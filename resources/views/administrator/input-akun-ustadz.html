@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin</title>
+    <title>Input Ustadz</title>
     <meta name="author" content="David Grzyb">
     <meta name="description" content="">
 
@@ -206,7 +206,7 @@
 
             <div class="overflow-x-hidden">
                 <main class="pt-6 px-6">
-                    <h1 class="text-3xl text-black pb-2 mt-2">Data Admin</h1>
+                    <h1 class="text-3xl text-black pb-2 mt-2">Data Ustadz</h1>
 
                     <div class="bg-white rounded-lg shadow-md p-8 my-8">
 
@@ -227,7 +227,7 @@
 
                         <div class="p-4">
                             <h2 class="text-2xl ">
-                                Tambah Admin
+                                Tambah Ustadz
                             </h2>
 
                         </div>
@@ -241,16 +241,16 @@
                                     </p>
                                 </div>
 
-                                <div class="grid justify-items-stretch py-8">
-                                    <div class="justify-self-center object-center text-center text-white text-base px-4">
-                                        <div class="py-8 self-center">
-                                            <img id="showImage" class="w-52 rounded-full"
-                                                src="https://source.unsplash.com/random/350x350" alt="random image">
-                                        </div>
-                                        <div class="">
-                                        <button class="bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-3 px-8"
-                                            href="#">Ganti Foto</button>
-                                        </div>
+                                <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 px-4 py-2 space-y-1">
+                                    <p class="self-center text-gray-600">
+                                        NIS
+                                    </p>
+                                    <div class="relative z-0 w-full mb-5 border-gray-200">
+                                        <input type="text" name="name" placeholder="Required" required
+                                            class="pt-3 pb-2 px-3 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black" />
+                                        
+                                        <span class="text-sm text-red-600 hidden" id="error">This field is
+                                            required</span>
                                     </div>
                                 </div>
 
@@ -327,6 +327,54 @@
                                         <span class="text-sm text-red-600 hidden" id="error">This field is
                                             required</span>
                                     </div>
+                                </div>
+                                <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 px-4 py-2 space-y-1">
+                                    <p class="self-center text-gray-600">
+                                        Status
+                                    </p>
+                                    <div class="relative z-0 w-full mb-5">
+                                        <select name="select" value="" onclick="this.setAttribute('value', this.value);"
+                                            class="pt-3 pb-2 px-3 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none z-1 focus:outline-none focus:ring-0 focus:border-black border-gray-200">
+                                            <option value="" selected disabled hidden></option>
+                                            <option value="1">Aktif</option>
+                                            <option value="2">Tidak Aktif</option>
+                                        </select>
+                                        <span class="text-sm text-red-600 hidden" id="error">Option has to be
+                                            selected</span>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="flex flex-row-reverse object-left text-center text-white text-base pt-8 px-3">
+                                    <button class="bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-3 px-8" href="update-santri.html">Generate Akun</button>
+                                </div>
+
+                                <div class="overflow-auto py-8 px-3">
+                                    <table class="table-auto">
+                                        <thead class="bg-gray-800 text-white">
+                                            <tr>
+                                                <th class="text-center w-1/2 py-3 uppercase font-semibold text-sm">
+                                                    Username</th>
+                                                <th class="text-center w-1/2 py-3 uppercase font-semibold text-sm">
+                                                    Password</th>
+                                                <th class="text-center w-1/2 py-3 uppercase font-semibold text-sm"></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="text-gray-700 bg-gray-200">
+                                            <tr>
+                                                <td class="text-center py-3 px-4">xxxx</td>
+                                                <td class="text-center py-3 px-4"><a>xxxx</a></td>
+                                                <td class="text-center py-3 px-4"><a></a></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="p-4">
+                                    <p class="text-gray-600">
+                                        Berikan <a class="bg-gray-200">username</a> dan <a class="bg-gray-200">password</a> ini kepada admin yang bersangkutan agar
+                                        bisa masuk ke akun SIAKAD MDNU!
+                                    </p>
                                 </div>
                             </div>
                         </form>

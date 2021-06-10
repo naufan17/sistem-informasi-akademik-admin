@@ -129,7 +129,7 @@
                 </div>
 
                 <div class="group border-indigo-500 hover:bg-blue-600 hover:shadow-lg hover:border-transparent">
-                    <a href="santri.html" class="text-gray-800 group-hover:text-white flex items-center py-4 pl-6">
+                    <a href="data-santri.html" class="text-gray-800 group-hover:text-white flex items-center py-4 pl-6">
                         <i class="fas fa-address-book mr-3"></i>
                         Santri
                     </a>
