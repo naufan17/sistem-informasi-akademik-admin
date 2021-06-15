@@ -1,36 +1,62 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="csrf-token" content="{{ csrf_token() }}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <!-- Fonts -->
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
+    <title>{{ config('app.name', 'Laravel') }}</title>
 
-        <!-- Styles -->
-        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}" defer></script>
 
-        <!-- Scripts -->
-        <script src="{{ asset('js/app.js') }}" defer></script>
-    </head>
-    <body class="font-sans antialiased">
-        <div class="min-h-screen bg-gray-100">
-            @include('administrator.layouts.navigation')
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
-            <!-- Page Heading -->
-            <header class="bg-white shadow">
-                <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                    @yield('header')
+    <!-- Styles -->
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+
+    <!-- Tailwind -->
+    <link href="https://unpkg.com/tailwindcss/dist/tailwind.min.css" rel="stylesheet"
+
+</head>
+<body class="work-sans leading-normal text-base tracking-normal">
+    <!-- HEADER -->
+    <nav id="header" class="w-full z-30 top-0 bg-white border-b-2">
+        <div class="w-full container mx-auto flex flex-wrap items-center justify-between">
+            <div class="flex space-x-4 py-5">
+                <!--LOGO-->
+                <div class="object-left">
+                    <img src="images/logo.png" class="w-24">
                 </div>
-            </header>
-
-            <!-- Page Content -->
-            <main>
-                @yield('content')
-            </main>
+                <!--NAME-->
+                <div class="text-center font-bold font-sans text-yellow-800 mt-2">
+                    <a class="text-base">MADRASAH DINIYYAH</a><br>
+                    <a class="text-2xl font-bold">NURUL UMMAH</a><br>
+                    <a class="text-base tracking-widest">YOGYAKARTA</a>
+                </div>
+            </div>
+            <div class="font-bold text-yellow-600 text-right">
+                <a class="text-xl">SISTEM INFORMASI AKADEMIK <br></a>
+                <a class="text-base tracking-widest">M D N U</a>
+            </div>
         </div>
-    </body>
+    </nav>
+    <div id="app">
+        <main class="py-4">
+            <div class="bg-gray-100 font-family-karla flex">
+                <!-- Page Content -->
+                <div class="w-full flex flex-col h-screen overflow-y-hidden">
+                    <div class="overflow-x-hidden">
+                        @yield('content')
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
 </html>

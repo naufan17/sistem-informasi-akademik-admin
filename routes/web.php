@@ -18,3 +18,19 @@ Route::get('/', function () {
 });
 
 Route::multiauth('Administrator', 'administrator');
+
+Route::get('/data-admin', function () {
+    return view('administrator.data-admin');
+});
+
+Route::get('/data-mapel', function () {
+    return view('administrator.data-mapel');
+});
+
+Route::get('/data-ustadz', function () {
+    return view('administrator.data-ustadz');
+});
+
+Route::get('/data-santri', function () {
+    return view('administrator.data-santri');
+});
