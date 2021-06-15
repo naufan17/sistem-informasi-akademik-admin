@@ -25,29 +25,29 @@
 
 </head>
 <body class="work-sans leading-normal text-base tracking-normal">
-    <!-- HEADER -->
-    <nav id="header" class="w-full z-30 top-0 bg-white border-b-2">
-        <div class="w-full container mx-auto flex flex-wrap items-center justify-between">
-            <div class="flex space-x-4 py-5">
-                <!--LOGO-->
-                <div class="object-left">
-                    <img src="images/logo.png" class="w-24">
-                </div>
-                <!--NAME-->
-                <div class="text-center font-bold font-sans text-yellow-800 mt-2">
-                    <a class="text-base">MADRASAH DINIYYAH</a><br>
-                    <a class="text-2xl font-bold">NURUL UMMAH</a><br>
-                    <a class="text-base tracking-widest">YOGYAKARTA</a>
-                </div>
-            </div>
-            <div class="font-bold text-yellow-600 text-right">
-                <a class="text-xl">SISTEM INFORMASI AKADEMIK <br></a>
-                <a class="text-base tracking-widest">M D N U</a>
-            </div>
-        </div>
-    </nav>
     <div id="app">
         <main class="py-4">
+            <!-- HEADER -->
+            <nav id="header" class="w-full z-30 top-0 bg-white border-b-2">
+                <div class="w-full container mx-auto flex flex-wrap items-center justify-between">
+                    <div class="flex space-x-4 py-2">
+                        <!--LOGO-->
+                        <div class="object-left">
+                            <img src="images/logo.png" class="w-24">
+                        </div>
+                        <!--NAME-->
+                        <div class="text-center font-bold font-sans text-yellow-800 mt-2">
+                            <a class="text-base">MADRASAH DINIYYAH</a><br>
+                            <a class="text-2xl font-bold">NURUL UMMAH</a><br>
+                            <a class="text-base tracking-widest">YOGYAKARTA</a>
+                        </div>
+                    </div>
+                    <div class="font-bold text-yellow-600 text-right">
+                        <a class="text-xl">SISTEM INFORMASI AKADEMIK <br></a>
+                        <a class="text-base tracking-widest">M D N U</a>
+                    </div>
+                </div>
+            </nav>
             <!-- MENU -->
             <div class="bg-gray-100 font-family-karla flex">
                 <aside class="relative bg-gray-100 h-screen w-64 hidden sm:block ">

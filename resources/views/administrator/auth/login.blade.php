@@ -1,4 +1,4 @@
-@extends('administrator.layouts.guest')
+@extends('administrator.layouts.app')
 
 @section('content')
     <x-auth-card>
