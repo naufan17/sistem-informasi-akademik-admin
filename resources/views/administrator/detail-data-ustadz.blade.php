@@ -49,8 +49,7 @@
                     <div class="pt-6 px-6 mb-8">
                         <div class="text-center bg-white rounded-lg shadow-xl">
                             <div class="px-6 py-6">
-                                <img src="https://source.unsplash.com/random/350x350" alt="random image"
-                                    class="object-center rounded-full">
+                                <img src="https://source.unsplash.com/random/350x350" alt="random image" class="object-center rounded-full">
                             </div>
                             <h4 class="pb-6 text-l font-semibold leading-tight truncate">Hai Admin!</h4>
                         </div>
@@ -79,8 +78,7 @@
                 </div>
 
                 <div class="group border-indigo-500 hover:bg-blue-600 hover:shadow-lg hover:border-transparent">
-                    <a href="riwayat-nilai.html"
-                        class="text-gray-800 group-hover:text-white flex items-center py-4 pl-6">
+                    <a href="riwayat-nilai.html" class="text-gray-800 group-hover:text-white flex items-center py-4 pl-6">
                         <i class="fas fa-star mr-3"></i>
                         Riwayat Nilai
                     </a>
@@ -100,8 +98,7 @@
                     </a>
                 </div>
             </nav>
-            <a href="#"
-                class="absolute w-full upgrade-btn bottom-0 active-nav-link text-white flex items-center justify-center py-4">
+            <a href="#" class="absolute w-full upgrade-btn bottom-0 active-nav-link text-white flex items-center justify-center py-4">
                 <i class="fas fa-sign-out-alt mr-3"></i>
                 Log Out
             </a>
@@ -111,8 +108,7 @@
             <!-- Mobile Header & Nav -->
             <header x-data="{ isOpen: false }" class="w-full bg-sidebar py-5 px-6 sm:hidden">
                 <div class="flex items-center justify-between">
-                    <a href="index.html"
-                        class="text-white text-3xl font-semibold uppercase hover:text-gray-300">Admin</a>
+                    <a href="index.html" class="text-white text-3xl font-semibold uppercase hover:text-gray-300">Admin</a>
                     <button @click="isOpen = !isOpen" class="text-white text-3xl focus:outline-none">
                         <i x-show="!isOpen" class="fas fa-bars"></i>
                         <i x-show="isOpen" class="fas fa-times"></i>
@@ -125,28 +121,23 @@
                         <i class="fas fa-tachometer-alt mr-3"></i>
                         Dashboard
                     </a>
-                    <a href="blank.html"
-                        class="flex items-center text-white opacity-75 hover:opacity-100 py-2 pl-4 nav-item">
+                    <a href="blank.html" class="flex items-center text-white opacity-75 hover:opacity-100 py-2 pl-4 nav-item">
                         <i class="fas fa-sticky-note mr-3"></i>
                         Blank Page
                     </a>
-                    <a href="nilai.html"
-                        class="flex items-center text-white opacity-75 hover:opacity-100 py-2 pl-4 nav-item">
+                    <a href="nilai.html" class="flex items-center text-white opacity-75 hover:opacity-100 py-2 pl-4 nav-item">
                         <i class="fas fa-table mr-3"></i>
                         Tables
                     </a>
-                    <a href="forms.html"
-                        class="flex items-center text-white opacity-75 hover:opacity-100 py-2 pl-4 nav-item">
+                    <a href="forms.html" class="flex items-center text-white opacity-75 hover:opacity-100 py-2 pl-4 nav-item">
                         <i class="fas fa-align-left mr-3"></i>
                         Forms
                     </a>
-                    <a href="tabs.html"
-                        class="flex items-center text-white opacity-75 hover:opacity-100 py-2 pl-4 nav-item">
+                    <a href="tabs.html" class="flex items-center text-white opacity-75 hover:opacity-100 py-2 pl-4 nav-item">
                         <i class="fas fa-tablet-alt mr-3"></i>
                         Tabbed Content
                     </a>
-                    <a href="calendar.html"
-                        class="flex items-center text-white opacity-75 hover:opacity-100 py-2 pl-4 nav-item">
+                    <a href="calendar.html" class="flex items-center text-white opacity-75 hover:opacity-100 py-2 pl-4 nav-item">
                         <i class="fas fa-calendar mr-3"></i>
                         Calendar
                     </a>
@@ -162,8 +153,7 @@
                         <i class="fas fa-sign-out-alt mr-3"></i>
                         Sign Out
                     </a>
-                    <button
-                        class="w-full bg-white cta-btn font-semibold py-2 mt-3 rounded-lg shadow-lg hover:shadow-xl hover:bg-gray-300 flex items-center justify-center">
+                    <button class="w-full bg-white cta-btn font-semibold py-2 mt-3 rounded-lg shadow-lg hover:shadow-xl hover:bg-gray-300 flex items-center justify-center">
                         <i class="fas fa-arrow-circle-up mr-3"></i> Upgrade to Pro!
                     </button>
                 </nav>
@@ -176,14 +166,9 @@
                     <div class="bg-white rounded-lg shadow-md p-8 my-8">
 
                         <div class="p-4">
-                            <button
-                                class="flex items-center border border-teal-500 text-teal-500 block rounded-sm py-3 px-6 w-32 hover:bg-blue-700 hover:text-white">
-                                <svg class="h-5 w-5 mr-3 fill-current" version="1.1" id="Layer_1"
-                                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                    x="0px" y="0px" viewBox="-49 141 512 512"
-                                    style="enable-background:new -49 141 512 512;" xml:space="preserve">
-                                    <path id="XMLID_10_"
-                                        d="M438,372H36.355l72.822-72.822c9.763-9.763,9.763-25.592,0-35.355c-9.763-9.764-25.593-9.762-35.355,0 l-115.5,115.5C-46.366,384.01-49,390.369-49,397s2.634,12.989,7.322,17.678l115.5,115.5c9.763,9.762,25.593,9.763,35.355,0 c9.763-9.763,9.763-25.592,0-35.355L36.355,422H438c13.808,0,25-11.193,25-25S451.808,372,438,372z">
+                            <button class="flex items-center border border-teal-500 text-teal-500 block rounded-sm py-3 px-6 w-32 hover:bg-blue-700 hover:text-white">
+                                <svg class="h-5 w-5 mr-3 fill-current" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="-49 141 512 512" style="enable-background:new -49 141 512 512;" xml:space="preserve">
+                                    <path id="XMLID_10_" d="M438,372H36.355l72.822-72.822c9.763-9.763,9.763-25.592,0-35.355c-9.763-9.764-25.593-9.762-35.355,0 l-115.5,115.5C-46.366,384.01-49,390.369-49,397s2.634,12.989,7.322,17.678l115.5,115.5c9.763,9.762,25.593,9.763,35.355,0 c9.763-9.763,9.763-25.592,0-35.355L36.355,422H438c13.808,0,25-11.193,25-25S451.808,372,438,372z">
                                     </path>
                                 </svg>
                                 Back
@@ -200,14 +185,11 @@
 
                         <form id="form" novalidate>
                             <div>
-                                <div
-                                    class="flex flex-row-reverse object-left text-center text-white text-base py-3 px-3">
-                                    <button class="bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-3 px-8"
-                                        href="update-santri.html">Update Akun</button>
+                                <div class="flex flex-row-reverse object-left text-center text-white text-base py-3 px-3">
+                                    <button class="bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-3 px-8" href="update-santri.html">Update Akun</button>
                                 </div>
 
-                                <div
-                                    class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 border-b">
+                                <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 border-b">
                                     <p class="text-gray-600">
                                         NIS
                                     </p>
@@ -216,8 +198,7 @@
                                     </p>
                                 </div>
 
-                                <div
-                                    class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 border-b">
+                                <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 border-b">
                                     <p class="text-gray-600">
                                         Nama Lengkap
                                     </p>
@@ -226,8 +207,7 @@
                                     </p>
                                 </div>
 
-                                <div
-                                    class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 border-b">
+                                <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 border-b">
                                     <p class="text-gray-600">
                                         Tempat Lahir
                                     </p>
@@ -236,8 +216,7 @@
                                     </p>
                                 </div>
 
-                                <div
-                                    class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 border-b">
+                                <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 border-b">
                                     <p class="text-gray-600">
                                         NIS
                                     </p>
@@ -246,8 +225,7 @@
                                     </p>
                                 </div>
 
-                                <div
-                                    class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 border-b">
+                                <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 border-b">
                                     <p class="text-gray-600">
                                         Nomor Induk Kependudukan / Passport
                                     </p>
@@ -256,8 +234,7 @@
                                     </p>
                                 </div>
 
-                                <div
-                                    class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 border-b">
+                                <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 border-b">
                                     <p class="text-gray-600">
                                         Nomor Telepon / Handphone
                                     </p>
@@ -266,8 +243,7 @@
                                     </p>
                                 </div>
 
-                                <div
-                                    class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 border-b">
+                                <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 border-b">
                                     <p class="text-gray-600">
                                         E-mail
                                     </p>
@@ -275,8 +251,7 @@
                                         1111@gmail.com
                                     </p>
                                 </div>
-                                <div
-                                    class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 border-b">
+                                <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 border-b">
                                     <p class="text-gray-600">
                                         Status
                                     </p>
@@ -309,8 +284,7 @@
                                 </div>
                                 <div class="p-4">
                                     <p class="text-gray-600">
-                                        Berikan <a class="bg-gray-200">username</a> dan <a
-                                            class="bg-gray-200">password</a> ini kepada admin yang bersangkutan agar
+                                        Berikan <a class="bg-gray-200">username</a> dan <a class="bg-gray-200">password</a> ini kepada admin yang bersangkutan agar
                                         bisa masuk ke akun SIAKAD MDNU!
                                     </p>
                                 </div>
@@ -318,14 +292,9 @@
                         </form>
 
                         <div class="p-4">
-                            <button
-                                class="flex items-center border border-teal-500 text-teal-500 block rounded-sm py-3 px-6 w-32 hover:bg-blue-700 hover:text-white">
-                                <svg class="h-5 w-5 mr-3 fill-current" version="1.1" id="Layer_1"
-                                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                    x="0px" y="0px" viewBox="-49 141 512 512"
-                                    style="enable-background:new -49 141 512 512;" xml:space="preserve">
-                                    <path id="XMLID_10_"
-                                        d="M438,372H36.355l72.822-72.822c9.763-9.763,9.763-25.592,0-35.355c-9.763-9.764-25.593-9.762-35.355,0 l-115.5,115.5C-46.366,384.01-49,390.369-49,397s2.634,12.989,7.322,17.678l115.5,115.5c9.763,9.762,25.593,9.763,35.355,0 c9.763-9.763,9.763-25.592,0-35.355L36.355,422H438c13.808,0,25-11.193,25-25S451.808,372,438,372z">
+                            <button class="flex items-center border border-teal-500 text-teal-500 block rounded-sm py-3 px-6 w-32 hover:bg-blue-700 hover:text-white">
+                                <svg class="h-5 w-5 mr-3 fill-current" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="-49 141 512 512" style="enable-background:new -49 141 512 512;" xml:space="preserve">
+                                    <path id="XMLID_10_" d="M438,372H36.355l72.822-72.822c9.763-9.763,9.763-25.592,0-35.355c-9.763-9.764-25.593-9.762-35.355,0 l-115.5,115.5C-46.366,384.01-49,390.369-49,397s2.634,12.989,7.322,17.678l115.5,115.5c9.763,9.762,25.593,9.763,35.355,0 c9.763-9.763,9.763-25.592,0-35.355L36.355,422H438c13.808,0,25-11.193,25-25S451.808,372,438,372z">
                                     </path>
                                 </svg>
                                 Back
@@ -340,37 +309,36 @@
                     <footer class="container mx-auto bg-white py-8 border-t border-gray-400">
                         <div class="container flex px-6 py-8 ">
                             <div class="w-full mx-auto flex flex-wrap">
+
                                 <div class="text-left flex w-full lg:w-1/2 ">
                                     <div class="px-3 md:px-0">
-                                        <h3 class="font-bold text-gray-900">Madrasah Diniyyah Pondok Pesantren Nurul
-                                            Ummah Yogyakarta</h3>
-                                        <a class="inline-block no-underline hover:text-black hover:underline pt-5"
-                                            href="tel:+62 857 2565 5593">Telp. 0857 2565 5593</a><br>
-                                        <a class="inline-block no-underline hover:text-black hover:underline"
-                                            href="https://web.whatsapp.com/send?phone=6285725655593&text=Assalamualaikum%20Admin">WhatsApp.
-                                            0857 2565 5593</a><br>
-                                        <a class="inline-block no-underline hover:text-black hover:underline"
-                                            href="mailto:admisi.nurma@gmail.com">E-mail. admisi.nurma@gmail.com</a>
+                                        <h3 class="font-bold text-gray-900">Madrasah Diniyyah Pondok Pesantren Nurul Ummah Yogyakarta</h3>
+                                        <a class="inline-block no-underline hover:text-black hover:underline pt-4" href="tel:+62 857 2565 5593">Telp. 0857 2565 5593</a><br>
+                                        <a class="inline-block no-underline hover:text-black hover:underline" href="https://web.whatsapp.com/send?phone=6285725655593&text=Assalamualaikum%20Admin">WhatsApp. 0857 2565 5593</a><br>
+                                        <a class="inline-block no-underline hover:text-black hover:underline" href="mailto:admisi.nurma@gmail.com">E-mail. admisi.nurma@gmail.com</a>
                                     </div>
                                 </div>
+
                                 <div class="flex w-full lg:w-1/2 lg:justify-end lg:text-right">
                                     <div class="px-3 md:px-0">
                                         <h3 class="font-bold text-gray-900">Media Sosial</h3>
-                                        <ul class="list-reset items-center pt-3">
+                                        <ul class="list-reset items-center pt-4">
                                             <li>
-                                                <a class="inline-block no-underline hover:text-black hover:underline py-1"
-                                                    href="https://instagram.com/nurulummahyk?igshid=1m74irp80dl0v">Instagram</a>
-                                                <a class="inline-block no-underline hover:text-black hover:underline"
-                                                    href="https://www.youtube.com/channel/UCYQ8dFPzAkFF0WbS0r-IDaw">YouTube</a>
-                                                <a class="inline-block no-underline hover:text-black hover:underline"
-                                                    href="https://nurulummah.com/">Website</a>
+                                                <a class="inline-block no-underline hover:text-black hover:underline py-1" href="https://instagram.com/nurulummahyk?igshid=1m74irp80dl0v">Instagram</a>
+                                                <a class="inline-block no-underline hover:text-black hover:underline" href="https://www.youtube.com/channel/UCYQ8dFPzAkFF0WbS0r-IDaw">YouTube</a>
+                                                <a class="inline-block no-underline hover:text-black hover:underline" href="https://www.youtube.com/channel/UCYQ8dFPzAkFF0WbS0r-IDaw">Facebook</a><br>
+                                                <a class="inline-block no-underline hover:text-black hover:underline" href="https://nurulummah.com/">Twitter</a>
+                                                <a class="inline-block no-underline hover:text-black hover:underline" href="https://nurulummah.com/">Website</a>
+
                                             </li>
                                         </ul>
                                     </div>
                                 </div>
+
                             </div>
                         </div>
                     </footer>
+
             </div>
         </div>
         </main>
