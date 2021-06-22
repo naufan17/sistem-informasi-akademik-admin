@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Administrator;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Administrator;
 
 class DataAdminController extends Controller
 {
@@ -14,6 +15,8 @@ class DataAdminController extends Controller
      */
     public function index()
     {
-        return view('administrator.data-admin');
+        $administrators = Administrator::all();
+
+        return view('administrator.data-admin', compact('administrators'));
     }
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Administrator;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\User;
 
 class DataSantriController extends Controller
 {
@@ -14,6 +15,8 @@ class DataSantriController extends Controller
      */
     public function index()
     {
-        return view('administrator.data-santri');
+        $santris = User::where('role', 'santri')->get();
+
+        return view('administrator.data-santri', compact('santris'));
     }
 }
