@@ -19,4 +19,9 @@ class DataUstadzController extends Controller
 
         return view('administrator.data-ustadz', compact('ustadzs'));
     }
+
+    public function formTambah()
+    {
+        return view('administrator.tambah-data-ustadz');
+    }
 }

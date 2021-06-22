@@ -19,4 +19,9 @@ class DataSantriController extends Controller
 
         return view('administrator.data-santri', compact('santris'));
     }
+
+    public function formTambah()
+    {
+        return view('administrator.tambah-data-santri');
+    }
 }

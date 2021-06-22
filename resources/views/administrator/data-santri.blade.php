@@ -53,7 +53,9 @@
                 </div>
                 <p class="text-xl pt-8 flex items-center border-b-2">Daftar List Santri</p>
                 <div class="flex flex-row-reverse object-left text-center text-white text-base py-8">
-                    <button class="bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-3 px-8" href="update-santri.html">Input Santri</button>
+                    <a href="{{ route('administrator.tambah-data-santri') }}" class="button bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-3 px-8">
+                        Tambah Santri
+                    </a>
                 </div>
                 <div class="bg-white overflow-auto pb-8">
                     <table class="table-auto bg-white">
@@ -74,7 +76,7 @@
                                 <td class="text-left py-3 px-4">{{ $santri->id }}</td>
                                 <td class="text-left py-3 px-4">{{ $santri->name }}</td>
                                 <td class="text-left py-3 px-4">Awaliyah</td>
-                                <td class="text-left py-3 px-4">Aktif</td>
+                                <td class="text-left py-3 px-4">{{ $santri->status }}</td>
                                 <td>
                                     <div class="flex py-3 px-4">
                                         <div class="w-5 mr-2 transform hover:text-purple-500 hover:scale-110">

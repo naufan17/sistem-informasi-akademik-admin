@@ -19,4 +19,9 @@ class DataAdminController extends Controller
 
         return view('administrator.data-admin', compact('administrators'));
     }
+
+    public function formTambah()
+    {
+        return view('administrator.tambah-data-admin');
+    }
 }

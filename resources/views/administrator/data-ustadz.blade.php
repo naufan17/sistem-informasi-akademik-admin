@@ -34,7 +34,9 @@
                     Daftar List Ustadz
                 </p>
                 <div class="flex flex-row-reverse object-left text-center text-white text-base py-8">
-                    <button class="bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-3 px-8" href="update-santri.html">Input Ustadz</button>
+                    <a href="{{ route('administrator.tambah-data-ustadz') }}" class="button bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-3 px-8">
+                        Tambah Ustadz
+                    </a>
                 </div>
                 <div class="bg-white overflow-auto pb-8">
                     <table class="table-auto bg-white">
@@ -55,7 +57,7 @@
                                 <td class="text-left py-3 px-4">{{ $ustadz->id }}</td>
                                 <td class="text-left py-3 px-4">{{ $ustadz->name }}</td>
                                 <td class="text-left py-3 px-4">Awaliyah</td>
-                                <td class="text-left py-3 px-4">Aktif</td>
+                                <td class="text-left py-3 px-4">{{ $ustadz->status }}</td>
                                 <td>
                                     <div class="flex py-3 px-4">
                                         <div class="w-5 mr-2 transform hover:text-purple-500 hover:scale-110">

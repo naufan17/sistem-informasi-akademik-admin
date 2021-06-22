@@ -11,7 +11,9 @@
                     Daftar Anggota Admin
                 </p>
                 <div class="flex object-left text-center text-white text-base py-8">
-                    <button class="bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-3 px-8" href="update-data-admin.html">Tambah Admin</button>
+                    <a href="{{ route('administrator.tambah-data-admin') }}" class="button bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-3 px-8">
+                        Tambah Admin
+                    </a>
                 </div>
                 <div class="bg-white overflow-auto pb-8">
                     <table class="table-auto bg-white">
