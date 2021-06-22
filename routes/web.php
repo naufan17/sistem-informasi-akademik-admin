@@ -24,7 +24,7 @@ Route::get('/', function () {
 
 Route::multiauth('Administrator', 'administrator');
 
-Route::get('/data-admin', [DataAdminController::class, 'index'])->name('data.admin');
-Route::get('/data-mapel', [DataMapelController::class, 'index'])->name('data.mapel');
-Route::get('/data-ustadz', [DataUstadzController::class, 'index'])->name('data.ustadz');
-Route::get('/data-santri', [DataSantriController::class, 'index'])->name('data.santri');
+Route::get('/administrator/data-admin', [DataAdminController::class, 'index'])->name('administrator.data-admin');
+Route::get('/administrator/data-mapel', [DataMapelController::class, 'index'])->name('administrator.data-mapel');
+Route::get('/administrator/data-ustadz', [DataUstadzController::class, 'index'])->name('administrator.data-ustadz');
+Route::get('/administrator/data-santri', [DataSantriController::class, 'index'])->name('administrator.data-santri');
