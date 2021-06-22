@@ -1,6 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Administrator\DashboardController;
+use App\Http\Controllers\Administrator\DataAdminController;
+use App\Http\Controllers\Administrator\DataMapelController;
+use App\Http\Controllers\Administrator\DataSantriController;
+use App\Http\Controllers\Administrator\DataUstadzController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,18 +24,7 @@ Route::get('/', function () {
 
 Route::multiauth('Administrator', 'administrator');
 
-Route::get('/data-admin', function () {
-    return view('administrator.data-admin');
-});
-
-Route::get('/data-mapel', function () {
-    return view('administrator.data-mapel');
-});
-
-Route::get('/data-ustadz', function () {
-    return view('administrator.data-ustadz');
-});
-
-Route::get('/data-santri', function () {
-    return view('administrator.data-santri');
-});
+Route::get('/data-admin', [DataAdminController::class, 'index'])->name('data.admin');
+Route::get('/data-mapel', [DataMapelController::class, 'index'])->name('data.mapel');
+Route::get('/data-ustadz', [DataUstadzController::class, 'index'])->name('data.ustadz');
+Route::get('/data-santri', [DataSantriController::class, 'index'])->name('data.santri');

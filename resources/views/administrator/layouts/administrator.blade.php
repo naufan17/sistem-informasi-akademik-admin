@@ -63,21 +63,6 @@
                             </div>
                         </div>
                         <div class="group border-indigo-500 hover:bg-blue-600 hover:shadow-lg hover:border-transparent">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle text-gray-800 group-hover:text-white flex items-center py-4 pl-6" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                {{ Auth::guard('administrator')->user()->name }}
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ route('administrator.logout') }}"
-                                    onclick="event.preventDefault();
-                                                    document.getElementById('logout-form').submit();">
-                                    {{ __('Logout') }}
-                                </a>
-                                <form id="logout-form" action="{{ route('administrator.logout') }}" method="POST" class="d-none">
-                                    @csrf
-                                </form>
-                            </div>
-                        </div>
-                        <div class="group border-indigo-500 hover:bg-blue-600 hover:shadow-lg hover:border-transparent">
                             <a href="/data-admin" class="text-gray-800 group-hover:text-white flex items-center py-4 pl-6">
                                 <i class="fas fa-id-card-alt mr-3"></i>
                                 Data Admin
@@ -87,18 +72,6 @@
                             <a href="/data-mapel" class="text-gray-800 group-hover:text-white flex items-center py-4 pl-6">
                                 <i class="fas fa-book-open mr-3"></i>
                                 Mata Pelajaran
-                            </a>
-                        </div>
-                        <div class="group border-indigo-500 hover:bg-blue-600 hover:shadow-lg hover:border-transparent">
-                            <a href="nilai.html" class="text-gray-800 group-hover:text-white flex items-center py-4 pl-6">
-                                <i class="fas fa-star-half-alt mr-3"></i>
-                                Nilai
-                            </a>
-                        </div>
-                        <div class="group border-indigo-500 hover:bg-blue-600 hover:shadow-lg hover:border-transparent">
-                            <a href="riwayat-nilai.html" class="text-gray-800 group-hover:text-white flex items-center py-4 pl-6">
-                                <i class="fas fa-star mr-3"></i>
-                                Riwayat Nilai
                             </a>
                         </div>
                         <div class="group border-indigo-500 hover:bg-blue-600 hover:shadow-lg hover:border-transparent">
@@ -113,11 +86,15 @@
                                 Santri
                             </a>
                         </div>
+                        <button class="w-full bg-blue-600 hover:bg-blue-800 cta-btn font-semibold justify-center ">
+                            <a class="text-white items-center py-4 pl-8 flex item-center" href="{{ route('administrator.logout') }}" onclick="event.preventDefault();
+                                document.getElementById('logout-form').submit();">{{ __('Logout') }}
+                            </a>
+                            <form id="logout-form" action="{{ route('administrator.logout') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>
+                        </button>
                     </nav>
-                    <a href="#" class="absolute w-full upgrade-btn bottom-0 active-nav-link text-white flex items-center justify-center py-4">
-                        <i class="fas fa-sign-out-alt mr-3"></i>
-                        Log Out
-                    </a>
                 </aside>
                 <!-- Page Content -->
                 <div class="w-full flex flex-col h-screen overflow-y-hidden">
