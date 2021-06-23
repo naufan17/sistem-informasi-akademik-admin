@@ -16,6 +16,7 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 
     <!-- Tailwind -->
@@ -25,18 +26,15 @@
     <link href="https://fonts.googleapis.com/css?family=Work+Sans:200,400&display=swap" rel="stylesheet">
 
 </head>
-
 <body class="bg-white text-gray-600 work-sans leading-normal text-base tracking-normal">
     <!--HEADER-->
     <nav id="header" class="w-full z-30 top-0 py-1">
         <div class="w-full container mx-auto flex flex-wrap items-center justify-between">
             <div class="flex space-x-4 py-5">
-
                 <!--LOGO-->
                 <div class="object-left">
                     <img src="{{ ('images/logo.png ') }}" class="w-24">
                 </div>
-
                 <!--NAME-->
                 <div class="text-center font-sans font-bold text-yellow-800 mt-3">
                     <a class="text-base">MADRASAH DINIYYAH<br></a>
@@ -44,7 +42,6 @@
                     <a class="text-base tracking-widest">YOGYAKARTA</a>
                 </div>
             </div>
-
             <div class="font-bold text-yellow-600 text-right">
                 <a class="text-xl">SISTEM INFORMASI AKADEMIK <br></a>
                 <a class="text-base tracking-widest">M D N U</a>
@@ -145,7 +142,6 @@
             </div>
         </div>
     </section>
-
     <!-- FOOTER -->
     <footer class="container mx-auto bg-white py-8 border-t border-gray-400">
         <div class="container flex px-6 py-8 ">
@@ -159,7 +155,6 @@
                         <a class="inline-block no-underline hover:text-black hover:underline" href="mailto:admisi.nurma@gmail.com">E-mail. admisi.nurma@gmail.com</a>
                     </div>
                 </div>
-
                 <div class="flex w-full lg:w-1/2 lg:justify-end lg:text-right">
                     <div class="px-3 md:px-0">
                         <h3 class="font-bold text-gray-900">Media Sosial</h3>
@@ -170,16 +165,12 @@
                                 <a class="inline-block no-underline hover:text-black hover:underline" href="https://www.youtube.com/channel/UCYQ8dFPzAkFF0WbS0r-IDaw">Facebook</a><br>
                                 <a class="inline-block no-underline hover:text-black hover:underline" href="https://nurulummah.com/">Twitter</a>
                                 <a class="inline-block no-underline hover:text-black hover:underline" href="https://nurulummah.com/">Website</a>
-
                             </li>
                         </ul>
                     </div>
                 </div>
-
             </div>
         </div>
     </footer>
-
 </body>
-
 </html>
