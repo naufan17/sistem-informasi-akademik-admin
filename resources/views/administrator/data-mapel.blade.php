@@ -59,7 +59,9 @@
                     Daftar Paket Mata Pelajaran
                 </p>
                 <div class="flex flex-row-reverse object-left text-center text-white text-base py-8">
-                    <button class="bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-3 px-8" href="#">Input Mapel</button>
+                    <a href="{{ route('administrator.tambah-data-mapel') }}" class="button bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-3 px-8">
+                        Tambah Mapel
+                    </a>
                 </div>
                 <div class="bg-white overflow-auto pb-8">
                     <table class="table-auto bg-white">
@@ -75,12 +77,13 @@
                             </tr>
                         </thead>
                         <tbody class="text-gray-700">
+                            @foreach($mapels as $mapel)
                             <tr>
-                                <td class="text-left py-3 px-4">1</td>
-                                <td class="text-left py-3 px-4">MP-01</td>
-                                <td class="text-left py-3 px-4"><a>Tafsir</a></td>
-                                <td class="text-left py-3 px-4"><a>Awaliyah</a></td>
-                                <td class="text-left py-3 px-4"><a>Selasa, 19.00-19.45</a></td>
+                                <td class="text-left py-3 px-4">{{ $loop->iteration }}</td>
+                                <td class="text-left py-3 px-4">{{ $mapel->id }}</td>
+                                <td class="text-left py-3 px-4">{{ $mapel->matkul }}</td>
+                                <td class="text-left py-3 px-4">{{ $mapel->kelas }}</td>
+                                <td class="text-left py-3 px-4">{{ $mapel->jadwal }}</td>
                                 <td class="text-left py-3 px-4"><a>Salman Hadi</a></td>
                                 <td>
                                     <div class="flex py-3 px-4">
@@ -97,72 +100,7 @@
                                     </div>
                                 </td>
                             </tr>
-                            <tr class="bg-gray-200">
-                                <td class="text-left py-3 px-4">2</td>
-                                <td class="text-left py-3 px-4">MP-02</td>
-                                <td class="text-left py-3 px-4"><a>Fiqih</a></td>
-                                <td class="text-left py-3 px-4"><a>Awaliyah</a></td>
-                                <td class="text-left py-3 px-4"><a>Rabu, 19.00-19.45</a></td>
-                                <td class="text-left py-3 px-4"><a>Muhammad Roudak</a></td>
-                                <td>
-                                    <div class="flex py-3 px-4">
-                                        <div class="w-5 mr-2 transform hover:text-purple-500 hover:scale-110">
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
-                                            </svg>
-                                        </div>
-                                        <div class="w-5 mr-2 transform hover:text-purple-500 hover:scale-110">
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                                            </svg>
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="text-left py-3 px-4">3</td>
-                                <td class="text-left py-3 px-4">MP-03</td>
-                                <td class="text-left py-3 px-4"><a>Nahwu</a></td>
-                                <td class="text-left py-3 px-4"><a>Awaliyah</a></td>
-                                <td class="text-left py-3 px-4"><a>Jumat, 19.00-19.45</a></td>
-                                <td class="text-left py-3 px-4"><a>Ainun Najib</a></td>
-                                <td>
-                                    <div class="flex py-3 px-4">
-                                        <div class="w-5 mr-2 transform hover:text-purple-500 hover:scale-110">
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
-                                            </svg>
-                                        </div>
-                                        <div class="w-5 mr-2 transform hover:text-purple-500 hover:scale-110">
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                                            </svg>
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr class="bg-gray-200">
-                                <td class="text-left py-3 px-4">4</td>
-                                <td class="text-left py-3 px-4">MP-04</td>
-                                <td class="text-left py-3 px-4"><a>Hadits</a></td>
-                                <td class="text-left py-3 px-4"><a>Awaliyah</a></td>
-                                <td class="text-left py-3 px-4"><a>Sabtu, 19.00-19.45</a></td>
-                                <td class="text-left py-3 px-4"><a>Adriek N</a></td>
-                                <td>
-                                    <div class="flex py-3 px-4">
-                                        <div class="w-5 mr-2 transform hover:text-purple-500 hover:scale-110">
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
-                                            </svg>
-                                        </div>
-                                        <div class="w-5 mr-2 transform hover:text-purple-500 hover:scale-110">
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                                            </svg>
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>
