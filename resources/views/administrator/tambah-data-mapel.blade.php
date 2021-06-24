@@ -29,20 +29,20 @@
                         </div>
                         <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 px-4 py-2 space-y-1">
                             <p class="self-center text-gray-600">
-                                Kode MP
+                                Kode Mata Pelajaran
                             </p>
                             <div class="relative z-0 w-full mb-5">
-                                <input type="text" name="name" placeholder="" required class="pt-3 pb-2 px-3 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-200" />
+                                <input type="number" name="id" placeholder="" required class="pt-3 pb-2 px-3 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-200" />
                                 <span class="text-sm text-red-600 hidden" id="error">This field is
                                     required</span>
                             </div>
                         </div>
                         <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 px-4 py-2 space-y-1">
                             <p class="self-center text-gray-600">
-                                Nama MP
+                                Nama Mata Pelajaran
                             </p>
                             <div class="relative z-0 w-full mb-5">
-                                <input type="text" name="name" placeholder="" required class="pt-3 pb-2 px-3 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-200" />
+                                <input type="text" name="course" placeholder="" required class="pt-3 pb-2 px-3 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-200" />
                                 <span class="text-sm text-red-600 hidden" id="error">This field is
                                     required</span>
                             </div>
@@ -52,9 +52,10 @@
                                 Nama Kitab
                             </p>
                             <div class="relative z-0 w-full mb-5">
-                                <input type="text" name="name" placeholder="" required class="pt-3 pb-2 px-3 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-200" />
-                                <span class="text-sm text-red-600 hidden" id="error">This field is
-                                    required</span>
+                                <input type="text" name="book" placeholder="" required class="pt-3 pb-2 px-3 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-200" />
+                                    <span class="text-sm text-red-600 hidden" id="error">This field is
+                                        required
+                                    </span>
                             </div>
                         </div>
                         <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 px-4 py-2 space-y-1">
@@ -62,7 +63,7 @@
                                 Kelas
                             </p>
                             <div class="relative z-0 w-full mb-5">
-                                <select name="select" value="" onclick="this.setAttribute('value', this.value);" class="pt-3 pb-2 px-3 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none z-1 focus:outline-none focus:ring-0 focus:border-black border-gray-200">
+                                <select type="text" name="grade" value="" onclick="this.setAttribute('value', this.value);" class="pt-3 pb-2 px-3 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none z-1 focus:outline-none focus:ring-0 focus:border-black border-gray-200">
                                     <option value="" selected disabled hidden></option>
                                     <option value="1">Awaliyah</option>
                                     <option value="2">1 Wustho</option>
@@ -70,8 +71,7 @@
                                     <option value="4">1 Ulya</option>
                                     <option value="5">2 Ulya</option>
                                 </select>
-                                <span class="text-sm text-red-600 hidden" id="error">Option has to be
-                                    selected</span>
+                                <span class="text-sm text-red-600 hidden" id="error">Option has to be selected</span>
                             </div>
                         </div>
                         <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 px-4 py-2 space-y-1">
@@ -79,9 +79,22 @@
                                 Jadwal
                             </p>
                             <div class="relative z-0 w-full mb-5">
-                                <input type="text" name="name" placeholder="" required class="pt-3 pb-2 px-3 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-200" />
+                                <input type="text" name="schdule" placeholder="" required class="pt-3 pb-2 px-3 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-200" />
                                 <span class="text-sm text-red-600 hidden" id="error">This field is
                                     required</span>
+                            </div>
+                        </div>
+                        <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 px-4 py-2 space-y-1">
+                            <p class="self-center text-gray-600">
+                                Semester
+                            </p>
+                            <div class="relative z-0 w-full mb-5">
+                            <select type="text" name="semester" value="" onclick="this.setAttribute('value', this.value);" class="pt-3 pb-2 px-3 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none z-1 focus:outline-none focus:ring-0 focus:border-black border-gray-200">
+                                    <option value="" selected disabled hidden></option>
+                                    <option value="Genap">Genap</option>
+                                    <option value="Ganjil">Ganjil</option>
+                                </select>
+                                <span class="text-sm text-red-600 hidden" id="error">Option has to be selected</span>
                             </div>
                         </div>
                         <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 px-4 py-2 space-y-1">

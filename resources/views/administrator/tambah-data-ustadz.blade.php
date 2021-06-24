@@ -20,8 +20,8 @@
                         Tambah Ustadz
                     </h2>
                 </div>
-                <form id="form" novalidate>
-                    <div>
+                <form method="POST" action="">
+                    <div class="pb-8">
                         <div class="pt-8">
                             <p class="self-center bg-gray-50 py-4 px-4">
                                 Identitas Diri
@@ -29,61 +29,10 @@
                         </div>
                         <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 px-4 py-2 space-y-1">
                             <p class="self-center text-gray-600">
-                                NIS
+                                Name
                             </p>
-                            <div class="relative z-0 w-full mb-5 border-gray-200">
-                                <input type="text" name="name" placeholder="Required" required class="pt-3 pb-2 px-3 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black" />
-                                <span class="text-sm text-red-600 hidden" id="error">This field is
-                                    required</span>
-                            </div>
-                        </div>
-                        <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 px-4 py-2 space-y-1">
-                            <p class="self-center text-gray-600">
-                                Nama Lengkap
-                            </p>
-                            <div class="relative z-0 w-full mb-5 border-gray-200">
-                                <input type="text" name="name" placeholder="Required" required class="pt-3 pb-2 px-3 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black" />
-                                <span class="text-sm text-red-600 hidden" id="error">This field is
-                                    required</span>
-                            </div>
-                        </div>
-                        <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 px-4 py-2 space-y-1">
-                            <p class="self-center text-gray-600">
-                                Tempat Lahir
-                            </p>
-                            <div class="relative z-0 w-full mb-5 border-gray-200">
-                                <input type="text" name="name" placeholder="Required" required class="pt-3 pb-2 px-3 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black" />
-                                <span class="text-sm text-red-600 hidden" id="error">This field is
-                                    required</span>
-                            </div>
-                        </div>
-                        <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 px-4 py-2 space-y-1">
-                            <p class="self-center text-gray-600">
-                                Tanggal Lahir
-                            </p>
-                            <div class="relative z-0 w-full mb-5 border-gray-200">
-                                <input type="text" name="date" placeholder="Required " onclick="this.setAttribute('type', 'date');" class="pt-3 pb-2 px-3 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black" />
-                                <span class="text-sm text-red-600 hidden" id="error">This field is
-                                    required</span>
-                            </div>
-                        </div>
-                        <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 px-4 py-2 space-y-1">
-                            <p class="self-center text-gray-600">
-                                Nomor Induk Kependudukan / Passport
-                            </p>
-                            <div class="relative z-0 w-full mb-5 border-gray-200">
-                                <input type="text" name="name" placeholder="Required" required class="pt-3 pb-2 px-3 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black" />
-                                <span class="text-sm text-red-600 hidden" id="error">This field is
-                                    required</span>
-                            </div>
-                        </div>
-
-                        <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 px-4 py-2 space-y-1">
-                            <p class="self-center text-gray-600">
-                                Nomor Telepon / Handphone
-                            </p>
-                            <div class="relative z-0 w-full mb-5 border-gray-200">
-                                <input type="text" name="name" placeholder="Required" class="pt-3 pb-2 px-3 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black" />
+                            <div class="relative z-0 w-full mb-5">
+                                <input id="name" type="text" name="name" placeholder="" required autocomplete="name" required class="pt-3 pb-2 px-3 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-200" />
                                 <span class="text-sm text-red-600 hidden" id="error">This field is
                                     required</span>
                             </div>
@@ -92,29 +41,48 @@
                             <p class="self-center text-gray-600">
                                 Email
                             </p>
-                            <div class="relative z-0 w-full mb-5 border-gray-200">
-                                <input type="text" name="name" placeholder="Required" required class="pt-3 pb-2 px-3 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black" />
+                            <div class="relative z-0 w-full mb-5">
+                                <input id="email" type="email" name="email" placeholder="" required autocomplete="email" required class="pt-3 pb-2 px-3 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-200" />
                                 <span class="text-sm text-red-600 hidden" id="error">This field is
                                     required</span>
                             </div>
                         </div>
                         <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 px-4 py-2 space-y-1">
                             <p class="self-center text-gray-600">
-                                Status
+                                Role
                             </p>
                             <div class="relative z-0 w-full mb-5">
-                                <select name="select" value="" onclick="this.setAttribute('value', this.value);" class="pt-3 pb-2 px-3 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none z-1 focus:outline-none focus:ring-0 focus:border-black border-gray-200">
-                                    <option value="" selected disabled hidden></option>
-                                    <option value="1">Aktif</option>
-                                    <option value="2">Tidak Aktif</option>
+                                <select id="role" type="text" name="role" placeholder="" required autocomplete="role" required class="pt-3 pb-2 px-3 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-200" >
+                                    <option value="Ustadz">Ustadz</option>
                                 </select>
-                                <span class="text-sm text-red-600 hidden" id="error">Option has to be
-                                    selected</span>
+                                <span class="text-sm text-red-600 hidden" id="error">This field is
+                                    required</span>
                             </div>
                         </div>
-                        <div class="flex flex-row-reverse object-left text-center text-white text-base pt-8 px-3">
-                            <button class="bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-3 px-8" href="update-santri.html">Generate Akun</button>
+                        <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 px-4 py-2 space-y-1">
+                            <p class="self-center text-gray-600">
+                                Password
+                            </p>
+                            <div class="relative z-0 w-full mb-5">
+                                <input id="possword" type="password" name="password" placeholder="" required autocomplete="new-password" required class="pt-3 pb-2 px-3 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-200" />
+                                <span class="text-sm text-red-600 hidden" id="error">This field is
+                                    required</span>
+                            </div>
                         </div>
+                        <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 px-4 py-2 space-y-1">
+                            <p class="self-center text-gray-600">
+                                Password Confirm
+                            </p>
+                            <div class="relative z-0 w-full mb-5">
+                                <input id="possword-confirm" type="password" name="password_confirmation" placeholder="" required autocomplete="new-password" required class="pt-3 pb-2 px-3 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-200" />
+                                <span class="text-sm text-red-600 hidden" id="error">This field is
+                                    required</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-row-reverse object-left text-center text-white text-base pt-8 px-3">
+                        <button type="submit" class="bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-3 px-8" >Register</button>
+                    </div>
                         <!-- <div class="overflow-auto py-8 px-3">
                             <table class="table-auto">
                                 <thead class="bg-gray-800 text-white">

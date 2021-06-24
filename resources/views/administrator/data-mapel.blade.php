@@ -69,22 +69,26 @@
                             <tr>
                                 <th class="text-left py-3 px-4 uppercase font-semibold text-sm">No</th>
                                 <th class="text-left w-1/6 py-3 px-4 uppercase font-semibold text-sm">Kode MP</th>
-                                <th class="text-left w-1/6 py-3 px-4 uppercase font-semibold text-sm">Nama MP</th>
+                                <th class="text-left w-1/6 py-3 px-4 uppercase font-semibold text-sm">Mata pelajaran</th>
+                                <th class="text-left w-1/6 py-3 px-4 uppercase font-semibold text-sm">Kitab</th>
                                 <th class="text-left w-1/6 py-3 px-4 uppercase font-semibold text-sm">Kelas</th>
                                 <th class="text-left w-1/6 py-3 px-4 uppercase font-semibold text-sm">Jadwal</th>
+                                <th class="text-left w-1/5 py-3 px-4 uppercase font-semibold text-sm">Semester</th>
                                 <th class="text-left w-1/6 py-3 px-4 uppercase font-semibold text-sm">Nama Ustadz</th>
                                 <th class="text-left w-1/6 py-3 px-4 uppercase font-semibold text-sm">Aksi</th>
                             </tr>
                         </thead>
                         <tbody class="text-gray-700">
-                            @foreach($mapels as $mapel)
+                            @foreach($courses as $course)
                             <tr>
                                 <td class="text-left py-3 px-4">{{ $loop->iteration }}</td>
-                                <td class="text-left py-3 px-4">{{ $mapel->id }}</td>
-                                <td class="text-left py-3 px-4">{{ $mapel->matkul }}</td>
-                                <td class="text-left py-3 px-4">{{ $mapel->kelas }}</td>
-                                <td class="text-left py-3 px-4">{{ $mapel->jadwal }}</td>
-                                <td class="text-left py-3 px-4">{{ $mapel->name }}</td>
+                                <td class="text-left py-3 px-4">{{ $course->id }}</td>
+                                <td class="text-left py-3 px-4">{{ $course->course }}</td>
+                                <td class="text-left py-3 px-4">{{ $course->book }}</td>
+                                <td class="text-left py-3 px-4">{{ $course->grade }}</td>
+                                <td class="text-left py-3 px-4">{{ $course->schedule }}</td>
+                                <td class="text-left py-3 px-4">{{ $course->semester }}</td>   
+                                <td class="text-left py-3 px-4">{{ $course->name }}</td>
                                 <td>
                                     <div class="flex py-3 px-4">
                                         <div class="w-5 mr-2 transform hover:text-purple-500 hover:scale-110">

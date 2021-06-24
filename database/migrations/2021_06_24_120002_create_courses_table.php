@@ -16,10 +16,11 @@ class CreateCoursesTable extends Migration
         Schema::create('courses', function (Blueprint $table) {
             $table->id();
             $table->string('course');
+            $table->string('book');
             $table->string('grade');
-            $table->unsignedBigInteger('id_ustadz');
             $table->string('schedule');
             $table->enum('semester', ['Genap', 'Ganjil']);
+            $table->unsignedBigInteger('id_ustadz');
             $table->timestamps();
             $table->foreign('id_ustadz')->references('id')->on('users');
         });

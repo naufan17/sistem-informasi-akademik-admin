@@ -20,57 +20,8 @@
                         Tambah Admin
                     </h2>
                 </div>
-                <form method="POST" action="{{ route('administrator.register') }}">
-                    @csrf
-                    <!-- Name -->
-                    <div class="mt-4">
-                        <x-label for="name" :value="__('Name')" />
-                        <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus />
-                    </div>
-                    <!-- Email Address -->
-                    <div class="mt-4">
-                        <x-label for="email" :value="__('Email')" />
-                        <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
-                    </div>
-                    <div>
-                        <label class="block font-medium text-sm text-gray-700" for="email">
-                            {{ __('Email') }}
-                        </label>
-                        <input id="email" class = "rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 block mt-1 w-full" type="email" name="email" :value="old('email')" required>
-                    </div>
-                    <!-- Password -->
-                    <div class="mt-4">
-                        <x-label for="password" :value="__('Password')" />
-                        <x-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="new-password" />
-                    </div>
-                    <div class="mt-4">
-                        <label class="block font-medium text-sm text-gray-700" for="password">
-                            {{ __('Password') }}
-                        </label>
-                        <input id="password" class = "rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 block mt-1 w-full" type="password" name="password" required autocomplete="new-password">
-                    </div>
-                    <!-- Confirm Password -->
-                    <div class="mt-4">
-                        <x-label for="password_confirmation" :value="__('Confirm Password')" />
-                        <x-input id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation" required />
-                    </div>
-                    <div class="mt-4">
-                        <label class="block font-medium text-sm text-gray-700" for="password_confirmation">
-                            {{ __('Password Confirmation') }}
-                        </label>
-                        <input id="password_confirmation" class = "rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 block mt-1 w-full" type="password" name="password_confirmation" required>
-                    </div>
-                    <div class="flex items-center justify-end mt-4">
-                        <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('administrator.login') }}">
-                            {{ __('Already registered?') }}
-                        </a>
-                        <button type = "submit" class = 'inline-flex items-center px-4 py-2 ml-3 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring ring-gray-300 disabled:opacity-25 transition ease-in-out duration-150']) }}>
-                            {{ __('Register') }}
-                        </button>
-                    </div>
-                </form>
-                <form id="form" novalidate>
-                    <div>
+                <form method="POST" action="">
+                    <div class="pb-8">
                         <div class="pt-8">
                             <p class="self-center bg-gray-50 py-4 px-4">
                                 Identitas Diri
@@ -78,60 +29,10 @@
                         </div>
                         <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 px-4 py-2 space-y-1">
                             <p class="self-center text-gray-600">
-                                NIS
+                                Name
                             </p>
-                            <div class="relative z-0 w-full mb-5 border-gray-200">
-                                <input type="text" name="name" placeholder="Required" required class="pt-3 pb-2 px-3 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black" />
-                                <span class="text-sm text-red-600 hidden" id="error">This field is
-                                    required</span>
-                            </div>
-                        </div>
-                        <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 px-4 py-2 space-y-1">
-                            <p class="self-center text-gray-600">
-                                Nama Lengkap
-                            </p>
-                            <div class="relative z-0 w-full mb-5 border-gray-200">
-                                <input type="text" name="name" placeholder="Required" required class="pt-3 pb-2 px-3 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black" />
-                                <span class="text-sm text-red-600 hidden" id="error">This field is
-                                    required</span>
-                            </div>
-                        </div>
-                        <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 px-4 py-2 space-y-1">
-                            <p class="self-center text-gray-600">
-                                Tempat Lahir
-                            </p>
-                            <div class="relative z-0 w-full mb-5 border-gray-200">
-                                <input type="text" name="name" placeholder="Required" required class="pt-3 pb-2 px-3 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black" />
-                                <span class="text-sm text-red-600 hidden" id="error">This field is
-                                    required</span>
-                            </div>
-                        </div>
-                        <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 px-4 py-2 space-y-1">
-                            <p class="self-center text-gray-600">
-                                Tanggal Lahir
-                            </p>
-                            <div class="relative z-0 w-full mb-5 border-gray-200">
-                                <input type="text" name="date" placeholder="Required " onclick="this.setAttribute('type', 'date');" class="pt-3 pb-2 px-3 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black" />
-                                <span class="text-sm text-red-600 hidden" id="error">This field is
-                                    required</span>
-                            </div>
-                        </div>
-                        <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 px-4 py-2 space-y-1">
-                            <p class="self-center text-gray-600">
-                                Nomor Induk Kependudukan / Passport
-                            </p>
-                            <div class="relative z-0 w-full mb-5 border-gray-200">
-                                <input type="text" name="name" placeholder="Required" required class="pt-3 pb-2 px-3 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black" />
-                                <span class="text-sm text-red-600 hidden" id="error">This field is
-                                    required</span>
-                            </div>
-                        </div>
-                        <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 px-4 py-2 space-y-1">
-                            <p class="self-center text-gray-600">
-                                Nomor Telepon / Handphone
-                            </p>
-                            <div class="relative z-0 w-full mb-5 border-gray-200">
-                                <input type="text" name="name" placeholder="Required" class="pt-3 pb-2 px-3 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black" />
+                            <div class="relative z-0 w-full mb-5">
+                                <input id="name" type="text" name="name" placeholder="" required autocomplete="name" required class="pt-3 pb-2 px-3 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-200" />
                                 <span class="text-sm text-red-600 hidden" id="error">This field is
                                     required</span>
                             </div>
@@ -140,15 +41,39 @@
                             <p class="self-center text-gray-600">
                                 Email
                             </p>
-                            <div class="relative z-0 w-full mb-5 border-gray-200">
-                                <input type="text" name="name" placeholder="Required" required class="pt-3 pb-2 px-3 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black" />
+                            <div class="relative z-0 w-full mb-5">
+                                <input id="email" type="email" name="email" placeholder="" required autocomplete="email" required class="pt-3 pb-2 px-3 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-200" />
                                 <span class="text-sm text-red-600 hidden" id="error">This field is
                                     required</span>
                             </div>
                         </div>
-                        <div class="flex flex-row-reverse object-left text-center text-white text-base pt-8 px-3">
-                            <button class="bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-3 px-8" href="update-santri.html">Generate Akun</button>
+                        <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 px-4 py-2 space-y-1">
+                            <p class="self-center text-gray-600">
+                                Password
+                            </p>
+                            <div class="relative z-0 w-full mb-5">
+                                <input id="possword" type="password" name="password" placeholder="" required autocomplete="new-password" required class="pt-3 pb-2 px-3 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-200" />
+                                <span class="text-sm text-red-600 hidden" id="error">This field is
+                                    required</span>
+                            </div>
                         </div>
+                        <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 px-4 py-2 space-y-1">
+                            <p class="self-center text-gray-600">
+                                Password Confirm
+                            </p>
+                            <div class="relative z-0 w-full mb-5">
+                                <input id="possword-confirm" type="password" name="password_confirmation" placeholder="" required autocomplete="new-password" required class="pt-3 pb-2 px-3 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-200" />
+                                <span class="text-sm text-red-600 hidden" id="error">This field is
+                                    required</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-row-reverse object-left text-center text-white text-base pt-8 px-3">
+                        <button type="submit" class="bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-3 px-8" >Register</button>
+                    </div>
+                </form>
+                <!-- <form id="form" novalidate>
+                    <div> -->
                         <!-- TIDAK DIPAKAI -->
                         <!-- <div class="overflow-auto py-8 px-3">
                             <table class="table-auto">
@@ -187,8 +112,8 @@
                                 Save
                             </button>
                         </div> -->
-                    </div>
-                </form>
+                    <!-- </div>
+                </form> -->
             </div>
         </main>
     </div>
