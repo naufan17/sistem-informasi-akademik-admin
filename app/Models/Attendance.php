@@ -6,20 +6,19 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 
-class Mapel extends Model
+class Attendance extends Model
 {
     use HasFactory, Notifiable;
 
-        /**
+    /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'matkul',
-        'kelas',
-        'id_ustadz',
-        'jadwal',
+        'attendance',
+        'id_santri',
+        'id_course',
     ];
 
 }

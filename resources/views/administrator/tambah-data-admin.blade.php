@@ -20,6 +20,55 @@
                         Tambah Admin
                     </h2>
                 </div>
+                <form method="POST" action="{{ route('administrator.register') }}">
+                    @csrf
+                    <!-- Name -->
+                    <div class="mt-4">
+                        <x-label for="name" :value="__('Name')" />
+                        <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus />
+                    </div>
+                    <!-- Email Address -->
+                    <div class="mt-4">
+                        <x-label for="email" :value="__('Email')" />
+                        <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
+                    </div>
+                    <div>
+                        <label class="block font-medium text-sm text-gray-700" for="email">
+                            {{ __('Email') }}
+                        </label>
+                        <input id="email" class = "rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 block mt-1 w-full" type="email" name="email" :value="old('email')" required>
+                    </div>
+                    <!-- Password -->
+                    <div class="mt-4">
+                        <x-label for="password" :value="__('Password')" />
+                        <x-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="new-password" />
+                    </div>
+                    <div class="mt-4">
+                        <label class="block font-medium text-sm text-gray-700" for="password">
+                            {{ __('Password') }}
+                        </label>
+                        <input id="password" class = "rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 block mt-1 w-full" type="password" name="password" required autocomplete="new-password">
+                    </div>
+                    <!-- Confirm Password -->
+                    <div class="mt-4">
+                        <x-label for="password_confirmation" :value="__('Confirm Password')" />
+                        <x-input id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation" required />
+                    </div>
+                    <div class="mt-4">
+                        <label class="block font-medium text-sm text-gray-700" for="password_confirmation">
+                            {{ __('Password Confirmation') }}
+                        </label>
+                        <input id="password_confirmation" class = "rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 block mt-1 w-full" type="password" name="password_confirmation" required>
+                    </div>
+                    <div class="flex items-center justify-end mt-4">
+                        <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('administrator.login') }}">
+                            {{ __('Already registered?') }}
+                        </a>
+                        <button type = "submit" class = 'inline-flex items-center px-4 py-2 ml-3 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring ring-gray-300 disabled:opacity-25 transition ease-in-out duration-150']) }}>
+                            {{ __('Register') }}
+                        </button>
+                    </div>
+                </form>
                 <form id="form" novalidate>
                     <div>
                         <div class="pt-8">
@@ -100,6 +149,7 @@
                         <div class="flex flex-row-reverse object-left text-center text-white text-base pt-8 px-3">
                             <button class="bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-3 px-8" href="update-santri.html">Generate Akun</button>
                         </div>
+                        <!-- TIDAK DIPAKAI -->
                         <!-- <div class="overflow-auto py-8 px-3">
                             <table class="table-auto">
                                 <thead class="bg-gray-800 text-white">

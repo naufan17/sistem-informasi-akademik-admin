@@ -84,7 +84,7 @@
                                 <td class="text-left py-3 px-4">{{ $mapel->matkul }}</td>
                                 <td class="text-left py-3 px-4">{{ $mapel->kelas }}</td>
                                 <td class="text-left py-3 px-4">{{ $mapel->jadwal }}</td>
-                                <td class="text-left py-3 px-4"><a>Salman Hadi</a></td>
+                                <td class="text-left py-3 px-4">{{ $mapel->name }}</td>
                                 <td>
                                     <div class="flex py-3 px-4">
                                         <div class="w-5 mr-2 transform hover:text-purple-500 hover:scale-110">

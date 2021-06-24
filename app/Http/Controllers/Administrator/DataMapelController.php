@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Administrator;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Mapel;
+use App\Models\User;
 
 class DataMapelController extends Controller
 {
@@ -15,7 +16,7 @@ class DataMapelController extends Controller
      */
     public function index()
     {
-        $mapels = Mapel::all();
+        $mapels = Mapel::leftjoin('users', 'mapels.id_ustadz', '=', 'users.id')->get();
 
         return view('administrator.data-mapel', compact('mapels'));
     }
