@@ -20,7 +20,7 @@
                         Tambah Ustadz
                     </h2>
                 </div>
-                <form method="POST" action="">
+                <form method="GET" action="{{ url('administrator/tambah-data-ustadz') }}">
                     <div class="pb-8">
                         <div class="pt-8">
                             <p class="self-center bg-gray-50 py-4 px-4">

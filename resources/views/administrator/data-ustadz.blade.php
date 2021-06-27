@@ -34,7 +34,7 @@
                     Daftar List Ustadz
                 </p>
                 <div class="flex flex-row-reverse object-left text-center text-white text-base py-8">
-                    <a href="{{ route('administrator.tambah-data-ustadz') }}" class="button bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-3 px-8">
+                    <a href="{{ route('administrator.form-tambah-data-ustadz') }}" class="button bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-3 px-8">
                         Tambah Ustadz
                     </a>
                 </div>

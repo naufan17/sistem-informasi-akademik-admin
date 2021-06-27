@@ -14,7 +14,7 @@ class CreateAttendancesTable extends Migration
     public function up()
     {
         Schema::create('attendances', function (Blueprint $table) {
-            $table->id();
+            $table->id('id_attendance');
             $table->float('attendance');
             $table->unsignedBigInteger('id_santri');
             $table->unsignedBigInteger('id_course');

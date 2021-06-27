@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Administrator;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 
 class DataUstadzController extends Controller
 {
@@ -23,5 +25,24 @@ class DataUstadzController extends Controller
     public function formTambah()
     {
         return view('administrator.tambah-data-ustadz');
+    }
+
+    public function Tambah(Request $request)
+    {
+        Validator::make($request, [
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'role' => ['required', 'string'],
+        ]);
+
+        User::create([
+            'name' => $request['name'],
+            'email' => $request['email'],
+            'password' => Hash::make($request['password']),
+            'role' => $request['role'],
+        ]);
+
+        return redirect('/administrator/data-ustadz');
     }
 }

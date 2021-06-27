@@ -23,6 +23,23 @@ class DataMapelController extends Controller
 
     public function formTambah()
     {
-        return view('administrator.tambah-data-mapel');
+        $ustadzs = User::where('role', 'ustadz')->get();
+
+        return view('administrator.tambah-data-mapel', compact('ustadzs'));
+    }
+
+    public function Tambah(Request $request)
+    {
+        Course::create([
+            'id' => $request->id,
+            'course' => $request->course,
+            'book' => $request->book,
+            'grade' => $request->grade,
+            'schedule' => $request->schedule,
+            'semester' => $request->semester,
+            'id_ustadz' => $request->id_ustadz
+        ]);
+
+        return redirect('administrator/data-mapel');
     }
 }

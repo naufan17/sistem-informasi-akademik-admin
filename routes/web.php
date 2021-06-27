@@ -25,13 +25,17 @@ Route::get('/', function () {
 Route::multiauth('Administrator', 'administrator');
 
 Route::get('/administrator/data-admin', [DataAdminController::class, 'index'])->name('administrator.data-admin');
-Route::get('/administrator/tambah-data-admin', [DataAdminController::class, 'formTambah'])->name('administrator.tambah-data-admin');
+Route::get('/administrator/form-tambah-data-admin', [DataAdminController::class, 'formTambah'])->name('administrator.form-tambah-data-admin');
+Route::post('/administrator/tambah-data-admin', [DataAdminController::class, 'Tambah'])->name('administrator.tambah-data-admin');
 
 Route::get('/administrator/data-mapel', [DataMapelController::class, 'index'])->name('administrator.data-mapel');
-Route::get('/administrator/tambah-data-mapel', [DataMapelController::class, 'formTambah'])->name('administrator.tambah-data-mapel');
+Route::get('/administrator/form-tambah-data-mapel', [DataMapelController::class, 'formTambah'])->name('administrator.form-tambah-data-mapel');
+Route::get('/administrator/tambah-data-mapel', [DataMapelController::class, 'Tambah'])->name('administrator.tambah-data-mapel');
 
 Route::get('/administrator/data-ustadz', [DataUstadzController::class, 'index'])->name('administrator.data-ustadz');
-Route::get('/administrator/tambah-data-ustadz', [DataUstadzController::class, 'formTambah'])->name('administrator.tambah-data-ustadz');
+Route::get('/administrator/form-tambah-data-ustadz', [DataUstadzController::class, 'formTambah'])->name('administrator.form-tambah-data-ustadz');
+Route::get('/administrator/tambah-data-ustadz', [DataUstadzController::class, 'Tambah'])->name('administrator.tambah-data-ustadz');
 
 Route::get('/administrator/data-santri', [DataSantriController::class, 'index'])->name('administrator.data-santri');
-Route::get('/administrator/tambah-data-santri', [DataSantriController::class, 'formTambah'])->name('administrator.tambah-data-santri');
+Route::get('/administrator/form-tambah-data-santri', [DataSantriController::class, 'formTambah'])->name('administrator.form-tambah-data-santri');
+Route::get('/administrator/tambah-data-santri', [DataSantriController::class, 'Tambah'])->name('administrator.tambah-data-santri');
