@@ -27,20 +27,20 @@ class DataSantriController extends Controller
         return view('administrator.tambah-data-santri');
     }
 
-    public function Tambah(array $data)
+    public function Tambah(Request $request)
     {
-        Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
-            'role' => ['required', 'string'],
+        $request->validate([
+            'name' => 'required', 'string', 'max:255',
+            'email' => 'required', 'string', 'email', 'max:255', 'unique:users',
+            'password' => 'required', 'string', 'min:8', 'confirmed',
+            'role' => 'required', 'string',
         ]);
 
         User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
-            'role' => $data['role'],
+            'name' => $request['name'],
+            'email' => $request['email'],
+            'password' => Hash::make($request['password']),
+            'role' => $request['role'],
         ]);
 
         return redirect('/administrator/data-santri');

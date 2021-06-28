@@ -26,7 +26,7 @@ Route::multiauth('Administrator', 'administrator');
 
 Route::get('/administrator/data-admin', [DataAdminController::class, 'index'])->name('administrator.data-admin');
 Route::get('/administrator/form-tambah-data-admin', [DataAdminController::class, 'formTambah'])->name('administrator.form-tambah-data-admin');
-Route::post('/administrator/tambah-data-admin', [DataAdminController::class, 'Tambah'])->name('administrator.tambah-data-admin');
+Route::get('/administrator/tambah-data-admin', [DataAdminController::class, 'Tambah'])->name('administrator.tambah-data-admin');
 
 Route::get('/administrator/data-mapel', [DataMapelController::class, 'index'])->name('administrator.data-mapel');
 Route::get('/administrator/form-tambah-data-mapel', [DataMapelController::class, 'formTambah'])->name('administrator.form-tambah-data-mapel');

@@ -29,11 +29,11 @@ class DataUstadzController extends Controller
 
     public function Tambah(Request $request)
     {
-        Validator::make($request, [
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
-            'role' => ['required', 'string'],
+        $request->validate([
+            'name' => 'required', 'string', 'max:255',
+            'email' => 'required', 'string', 'email', 'max:255', 'unique:users',
+            'password' => 'required', 'string', 'min:8', 'confirmed',
+            'role' => 'required', 'string',
         ]);
 
         User::create([
