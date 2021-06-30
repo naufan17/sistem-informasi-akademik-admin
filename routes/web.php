@@ -18,9 +18,9 @@ use App\Http\Controllers\Administrator\DataUstadzController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('home');
-// });
+Route::get('/', function () {
+    return view('home');
+});
 
 Route::multiauth('Administrator', 'administrator');
 
