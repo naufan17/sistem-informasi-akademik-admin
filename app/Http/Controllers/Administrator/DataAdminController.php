@@ -33,7 +33,7 @@ class DataAdminController extends Controller
         return view('administrator.tambah-data-admin');
     }
 
-    public function Tambah(Request $request)
+    public function tambah(Request $request)
     {
         $request->validate([
             'name' => 'required|string|max:255',

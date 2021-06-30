@@ -22,12 +22,12 @@ class DataUstadzController extends Controller
         return view('administrator.data-ustadz', compact('ustadzs'));
     }
 
-    public function formTambah()
+    public function formStore()
     {
         return view('administrator.tambah-data-ustadz');
     }
 
-    public function Tambah(Request $request)
+    public function store(Request $request)
     {
         $request->validate([
             'name' => 'required', 'string', 'max:255',
@@ -53,11 +53,38 @@ class DataUstadzController extends Controller
         return view('administrator.data-ustadz', compact('ustadzs'));
     }
 
-    public function formUpdate($name)
+    public function formUpdate($id)
     {
-        $ustadzs = User::where('role', 'ustadz')->where('name', $name)->get();
+        $ustadzs = User::where('role', 'ustadz')->where('id', $id)->get();
 
         return view('administrator.update-data-ustadz', compact('ustadzs'));
+    }
+
+    public function updateProfile(Request $request)
+    {
+        User::where('id', $request->id)->update([
+            'name' => $request->name, 
+            'email' => $request->email, 
+            'status' => $request->status, 
+        ]);
+
+        return redirect('/administrator/data-ustadz');
+    }
+
+    public function updatePassword(Request $request)
+    {
+        User::where('id', $request->id)->update([
+            'password' => Hash::make($request->password),
+        ]);
+
+        return redirect('/administrator/data-ustadz');
+    }
+
+    public function destroy($id)
+    {
+        User::where('id', $id)->delete();
+
+        return redirect('/administrator/data-ustadz');
     }
 
 }

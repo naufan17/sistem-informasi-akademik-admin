@@ -7,11 +7,9 @@
         <main class="pt-6 px-6">
             <h1 class="text-3xl text-black pb-2 mt-2">Data Admin</h1>
             <div class="bg-white rounded-lg shadow-md p-8 my-8">
-                <p class="text-xl pb-4 flex items-center">
-                    Daftar Anggota Admin
-                </p>
+                <p class="text-xl pb-4 flex items-center">Daftar Anggota Admin</p>
                 <div class="flex object-left text-center text-white text-base py-8">
-                    <a href="{{ route('administrator.form-tambah-data-admin') }}" class="button bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-3 px-8">
+                    <a href="{{ url('administrator/data-admin/form-tambah') }}" class="button bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-3 px-8">
                         Tambah Admin
                     </a>
                 </div>
@@ -36,9 +34,11 @@
                                 <td>
                                     <div class="flex py-3 px-4">
                                         <div class="w-5 mr-2 transform hover:text-purple-500 hover:scale-110">
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
-                                            </svg>
+                                            <a href="{{ url('administrator/data-mapel/form-update') }}/{{ $administrator->name }}">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+                                                </svg>
+                                            </a>
                                         </div>
                                         <div class="w-5 mr-2 transform hover:text-purple-500 hover:scale-110">
                                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
