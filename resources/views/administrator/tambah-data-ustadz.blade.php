@@ -16,53 +16,38 @@
                     </a>
                 </div>
                 <div class="p-4">
-                    <h2 class="text-2xl ">
-                        Tambah Ustadz
-                    </h2>
+                    <h2 class="text-2xl ">Tambah Ustadz</h2>
                 </div>
                 <form method="GET" action="{{ url('administrator/tambah-data-ustadz') }}">
                     <div class="pb-8">
                         <div class="pt-8">
-                            <p class="self-center bg-gray-50 py-4 px-4">
-                                Identitas Diri
-                            </p>
+                            <p class="self-center bg-gray-50 py-4 px-4">Identitas Diri</p>
                         </div>
                         <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 px-4 py-2 space-y-1">
-                            <p class="self-center text-gray-600">
-                                Name
-                            </p>
+                            <p class="self-center text-gray-600">Name</p>
                             <div class="relative z-0 w-full mb-5">
                                 <input id="name" type="text" name="name" placeholder="" required autocomplete="name" required class="pt-3 pb-2 px-3 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-200" />
-                                <span class="text-sm text-red-600 hidden" id="error">This field is
-                                    required</span>
+                                <span class="text-sm text-red-600 hidden" id="error">This field is required</span>
                             </div>
                         </div>
                         <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 px-4 py-2 space-y-1">
-                            <p class="self-center text-gray-600">
-                                Email
-                            </p>
+                            <p class="self-center text-gray-600">Email</p>
                             <div class="relative z-0 w-full mb-5">
                                 <input id="email" type="email" name="email" placeholder="" required autocomplete="email" required class="pt-3 pb-2 px-3 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-200" />
-                                <span class="text-sm text-red-600 hidden" id="error">This field is
-                                    required</span>
+                                <span class="text-sm text-red-600 hidden" id="error">This field is required</span>
                             </div>
                         </div>
                         <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 px-4 py-2 space-y-1">
-                            <p class="self-center text-gray-600">
-                                Role
-                            </p>
+                            <p class="self-center text-gray-600">Role</p>
                             <div class="relative z-0 w-full mb-5">
                                 <select id="role" type="text" name="role" placeholder="" required autocomplete="role" required class="pt-3 pb-2 px-3 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-200" >
                                     <option value="Ustadz">Ustadz</option>
                                 </select>
-                                <span class="text-sm text-red-600 hidden" id="error">This field is
-                                    required</span>
+                                <span class="text-sm text-red-600 hidden" id="error">This field is required</span>
                             </div>
                         </div>
                         <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 px-4 py-2 space-y-1">
-                            <p class="self-center text-gray-600">
-                                Password
-                            </p>
+                            <p class="self-center text-gray-600">Password</p>
                             <div class="relative z-0 w-full mb-5">
                                 <input id="possword" type="password" name="password" placeholder="" required autocomplete="new-password" required class="pt-3 pb-2 px-3 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-200" />
                                 <span class="text-sm text-red-600 hidden" id="error">This field is
@@ -70,13 +55,10 @@
                             </div>
                         </div>
                         <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 px-4 py-2 space-y-1">
-                            <p class="self-center text-gray-600">
-                                Password Confirm
-                            </p>
+                            <p class="self-center text-gray-600">Password Confirm</p>
                             <div class="relative z-0 w-full mb-5">
                                 <input id="possword-confirm" type="password" name="password_confirmation" placeholder="" required autocomplete="new-password" required class="pt-3 pb-2 px-3 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-200" />
-                                <span class="text-sm text-red-600 hidden" id="error">This field is
-                                    required</span>
+                                <span class="text-sm text-red-600 hidden" id="error">This field is required</span>
                             </div>
                         </div>
                     </div>

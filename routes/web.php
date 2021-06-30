@@ -32,10 +32,15 @@ Route::get('/administrator/data-mapel', [DataMapelController::class, 'index'])->
 Route::get('/administrator/form-tambah-data-mapel', [DataMapelController::class, 'formTambah'])->name('administrator.form-tambah-data-mapel');
 Route::get('/administrator/tambah-data-mapel', [DataMapelController::class, 'Tambah'])->name('administrator.tambah-data-mapel');
 
+Route::get('/administrator/filter-ustadz', [DataUstadzController::class, 'filter'])->name('administrator.filter-ustadz');
 Route::get('/administrator/data-ustadz', [DataUstadzController::class, 'index'])->name('administrator.data-ustadz');
 Route::get('/administrator/form-tambah-data-ustadz', [DataUstadzController::class, 'formTambah'])->name('administrator.form-tambah-data-ustadz');
 Route::get('/administrator/tambah-data-ustadz', [DataUstadzController::class, 'Tambah'])->name('administrator.tambah-data-ustadz');
+Route::get('/administrator/form-update-data-ustadz/{name}', [DataUstadzController::class, 'formUpdate'])->name('administrator.form-update-data-ustadz');
 
+
+Route::get('/administrator/filter-santri', [DataSantriController::class, 'filter'])->name('administrator.filter-santri');
 Route::get('/administrator/data-santri', [DataSantriController::class, 'index'])->name('administrator.data-santri');
 Route::get('/administrator/form-tambah-data-santri', [DataSantriController::class, 'formTambah'])->name('administrator.form-tambah-data-santri');
 Route::get('/administrator/tambah-data-santri', [DataSantriController::class, 'Tambah'])->name('administrator.tambah-data-santri');
+Route::get('/administrator/form-update-data-santri/{name}', [DataSantriController::class, 'formUpdate'])->name('administrator.form-update-data-santri');

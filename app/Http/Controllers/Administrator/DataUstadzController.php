@@ -45,4 +45,19 @@ class DataUstadzController extends Controller
 
         return redirect('/administrator/data-ustadz');
     }
+
+    public function filter(Request $request)
+    {
+        $ustadzs = User::where('role', 'ustadz')->where('status', $request->status)->get();
+
+        return view('administrator.data-ustadz', compact('ustadzs'));
+    }
+
+    public function formUpdate($name)
+    {
+        $ustadzs = User::where('role', 'ustadz')->where('name', $name)->get();
+
+        return view('administrator.update-data-ustadz', compact('ustadzs'));
+    }
+
 }

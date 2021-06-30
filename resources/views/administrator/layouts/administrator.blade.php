@@ -63,27 +63,33 @@
                             </div>
                         </div>
                         <div class="group border-indigo-500 hover:bg-blue-600 hover:shadow-lg hover:border-transparent">
-                            <a href="{{ route('administrator.data-admin') }}" class="text-gray-800 group-hover:text-white flex items-center py-4 pl-6">
+                            <a href="{{ url('administrator/data-admin') }}" class="text-gray-800 group-hover:text-white flex items-center py-4 pl-6">
                                 <i class="fas fa-id-card-alt mr-3"></i>
                                 Data Admin
                             </a>
                         </div>
                         <div class="group border-indigo-500 hover:bg-blue-600 hover:shadow-lg hover:border-transparent">
-                            <a href="{{ route('administrator.data-mapel') }}" class="text-gray-800 group-hover:text-white flex items-center py-4 pl-6">
+                            <a href="{{ url('administrator/data-mapel') }}" class="text-gray-800 group-hover:text-white flex items-center py-4 pl-6">
                                 <i class="fas fa-book-open mr-3"></i>
                                 Mata Pelajaran
                             </a>
                         </div>
                         <div class="group border-indigo-500 hover:bg-blue-600 hover:shadow-lg hover:border-transparent">
-                            <a href="{{ route('administrator.data-ustadz') }}" class="text-gray-800 group-hover:text-white flex items-center py-4 pl-6">
+                            <a href="{{ url('administrator/data-ustadz') }}" class="text-gray-800 group-hover:text-white flex items-center py-4 pl-6">
                                 <i class="fas fa-address-book mr-3"></i>
                                 Ustadz
                             </a>
                         </div>
                         <div class="group border-indigo-500 hover:bg-blue-600 hover:shadow-lg hover:border-transparent">
-                            <a href="{{ route('administrator.data-santri') }}" class="text-gray-800 group-hover:text-white flex items-center py-4 pl-6">
+                            <a href="{{ url('administrator/data-santri') }}" class="text-gray-800 group-hover:text-white flex items-center py-4 pl-6">
                                 <i class="fas fa-address-book mr-3"></i>
                                 Santri
+                            </a>
+                        </div>
+                        <div class="group border-indigo-500 hover:bg-blue-600 hover:shadow-lg hover:border-transparent">
+                            <a href="" class="text-gray-800 group-hover:text-white flex items-center py-4 pl-6">
+                                <i class="fas fa-address-book mr-3"></i>
+                                Input Kelas
                             </a>
                         </div>
                         <button class="w-full bg-blue-600 hover:bg-blue-800 cta-btn font-semibold justify-center ">
