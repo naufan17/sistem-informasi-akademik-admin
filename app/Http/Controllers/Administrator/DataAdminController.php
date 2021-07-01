@@ -60,4 +60,37 @@ class DataAdminController extends Controller
 
         return redirect(route('administrator.data-admin'));
     }
+
+    public function formUpdate($id)
+    {
+        $administrators = Administrator::where('id', $id)->get();
+
+        return view('administrator.update-data-admin', compact('administrators'));
+    }
+
+    public function updateProfile(Request $request)
+    {
+        Administrator::where('id', $request->id)->update([
+            'name' => $request->name, 
+            'email' => $request->email,  
+        ]);
+
+        return redirect('/administrator/data-admin');
+    }
+
+    public function updatePassword(Request $request)
+    {
+        Administrator::where('id', $request->id)->update([
+            'password' => Hash::make($request->password), 
+        ]);
+
+        return redirect('/administrator/data-admin');
+    }
+
+    public function destroy($id)
+    {
+        Administrator::where('id', $id)->delete();
+
+        return redirect('/administrator/data-admin');
+    }
 }

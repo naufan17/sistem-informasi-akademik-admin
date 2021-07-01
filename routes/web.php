@@ -28,7 +28,9 @@ Route::get('/administrator/data-admin', [DataAdminController::class, 'index'])->
 Route::get('/administrator/data-admin/form-tambah', [DataAdminController::class, 'formTambah'])->name('administrator.data-admin.form-tambah');
 Route::get('/administrator/data-admin/tambah', [DataAdminController::class, 'tambah'])->name('administrator.data-admin.tambah');
 Route::get('/administrator/data-admin/form-update/{id}', [DataAdminController::class, 'formUpdate'])->name('administrator.data-admin.form-update');
-Route::get('/administrator/data-admin/update', [DataAdminController::class, 'update'])->name('administrator.data-admin.update');
+Route::get('/administrator/data-admin/update-profile', [DataAdminController::class, 'updateProfile'])->name('administrator.data-admin.update-profile');
+Route::get('/administrator/data-admin/update-password', [DataAdminController::class, 'updatePassword'])->name('administrator.data-admin.update-password');
+Route::get('/administrator/data-admin/delete/{id}', [DataAdminController::class, 'destroy'])->name('administrator.data-admin.delete');
 
 Route::get('/administrator/data-mapel', [DataMapelController::class, 'index'])->name('administrator.data-mapel');
 Route::get('/administrator/data-mapel/form-tambah', [DataMapelController::class, 'formTambah'])->name('administrator.data-mapel.form-tambah');
