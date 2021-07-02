@@ -74,8 +74,8 @@
                                 <input type="password" name="password_confirmation" placeholder="" required autocomplete="new-password" required class="pt-3 pb-2 px-3 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-200" />
                             </div>
                         </div>
+                        @endforeach
                     </div>
-                    @endforeach
                     <div class="flex flex-row-reverse object-left text-center text-white text-base pt-8 px-3">
                         <button type="submit" class="bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-3 px-8" >Simpan</button>
                     </div>

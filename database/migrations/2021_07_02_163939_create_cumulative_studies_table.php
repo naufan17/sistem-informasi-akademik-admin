@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateScoresTable extends Migration
+class CreateCumulativeStudiesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,12 @@ class CreateScoresTable extends Migration
      */
     public function up()
     {
-        Schema::create('scores', function (Blueprint $table) {
-            $table->id('id_score');
-            $table->float('minimum_score');
-            $table->float('score');
+        Schema::create('cumulative_studies', function (Blueprint $table) {
+            $table->id('id_cumulative_study');
+            $table->string('year');
+            $table->integer('current_semester');
+            $table->float('minimum_score')->nullable();
+            $table->float('score')->nullable();
             $table->unsignedBigInteger('id_santri');
             $table->unsignedBigInteger('id_course');
             $table->timestamps();
@@ -32,6 +34,6 @@ class CreateScoresTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('scores');
+        Schema::dropIfExists('cumulative_studies');
     }
 }

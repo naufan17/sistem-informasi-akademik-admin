@@ -15,13 +15,13 @@ class CreateAttendancesTable extends Migration
     {
         Schema::create('attendances', function (Blueprint $table) {
             $table->id('id_attendance');
-            $table->float('minimum_attendance');
-            $table->float('attendance');
+            $table->float('minimum_attendance_mdnu');
+            $table->float('attendance_mdnu');
+            $table->float('minimum_attendance_asrama');
+            $table->float('attendance_asrama');
             $table->unsignedBigInteger('id_santri');
-            $table->unsignedBigInteger('id_course');
             $table->timestamps();
             $table->foreign('id_santri')->references('id')->on('users');
-            $table->foreign('id_course')->references('id_course')->on('courses');
         });
     }
 
