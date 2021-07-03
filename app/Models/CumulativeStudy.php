@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 
-class Clas extends Model
+class CumulativeStudy extends Model
 {
     use HasFactory, Notifiable;
 
@@ -18,8 +18,9 @@ class Clas extends Model
     protected $fillable = [
         'year',
         'current_semester',
+        'minimum_score',
+        'score',
         'id_santri',
         'id_course',
     ];
-    
 }

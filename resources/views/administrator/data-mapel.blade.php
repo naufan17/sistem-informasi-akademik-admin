@@ -57,7 +57,7 @@
                 </div>
                 <p class="text-xl pt-8 flex items-center border-b-2">Daftar Paket Mata Pelajaran</p>
                 <div class="flex flex-row-reverse object-left text-center text-white text-base py-8">
-                    <a href="{{ url('administrator/data-mapel/form-tambah') }}" class="button bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-3 px-8">
+                    <a href="{{ url('administrator/data-mapel/form-create') }}" class="button bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-3 px-8">
                         Tambah Mapel
                     </a>
                 </div>
@@ -83,8 +83,8 @@
                                 <td class="text-left py-3 px-4">{{ $course->id }}</td>
                                 <td class="text-left py-3 px-4">{{ $course->course }}</td>
                                 <td class="text-left py-3 px-4">{{ $course->book }}</td>
-                                <td class="text-left py-3 px-4">{{ $course->grade }}</td>
-                                <td class="text-left py-3 px-4">{{ $course->schedule }}</td>
+                                <td class="text-left py-3 px-4">{{ $course->grade_number }} {{ $course->grade_name }}</td>
+                                <td class="text-left py-3 px-4">{{ $course->day }}, {{ $course->time_begin }} - {{ $course->time_end }}</td>
                                 <td class="text-left py-3 px-4">{{ $course->semester }}</td>   
                                 <td class="text-left py-3 px-4">{{ $course->name }}</td>
                                 <td>

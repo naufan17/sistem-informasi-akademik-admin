@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Administrator;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Course;
+use App\Models\Grade;
+use App\Models\Schedule;
 use App\Models\User;
 
 class DataMapelController extends Controller
@@ -16,27 +18,31 @@ class DataMapelController extends Controller
      */
     public function index()
     {
-        $courses = Course::leftjoin('users', 'courses.id_ustadz', '=', 'users.id')->get();
+        $courses = Course::leftjoin('users', 'courses.id_ustadz', '=', 'users.id')
+                        ->leftjoin('grades', 'courses.id_grade', '=', 'grades.id_grade')
+                        ->leftjoin('schedules', 'courses.id_schedule', '=', 'schedules.id_schedule')->get();
 
         return view('administrator.data-mapel', compact('courses'));
     }
 
-    public function formTambah()
+    public function formCreate()
     {
+        $grades = Grade::all();
+        $schedules = Schedule::all();
         $ustadzs = User::where('role', 'ustadz')->get();
 
-        return view('administrator.tambah-data-mapel', compact('ustadzs'));
+        return view('administrator.tambah-data-mapel', compact('grades', 'schedules', 'ustadzs'));
     }
 
-    public function Tambah(Request $request)
+    public function create(Request $request)
     {
         Course::create([
             'id' => $request->id,
             'course' => $request->course,
             'book' => $request->book,
-            'grade' => $request->grade,
-            'schedule' => $request->schedule,
             'semester' => $request->semester,
+            'id_grade' => $request->id_grade,
+            'id_schedule' => $request->id_schedule,
             'id_ustadz' => $request->id_ustadz
         ]);
 

@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 
-class Course extends Model
+class Schedule extends Model
 {
     use HasFactory, Notifiable;
 
@@ -16,12 +16,9 @@ class Course extends Model
      * @var array
      */
     protected $fillable = [
-        'course',
-        'book',
-        'semester',
-        'id_grade',
-        'id_schedule',
-        'id_ustadz',
+        'day',
+        'time_begin',
+        'time_end',
     ];
-
+    
 }

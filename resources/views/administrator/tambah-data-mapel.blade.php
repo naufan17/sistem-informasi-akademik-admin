@@ -18,7 +18,7 @@
                 <div class="p-4">
                     <h2 class="text-2xl ">Tambah Mata Pelajaran</h2>
                 </div>
-                <form method="GET" action="{{ url('administrator/data-mapel/tambah') }}">
+                <form method="GET" action="{{ url('administrator/data-mapel/create') }}">
                     <div class="pb-8">
                         <div class="pt-8">
                             <p class="self-center bg-gray-50 py-4 px-4">Data Mata Pelajaran</p>
@@ -42,29 +42,29 @@
                             </div>
                         </div>
                         <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 px-4 py-2 space-y-1">
-                            <p class="self-center text-gray-600">Kelas</p>
+                            <p class="self-center text-gray-600">Tingkat</p>
                             <div class="relative z-0 w-full mb-5">
-                                <select type="text" name="grade" value="" onclick="this.setAttribute('value', this.value);" class="pt-3 pb-2 px-3 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none z-1 focus:outline-none focus:ring-0 focus:border-black border-gray-200">
-                                    <option value="" selected disabled hidden></option>
-                                    <option value="1">Awaliyah</option>
-                                    <option value="2">1 Wustho</option>
-                                    <option value="3">2 Wustho</option>
-                                    <option value="4">1 Ulya</option>
-                                    <option value="5">2 Ulya</option>
+                                <select type="number" name="id_grade" value="" onclick="this.setAttribute('value', this.value);" class="pt-3 pb-2 px-3 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none z-1 focus:outline-none focus:ring-0 focus:border-black border-gray-200">
+                                    @foreach($grades as $grade)
+                                    <option value="{{ $grade->id }}">{{ $grade->number }} {{ $grade->name }}</option>
+                                    @endforeach
                                 </select>
                             </div>
                         </div>
                         <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 px-4 py-2 space-y-1">
                             <p class="self-center text-gray-600">Jadwal</p>
                             <div class="relative z-0 w-full mb-5">
-                                <input type="text" name="schedule" placeholder="" required class="pt-3 pb-2 px-3 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-200" />
+                                <select type="number" name="id_schedule" value="" onclick="this.setAttribute('value', this.value);" class="pt-3 pb-2 px-3 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none z-1 focus:outline-none focus:ring-0 focus:border-black border-gray-200">
+                                    @foreach($schedules as $schedule)
+                                    <option value="{{ $schedule->id }}">{{ $schedule->day }}, {{ $schedule->time_begin }} - {{ $schedule->time_end }}</option>
+                                    @endforeach
+                                </select>
                             </div>
                         </div>
                         <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 px-4 py-2 space-y-1">
                             <p class="self-center text-gray-600">Semester</p>
                             <div class="relative z-0 w-full mb-5">
                                 <select type="text" name="semester" value="" onclick="this.setAttribute('value', this.value);" class="pt-3 pb-2 px-3 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none z-1 focus:outline-none focus:ring-0 focus:border-black border-gray-200">
-                                    <option value="" selected disabled hidden></option>
                                     <option value="Genap">Genap</option>
                                     <option value="Ganjil">Ganjil</option>
                                 </select>
@@ -73,7 +73,7 @@
                         <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 px-4 py-2 space-y-1">
                             <p class="self-center text-gray-600">Nama Ustadz</p>
                             <div class="relative z-0 w-full mb-5">
-                                <select type="text" name="id_ustadz" value="" onclick="this.setAttribute('value', this.value);" class="pt-3 pb-2 px-3 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none z-1 focus:outline-none focus:ring-0 focus:border-black border-gray-200">
+                                <select type="number" name="id_ustadz" value="" onclick="this.setAttribute('value', this.value);" class="pt-3 pb-2 px-3 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none z-1 focus:outline-none focus:ring-0 focus:border-black border-gray-200">
                                     @foreach($ustadzs as $ustadz)
                                     <option value="{{ $ustadz->id }}">{{ $ustadz->name }}</option>
                                     @endforeach

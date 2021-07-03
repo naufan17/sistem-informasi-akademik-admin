@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 
-class Score extends Model
+class Grade extends Model
 {
     use HasFactory, Notifiable;
 
@@ -16,9 +16,8 @@ class Score extends Model
      * @var array
      */
     protected $fillable = [
-        'score',
-        'id_santri',
-        'id_course',
+        'grade_number',
+        'grade_name',
     ];
     
 }
