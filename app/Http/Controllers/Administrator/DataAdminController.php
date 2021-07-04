@@ -28,22 +28,24 @@ class DataAdminController extends Controller
         return view('administrator.data-admin', compact('administrators'));
     }
 
-    public function formTambah()
+    public function formCreate()
     {
         return view('administrator.tambah-data-admin');
     }
 
-    public function tambah(Request $request)
+    public function create(Request $request)
     {
         $request->validate([
             'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:administrators',
+            'username' => 'required|string|max:255',
+            // 'email' => 'required|string|email|max:255|unique:administrators',
             'password' => 'required|string|confirmed|min:8',
         ]);
 
         Administrator::create([
             'name' => $request->name,
-            'email' => $request->email,
+            'username' => $request->username,
+            // 'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
 
@@ -72,7 +74,8 @@ class DataAdminController extends Controller
     {
         Administrator::where('id', $request->id)->update([
             'name' => $request->name, 
-            'email' => $request->email,  
+            'username' => $request->username, 
+            // 'email' => $request->email,  
         ]);
 
         return redirect('/administrator/data-admin');

@@ -9,7 +9,7 @@
             <div class="bg-white rounded-lg shadow-md p-8 my-8">
                 <p class="text-xl pb-4 flex items-center">Daftar Anggota Admin</p>
                 <div class="flex object-left text-center text-white text-base py-8">
-                    <a href="{{ url('administrator/data-admin/form-tambah') }}" class="button bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-3 px-8">
+                    <a href="{{ url('administrator/data-admin/form-create') }}" class="button bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-3 px-8">
                         Tambah Admin
                     </a>
                 </div>
@@ -20,7 +20,7 @@
                                 <th class="text-left py-3 px-4 uppercase font-semibold text-sm">No</th>
                                 <th class="text-left py-3 px-4 uppercase font-semibold text-sm">ID</th>
                                 <th class="text-left w-1/5 py-3 px-4 uppercase font-semibold text-sm">Nama</th>
-                                <th class="text-left w-1/5 py-3 px-4 uppercase font-semibold text-sm">Email</th>
+                                <th class="text-left w-1/5 py-3 px-4 uppercase font-semibold text-sm">Username</th>
                                 <th class="text-left w-1/5 py-3 px-4 uppercase font-semibold text-sm">Aksi</td>
                             </tr>
                         </thead>
@@ -30,7 +30,7 @@
                                 <td class="text-left py-3 px-4">{{ $loop->iteration }}</td>
                                 <td class="text-left py-3 px-4">{{ $administrator->id }}</td>
                                 <td class="text-left py-3 px-4">{{ $administrator->name }}</td>
-                                <td class="text-left py-3 px-4">{{ $administrator->email }}</td>
+                                <td class="text-left py-3 px-4">{{ $administrator->username }}</td>
                                 <td>
                                     <div class="flex py-3 px-4">
                                         <div class="w-5 mr-2 transform hover:text-purple-500 hover:scale-110">
@@ -40,13 +40,13 @@
                                                 </svg>
                                             </a>
                                         </div>
-                                        <div class="w-5 mr-2 transform hover:text-purple-500 hover:scale-110">
+                                        <!-- <div class="w-5 mr-2 transform hover:text-purple-500 hover:scale-110">
                                             <a href="{{ url('administrator/data-admin/delete') }}/{{ $administrator->id }}">
                                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
                                                 </svg>
                                             </a>
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </td>
                             </tr>

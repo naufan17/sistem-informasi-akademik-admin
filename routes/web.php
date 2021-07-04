@@ -25,8 +25,8 @@ Route::get('/', function () {
 Route::multiauth('Administrator', 'administrator');
 
 Route::get('/administrator/data-admin', [DataAdminController::class, 'index'])->name('administrator.data-admin');
-Route::get('/administrator/data-admin/form-tambah', [DataAdminController::class, 'formTambah'])->name('administrator.data-admin.form-tambah');
-Route::get('/administrator/data-admin/tambah', [DataAdminController::class, 'tambah'])->name('administrator.data-admin.tambah');
+Route::get('/administrator/data-admin/form-create', [DataAdminController::class, 'formCreate'])->name('administrator.data-admin.form-create');
+Route::get('/administrator/data-admin/create', [DataAdminController::class, 'create'])->name('administrator.data-admin.create');
 Route::get('/administrator/data-admin/form-update/{id}', [DataAdminController::class, 'formUpdate'])->name('administrator.data-admin.form-update');
 Route::get('/administrator/data-admin/update-profile', [DataAdminController::class, 'updateProfile'])->name('administrator.data-admin.update-profile');
 Route::get('/administrator/data-admin/update-password', [DataAdminController::class, 'updatePassword'])->name('administrator.data-admin.update-password');
