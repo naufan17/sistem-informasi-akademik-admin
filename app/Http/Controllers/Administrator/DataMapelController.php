@@ -18,11 +18,13 @@ class DataMapelController extends Controller
      */
     public function index()
     {
+        $grades = Grade::all();
+        $schedules = Schedule::all();
         $courses = Course::leftjoin('users', 'courses.id_ustadz', '=', 'users.id')
                         ->leftjoin('grades', 'courses.id_grade', '=', 'grades.id_grade')
                         ->leftjoin('schedules', 'courses.id_schedule', '=', 'schedules.id_schedule')->get();
 
-        return view('administrator.data-mapel', compact('courses'));
+        return view('administrator.data-mapel', compact('grades', 'schedules', 'courses'));
     }
 
     public function formCreate()
@@ -47,5 +49,16 @@ class DataMapelController extends Controller
         ]);
 
         return redirect('administrator/data-mapel');
+    }
+
+    public function filter(Request $request)
+    {
+        $grades = Grade::all();
+        $schedules = Schedule::all();
+        $courses = Course::leftjoin('users', 'courses.id_ustadz', '=', 'users.id')
+                        ->leftjoin('grades', 'courses.id_grade', '=', 'grades.id_grade')
+                        ->leftjoin('schedules', 'courses.id_schedule', '=', 'schedules.id_schedule')->where('day', $request->day)->get();
+
+        return view('administrator.data-mapel', compact('grades', 'schedules', 'courses'));
     }
 }
