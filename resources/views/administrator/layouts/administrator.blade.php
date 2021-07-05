@@ -27,8 +27,9 @@
 <body class="work-sans leading-normal text-base tracking-normal">
     <div id="app">
         <main class="py-4">
+
             <!-- HEADER -->
-            <nav id="header" class="w-full z-30 top-0 bg-white border-b-2">
+            <nav id="header" class="w-full z-30 top-0 bg-white border-b-2 pb-3">
                 <div class="w-full container mx-auto flex flex-wrap items-center justify-between">
                     <div class="flex space-x-4 py-2">
                         <!--LOGO-->
@@ -48,6 +49,7 @@
                     </div>
                 </div>
             </nav>
+
             <!-- MENU -->
             <div class="bg-gray-100 font-family-karla flex">
                 <aside class="relative bg-gray-100 h-screen w-64 hidden sm:block ">
@@ -63,37 +65,49 @@
                             </div>
                         </div>
                         <div class="group border-indigo-500 hover:bg-blue-600 hover:shadow-lg hover:border-transparent">
-                            <a href="{{ url('administrator/data-admin') }}" class="text-gray-800 group-hover:text-white flex items-center py-4 pl-6">
-                                <i class="fas fa-id-card-alt mr-3"></i>
+                            <a href="{{ url('administrator/data-admin') }}" class="text-gray-800 group-hover:text-white flex items-center py-4 pl-8">
+                                
                                 Data Admin
                             </a>
                         </div>
                         <div class="group border-indigo-500 hover:bg-blue-600 hover:shadow-lg hover:border-transparent">
-                            <a href="{{ url('administrator/data-mapel') }}" class="text-gray-800 group-hover:text-white flex items-center py-4 pl-6">
-                                <i class="fas fa-book-open mr-3"></i>
+                            <a href="{{ url('administrator/data-mapel') }}" class="text-gray-800 group-hover:text-white flex items-center py-4 pl-8">
+                                
                                 Mata Pelajaran
                             </a>
                         </div>
                         <div class="group border-indigo-500 hover:bg-blue-600 hover:shadow-lg hover:border-transparent">
-                            <a href="{{ url('administrator/data-ustadz') }}" class="text-gray-800 group-hover:text-white flex items-center py-4 pl-6">
-                                <i class="fas fa-address-book mr-3"></i>
+                            <a href="{{ url('administrator/data-ustadz') }}" class="text-gray-800 group-hover:text-white flex items-center py-4 pl-8">
+                                
                                 Ustadz
                             </a>
                         </div>
                         <div class="group border-indigo-500 hover:bg-blue-600 hover:shadow-lg hover:border-transparent">
-                            <a href="{{ url('administrator/data-santri') }}" class="text-gray-800 group-hover:text-white flex items-center py-4 pl-6">
-                                <i class="fas fa-address-book mr-3"></i>
+                            <a href="{{ url('administrator/data-santri') }}" class="text-gray-800 group-hover:text-white flex items-center py-4 pl-8">
+                                
                                 Santri
                             </a>
                         </div>
                         <div class="group border-indigo-500 hover:bg-blue-600 hover:shadow-lg hover:border-transparent">
-                            <a href="" class="text-gray-800 group-hover:text-white flex items-center py-4 pl-6">
-                                <i class="fas fa-address-book mr-3"></i>
+                            <a href="" class="text-gray-800 group-hover:text-white flex items-center py-4 pl-8">
+                                
                                 Input Kelas
                             </a>
                         </div>
-                        <button class="w-full bg-blue-600 hover:bg-blue-800 cta-btn font-semibold justify-center ">
-                            <a class="text-white items-center py-4 pl-8 flex item-center" href="{{ route('administrator.logout') }}" onclick="event.preventDefault();
+                        <div class="group border-indigo-500 hover:bg-blue-600 hover:shadow-lg hover:border-transparent">
+                            <a href="" class="text-gray-800 group-hover:text-white flex items-center py-4 pl-8">
+                                
+                                Input MP
+                            </a>
+                        </div>
+                        <div class="group border-indigo-500 hover:bg-blue-600 hover:shadow-lg hover:border-transparent">
+                            <a href="" class="text-gray-800 group-hover:text-white flex items-center py-4 pl-8">
+                                
+                                Input Nilai
+                            </a>
+                        </div>
+                        <button class="w-full hover:bg-blue-600 cta-btn font-semibold justify-center ">
+                            <a class="text-gray-800 hover:text-white items-center py-4 pl-8 flex item-center" href="{{ route('administrator.logout') }}" onclick="event.preventDefault();
                                 document.getElementById('logout-form').submit();">{{ __('Logout') }}
                             </a>
                             <form id="logout-form" action="{{ route('administrator.logout') }}" method="POST" class="d-none">
@@ -109,8 +123,9 @@
                     </div>
                 </div>
             </div>
+
             <!-- FOOTER -->
-            <footer class="container mx-auto bg-white py-8 border-t border-gray-400">
+            <footer class="container mx-auto bg-white pt-8 border-t border-gray-400">
                 <div class="container flex px-6 py-8 ">
                     <div class="w-full mx-auto flex flex-wrap">
                         <div class="text-left flex w-full lg:w-1/2 ">
