@@ -27,6 +27,17 @@ class DataMapelController extends Controller
         return view('administrator.data-mapel', compact('grades', 'schedules', 'courses'));
     }
 
+    public function filter(Request $request)
+    {
+        $grades = Grade::all();
+        $schedules = Schedule::all();
+        $courses = Course::leftjoin('users', 'courses.id_ustadz', '=', 'users.id')
+                        ->leftjoin('grades', 'courses.id_grade', '=', 'grades.id_grade')
+                        ->leftjoin('schedules', 'courses.id_schedule', '=', 'schedules.id_schedule')->where('day', $request->day)->get();
+
+        return view('administrator.data-mapel', compact('grades', 'schedules', 'courses'));
+    }
+
     public function formCreate()
     {
         $grades = Grade::all();
@@ -51,14 +62,13 @@ class DataMapelController extends Controller
         return redirect('administrator/data-mapel');
     }
 
-    public function filter(Request $request)
+    public function formUpdate($id)
     {
-        $grades = Grade::all();
-        $schedules = Schedule::all();
-        $courses = Course::leftjoin('users', 'courses.id_ustadz', '=', 'users.id')
-                        ->leftjoin('grades', 'courses.id_grade', '=', 'grades.id_grade')
-                        ->leftjoin('schedules', 'courses.id_schedule', '=', 'schedules.id_schedule')->where('day', $request->day)->get();
+        return view('administrator.update-data-mapel');
+    }
 
-        return view('administrator.data-mapel', compact('grades', 'schedules', 'courses'));
+    public function update(Request $request)
+    {
+        return redirect('/administrator/data-mapel');
     }
 }

@@ -63,5 +63,15 @@ Route::get('/administrator/data-santri/delete/{id}', [DataSantriController::clas
 
 Route::get('/administrator/data-kelas', [DataKelasController::class, 'index'])->name('administrator.data-tingkat');
 Route::get('/administrator/data-nilai', [DataNilaiController::class, 'index'])->name('administrator.data-nilai');
+
 Route::get('/administrator/data-jadwal', [DataJadwalController::class, 'index'])->name('administrator.data-jadwal');
+Route::get('/administrator/data-jadwal/form-create', [DataJadwalController::class, 'formCreate'])->name('administrator.data-jadwal.form-create');
+Route::get('/administrator/data-jadwal/create', [DataJadwalController::class, 'create'])->name('administrator.data-jadwal.create');
+Route::get('/administrator/data-jadwal/form-update/{id}', [DataJadwalController::class, 'formUpdate'])->name('administrator.data-jadwal.form-update');
+Route::get('/administrator/data-jadwal/update', [DataJadwalController::class, 'update'])->name('administrator.data-jadwal.update');
+
 Route::get('/administrator/data-tingkat', [DataTingkatController::class, 'index'])->name('administrator.data-tingkat');
+Route::get('/administrator/data-tingkat/form-create', [DataTingkatController::class, 'formCreate'])->name('administrator.data-tingkat.form-create');
+Route::get('/administrator/data-tingkat/create', [DataTingkatController::class, 'create'])->name('administrator.data-tingkat.create');
+Route::get('/administrator/data-tingkat/form-update/{id}', [DataTingkatController::class, 'formUpdate'])->name('administrator.data-tingkat.form-update');
+Route::get('/administrator/data-tingkat/update', [DataTingkatController::class, 'update'])->name('administrator.data-tingkat.update');
