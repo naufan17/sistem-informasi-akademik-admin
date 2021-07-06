@@ -22,12 +22,12 @@ class DataSantriController extends Controller
         return view('administrator.data-santri', compact('santris'));
     }
 
-    public function formStore()
+    public function formCreate()
     {
         return view('administrator.tambah-data-santri');
     }
 
-    public function store(Request $request)
+    public function create(Request $request)
     {
         $request->validate([
             'name' => 'required', 'string', 'max:255',

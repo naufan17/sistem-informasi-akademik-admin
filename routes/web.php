@@ -6,6 +6,10 @@ use App\Http\Controllers\Administrator\DataAdminController;
 use App\Http\Controllers\Administrator\DataMapelController;
 use App\Http\Controllers\Administrator\DataSantriController;
 use App\Http\Controllers\Administrator\DataUstadzController;
+use App\Http\Controllers\Administrator\DataKelasController;
+use App\Http\Controllers\Administrator\DataNilaiController;
+use App\Http\Controllers\Administrator\DataJadwalController;
+use App\Http\Controllers\Administrator\DataTingkatController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,8 +45,8 @@ Route::get('/administrator/data-mapel/update', [DataMapelController::class, 'upd
 
 Route::get('/administrator/filter-ustadz', [DataUstadzController::class, 'filter'])->name('administrator.filter-ustadz');
 Route::get('/administrator/data-ustadz', [DataUstadzController::class, 'index'])->name('administrator.data-ustadz');
-Route::get('/administrator/data-ustadz/form-create', [DataUstadzController::class, 'formStore'])->name('administrator.data-ustadz.form-create');
-Route::get('/administrator/data-ustadz/create', [DataUstadzController::class, 'store'])->name('administrator.data-ustadz.create');
+Route::get('/administrator/data-ustadz/form-create', [DataUstadzController::class, 'formCreate'])->name('administrator.data-ustadz.form-create');
+Route::get('/administrator/data-ustadz/create', [DataUstadzController::class, 'create'])->name('administrator.data-ustadz.create');
 Route::get('/administrator/data-ustadz/form-update/{id}', [DataUstadzController::class, 'formUpdate'])->name('administrator.data-ustadz.form-update');
 Route::get('/administrator/data-ustadz/update-profile', [DataUstadzController::class, 'updateProfile'])->name('administrator.data-ustadz.update-profile');
 Route::get('/administrator/data-ustadz/update-password', [DataUstadzController::class, 'updatePassword'])->name('administrator.data-ustadz.update-password');
@@ -50,9 +54,14 @@ Route::get('/administrator/data-ustadz/delete/{id}', [DataUstadzController::clas
 
 Route::get('/administrator/filter-santri', [DataSantriController::class, 'filter'])->name('administrator.filter-santri');
 Route::get('/administrator/data-santri', [DataSantriController::class, 'index'])->name('administrator.data-santri');
-Route::get('/administrator/data-santri/form-create', [DataSantriController::class, 'formStore'])->name('administrator.data-santri.form-create');
-Route::get('/administrator/data-santri/create', [DataSantriController::class, 'store'])->name('administrator.data-santri.create');
+Route::get('/administrator/data-santri/form-create', [DataSantriController::class, 'formCreate'])->name('administrator.data-santri.form-create');
+Route::get('/administrator/data-santri/create', [DataSantriController::class, 'create'])->name('administrator.data-santri.create');
 Route::get('/administrator/data-santri/form-update/{id}', [DataSantriController::class, 'formUpdate'])->name('administrator.data-santri.form-update');
 Route::get('/administrator/data-santri/update-profile', [DataSantriController::class, 'updateProfile'])->name('administrator.data-santri.update-profile');
 Route::get('/administrator/data-santri/update-password', [DataSantriController::class, 'updatePassword'])->name('administrator.data-santri.update-password');
 Route::get('/administrator/data-santri/delete/{id}', [DataSantriController::class, 'destroy'])->name('administrator.data-santri.delete');
+
+Route::get('/administrator/data-kelas', [DataKelasController::class, 'index'])->name('administrator.data-tingkat');
+Route::get('/administrator/data-nilai', [DataNilaiController::class, 'index'])->name('administrator.data-nilai');
+Route::get('/administrator/data-jadwal', [DataJadwalController::class, 'index'])->name('administrator.data-jadwal');
+Route::get('/administrator/data-tingkat', [DataTingkatController::class, 'index'])->name('administrator.data-tingkat');

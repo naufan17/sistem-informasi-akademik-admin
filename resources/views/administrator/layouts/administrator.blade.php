@@ -27,7 +27,6 @@
 <body class="work-sans leading-normal text-base tracking-normal">
     <div id="app">
         <main class="py-4">
-
             <!-- HEADER -->
             <nav id="header" class="w-full z-30 top-0 bg-white border-b-2 pb-3">
                 <div class="w-full container mx-auto flex flex-wrap items-center justify-between">
@@ -49,7 +48,6 @@
                     </div>
                 </div>
             </nav>
-
             <!-- MENU -->
             <div class="bg-gray-100 font-family-karla flex">
                 <aside class="relative bg-gray-100 h-screen w-64 hidden sm:block ">
@@ -66,44 +64,42 @@
                         </div>
                         <div class="group border-indigo-500 hover:bg-blue-600 hover:shadow-lg hover:border-transparent">
                             <a href="{{ url('administrator/data-admin') }}" class="text-gray-800 group-hover:text-white flex items-center py-4 pl-8">
-                                
                                 Data Admin
                             </a>
                         </div>
                         <div class="group border-indigo-500 hover:bg-blue-600 hover:shadow-lg hover:border-transparent">
                             <a href="{{ url('administrator/data-mapel') }}" class="text-gray-800 group-hover:text-white flex items-center py-4 pl-8">
-                                
                                 Mata Pelajaran
                             </a>
                         </div>
                         <div class="group border-indigo-500 hover:bg-blue-600 hover:shadow-lg hover:border-transparent">
                             <a href="{{ url('administrator/data-ustadz') }}" class="text-gray-800 group-hover:text-white flex items-center py-4 pl-8">
-                                
                                 Ustadz
                             </a>
                         </div>
                         <div class="group border-indigo-500 hover:bg-blue-600 hover:shadow-lg hover:border-transparent">
-                            <a href="{{ url('administrator/data-santri') }}" class="text-gray-800 group-hover:text-white flex items-center py-4 pl-8">
-                                
+                            <a href="{{ url('administrator/data-santri') }}" class="text-gray-800 group-hover:text-white flex items-center py-4 pl-8">  
                                 Santri
                             </a>
                         </div>
                         <div class="group border-indigo-500 hover:bg-blue-600 hover:shadow-lg hover:border-transparent">
-                            <a href="" class="text-gray-800 group-hover:text-white flex items-center py-4 pl-8">
-                                
-                                Input Kelas
+                            <a href="{{ url('administrator/data-kelas') }}" class="text-gray-800 group-hover:text-white flex items-center py-4 pl-8"> 
+                                Kelas
                             </a>
                         </div>
                         <div class="group border-indigo-500 hover:bg-blue-600 hover:shadow-lg hover:border-transparent">
-                            <a href="" class="text-gray-800 group-hover:text-white flex items-center py-4 pl-8">
-                                
-                                Input MP
+                            <a href="{{ url('administrator/data-nilai') }}" class="text-gray-800 group-hover:text-white flex items-center py-4 pl-8">     
+                                Nilai
                             </a>
                         </div>
                         <div class="group border-indigo-500 hover:bg-blue-600 hover:shadow-lg hover:border-transparent">
-                            <a href="" class="text-gray-800 group-hover:text-white flex items-center py-4 pl-8">
-                                
-                                Input Nilai
+                            <a href="{{ url('administrator/data-jadwal') }}" class="text-gray-800 group-hover:text-white flex items-center py-4 pl-8">     
+                                Jadwal
+                            </a>
+                        </div>
+                        <div class="group border-indigo-500 hover:bg-blue-600 hover:shadow-lg hover:border-transparent">
+                            <a href="{{ url('administrator/data-tingkat') }}" class="text-gray-800 group-hover:text-white flex items-center py-4 pl-8">     
+                                Tingkat
                             </a>
                         </div>
                         <button class="w-full hover:bg-blue-600 cta-btn font-semibold justify-center ">
@@ -123,7 +119,6 @@
                     </div>
                 </div>
             </div>
-
             <!-- FOOTER -->
             <footer class="container mx-auto bg-white pt-8 border-t border-gray-400">
                 <div class="container flex px-6 py-8 ">
