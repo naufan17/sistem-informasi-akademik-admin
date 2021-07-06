@@ -59,4 +59,11 @@ class DataJadwalController extends Controller
 
         return redirect('/administrator/data-jadwal');
     }
+
+    public function delete($id)
+    {
+        Schedule::where('id_schedule', $id)->delete();
+
+        return redirect('/administrator/data-jadwal');
+    }
 }

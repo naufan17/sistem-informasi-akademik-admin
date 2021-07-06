@@ -56,4 +56,11 @@ class DataTingkatController extends Controller
 
         return redirect('/administrator/data-tingkat');
     }
+
+    public function delete($id)
+    {
+        Grade::where('id_grade', $id)->delete();
+
+        return redirect('/administrator/data-tingkat');
+    }
 }

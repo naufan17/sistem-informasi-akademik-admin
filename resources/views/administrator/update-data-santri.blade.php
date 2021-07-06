@@ -37,26 +37,11 @@
                                 <input type="email" name="email" placeholder="" value="{{ $santri->email }}" required autocomplete="email" required class="pt-3 pb-2 px-3 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-200" />
                             </div>
                         </div>
-
-                        <!--
-                        <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 px-4 py-2 space-y-1">
-                            <p class="self-center text-gray-600">Status</p>
-                            <div class="relative z-0 w-full mb-5">
-                                <input type="text" name="status" placeholder="" value="{{ $santri->status }}" required autocomplete="email" required class="pt-3 pb-2 px-3 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-200" />
-                                <label>
-                                    <input type="radio" name="status" value="Aktif"class="mr-2 text-black border-2 border-gray-300 focus:border-gray-300 focus:ring-black"/>Aktif
-                                </label>
-                                <label>
-                                    <input type="radio" name="status" value="Tidak Aktif" class="mr-2 text-black border-2 border-gray-300 focus:border-gray-300 focus:ring-black"/>Tidak Aktif
-                                </label>
-                            </div>
-                        </div>
-                        -->
-
                         <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 px-4 py-2 space-y-1">
                             <p class="self-center text-gray-600">Status</p>
                             <div class="relative z-0 w-full mb-5">
                                 <select type="text" name="status" value="{{ $santri->status }}" onclick="this.setAttribute('value', this.value);" required autocomplete="email" required class="pt-3 pb-2 px-3 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none z-1 focus:outline-none focus:ring-0 focus:border-black border-gray-200">
+                                    <option selected value="{{ $santri->status }}">{{ $santri->status }}</option>
                                     <option value="Aktif">Aktif</option>
                                     <option value="Tidak Aktif">Tidak Aktif</option>
                                 </select>
