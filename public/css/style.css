@@ -83,3 +83,7 @@
     color: #000;
     /*Set to match the Tailwind colour you want the active one to be */
 }
+
+tr:nth-child(even) {
+    background-color:rgba(229, 231, 235, var(--tw-bg-opacity));
+}
