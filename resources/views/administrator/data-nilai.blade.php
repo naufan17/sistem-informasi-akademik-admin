@@ -78,26 +78,41 @@
                                 <th class="text-left py-3 px-4 uppercase font-semibold text-sm">No</th>
                                 <th class="text-left w-1/4 py-3 px-4 uppercase font-semibold text-sm">Kode MP</th>
                                 <th class="text-left w-1/4 py-3 px-4 uppercase font-semibold text-sm">Nama MP</th>
+                                <th class="text-left w-1/4 py-3 px-4 uppercase font-semibold text-sm">Ustadz</th>
                                 <th class="text-left w-1/4 py-3 px-4 uppercase font-semibold text-sm">Aksi</td>
                                 <th class="text-left w-1/4 py-3 px-4 uppercase font-semibold text-sm">Keterangan</th>
                                 
                             </tr>
                         </thead>
                         <tbody class="text-gray-700">
-                            @foreach($santris as $santri)
+                            
                             <tr>
                                 <td class="text-left py-3 px-4">1</td>
                                 <td class="text-left py-3 px-4">1</td>
                                 <td class="text-left py-3 px-4">Tafsir</td>
+                                <td class="text-left py-3 px-4">Si A</td>
                                 <td class="text-left py-3 px-4">
-                                    <a href="{{ url('administrator/data-santri/form-update') }}/{{ $santri->id }}" class="button bg-blue-600 hover:bg-blue-800 text-white rounded shadow-md py-2 px-8">Input</a>
+                                    <a href="#" class="button bg-blue-600 hover:bg-blue-800 text-white rounded shadow-md py-2 px-8">Input</a>
                                 </td>  
                                 <td class="text-left py-3 px-4">
                                     <i class="fas fa-check"></i>
                                     <i class="fas fa-times"></i>
                                 </td> 
                             </tr>
-                            @endforeach
+                            <tr>
+                                <td class="text-left py-3 px-4">2</td>
+                                <td class="text-left py-3 px-4">2</td>
+                                <td class="text-left py-3 px-4">Hadits</td>
+                                <td class="text-left py-3 px-4">Si B</td>
+                                <td class="text-left py-3 px-4">
+                                    <a href="#" class="button bg-blue-600 hover:bg-blue-800 text-white rounded shadow-md py-2 px-8">Input</a>
+                                </td>  
+                                <td class="text-left py-3 px-4">
+                                    <i class="fas fa-check"></i>
+                                    <i class="fas fa-times"></i>
+                                </td> 
+                            </tr>
+                            
                         </tbody>
                     </table>
                 </div>

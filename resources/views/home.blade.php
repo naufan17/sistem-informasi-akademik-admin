@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,7 +15,7 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 
     <!-- Tailwind -->
@@ -27,6 +26,7 @@
 
 </head>
 <body class="bg-white text-gray-600 work-sans leading-normal text-base tracking-normal">
+
     <!--HEADER-->
     <nav id="header" class="w-full z-30 top-0 py-1">
         <div class="w-full container mx-auto flex flex-wrap items-center justify-between">
@@ -48,6 +48,7 @@
             </div>
         </div>
     </nav>
+
     <!--KONTEN-->
     <div class="carousel relative container mx-auto" style="max-width:1600px;">
         <div class="carousel-inner relative overflow-hidden w-full">
@@ -111,6 +112,7 @@
             </ol>
         </div>
     </div>
+
     <!-- LOGIN, TENTANG, ALAMAT -->
     <section class="bg-white py-8">
         <!-- LOGIN -->
@@ -142,6 +144,7 @@
             </div>
         </div>
     </section>
+
     <!-- FOOTER -->
     <footer class="container mx-auto bg-white py-8 border-t border-gray-400">
         <div class="container flex px-6 py-8 ">
@@ -172,5 +175,6 @@
             </div>
         </div>
     </footer>
+
 </body>
 </html>
