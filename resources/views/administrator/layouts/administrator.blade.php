@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,7 +12,8 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
-    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script> <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script> <!-- Nav Dropdown -->
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script> <!-- Nav Dropdown -->
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -24,7 +26,7 @@
     <!-- fontawesome icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/fontawesome.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css" />
-    
+
     <!-- Tailwind -->
     <link href="https://unpkg.com/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
 
@@ -41,7 +43,7 @@
                         <!--LOGO-->
                         <div class="object-left">
                             <img src="https://drive.google.com/file/d/1cmaYv3B2petkuK-dczI_UnpzHn9Bx1Qu/view?usp=sharing" class="w-24">
-                            
+
                         </div>
                         <!--NAME-->
                         <div class="text-center font-bold font-sans text-yellow-800 mt-2">
@@ -64,8 +66,8 @@
                         <div class="text-gray-900">
                             <div class="pt-6 px-6 mb-8">
                                 <div class="text-center bg-white rounded-lg shadow-lg">
-                                
-                                <!--
+
+                                    <!--
                                     <div class="px-6 py-6">
                                         <img src="https://source.unsplash.com/random/350x350" alt="random image" class="object-center rounded-full">
                                     </div>
@@ -113,8 +115,8 @@
                             </button>
                             <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-md">
                                 <div class="px-2 py-2 bg-white rounded-md shadow">
-                                    <a class="block px-4 py-3 mt-2 text-sm font-semibold rounded-lg hover:bg-blue-600 hover:text-white hover:shadow-lg hover:border-transparent" href="{{ url('administrator/data-mapel') }}">Mata Pelajaran</a>
                                     <a class="block px-4 py-3 mt-2 text-sm font-semibold rounded-lg hover:bg-blue-600 hover:text-white hover:shadow-lg hover:border-transparent" href="{{ url('administrator/data-jadwal') }}">Jadwal</a>
+                                    <a class="block px-4 py-3 mt-2 text-sm font-semibold rounded-lg hover:bg-blue-600 hover:text-white hover:shadow-lg hover:border-transparent" href="{{ url('administrator/data-mapel') }}">Mata Pelajaran</a>
                                     <a class="block px-4 py-3 mt-2 text-sm font-semibold rounded-lg hover:bg-blue-600 hover:text-white hover:shadow-lg hover:border-transparent" href="{{ url('administrator/data-tingkat') }}">Tingkat</a>
                                     <a class="block px-4 py-3 mt-2 text-sm font-semibold rounded-lg hover:bg-blue-600 hover:text-white hover:shadow-lg hover:border-transparent" href="{{ url('administrator/data-kelas') }}">Kelas</a>
                                     <a class="block px-4 py-3 mt-2 text-sm font-semibold rounded-lg hover:bg-blue-600 hover:text-white hover:shadow-lg hover:border-transparent" href="{{ url('administrator/data-nilai') }}">Nilai</a>
@@ -122,7 +124,7 @@
                             </div>
                         </div>
 
-<!--                        
+                        <!--                        
                         <div class="group border-indigo-500 hover:bg-blue-600 hover:shadow-lg hover:border-transparent">
                             <a href="{{ url('administrator/data-ustadz') }}" class="text-gray-800 group-hover:text-white flex items-center py-3 pl-8">
                                 Ustadz
@@ -155,13 +157,13 @@
                                 Nilai
                             </a>
                         </div>
--->                        
+-->
 
                         <button class="w-full hover:bg-blue-600 cta-btn font-semibold justify-center ">
                             <a class="text-gray-800 hover:text-white items-center py-3 pl-8 flex item-center" href="{{ route('administrator.logout') }}" onclick="event.preventDefault();
                                 document.getElementById('logout-form').submit();">{{ __('Logout') }}
                             </a>
-                            <form id="logout-form" action="{{ route('administrator.logout') }}" method="POST" class="d-none">
+                            <form id="logout-form" action="{{ route('administrator.logout') }}"  method="POST" class="d-none" >
                                 @csrf
                             </form>
                         </button>
@@ -181,8 +183,9 @@
                     <h3 class="text-center font-medium text-gray-900">Madrasah Diniyyah Pondok Pesantren Nurul Ummah Yogyakarta - 2021</h3>
                 </div>
             </footer>
-            
+
         </main>
     </div>
 </body>
+
 </html>
