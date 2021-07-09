@@ -40,7 +40,8 @@
                     <div class="flex space-x-4 py-2">
                         <!--LOGO-->
                         <div class="object-left">
-                            <img src="images/logo.png" class="w-24">
+                            <img src="https://drive.google.com/file/d/1cmaYv3B2petkuK-dczI_UnpzHn9Bx1Qu/view?usp=sharing" class="w-24">
+                            
                         </div>
                         <!--NAME-->
                         <div class="text-center font-bold font-sans text-yellow-800 mt-2">

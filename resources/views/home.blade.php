@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,7 +16,7 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
-    
+
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 
     <!-- Tailwind -->
@@ -25,6 +26,7 @@
     <link href="https://fonts.googleapis.com/css?family=Work+Sans:200,400&display=swap" rel="stylesheet">
 
 </head>
+
 <body class="bg-white text-gray-600 work-sans leading-normal text-base tracking-normal">
 
     <!--HEADER-->
@@ -128,7 +130,52 @@
         </div>
         <div class="container py-8 px-6 mx-auto">
             <a class="uppercase tracking-wide no-underline hover:no-underline font-bold text-gray-800 text-xl mb-8">Tentang MDNU</a>
-            <p class="py-4">MDNU atau Madrasah Diniyyah Nurul Ummah adalah Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad magni cumque, enim deleniti molestiae, ipsum iste suscipit itaque eius aliquam officiis ipsam commodi autem delectus, blanditiis omnis quos reiciendis. In.</p>
+            <p class="py-4 text-justify">MDNU atau Madrasah Diniyyah Nurul Ummah adalah satuan pendidikan keagamaan yang
+                menyelenggarakan pendidikan Agama Islam baik yang terorganisir pada
+                lembaga-lembaga pendidikan keagamaan yang berada di dalam pondok
+                pesantren maupun yang di luar pondok pesantren (Buklet Madin, 2003).
+                Madrasah Diniyah Nurul Ummah (MDNU) merupakan salah satu Unit
+                Kegiatan yang berada di bawah naungan Pondok Pesantren Nurul Ummah
+                yang bertanggung jawab terhadap sistem pendidikan keagamaannya.
+                Madrasah tersebut didirikan pada tanggal 24 Februari 1991, kemudian
+                mendapat pengakuan resmi dari Kanwil Departemen Agama Wilayah
+                Propinsi DIY, berupa Piagam Madrasah Diniyah No. 91199, tertanggal 27
+                Agustus 1991.</p>
+
+            <!--
+            <div class="w-full">
+                <div x-data={show:false} class="rounded-sm">
+                    <div class="" id="headingOne">
+                        <button @click="show=!show" class="underline text-blue-500 hover:text-blue-700 focus:outline-none" type="button">
+                            Baca selengkapnya..
+                        </button>
+                    </div>
+                    <div x-show="show" class="text-justify py-6">
+                        Sebelum MDNU berdiri, sebenarnya di PP Nurul Ummah telah
+                        terdapat kegiatan belajar mengajar yang berupa sorogan dan bandongan.
+                        Namun karena jumlah santri yang semakin meningkat, maka kemudian
+                        dibuat sistem klasikal (2 tahun kelas persiapan dan 4 tahun kelas
+                        madrasah). Tidak lama kemudian, seiring dengan peningkatan jumlah
+                        santri dan makin mendesaknya kebutuhan akan manajemen yang lebih
+                        bagus, maka pada tahun 1411 H / 1991 M, didirikanlah Madrasah Diniyah
+                        Nurul Ummah (MDNU) <br>
+
+                        Pada mulanya MDNU memiliki kepengurusan tersendiri yang berdiri
+                        sejajar dengan kepengurusan di Pondok Pesantren Nurul Ummah yang
+                        waktu itu ditangani oleh Ikatan Santri Nurul Ummah (ISNU). MDNU
+                        mengelola sistem madrasah, sedangkan ISNU menangani pengajian santri
+                        serta kegiatan lainnya yang berada di luar kegiatan madrasah diniyah.
+                        Untuk mengatasi adanya dualisme kepengurusan tersebut, maka pada
+                        tahun 1995, dua kepengurusan tersebut difusikan dalam wadah Pengurus
+                        Pondok Pesantren Nurul Ummah, dengan demikian berarti MDNU berada
+                        di bawah otoritas Pengurus Pondok Pesantren Nurul Ummah. <br>
+
+
+                    </div>
+                </div>
+            </div>
+-->
+
         </div>
         <!-- ALAMAT -->
         <div class="w-full container mx-auto flex flex-wrap items-center justify-between">
@@ -177,4 +224,5 @@
     </footer>
 
 </body>
+
 </html>
