@@ -4,6 +4,9 @@ namespace App\Http\Controllers\Administrator;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Course;
+use App\Models\Grade;
+use App\Models\Schedule;
 use App\Models\User;
 
 class DataNilaiController extends Controller
@@ -15,8 +18,12 @@ class DataNilaiController extends Controller
      */
     public function index()
     {
-        $santris = User::where('role', 'santri')->get();
+        $grades = Grade::all();
+        $schedules = Schedule::all();
+        $courses = Course::leftjoin('users', 'courses.id_ustadz', '=', 'users.id')
+                        ->leftjoin('grades', 'courses.id_grade', '=', 'grades.id_grade')
+                        ->leftjoin('schedules', 'courses.id_schedule', '=', 'schedules.id_schedule')->get();
 
-        return view('administrator.data-nilai', compact('santris'));
+        return view('administrator.data-nilai', compact('grades', 'schedules', 'courses'));
     }
 }

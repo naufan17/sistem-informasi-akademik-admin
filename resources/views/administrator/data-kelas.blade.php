@@ -7,8 +7,7 @@
         <main class="pt-6 px-6">
             <h1 class="text-3xl text-black pb-2 mt-2">Kelas</h1>
             <div class="bg-white rounded-lg shadow-md p-8 my-8">
-
-                <form method="GET" action="{{ url('administrator/filter-santri') }}">
+                <!-- <form method="GET" action="">
                     <div class="flex space-x-4 items-center pb-8">
                         <div class="flex-none w-36">
                             <a class="self-center">Tahun Ajaran</a>
@@ -30,62 +29,42 @@
                             <button type="submit" class="bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-3 px-8">Lihat Kelas</button>
                         </div>
                     </div>
-                </form>
-
+                </form> -->
                 <p class="text-xl py-8 flex items-center">Daftar & Input Santri Ke Kelas</p>
-
                 <div class="bg-white overflow-auto pb-8">
                     <table class="table-auto bg-white">
                         <thead class="bg-gray-800 text-white">
                             <tr>
                                 <th class="text-left py-3 px-4 uppercase font-semibold text-sm">No</th>
-                                <th class="text-left w-1/4 py-3 px-4 uppercase font-semibold text-sm">Tingkat</th>
-                                <th class="text-left w-1/4 py-3 px-4 uppercase font-semibold text-sm">Kelas</th>
-                                <th class="text-left w-1/4 py-3 px-4 uppercase font-semibold text-sm">Jumlah Santri</th>
-                                <th class="text-left w-1/4 py-3 px-4 uppercase font-semibold text-sm">Aksi</th>
+                                <th class="text-left w-1/6 py-3 px-4 uppercase font-semibold text-sm">Kode MP</th>
+                                <th class="text-left w-1/6 py-3 px-4 uppercase font-semibold text-sm">Mata pelajaran</th>
+                                <th class="text-left w-1/6 py-3 px-4 uppercase font-semibold text-sm">Kitab</th>
+                                <th class="text-left w-1/6 py-3 px-4 uppercase font-semibold text-sm">Kelas</th>
+                                <th class="text-left w-1/6 py-3 px-4 uppercase font-semibold text-sm">Jadwal</th>
+                                <th class="text-left w-1/5 py-3 px-4 uppercase font-semibold text-sm">Semester</th>
+                                <th class="text-left w-1/6 py-3 px-4 uppercase font-semibold text-sm">Nama Ustadz</th>
+                                <th class="text-left w-1/6 py-3 px-4 uppercase font-semibold text-sm">Santri</th>
                             </tr>
                         </thead>
                         <tbody class="text-gray-700">
-
+                            @foreach($courses as $course)
                             <tr>
-                                <td class="text-left py-3 px-4">1</td>
-                                <td class="text-left py-3 px-4">1</td>
-                                <td class="text-left py-3 px-4">Awaliyah</td>
-                                <td class="text-left py-3 px-4">20</td>
+                                <td class="text-left py-3 px-4">{{ $loop->iteration }}</td>
+                                <td class="text-left py-3 px-4">{{ $course->id }}</td>
+                                <td class="text-left py-3 px-4">{{ $course->course }}</td>
+                                <td class="text-left py-3 px-4">{{ $course->book }}</td>
+                                <td class="text-left py-3 px-4">{{ $course->grade_number }} {{ $course->grade_name }}</td>
+                                <td class="text-left py-3 px-4">{{ $course->day }}, {{ $course->time_begin }} - {{ $course->time_end }}</td>
+                                <td class="text-left py-3 px-4">{{ $course->semester }}</td>   
+                                <td class="text-left py-3 px-4">{{ $course->name }}</td>
                                 <td>
-                                    <div class="flex py-3 px-4">
-                                        <div class="w-5 mr-2 transform hover:text-purple-500 hover:scale-110">
-                                            <a href="{{ url('administrator/data-admin/form-update/1') }}">
-                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
-                                                </svg>
-                                            </a>
-                                        </div>
-                                    </div>
+                                    <a href="" class="button bg-blue-600 hover:bg-blue-800 hover:text-white text-white rounded shadow-md py-2 px-2">Tambah</a>
                                 </td>
                             </tr>
-                            <tr>
-                                <td class="text-left py-3 px-4">2</td>
-                                <td class="text-left py-3 px-4">1</td>
-                                <td class="text-left py-3 px-4">Wustho</td>
-                                <td class="text-left py-3 px-4">30</td>
-                                <td>
-                                    <div class="flex py-3 px-4">
-                                        <div class="w-5 mr-2 transform hover:text-purple-500 hover:scale-110">
-                                            <a href="{{ url('administrator/data-mapel/form-update') }}">
-                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
-                                                </svg>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
-
+                            @endforeach
                         </tbody>
                     </table>
                 </div>
-
             </div>
         </main>
     </div>

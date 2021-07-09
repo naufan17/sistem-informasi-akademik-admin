@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Administrator\DashboardController;
+use App\Http\Controllers\Administrator\DataAbsensiController;
 use App\Http\Controllers\Administrator\DataAdminController;
 use App\Http\Controllers\Administrator\DataMapelController;
 use App\Http\Controllers\Administrator\DataSantriController;
@@ -63,6 +64,7 @@ Route::get('/administrator/data-santri/delete/{id}', [DataSantriController::clas
 
 Route::get('/administrator/data-kelas', [DataKelasController::class, 'index'])->name('administrator.data-tingkat');
 Route::get('/administrator/data-nilai', [DataNilaiController::class, 'index'])->name('administrator.data-nilai');
+Route::get('/administrator/data-absensi', [DataAbsensiController::class, 'index'])->name('administrator.data-absensi');
 
 Route::get('/administrator/data-jadwal', [DataJadwalController::class, 'index'])->name('administrator.data-jadwal');
 Route::get('/administrator/data-jadwal/form-create', [DataJadwalController::class, 'formCreate'])->name('administrator.data-jadwal.form-create');
