@@ -73,13 +73,13 @@
                         <thead class="bg-gray-800 text-white">
                             <tr>
                                 <th class="text-left py-3 px-4 uppercase font-semibold text-sm">No</th>
-                                <th class="text-left w-1/6 py-3 px-4 uppercase font-semibold text-sm">Kode MP</th>
+                                <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Kode MP</th>
                                 <th class="text-left w-1/6 py-3 px-4 uppercase font-semibold text-sm">Mata pelajaran</th>
                                 <th class="text-left w-1/6 py-3 px-4 uppercase font-semibold text-sm">Kitab</th>
                                 <th class="text-left w-1/6 py-3 px-4 uppercase font-semibold text-sm">Kelas</th>
                                 <th class="text-left w-1/6 py-3 px-4 uppercase font-semibold text-sm">Jadwal</th>
-                                <th class="text-left w-1/5 py-3 px-4 uppercase font-semibold text-sm">Semester</th>
-                                <th class="text-left w-1/6 py-3 px-4 uppercase font-semibold text-sm">Nama Ustadz</th>
+                                <th class="text-left w-1/6 py-3 px-4 uppercase font-semibold text-sm">Semester</th>
+                                <th class="text-left w-1/3 py-3 px-4 uppercase font-semibold text-sm">Nama Ustadz</th>
                                 <th class="text-left w-1/6 py-3 px-4 uppercase font-semibold text-sm">Nilai</th>
                             </tr>
                         </thead>
