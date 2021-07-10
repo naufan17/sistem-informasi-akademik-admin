@@ -44,7 +44,7 @@
                         <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 px-4 py-2 space-y-1">
                             <p class="self-center text-gray-600">Tingkat</p>
                             <div class="relative z-0 w-full mb-5">
-                                <select type="number" name="id_grade" value="" onclick="this.setAttribute('value', this.value);" class="pt-3 pb-2 px-3 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none z-1 focus:outline-none focus:ring-0 focus:border-black border-gray-200">
+                                <select type="number" name="id_grade" onclick="this.setAttribute('value', this.value);" class="pt-3 pb-2 px-3 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none z-1 focus:outline-none focus:ring-0 focus:border-black border-gray-200">
                                     @foreach($grades as $grade)
                                     <option value="{{ $grade->id }}">{{ $grade->number }} {{ $grade->name }}</option>
                                     @endforeach
@@ -54,7 +54,7 @@
                         <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 px-4 py-2 space-y-1">
                             <p class="self-center text-gray-600">Jadwal</p>
                             <div class="relative z-0 w-full mb-5">
-                                <select type="number" name="id_schedule" value="" onclick="this.setAttribute('value', this.value);" class="pt-3 pb-2 px-3 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none z-1 focus:outline-none focus:ring-0 focus:border-black border-gray-200">
+                                <select type="number" name="id_schedule" onclick="this.setAttribute('value', this.value);" class="pt-3 pb-2 px-3 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none z-1 focus:outline-none focus:ring-0 focus:border-black border-gray-200">
                                     @foreach($schedules as $schedule)
                                     <option value="{{ $schedule->id }}">{{ $schedule->day }}, {{ $schedule->time_begin }} - {{ $schedule->time_end }}</option>
                                     @endforeach
@@ -64,7 +64,7 @@
                         <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 px-4 py-2 space-y-1">
                             <p class="self-center text-gray-600">Semester</p>
                             <div class="relative z-0 w-full mb-5">
-                                <select type="text" name="semester" value="" onclick="this.setAttribute('value', this.value);" class="pt-3 pb-2 px-3 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none z-1 focus:outline-none focus:ring-0 focus:border-black border-gray-200">
+                                <select type="text" name="semester" onclick="this.setAttribute('value', this.value);" class="pt-3 pb-2 px-3 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none z-1 focus:outline-none focus:ring-0 focus:border-black border-gray-200">
                                     <option value="Genap">Genap</option>
                                     <option value="Ganjil">Ganjil</option>
                                 </select>
@@ -73,7 +73,7 @@
                         <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 px-4 py-2 space-y-1">
                             <p class="self-center text-gray-600">Nama Ustadz</p>
                             <div class="relative z-0 w-full mb-5">
-                                <select type="number" name="id_ustadz" value="" onclick="this.setAttribute('value', this.value);" class="pt-3 pb-2 px-3 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none z-1 focus:outline-none focus:ring-0 focus:border-black border-gray-200">
+                                <select type="number" name="id_ustadz" onclick="this.setAttribute('value', this.value);" class="pt-3 pb-2 px-3 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none z-1 focus:outline-none focus:ring-0 focus:border-black border-gray-200">
                                     @foreach($ustadzs as $ustadz)
                                     <option value="{{ $ustadz->id }}">{{ $ustadz->name }}</option>
                                     @endforeach

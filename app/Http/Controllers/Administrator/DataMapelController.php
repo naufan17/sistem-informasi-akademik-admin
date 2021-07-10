@@ -44,7 +44,7 @@ class DataMapelController extends Controller
         $schedules = Schedule::all();
         $ustadzs = User::where('role', 'ustadz')->get();
 
-        return view('administrator.tambah-data-mapel', compact('grades', 'schedules', 'ustadzs'));
+        return view('administrator.tambah-data-mapel', compact('schedules', 'ustadzs', 'grades'));
     }
 
     public function create(Request $request)

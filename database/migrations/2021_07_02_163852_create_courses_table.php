@@ -17,7 +17,6 @@ class CreateCoursesTable extends Migration
             $table->id('id_course');
             $table->string('course');
             $table->string('book');
-            $table->enum('semester', ['Genap', 'Ganjil']);
             $table->unsignedBigInteger('id_grade');
             $table->unsignedBigInteger('id_schedule');
             $table->unsignedBigInteger('id_ustadz');
