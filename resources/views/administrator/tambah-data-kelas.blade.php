@@ -5,7 +5,7 @@
 <div class="w-full flex flex-col h-screen overflow-y-hidden">
     <div class="overflow-x-hidden">
         <main class="pt-6 px-6">
-            <h1 class="text-3xl text-black pb-2 mt-2">Nilai</h1>
+            <h1 class="text-3xl text-black pb-2 mt-2">Kelas</h1>
             <div class="bg-white rounded-lg shadow-md p-8 my-8">
 
             <!-- BACK BUTTON -->
@@ -18,37 +18,32 @@
                     </a>
                 </div>
 
-                <p class="text-xl pb-4 flex items-center">Input Nilai ke Santri</p>
+                <p class="text-xl pb-4 flex items-center border-b">Input Santri Pada MP Kelas</p>
+                <div class="flex object-left text-center text-white text-base py-8">
+                    <a href="{{ url('administrator/update-data-kelas') }}" class="button bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-3 px-8">Tambah Santri</a>
+                </div>
+
                 <div class="bg-white overflow-auto pb-8">
-                <table class="table-auto bg-white">
+                    <table class="table-auto bg-white">
                         <thead class="bg-gray-800 text-white">
                             <tr>
                                 <th class="text-left py-3 px-4 uppercase font-semibold text-sm">No</th>
-                                <th class="text-left w-1/5 py-3 px-4 uppercase font-semibold text-sm">NIS</th>
-                                <th class="text-left w-1/5 py-3 px-4 uppercase font-semibold text-sm">Nama Santri</th>
-                                <th class="text-left w-1/5 py-3 px-4 uppercase font-semibold text-sm">Nilai Hasil Belajar</th>
-                                <th class="text-left w-1/5 py-3 px-4 uppercase font-semibold text-sm">Input</th>
+                                <th class="text-left py-3 px-4 uppercase font-semibold text-sm">NIS</th>
+                                <th class="text-left w-1/4 py-3 px-4 uppercase font-semibold text-sm">Nama Santri</th>
+                                <th class="text-left w-1/4 py-3 px-4 uppercase font-semibold text-sm">Status</th>
                             </tr>
                         </thead>
                         <tbody class="text-gray-700">
-                            @foreach($santris as $santri)
+                            
                             <tr>
-                                <td class="text-left py-3 px-4">{{ $loop->iteration }}</td>
-                                <td class="text-left py-3 px-4">{{ $santri->id }}</td>
-                                <td class="text-left py-3 px-4">{{ $santri->name }}</td>
                                 <td class="text-left py-3 px-4"></td>
-                                <td class="py-3 px-4">
-                                    <a href="{{ url('administrator/update-data-nilai') }}" class="transform hover:text-purple-500 hover:scale-110">
-                                    <i class="fas fa-external-link-alt"></i></a>
-                                </td>
+                                <td class="text-left py-3 px-4"></td>
+                                <td class="text-left py-3 px-4"></td>
+                                <td class="text-left py-3 px-4"></td>
                             </tr>
-                            @endforeach
+                            
                         </tbody>
                     </table>
-
-                    <div class="flex flex-row-reverse object-left text-center text-white text-base pt-8 px-3">
-                        <button type="submit" class="bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-3 px-8">Simpan</button>
-                    </div>
 
                 </div>
             </div>

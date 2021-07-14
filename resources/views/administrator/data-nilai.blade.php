@@ -8,7 +8,7 @@
             <h1 class="text-3xl text-black pb-2 mt-2">Nilai</h1>
             <div class="bg-white rounded-lg shadow-md p-8 my-8">
                 <!-- OPTION -->
-                <!-- <form method="GET" action="{{ url('administrator/filter-santri') }}">
+                <form method="GET" action="{{ url('administrator/filter-santri') }}">
                     <div class="flex space-x-4 items-center pb-4">
                         <div class="flex-none w-36">
                             <a class="self-center">Kelas</a>
@@ -66,7 +66,7 @@
                             <button type="submit" class="bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-3 px-8">Lihat Kelas</button>
                         </div>
                     </div>
-                </form> -->
+                </form>
                 <p class="text-xl py-8 flex items-center">Input Nila MP ke Santri</p>
                 <div class="bg-white overflow-auto pb-8">
                     <table class="table-auto bg-white">
@@ -93,7 +93,7 @@
                                 <td class="text-left py-3 px-4">{{ $course->day }}, {{ $course->time_begin }} - {{ $course->time_end }}</td>
                                 <td class="text-left py-3 px-4">{{ $course->name }}</td>
                                 <td>
-                                    <a href="" class="button bg-blue-600 hover:bg-blue-800 hover:text-white text-white rounded shadow-md py-2 px-2">Tambah</a>
+                                    <a href="{{ url('administrator/tambah-data-nilai') }}" class="button bg-blue-600 hover:bg-blue-800 hover:text-white text-white rounded shadow-md py-2 px-2">Tambah</a>
                                 </td>
                             </tr>
                             @endforeach

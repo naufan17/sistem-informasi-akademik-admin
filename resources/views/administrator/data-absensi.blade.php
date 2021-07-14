@@ -68,11 +68,11 @@
                                 <td class="text-left py-3 px-4">{{ $loop->iteration }}</td>
                                 <td class="text-left py-3 px-4">{{ $santri->id }}</td>
                                 <td class="text-left py-3 px-4">{{ $santri->name }}</td>
-                                <td class="text-left py-3 px-4"></td>
-                                <td class="text-left py-3 px-4"></td>
-                                
-                                <td>
-                                    <a href="" class="button bg-blue-600 hover:bg-blue-800 hover:text-white text-white rounded shadow-md py-2 px-4">Tambah</a>
+                                <td class="text-left py-3 px-4">%</td>
+                                <td class="text-left py-3 px-4">%</td>
+                                <td class="py-3 px-4">
+                                    <a href="{{ url('administrator/tambah-data-absensi') }}" class="transform hover:text-purple-500 hover:scale-110">
+                                    <i class="fas fa-external-link-alt"></i></a>
                                 </td>
                             </tr>
                             @endforeach
