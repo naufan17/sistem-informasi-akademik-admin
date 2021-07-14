@@ -17,7 +17,7 @@ class DataAbsensiController extends Controller
      */
     public function index()
     {
-        $santris = User::where('role', 'santri')->get();
+        $santris = User::where('role', 'santri')->where('status', 'Aktif')->get();
 
         return view('administrator.data-absensi', compact('santris'));
     }

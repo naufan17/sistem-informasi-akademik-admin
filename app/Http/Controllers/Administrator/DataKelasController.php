@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Administrator;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Course;
+use App\Models\CumulativeStudy;
 use App\Models\Grade;
 use App\Models\Schedule;
 use App\Models\User;
@@ -25,5 +26,13 @@ class DataKelasController extends Controller
                         ->leftjoin('schedules', 'courses.id_schedule', '=', 'schedules.id_schedule')->get();
 
         return view('administrator.data-kelas', compact('grades', 'schedules', 'courses'));
+    }
+
+    public function listSantri($id)
+    {
+        $santris = CumulativeStudy::leftjoin('courses', 'cumulative_studies.id_course', '=', 'courses.id_course')
+                                ->leftjoin('users', 'cumulative_studies.id_santri', '=', 'users.id')->get();
+
+        return view('administrator.tambah-santri-kelas', compact('santris'));
     }
 }

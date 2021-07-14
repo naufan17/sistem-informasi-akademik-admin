@@ -63,8 +63,13 @@ Route::get('/administrator/data-santri/update-password', [DataSantriController::
 Route::get('/administrator/data-santri/delete/{id}', [DataSantriController::class, 'destroy'])->name('administrator.data-santri.delete');
 
 Route::get('/administrator/data-kelas', [DataKelasController::class, 'index'])->name('administrator.data-tingkat');
+Route::get('/administrator/data-kelas/list-santri/{id}', [DataKelasController::class, 'listSantri'])->name('administrator.data-tingkat.list-santri');
+
 Route::get('/administrator/data-nilai', [DataNilaiController::class, 'index'])->name('administrator.data-nilai');
+Route::get('/administrator/data-nilai/form-create/{id}', [DataNilaiController::class, 'formCreate'])->name('administrator.data-nilai.form-create');
+
 Route::get('/administrator/data-absensi', [DataAbsensiController::class, 'index'])->name('administrator.data-absensi');
+Route::get('/administrator/data-absensi/form-create/{id}', [DataAbsensiController::class, 'formCreate'])->name('administrator.data-absensi.form-create');
 
 Route::get('/administrator/data-jadwal', [DataJadwalController::class, 'index'])->name('administrator.data-jadwal');
 Route::get('/administrator/data-jadwal/form-create', [DataJadwalController::class, 'formCreate'])->name('administrator.data-jadwal.form-create');
