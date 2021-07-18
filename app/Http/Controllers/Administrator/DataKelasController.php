@@ -30,9 +30,11 @@ class DataKelasController extends Controller
 
     public function listSantri($id)
     {
+        $santriin = CumulativeStudy::where('id_course', $id)->leftjoin('users', 'cumulative_studies.id_santri', '=', 'users.id')->get();
+
         $santris = CumulativeStudy::leftjoin('courses', 'cumulative_studies.id_course', '=', 'courses.id_course')
                                 ->leftjoin('users', 'cumulative_studies.id_santri', '=', 'users.id')->get();
 
-        return view('administrator.tambah-santri-kelas', compact('santris'));
+        return view('administrator.tambah-santri-kelas', compact('santriin', 'santris'));
     }
 }

@@ -7,7 +7,6 @@
         <main class="pt-6 px-6">
             <h1 class="text-3xl text-black pb-2 mt-2">Absensi</h1>
             <div class="bg-white rounded-lg shadow-md p-8 my-8">
-
             <!-- BACK BUTTON -->
             <div class="p-4">
                     <a href="{{ url('administrator/data-absensi') }}" class="button flex items-center border border-teal-500 text-teal-500 block rounded-sm py-3 px-6 w-32 hover:bg-blue-700 hover:text-white">
@@ -17,19 +16,19 @@
                         Back
                     </a>
                 </div>
-
                 <p class="text-xl pb-4 flex items-center">Input Presentase Absensi ke Santri</p>
-                <div class="pb-8">
+                    @foreach($santris as $santri)
+                    <div class="pb-8">
                         <div class="pt-8">
                             <p class="self-center bg-gray-50 py-4 px-4">Absensi MDNU & Asrama</p>
                         </div>
                         <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4">
                             <p class="text-gray-600 ">NIS</p>
-                            <p class="border-b-2 px-3 pb-2">001</p>
+                            <p class="border-b-2 px-3 pb-2">{{ $santri->id }}</p>
                         </div>
                         <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4">
                             <p class="text-gray-600 ">Nama Lengkap</p>
-                            <p class="border-b-2 px-3 pb-2">si A</p>
+                            <p class="border-b-2 px-3 pb-2">{{ $santri->name }}</p>
                         </div>
 
                         <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 px-4 py-2 space-y-1">
@@ -44,12 +43,11 @@
                                 <input type="" name="=" placeholder="%" required class="pt-3 pb-2 px-3 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-200" />
                             </div>
                         </div>
-                        
                     </div>
                     <div class="flex flex-row-reverse object-left text-center text-white text-base pt-8 px-3">
                         <button type="submit" class="bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-3 px-8">Simpan</button>
                     </div>
-
+                    @endforeach 
                 </div>
             </div>
         </main>

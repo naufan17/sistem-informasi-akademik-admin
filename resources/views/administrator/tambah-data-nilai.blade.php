@@ -7,7 +7,6 @@
         <main class="pt-6 px-6">
             <h1 class="text-3xl text-black pb-2 mt-2">Nilai</h1>
             <div class="bg-white rounded-lg shadow-md p-8 my-8">
-
             <!-- BACK BUTTON -->
             <div class="p-4">
                     <a href="{{ url('administrator/data-nilai') }}" class="button flex items-center border border-teal-500 text-teal-500 block rounded-sm py-3 px-6 w-32 hover:bg-blue-700 hover:text-white">
@@ -17,7 +16,6 @@
                         Back
                     </a>
                 </div>
-
                 <p class="text-xl pb-4 flex items-center">Input Nilai ke Santri</p>
                 <div class="bg-white overflow-auto pb-8">
                 <table class="table-auto bg-white">
@@ -45,11 +43,9 @@
                             @endforeach
                         </tbody>
                     </table>
-
                     <div class="flex flex-row-reverse object-left text-center text-white text-base pt-8 px-3">
                         <button type="submit" class="bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-3 px-8">Simpan</button>
                     </div>
-
                 </div>
             </div>
         </main>

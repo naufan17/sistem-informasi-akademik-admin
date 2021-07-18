@@ -75,7 +75,7 @@
                             @foreach($courses as $course)
                             <tr>
                                 <td class="text-left py-3 px-4">{{ $loop->iteration }}</td>
-                                <td class="text-left py-3 px-4">{{ $course->id }}</td>
+                                <td class="text-left py-3 px-4">{{ $course->id_course }}</td>
                                 <td class="text-left py-3 px-4">{{ $course->course }}</td>
                                 <td class="text-left py-3 px-4">{{ $course->book }}</td>
                                 <td class="text-left py-3 px-4">{{ $course->grade_number }} {{ $course->grade_name }}</td>

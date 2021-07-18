@@ -71,7 +71,7 @@
                                 <td class="text-left py-3 px-4">%</td>
                                 <td class="text-left py-3 px-4">%</td>
                                 <td class="py-3 px-4">
-                                    <a href="{{ url('administrator/tambah-data-absensi') }}" class="transform hover:text-purple-500 hover:scale-110">
+                                    <a href="{{ url('administrator/data-absensi/form-create') }}/{{ $santri->id }}" class="transform hover:text-purple-500 hover:scale-110">
                                     <i class="fas fa-external-link-alt"></i></a>
                                 </td>
                             </tr>

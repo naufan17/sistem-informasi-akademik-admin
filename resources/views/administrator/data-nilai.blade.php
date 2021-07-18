@@ -86,14 +86,14 @@
                             @foreach($courses as $course)
                             <tr>
                                 <td class="text-left py-3 px-4">{{ $loop->iteration }}</td>
-                                <td class="text-left py-3 px-4">{{ $course->id }}</td>
+                                <td class="text-left py-3 px-4">{{ $course->id_course }}</td>
                                 <td class="text-left py-3 px-4">{{ $course->course }}</td>
                                 <td class="text-left py-3 px-4">{{ $course->book }}</td>
                                 <td class="text-left py-3 px-4">{{ $course->grade_number }} {{ $course->grade_name }}</td>
                                 <td class="text-left py-3 px-4">{{ $course->day }}, {{ $course->time_begin }} - {{ $course->time_end }}</td>
                                 <td class="text-left py-3 px-4">{{ $course->name }}</td>
                                 <td>
-                                    <a href="{{ url('administrator/tambah-data-nilai') }}" class="button bg-blue-600 hover:bg-blue-800 hover:text-white text-white rounded shadow-md py-2 px-2">Tambah</a>
+                                    <a href="{{ url('administrator/data-nilai/form-create') }}/{{ $course->id_course }}" class="button bg-blue-600 hover:bg-blue-800 hover:text-white text-white rounded shadow-md py-2 px-2">Tambah</a>
                                 </td>
                             </tr>
                             @endforeach

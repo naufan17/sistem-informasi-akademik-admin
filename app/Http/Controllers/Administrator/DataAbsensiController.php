@@ -22,4 +22,12 @@ class DataAbsensiController extends Controller
         return view('administrator.data-absensi', compact('santris'));
     }
 
+    public function formCreate($id)
+    {
+        $santris = User::where('id', $id)->get();
+
+        return view('administrator.tambah-data-absensi', compact('santris'));
+    }
+
+
 }

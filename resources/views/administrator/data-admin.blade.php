@@ -13,7 +13,6 @@
                         Tambah Admin
                     </a>
                 </div>
-
                 <div class="bg-white overflow-auto pb-8">
                     <table class="table-auto bg-white">
                         <thead class="bg-gray-800 text-white">
