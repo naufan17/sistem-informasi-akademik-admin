@@ -16,7 +16,7 @@
                         Back
                     </a>
                 </div>
-                <p class="text-xl pb-4 flex items-center">Input Nilai ke Santri</p>
+                <p class="text-xl pb-4 flex items-center">Input Nilai MP ke Santri</p>
                 <div class="bg-white overflow-auto pb-8">
                 <table class="table-auto bg-white">
                         <thead class="bg-gray-800 text-white">
