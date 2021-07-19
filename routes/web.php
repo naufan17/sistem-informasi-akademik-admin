@@ -43,6 +43,7 @@ Route::get('/administrator/data-mapel/form-create', [DataMapelController::class,
 Route::get('/administrator/data-mapel/create', [DataMapelController::class, 'create'])->name('administrator.data-mapel.create');
 Route::get('/administrator/data-mapel/form-update/{id}', [DataMapelController::class, 'formUpdate'])->name('administrator.data-mapel.form-update');
 Route::get('/administrator/data-mapel/update', [DataMapelController::class, 'update'])->name('administrator.data-mapel.update');
+Route::get('/administrator/data-mapel/delete/{id}', [DataMapelController::class, 'destroy'])->name('administrator.data-mapel.delete');
 
 Route::get('/administrator/filter-ustadz', [DataUstadzController::class, 'filter'])->name('administrator.filter-ustadz');
 Route::get('/administrator/data-ustadz', [DataUstadzController::class, 'index'])->name('administrator.data-ustadz');
