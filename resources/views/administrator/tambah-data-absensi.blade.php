@@ -17,30 +17,29 @@
                     </a>
                 </div>
                 <p class="text-xl pb-4 flex items-center">Input Presentase Absensi ke Santri</p>
-                    @foreach($santris as $santri)
+                    @foreach($attendances as $attendance)
                     <div class="pb-8">
                         <div class="pt-8">
                             <p class="self-center bg-gray-50 py-4 px-4">Absensi MDNU & Asrama</p>
                         </div>
                         <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4">
                             <p class="text-gray-600 ">NIS</p>
-                            <p class="border-b-2 px-3 pb-2">{{ $santri->id }}</p>
+                            <p class="border-b-2 px-3 pb-2">{{ $attendance->id_attendance }}</p>
                         </div>
                         <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4">
                             <p class="text-gray-600 ">Nama Lengkap</p>
-                            <p class="border-b-2 px-3 pb-2">{{ $santri->name }}</p>
+                            <p class="border-b-2 px-3 pb-2">{{ $attendance->name }}</p>
                         </div>
-
                         <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 px-4 py-2 space-y-1">
                             <p class="self-center text-gray-600">Presentase Absensi MDNU</p>
                             <div class="relative z-0 w-full mb-5">
-                                <input type="" name="" placeholder="%" required class="pt-3 pb-2 px-3 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-200" />
+                                <input type="" name="" placeholder="%" value="{{ $attendance->attendance_mdnu }}" equired class="pt-3 pb-2 px-3 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-200" />
                             </div>
                         </div>
                         <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 px-4 py-2 space-y-1">
                             <p class="self-center text-gray-600">Presentase Absensi Asrama</p>
                             <div class="relative z-0 w-full mb-5">
-                                <input type="" name="=" placeholder="%" required class="pt-3 pb-2 px-3 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-200" />
+                                <input type="" name="=" placeholder="%" value="{{ $attendance->attendance_asrama }}" required class="pt-3 pb-2 px-3 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-200" />
                             </div>
                         </div>
                     </div>

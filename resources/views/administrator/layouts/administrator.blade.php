@@ -43,7 +43,6 @@
                         <!--LOGO-->
                         <div class="object-left">
                             <img src="https://drive.google.com/file/d/1cmaYv3B2petkuK-dczI_UnpzHn9Bx1Qu/view?usp=sharing" class="w-24">
-
                         </div>
                         <!--NAME-->
                         <div class="text-center font-bold font-sans text-yellow-800 mt-2">
@@ -58,7 +57,6 @@
                     </div>
                 </div>
             </nav>
-
             <!-- MENU -->
             <div class="bg-gray-100 font-family-karla flex">
                 <aside class="relative bg-gray-100 h-screen w-64 hidden sm:block ">
@@ -66,13 +64,11 @@
                         <div class="text-gray-900">
                             <div class="pt-6 px-6 mb-8">
                                 <div class="text-center bg-white rounded-lg shadow-lg">
-
                                     <!--
                                     <div class="px-6 py-6">
                                         <img src="https://source.unsplash.com/random/350x350" alt="random image" class="object-center rounded-full">
                                     </div>
                                 -->
-
                                     <h4 class="py-6 text-l font-semibold leading-tight truncate">Hai {{ Auth::guard('administrator')->user()->name }}</h4>
                                 </div>
                             </div>
@@ -82,7 +78,6 @@
                                 Data Admin
                             </a>
                         </div>
-
                         <!--
                         <div class="group border-indigo-500 hover:bg-blue-600 hover:shadow-lg hover:border-transparent">
                             <a href="{{ url('administrator/data-mapel') }}" class="text-gray-800 group-hover:text-white flex items-center py-3 pl-8">
@@ -90,7 +85,6 @@
                             </a>
                         </div>
                         -->
-
                         <div @click.away="open = false" class="group border-indigo-500 hover:bg-blue-600 hover:shadow-lg hover:border-transparent" x-data="{ open: false }">
                             <button @click="open = !open" class="flex flex-row text-gray-800 group-hover:text-white flex items-center py-3 pl-8">
                                 <span class="w-full text-left font-bold">List Data</span>

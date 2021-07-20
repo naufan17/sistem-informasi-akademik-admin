@@ -5,8 +5,7 @@ namespace App\Http\Controllers\Administrator;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\User;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Validator;
+use App\Models\Attendance;
 
 class DataAbsensiController extends Controller
 {
@@ -17,16 +16,16 @@ class DataAbsensiController extends Controller
      */
     public function index()
     {
-        $santris = User::where('role', 'santri')->where('status', 'Aktif')->get();
+        $attendances = Attendance::leftjoin('users', 'attendances.id_santri', '=', 'users.id')->get();
 
-        return view('administrator.data-absensi', compact('santris'));
+        return view('administrator.data-absensi', compact('attendances'));
     }
 
     public function formCreate($id)
     {
-        $santris = User::where('id', $id)->get();
+        $attendances = Attendance::leftjoin('users', 'attendances.id_santri', '=', 'users.id')->where('id', $id)->get();
 
-        return view('administrator.tambah-data-absensi', compact('santris'));
+        return view('administrator.tambah-data-absensi', compact('attendances'));
     }
 
 

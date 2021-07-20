@@ -82,15 +82,15 @@
                             </tr>
                         </thead>
                         <tbody class="text-gray-700">
-                            @foreach($santris as $santri)
+                            @foreach($attendances as $attendance)
                             <tr>
                                 <td class="text-left py-3 px-4">{{ $loop->iteration }}</td>
-                                <td class="text-left py-3 px-4">{{ $santri->id }}</td>
-                                <td class="text-left py-3 px-4">{{ $santri->name }}</td>
-                                <td class="text-left py-3 px-4">%</td>
-                                <td class="text-left py-3 px-4">%</td>
+                                <td class="text-left py-3 px-4">{{ $attendance->id_attendance }}</td>
+                                <td class="text-left py-3 px-4">{{ $attendance->name }}</td>
+                                <td class="text-left py-3 px-4">{{ $attendance->attendance_mdnu }} %</td>
+                                <td class="text-left py-3 px-4">{{ $attendance->attendance_asrama }} %</td>
                                 <td class="py-3 px-4">
-                                    <a href="{{ url('administrator/data-absensi/form-create') }}/{{ $santri->id }}" class="transform hover:text-purple-500 hover:scale-110">
+                                    <a href="{{ url('administrator/data-absensi/form-create') }}/{{ $attendance->id_attendance }}" class="transform hover:text-purple-500 hover:scale-110">
                                     <i class="fas fa-external-link-alt"></i></a>
                                 </td>
                             </tr>
