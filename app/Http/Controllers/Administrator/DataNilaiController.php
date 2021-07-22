@@ -34,5 +34,13 @@ class DataNilaiController extends Controller
 
         return view('administrator.tambah-nilai-santri', compact('santris'));
     }
+    
+    public function create(Request $request)
+    {
+        CumulativeStudy::update([
+            'score' => $request['score'],
+        ]);
 
+        return redirect('/administrator/data-nilai');
+    }
 }

@@ -53,7 +53,6 @@ class DataMapelController extends Controller
             'id' => $request->id,
             'course' => $request->course,
             'book' => $request->book,
-            'semester' => $request->semester,
             'id_grade' => $request->id_grade,
             'id_schedule' => $request->id_schedule,
             'id_ustadz' => $request->id_ustadz
@@ -77,11 +76,10 @@ class DataMapelController extends Controller
 
     public function update(Request $request)
     {
-        Course::where('id_course', $request->id_course)->create([
+        Course::where('id_course', $request->id_course)->update([
             'id_course' => $request->id_course,
             'course' => $request->course,
             'book' => $request->book,
-            'semester' => $request->semester,
             'id_grade' => $request->id_grade,
             'id_schedule' => $request->id_schedule,
             'id_ustadz' => $request->id_ustadz

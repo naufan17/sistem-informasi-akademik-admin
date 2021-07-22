@@ -38,30 +38,31 @@
                     </table>
                 </div>
                 <p class="text-xl py-8 flex items-center">Input Santri ke Kelas</p>
-                <div class="bg-white overflow-auto pb-8">
-                    <table class="table-auto bg-white">
-                        <thead class="bg-gray-800 text-white">
-                            <tr>
-                                <th class="text-left py-3 px-4 uppercase font-semibold text-sm">No</th>
-                                <th class="text-left w-1/3 py-3 px-4 uppercase font-semibold text-sm">NIS</th>
-                                <th class="text-left w-1/3 py-3 px-4 uppercase font-semibold text-sm">Nama</th>
-                                <th class="text-left w-1/3 py-3 px-4 uppercase font-semibold text-sm">Aksi</td>
-                            </tr>
-                        </thead>
-                        <tbody class="text-gray-700">
-                            @foreach($santris as $santri)
-                            <tr>
-                                <td class="text-left py-3 px-4">{{ $loop->iteration }}</td>
-                                <td class="text-left py-3 px-4">{{ $santri->id }}</td>
-                                <td class="text-left py-3 px-4">{{ $santri->name }}</td>
-                                <td>
-                                    <a href="" class="button bg-blue-600 hover:bg-blue-800 hover:text-white text-white rounded shadow-md py-2 px-2">Tambah</a>
-                                </td>
-                            </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
-                </div>
+                @foreach($santris as $santri)
+                <form method="GET" action="{{ url('administrator/data-santri/update-profile') }}">
+                    <div class="pb-8">
+                        <div class="pt-8">
+                            <p class="self-center bg-gray-50 py-4 px-4">Update Profile</p>
+                        </div>
+                        <input id="id" type="hidden" name="id" placeholder="" value="{{ $santri->id}}" required autocomplete="role" required class="pt-3 pb-2 px-3 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-200" />
+                        <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 px-4 py-2 space-y-1">
+                            <p class="self-center text-gray-600">Nama</p>
+                            <div class="relative z-0 w-full mb-5">
+                                <input type="text" name="name" placeholder="" value="{{ $santri->name }}" required autocomplete="name" required class="pt-3 pb-2 px-3 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-200" />
+                            </div>
+                        </div>
+                        <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 px-4 py-2 space-y-1">
+                            <p class="self-center text-gray-600">Name Mata Pelajaran</p>
+                            <div class="relative z-0 w-full mb-5">
+                                <input type="text" name="name" placeholder="" value="{{ $santri->course_name }}" required autocomplete="name" required class="pt-3 pb-2 px-3 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-200" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-row-reverse object-left text-center text-white text-base pt-8 px-3">
+                        <button type="submit" class="bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-3 px-8">Tambah</button>
+                    </div>
+                </form>
+                @endforeach
             </div>
         </main>
     </div>

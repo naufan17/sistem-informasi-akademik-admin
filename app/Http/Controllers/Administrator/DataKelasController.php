@@ -30,11 +30,24 @@ class DataKelasController extends Controller
 
     public function listSantri($id)
     {
-        $santriin = CumulativeStudy::where('id_course', $id)->leftjoin('users', 'cumulative_studies.id_santri', '=', 'users.id')->get();
+        $santriin = CumulativeStudy::where('id_course', $id)
+                                    ->leftjoin('users', 'cumulative_studies.id_santri', '=', 'users.id')->get();
 
-        $santris = CumulativeStudy::leftjoin('courses', 'cumulative_studies.id_course', '=', 'courses.id_course')
-                                ->leftjoin('users', 'cumulative_studies.id_santri', '=', 'users.id')->get();
+        $santris = User::where('role', 'santri')->where('status', 'Aktif')->get();
 
         return view('administrator.tambah-santri-kelas', compact('santriin', 'santris'));
+    }
+
+    public function createSantri($id)
+    {
+        CumulativeStudy::create([
+            'id' => $request['id'],
+            'name' => $request['name'],
+            'email' => $request['email'],
+            'password' => Hash::make($request['password']),
+            'role' => $request['role'],
+        ]);
+
+        return redirect('/administrator/data-kelas');
     }
 }

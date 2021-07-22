@@ -7,7 +7,6 @@
         <main class="pt-6 px-6">
             <h1 class="text-3xl text-black pb-2 mt-2">Kelas</h1>
             <div class="bg-white rounded-lg shadow-md p-8 my-8">
-
                 <!-- BACK BUTTON -->
                 <div class="p-4">
                     <a href="{{ url('administrator/tambah-data-kelas') }}" class="button flex items-center border border-teal-500 text-teal-500 block rounded-sm py-3 px-6 w-32 hover:bg-blue-700 hover:text-white">
@@ -17,9 +16,7 @@
                         Back
                     </a>
                 </div>
-
                 <p class="text-xl py-8 flex items-center">Input Santri Pada MP Kelas</p>
-
                 <div class="bg-white overflow-auto pb-8">
                     <table class="table-auto bg-white">
                         <thead class="bg-gray-800 text-white">
@@ -32,7 +29,6 @@
                             </tr>
                         </thead>
                         <tbody class="text-gray-700">
-
                             <tr>
                                 <td class="text-left py-3 px-4">1</td>
                                 <td class="text-left py-3 px-4">001</td>
@@ -51,10 +47,8 @@
                                     <a href="" class="button bg-blue-600 hover:bg-blue-800 hover:text-white text-white rounded shadow-md py-2 px-4">Tambah</a>
                                 </td>
                             </tr>
-
                         </tbody>
                     </table>
-
                     <div class="flex flex-row-reverse object-left text-center text-white text-base pt-8 px-3">
                         <button type="submit" class="bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-3 px-8">Simpan</button>
                     </div>
