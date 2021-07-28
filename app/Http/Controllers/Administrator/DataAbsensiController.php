@@ -31,18 +31,17 @@ class DataAbsensiController extends Controller
 
     public function create(Request $request)
     {
-        $request->validate([
-            'day' => 'required', 'string','max:255',
-            'time_begin' => 'required', 'string','max:255',
-            'time_end' => 'required', 'string','max:255',
+        // $request->validate([
+        //     'day' => 'required', 'string','max:255',
+        //     'time_begin' => 'required', 'string','max:255',
+        //     'time_end' => 'required', 'string','max:255',
+        // ]);
+
+        Attendance::where('id_attendance', $request->id_attendance)->create([
+            'attendance_mdnu' => $request['attendance_mdnu'],
+            'attendance_asrama' => $request['attendance_asrama'],
         ]);
 
-        Schedule::create([
-            'day' => $request['day'],
-            'time_begin' => $request['time_begin'],
-            'time_end' => $request['time_end'],
-        ]);
-
-        return redirect('/administrator/data-jadwal');
+        return redirect('/administrator/data-absensi');
     }
 }

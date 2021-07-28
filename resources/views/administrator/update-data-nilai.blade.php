@@ -7,7 +7,6 @@
         <main class="pt-6 px-6">
             <h1 class="text-3xl text-black pb-2 mt-2">Nilai</h1>
             <div class="bg-white rounded-lg shadow-md p-8 my-8">
-
             <!-- BACK BUTTON -->
             <div class="p-4">
                     <a href="{{ url('administrator/tambah-data-nilai') }}" class="button flex items-center border border-teal-500 text-teal-500 block rounded-sm py-3 px-6 w-32 hover:bg-blue-700 hover:text-white">
@@ -17,7 +16,6 @@
                         Back
                     </a>
                 </div>
-
                 <p class="text-xl pb-4 flex items-center">Input Nilai ke Santri</p>
                 <div class="bg-white overflow-auto pb-8">
                     <table class="table-auto bg-white">
@@ -27,19 +25,17 @@
                                 <th class="text-left w-1/4 py-3 px-4 uppercase font-semibold text-sm">NIS</th>
                                 <th class="text-left w-1/4 py-3 px-4 uppercase font-semibold text-sm">Nama Santri</th>
                                 <th class="text-left w-1/4 py-3 px-4 uppercase font-semibold text-sm">KKM</th>
-                                <th class="text-left w-1/4 py-3 px-4 uppercase font-semibold text-sm">Nilai Hasil Belajar (1-100)</th>
-                               
+                                <th class="text-left w-1/4 py-3 px-4 uppercase font-semibold text-sm">Nilai Hasil Belajar (1-100)</th>         
                             </tr>
                         </thead>
                         <tbody class="text-gray-700">
-                            
                             <tr>
                                 <td class="text-left py-3 px-4">1</td>
                                 <td class="text-left py-3 px-4">001</td>
                                 <td class="text-left py-3 px-4">si A</td>
                                 <td class="text-left py-3 px-4">60</td>
                                 <td class="text-left py-3 px-4">
-                                <input type="" name="" placeholder="masukkan nilai" class="py-2 px-3 block w-full bg-transparent border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-400" />
+                                    <input type="number" name="" placeholder="masukkan nilai" class="py-2 px-3 block w-full bg-transparent border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-400" />
                                 </td>
                             </tr>
                             <tr>
@@ -48,17 +44,14 @@
                                 <td class="text-left py-3 px-4">si B</td>
                                 <td class="text-left py-3 px-4">60</td>
                                 <td class="text-left py-3 px-4">
-                                <input type="" name="" placeholder="masukkan nilai" class="py-2 px-3 block w-full bg-transparent border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-400" />
+                                    <input type="number" name="" placeholder="masukkan nilai" class="py-2 px-3 block w-full bg-transparent border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-400" />
                                 </td>
                             </tr>
-                            
                         </tbody>
                     </table>
-
                     <div class="flex flex-row-reverse object-left text-center text-white text-base pt-8 px-3">
                         <button type="submit" class="bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-3 px-8">Simpan</button>
                     </div>
-
                 </div>
             </div>
         </main>

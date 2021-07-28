@@ -41,6 +41,6 @@ class DataNilaiController extends Controller
             'score' => $request['score'],
         ]);
 
-        return redirect('/administrator/data-nilai');
+        return redirect('/administrator/data-nilaixxx');
     }
 }
