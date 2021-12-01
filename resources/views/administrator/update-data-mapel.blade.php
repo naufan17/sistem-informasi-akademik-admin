@@ -48,7 +48,7 @@
                                 <select type="number" name="id_grade" value="{{ $course->id_grade }}" onclick="this.setAttribute('value', this.value);" class="pt-3 pb-2 px-3 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none z-1 focus:outline-none focus:ring-0 focus:border-black border-gray-200">
                                     <option selected value="{{ $course->id_grade }}">{{ $course->grade_number }} {{ $course->grade_name }}</option>
                                     @foreach($grades as $grade)
-                                    <option value="{{ $grade->id_grade }}">{{ $grade->number }} {{ $grade->name }}</option>
+                                    <option value="{{ $grade->id_grade }}">{{ $grade->grade_number }} {{ $grade->grade_name }}</option>
                                     @endforeach
                                 </select>
                             </div>
