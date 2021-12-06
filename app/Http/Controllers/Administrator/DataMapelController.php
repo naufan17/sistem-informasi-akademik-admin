@@ -18,24 +18,20 @@ class DataMapelController extends Controller
      */
     public function index()
     {
-        $grades = Grade::all();
-        $schedules = Schedule::all();
         $courses = Course::leftjoin('users', 'courses.id_ustadz', '=', 'users.id')
                         ->leftjoin('grades', 'courses.id_grade', '=', 'grades.id_grade')
                         ->leftjoin('schedules', 'courses.id_schedule', '=', 'schedules.id_schedule')->get();
 
-        return view('administrator.data-mapel', compact('grades', 'schedules', 'courses'));
+        return view('administrator.data-mapel', compact('courses'));
     }
 
-    public function filter(Request $request)
+    public function filterSemester(Request $request)
     {
-        $grades = Grade::all();
-        $schedules = Schedule::all();
         $courses = Course::leftjoin('users', 'courses.id_ustadz', '=', 'users.id')
                         ->leftjoin('grades', 'courses.id_grade', '=', 'grades.id_grade')
-                        ->leftjoin('schedules', 'courses.id_schedule', '=', 'schedules.id_schedule')->where('day', $request->day)->get();
+                        ->leftjoin('schedules', 'courses.id_schedule', '=', 'schedules.id_schedule')->where('semester', $request->semester)->get();
 
-        return view('administrator.data-mapel', compact('grades', 'schedules', 'courses'));
+        return view('administrator.data-mapel', compact('courses'));
     }
 
     public function formCreate()
@@ -53,6 +49,7 @@ class DataMapelController extends Controller
             'id' => $request->id,
             'course' => $request->course,
             'book' => $request->book,
+            'semester' => $request->semester,
             'id_grade' => $request->id_grade,
             'id_schedule' => $request->id_schedule,
             'id_ustadz' => $request->id_ustadz
@@ -80,6 +77,7 @@ class DataMapelController extends Controller
             'id_course' => $request->id_course,
             'course' => $request->course,
             'book' => $request->book,
+            'semester' => $request->semester,
             'id_grade' => $request->id_grade,
             'id_schedule' => $request->id_schedule,
             'id_ustadz' => $request->id_ustadz

@@ -20,6 +20,13 @@ class DataTingkatController extends Controller
         return view('administrator.data-tingkat', compact('grades'));
     }
 
+    public function filterNamaTingkat(Request $request)
+    {
+        $grades = Grade::where('grade_name', $request->grade_name)->get();
+
+        return view('administrator.data-tingkat', compact('grades'));
+    }
+
     public function formCreate()
     {
         return view('administrator.tambah-data-tingkat');

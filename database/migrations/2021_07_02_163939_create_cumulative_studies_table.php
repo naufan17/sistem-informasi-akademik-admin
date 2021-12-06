@@ -15,8 +15,6 @@ class CreateCumulativeStudiesTable extends Migration
     {
         Schema::create('cumulative_studies', function (Blueprint $table) {
             $table->id('id_cumulative_study');
-            $table->string('year');
-            $table->enum('semester', ['Ganjil', 'Genap']);
             $table->float('minimum_score')->nullable();
             $table->float('score')->nullable();
             $table->unsignedBigInteger('id_santri');

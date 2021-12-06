@@ -20,6 +20,13 @@ class DataJadwalController extends Controller
         return view('administrator.data-jadwal', compact('schedules'));
     }
 
+    public function filterHari(Request $request)
+    {
+        $schedules = Schedule::where('day', $request->day)->get();
+
+        return view('administrator.data-jadwal', compact('schedules'));
+    }
+
     public function formCreate()
     {
         return view('administrator.tambah-data-jadwal');
