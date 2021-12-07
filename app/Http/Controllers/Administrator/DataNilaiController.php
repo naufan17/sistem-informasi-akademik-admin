@@ -32,15 +32,16 @@ class DataNilaiController extends Controller
     {
         $santris = CumulativeStudy::where('id_course', $id)->leftjoin('users', 'cumulative_studies.id_santri', '=', 'users.id')->get();
 
-        return view('administrator.tambah-nilai-santri', compact('santris'));
+        return view('administrator.tambah-data-nilai', compact('santris'));
     }
     
     public function create(Request $request)
     {
-        CumulativeStudy::update([
-            'score' => $request['score'],
+        CumulativeStudy::where('id_cumulative_study', $request->id_cumulative_study)->update([
+            'minimum_score' => '75',
+            'score' => $request->score,
         ]);
 
-        return redirect('/administrator/data-nilaixxx');
+        return redirect('/administrator/data-nilai');
     }
 }

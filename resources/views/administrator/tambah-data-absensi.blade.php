@@ -18,29 +18,30 @@
                 </div>
                 <p class="text-xl pb-4 flex items-center">Input Presentase Absensi ke Santri</p>
                 <form method="GET" action="{{ url('administrator/data-absensi/create') }}">
-                    @foreach($attendances as $attendance)
+                    @foreach($santris as $santri)
                     <div class="pb-8">
                         <div class="pt-8">
                             <p class="self-center bg-gray-50 py-4 px-4">Absensi MDNU & Asrama</p>
                         </div>
+                        <input type="hidden" name="id_santri" placeholder="" value="{{ $santri->id }}" required class="pt-3 pb-2 px-3 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-200" />
                         <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4">
                             <p class="text-gray-600 ">NIS</p>
-                            <p class="border-b-2 px-3 pb-2">{{ $attendance->id}}</p>
+                            <p class="border-b-2 px-3 pb-2">{{ $santri->id}}</p>
                         </div>
                         <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4">
                             <p class="text-gray-600 ">Nama Lengkap</p>
-                            <p class="border-b-2 px-3 pb-2">{{ $attendance->name }}</p>
+                            <p class="border-b-2 px-3 pb-2">{{ $santri->name }}</p>
                         </div>
                         <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 px-4 py-2 space-y-1">
                             <p class="self-center text-gray-600">Presentase Absensi MDNU</p>
                             <div class="relative z-0 w-full mb-5">
-                                <input type="number" name="attendance_mdnu" placeholder="%" value="{{ $attendance->attendance_mdnu }}" required class="pt-3 pb-2 px-3 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-200" />
+                                <input type="number" name="attendance_mdnu" placeholder="%" value="{{ $santri->attendance_mdnu }}" required class="pt-3 pb-2 px-3 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-200" />
                             </div>
                         </div>
                         <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 px-4 py-2 space-y-1">
                             <p class="self-center text-gray-600">Presentase Absensi Asrama</p>
                             <div class="relative z-0 w-full mb-5">
-                                <input type="number" name="attendance_asrama" placeholder="%" value="{{ $attendance->attendance_asrama }}" required class="pt-3 pb-2 px-3 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-200" />
+                                <input type="number" name="attendance_asrama" placeholder="%" value="{{ $santri->attendance_asrama }}" required class="pt-3 pb-2 px-3 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-200" />
                             </div>
                         </div>
                     </div>

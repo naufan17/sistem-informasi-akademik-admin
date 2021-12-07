@@ -16,17 +16,16 @@ class DataAbsensiController extends Controller
      */
     public function index()
     {
-        $attendances = User::leftjoin('attendances', 'users.id', '=', 'attendances.id_santri')->where('role', 'Santri')->get();
+        $santris = User::leftjoin('attendances', 'users.id', '=', 'attendances.id_santri')->where('role', 'Santri')->get();
 
-        return view('administrator.data-absensi', compact('attendances'));
+        return view('administrator.data-absensi', compact('santris'));
     }
 
     public function formCreate($id)
     {
-        $attendances = User::leftjoin('attendances', 'users.id', '=', 'attendances.id_santri')->where('role', 'Santri')->where('id', $id)->get();
-        // $attendances = Attendance::leftjoin('users', 'attendances.id_santri', '=', 'users.id')->where('id', $id)->get();
+        $santris = User::leftjoin('attendances', 'users.id', '=', 'attendances.id_santri')->where('id', $id)->get();
 
-        return view('administrator.tambah-data-absensi', compact('attendances'));
+        return view('administrator.tambah-data-absensi', compact('santris'));
     }
 
     public function create(Request $request)
@@ -37,9 +36,12 @@ class DataAbsensiController extends Controller
         //     'time_end' => 'required', 'string','max:255',
         // ]);
 
-        Attendance::where('id_attendance', $request->id_attendance)->create([
+        Attendance::create([
+            'minimum_attendance_mdnu' => '80',
             'attendance_mdnu' => $request['attendance_mdnu'],
+            'minimum_attendance_asrama' => '80',
             'attendance_asrama' => $request['attendance_asrama'],
+            'id_santri' => $request['id_santri'],
         ]);
 
         return redirect('/administrator/data-absensi');
