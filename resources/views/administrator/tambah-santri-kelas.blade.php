@@ -16,7 +16,7 @@
                         Back
                     </a>
                 </div>
-                <div class="p-4">
+                <!-- <div class="p-4">
                     <h2 class="text-2xl ">Mata Pelajaran</h2>
                 </div>
                 @foreach($courses as $course)
@@ -53,7 +53,7 @@
                         <p>{{ $course->name }}</p>
                     </div>
                 </div>
-                @endforeach
+                @endforeach -->
                 <p class="text-xl py-8 flex items-center">Daftar Peserta Kelas</p>
                 <div class="bg-white overflow-auto pb-8">
                     <table class="table-auto bg-white">

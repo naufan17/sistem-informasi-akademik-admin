@@ -16,8 +16,6 @@ class CumulativeStudy extends Model
      * @var array
      */
     protected $fillable = [
-        'year',
-        'semester',
         'minimum_score',
         'score',
         'id_santri',

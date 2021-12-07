@@ -45,14 +45,24 @@ class DataMapelController extends Controller
 
     public function create(Request $request)
     {
+        $request->validate([
+            'id' => 'required', 'number',
+            'course' => 'required', 'string','max:255',
+            'book' => 'required', 'string','max:255',
+            'semester' => 'required', 'number',
+            'id_grade' => 'required', 'number',
+            'id_schedule' => 'required', 'number',
+            'id_ustadz' => 'required', 'number',
+        ]);
+
         Course::create([
-            'id' => $request->id,
-            'course' => $request->course,
-            'book' => $request->book,
-            'semester' => $request->semester,
-            'id_grade' => $request->id_grade,
-            'id_schedule' => $request->id_schedule,
-            'id_ustadz' => $request->id_ustadz
+            'id' => $request['id'],
+            'course' => $request['course'],
+            'book' => $request['book'],
+            'semester' => $request['semester'],
+            'id_grade' => $request['id_grade'],
+            'id_schedule' => $request['id_schedule'],
+            'id_ustadz' => $request['id_ustadz'],
         ]);
 
         return redirect('administrator/data-mapel');
@@ -80,7 +90,7 @@ class DataMapelController extends Controller
             'semester' => $request->semester,
             'id_grade' => $request->id_grade,
             'id_schedule' => $request->id_schedule,
-            'id_ustadz' => $request->id_ustadz
+            'id_ustadz' => $request->id_ustadz,
         ]);
 
         return redirect('/administrator/data-mapel');

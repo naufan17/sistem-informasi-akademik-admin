@@ -50,6 +50,37 @@
                             </div>
                         </div>
                     </div>
+                    <!-- <div class="pb-8">
+                        <div class="pt-8">
+                            <p class="self-center bg-gray-50 py-4 px-4">Jadwal Kelas</p>
+                        </div>
+                        <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 px-4 py-2 space-y-1">
+                            <p class="self-center text-gray-600">Tingkat</p>
+                            <div class="relative z-0 w-full mb-5">
+                                <select type="text" name="day" value=""  class="block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker py-3 px-4 pr-8 rounded" id="grid-state">
+                                    <option value="Senin">Senin</option>
+                                    <option value="Selasa">Selasa</option>
+                                    <option value="Rabu">Rabu</option>
+                                    <option value="Kamis">Kamis</option>
+                                    <option value="Jumat">Jumat</option>
+                                    <option value="Sabtu">Sabtu</option>
+                                    <option value="Minggu">Minggu</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 px-4 py-2 space-y-1">
+                            <p class="self-center text-gray-600">Waktu Mulai</p>
+                            <div class="relative z-0 w-full mb-5">
+                                <input type="text" name="time_begin" placeholder="" required autocomplete="time_begin" required class="pt-3 pb-2 px-3 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-200" />
+                            </div>
+                        </div>
+                        <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 px-4 py-2 space-y-1">
+                            <p class="self-center text-gray-600">Waktu Selesai</p>
+                            <div class="relative z-0 w-full mb-5">
+                                <input type="text" name="time_end" placeholder="" required autocomplete="time_end" required class="pt-3 pb-2 px-3 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-200" />
+                            </div>
+                        </div>
+                    </div> -->
                     <div class="flex flex-row-reverse object-left text-center text-white text-base pt-8 px-3">
                         <button type="submit" class="bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-3 px-8">Tambah</button>
                     </div>
