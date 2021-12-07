@@ -42,13 +42,11 @@
                             <tr>
                                 <th class="text-left py-3 px-4 uppercase font-semibold text-sm">No</th>
                                 <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Kode MP</th>
-                                <th class="text-left w-1/6 py-3 px-4 uppercase font-semibold text-sm">Mata pelajaran</th>
-                                <th class="text-left w-1/6 py-3 px-4 uppercase font-semibold text-sm">Kitab</th>
+                                <th class="text-left w-1/4 py-3 px-4 uppercase font-semibold text-sm">Mata pelajaran</th>
+                                <th class="text-left w-1/4 py-3 px-4 uppercase font-semibold text-sm">Kitab</th>
                                 <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Semester</th>
-                                <th class="text-left w-1/6 py-3 px-4 uppercase font-semibold text-sm">Kelas</th>
-                                <th class="text-left w-1/6 py-3 px-4 uppercase font-semibold text-sm">Jadwal</th>
-                                <th class="text-left w-1/6 py-3 px-4 uppercase font-semibold text-sm">Nama Ustadz</th>
-                                <th class="text-left w-1/6 py-3 px-4 uppercase font-semibold text-sm">Santri</th>
+                                <th class="text-left w-1/4 py-3 px-4 uppercase font-semibold text-sm">Kelas</th>
+                                <th class="text-left w-1/4 py-3 px-4 uppercase font-semibold text-sm">Santri</th>
                             </tr>
                         </thead>
                         <tbody class="text-gray-700">
@@ -60,8 +58,6 @@
                                 <td class="text-left py-3 px-4">{{ $course->book }}</td>
                                 <td class="text-left py-3 px-4">{{ $course->semester }}</td>
                                 <td class="text-left py-3 px-4">{{ $course->grade_number }} {{ $course->grade_name }}</td>
-                                <td class="text-left py-3 px-4">{{ $course->day }}, {{ $course->time_begin }} - {{ $course->time_end }}</td>
-                                <td class="text-left py-3 px-4">{{ $course->name }}</td>
                                 <td>
                                     <a href="{{ url('administrator/data-kelas/list-santri') }}/{{ $course->id_course }}" class="button bg-blue-600 hover:bg-blue-800 hover:text-white text-white rounded shadow-md py-2 px-2">Tambah</a>
                                 </td>

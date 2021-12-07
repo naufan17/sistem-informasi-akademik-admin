@@ -23,10 +23,9 @@
                         <div class="pt-8">
                             <p class="self-center bg-gray-50 py-4 px-4">Absensi MDNU & Asrama</p>
                         </div>
-                        <input type="hidden" name="id_attendance" value="{{ $attendance->id_attendance }}" required class="pt-3 pb-2 px-3 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-200" />
                         <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4">
                             <p class="text-gray-600 ">NIS</p>
-                            <p class="border-b-2 px-3 pb-2">{{ $attendance->id_attendance }}</p>
+                            <p class="border-b-2 px-3 pb-2">{{ $attendance->id}}</p>
                         </div>
                         <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4">
                             <p class="text-gray-600 ">Nama Lengkap</p>

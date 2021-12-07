@@ -50,7 +50,7 @@
                         </div>
                     </div>
                     <div class="flex flex-row-reverse object-left text-center text-white text-base pt-8 px-3">
-                        <button type="submit" class="bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-3 px-8">Register</button>
+                        <button type="submit" class="bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-3 px-8">Tambah</button>
                     </div>
                 </form>
             </div>
