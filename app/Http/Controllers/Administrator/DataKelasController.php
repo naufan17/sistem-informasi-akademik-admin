@@ -37,7 +37,6 @@ class DataKelasController extends Controller
 
     public function listSantriIn($id)
     {
-        $ustadzs = User::where('role', 'ustadz')->get();
         $courses = Course::where('id_course', $id)
                         ->leftjoin('users', 'courses.id_ustadz', '=', 'users.id')
                         ->leftjoin('grades', 'courses.id_grade', '=', 'grades.id_grade')
@@ -48,19 +47,16 @@ class DataKelasController extends Controller
 
         $santris = User::where('role', 'santri')->where('status', 'Aktif')->get();
 
-        return view('administrator.tambah-santri-kelas', compact('santriin', 'santris', 'ustadzs', 'courses'));
+        return view('administrator.tambah-santri-kelas', compact('santriin', 'santris', 'courses'));
     }
 
-    public function createSantri($id)
+    public function create(Request $request)
     {
         CumulativeStudy::create([
-            'id' => $request['id'],
-            'name' => $request['name'],
-            'email' => $request['email'],
-            'password' => Hash::make($request['password']),
-            'role' => $request['role'],
+            'id_santri' => $request['id_santri'],
+            'id_course' => $request['id_course'],
         ]);
 
-        return redirect('/administrator/data-kelas');
+        return redirect()->route('administrator.data-kelas.list-santri', ['id_course' => $request->id_course]);
     }
 }

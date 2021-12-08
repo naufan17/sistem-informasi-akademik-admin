@@ -30,19 +30,36 @@ class DataAbsensiController extends Controller
 
     public function create(Request $request)
     {
-        // $request->validate([
-        //     'day' => 'required', 'string','max:255',
-        //     'time_begin' => 'required', 'string','max:255',
-        //     'time_end' => 'required', 'string','max:255',
-        // ]);
-
-        Attendance::create([
-            'minimum_attendance_mdnu' => '80',
-            'attendance_mdnu' => $request['attendance_mdnu'],
-            'minimum_attendance_asrama' => '80',
-            'attendance_asrama' => $request['attendance_asrama'],
-            'id_santri' => $request['id_santri'],
+        $request->validate([
+            'attendance_mdnu' => 'required', 'number',
+            'attendance_asrama' => 'required', 'number',
         ]);
+
+        $Attendance = Attendance::where('id_santri', $request->id_santri)->get();
+
+        if($Attendance !== null){
+            Attendance::where('id_santri', $request->id_santri)->update([
+                'attendance_mdnu' => $request->attendance_mdnu,
+                'attendance_asrama' => $request->attendance_asrama,
+            ]);
+        }else{
+            Attendance::create([
+                'minimum_attendance_mdnu' => '80',
+                'attendance_mdnu' => $request['attendance_mdnu'],
+                'minimum_attendance_asrama' => '80',
+                'attendance_asrama' => $request['attendance_asrama'],
+                'id_santri' => $request['id_santri'],
+            ]);            
+        }
+
+
+        // Attendance::updateOrCreate([
+        //     'minimum_attendance_mdnu' => '80',
+        //     'attendance_mdnu' => $request['attendance_mdnu'],
+        //     'minimum_attendance_asrama' => '80',
+        //     'attendance_asrama' => $request['attendance_asrama'],
+        //     'id_santri' => $request['id_santri'],
+        // ]);
 
         return redirect('/administrator/data-absensi');
     }

@@ -16,44 +16,6 @@
                         Back
                     </a>
                 </div>
-                <!-- <div class="p-4">
-                    <h2 class="text-2xl ">Mata Pelajaran</h2>
-                </div>
-                @foreach($courses as $course)
-                <div class="pb-8">
-                    <div class="pt-8">
-                        <p class="self-center bg-gray-50 py-4 px-4">Data Mata Pelajaran</p>
-                    </div>
-                    <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 border-b">
-                        <p class="text-gray-600">Kode Mata Pelajaran</p>
-                        <p>{{ $course->id_course }}</p>
-                    </div>
-                    <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 border-b">
-                        <p class="text-gray-600">Nama Mata Pelajaran</p>
-                        <p>{{ $course->course }}</p>
-                    </div>
-                    <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 border-b">
-                        <p class="text-gray-600">Nama Kitab</p>
-                        <p>{{ $course->book }}</p>
-                    </div>
-                    <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 border-b">
-                        <p class="text-gray-600">Semester</p>
-                        <p>{{ $course->semester }}</p>
-                    </div>
-                    <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 border-b">
-                        <p class="text-gray-600">Tingkat</p>
-                        <p>{{ $course->id_grade }} {{ $course->grade_name }}</p>
-                    </div>
-                    <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 border-b">
-                        <p class="text-gray-600">Jadwal</p>
-                        <p>{{ $course->day }}, {{ $course->time_begin }} - {{ $course->time_end }}</p>
-                    </div>
-                    <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 border-b">
-                        <p class="text-gray-600">Nama Ustadz</p>
-                        <p>{{ $course->name }}</p>
-                    </div>
-                </div>
-                @endforeach -->
                 <p class="text-xl py-8 flex items-center">Daftar Peserta Kelas</p>
                 <div class="bg-white overflow-auto pb-8">
                     <table class="table-auto bg-white">
@@ -87,15 +49,21 @@
                             </tr>
                         </thead>
                         <tbody class="text-gray-700">
+                            @foreach($courses as $course) 
                             @foreach($santris as $santris)
                             <tr>
                                 <td class="text-left py-3 px-4">{{ $loop->iteration }}</td>
                                 <td class="text-left py-3 px-4">{{ $santris->id }}</td>
                                 <td class="text-left py-3 px-4">{{ $santris->name }}</td>
                                 <td>
-                                    <a href="#" class="button bg-blue-600 hover:bg-blue-800 hover:text-white text-white rounded shadow-md py-2 px-2">Tambah</a>
+                                    <form method="GET" action="{{ url('administrator/data-kelas/list-santri/create') }}">
+                                        <input type="hidden" name="id_santri" placeholder="" value="{{ $santris->id }}"  required class="py-2 px-3 block w-full bg-transparent border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-300" />
+                                        <input type="hidden" name="id_course" placeholder="" value="{{ $course->id_course }}" required required class="py-2 px-3 block w-full bg-transparent border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-300" />
+                                        <button type="submit" class="bg-blue-600 hover:bg-blue-800 hover:text-white text-white rounded shadow-md py-1 px-2">Tambah</button>
+                                    </form>
                                 </td>
                             </tr>
+                            @endforeach
                             @endforeach
                         </tbody>
                     </table>

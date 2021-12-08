@@ -16,7 +16,11 @@ class Attendance extends Model
      * @var array
      */
     protected $fillable = [
-        'attendance',
+        'id_attendance',
+        'minimum_attendance_mdnu',
+        'attendance_mdnu',
+        'minimum_attendance_asrama',
+        'attendance_asrama',
         'id_santri',
         'id_course',
     ];
