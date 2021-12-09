@@ -22,8 +22,10 @@ class DataKelasController extends Controller
         $courses = Course::leftjoin('users', 'courses.id_ustadz', '=', 'users.id')
                         ->leftjoin('grades', 'courses.id_grade', '=', 'grades.id_grade')
                         ->leftjoin('schedules', 'courses.id_schedule', '=', 'schedules.id_schedule')->get();
+        
+        $santris = User::where('role', 'Santri')->get();
 
-        return view('administrator.data-kelas', compact('courses'));
+        return view('administrator.data-kelas', compact('courses', 'santris'));
     }
 
     public function filterSemester(Request $request)
@@ -35,17 +37,18 @@ class DataKelasController extends Controller
         return view('administrator.data-kelas', compact('courses'));
     }
 
-    public function listSantriIn($id)
+    public function formCreate($id)
     {
-        $courses = Course::where('id_course', $id)
-                        ->leftjoin('users', 'courses.id_ustadz', '=', 'users.id')
+        $coursein = Course::leftjoin('users', 'courses.id_ustadz', '=', 'users.id')
                         ->leftjoin('grades', 'courses.id_grade', '=', 'grades.id_grade')
                         ->leftjoin('schedules', 'courses.id_schedule', '=', 'schedules.id_schedule')->get();
 
+        $courses = Course::leftjoin('users', 'courses.id_ustadz', '=', 'users.id')
+                        ->leftjoin('grades', 'courses.id_grade', '=', 'grades.id_grade')
+                        ->leftjoin('schedules', 'courses.id_schedule', '=', 'schedules.id_schedule')->where('id_santri', $id)->get();
+
         $santriin = CumulativeStudy::where('id_course', $id)
                                     ->leftjoin('users', 'cumulative_studies.id_santri', '=', 'users.id')->get();
-
-        $santris = User::where('role', 'santri')->where('status', 'Aktif')->get();
 
         return view('administrator.tambah-santri-kelas', compact('santriin', 'santris', 'courses'));
     }

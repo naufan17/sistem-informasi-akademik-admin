@@ -65,8 +65,8 @@ Route::get('/administrator/data-santri/delete/{id}', [DataSantriController::clas
 
 Route::get('/administrator/data-kelas/filter-semester', [DataKelasController::class, 'filterSemester'])->name('administrator.data-kelaas.filter-semester');
 Route::get('/administrator/data-kelas', [DataKelasController::class, 'index'])->name('administrator.data-kelas');
-Route::get('/administrator/data-kelas/list-santri/{id}', [DataKelasController::class, 'listSantriIn'])->name('administrator.data-kelas.list-santri');
-Route::get('/administrator/data-kelas/list-santri/create', [DataKelasController::class, 'create'])->name('administrator.data-kelas.list-santri.create');
+Route::get('/administrator/data-kelas/form-create/{id}', [DataKelasController::class, 'formCreate'])->name('administrator.data-kelas.form-create');
+Route::get('/administrator/data-kelas/create', [DataKelasController::class, 'create'])->name('administrator.data-kelas.create');
 
 Route::get('/administrator/data-nilai', [DataNilaiController::class, 'index'])->name('administrator.data-nilai');
 Route::get('/administrator/data-nilai/form-create/{id}', [DataNilaiController::class, 'formCreate'])->name('administrator.data-nilai.form-create');

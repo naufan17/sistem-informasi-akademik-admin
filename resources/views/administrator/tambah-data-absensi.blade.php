@@ -18,37 +18,41 @@
                 </div>
                 <p class="text-xl pb-4 flex items-center">Input Presentase Absensi ke Santri</p>
                 <form method="GET" action="{{ url('administrator/data-absensi/create') }}">
-                    @foreach($santris as $santri)
-                    <div class="pb-8">
-                        <div class="pt-8">
-                            <p class="self-center bg-gray-50 py-4 px-4">Absensi MDNU & Asrama</p>
-                        </div>
-                        <input type="hidden" name="id_santri" placeholder="" value="{{ $santri->id }}" required class="pt-3 pb-2 px-3 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-200" />
-                        <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4">
-                            <p class="text-gray-600 ">NIS</p>
-                            <p class="border-b-2 px-3 pb-2">{{ $santri->id}}</p>
-                        </div>
-                        <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4">
-                            <p class="text-gray-600 ">Nama Lengkap</p>
-                            <p class="border-b-2 px-3 pb-2">{{ $santri->name }}</p>
-                        </div>
-                        <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 px-4 py-2 space-y-1">
-                            <p class="self-center text-gray-600">Presentase Absensi MDNU</p>
-                            <div class="relative z-0 w-full mb-5">
-                                <input type="number" name="attendance_mdnu" placeholder="%" value="{{ $santri->attendance_mdnu }}" required class="pt-3 pb-2 px-3 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-200" />
-                            </div>
-                        </div>
-                        <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 px-4 py-2 space-y-1">
-                            <p class="self-center text-gray-600">Presentase Absensi Asrama</p>
-                            <div class="relative z-0 w-full mb-5">
-                                <input type="number" name="attendance_asrama" placeholder="%" value="{{ $santri->attendance_asrama }}" required class="pt-3 pb-2 px-3 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-200" />
-                            </div>
+                    <div class="bg-white overflow-auto pb-8">
+                        <table class="table-auto bg-white">
+                            <thead class="bg-gray-800 text-white">
+                                <tr>
+                                    <th class="text-left py-3 px-4 uppercase font-semibold text-sm">No</th>
+                                    <th class="text-left w-1/4 py-3 px-4 uppercase font-semibold text-sm">Tahun Ajaran</th>
+                                    <th class="text-left w-1/4 py-3 px-4 uppercase font-semibold text-sm">Semester</th>
+                                    <th class="text-left w-1/4 py-3 px-4 uppercase font-semibold text-sm">Presentase Absensi MDNU</th>
+                                    <th class="text-left w-1/4 py-3 px-4 uppercase font-semibold text-sm">Presentase Absensi Asrama</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-gray-700">
+                                @foreach($santris as $santri)
+                                <tr>
+                                    <td class="text-left py-3 px-4">{{ $loop->iteration }}</td>
+                                    <td class="text-left py-3 px-4"></td>
+                                    <td class="text-left py-3 px-4"></td>
+                                    <td class="text-left py-3 px-4">
+                                        <div class="relative z-0 w-full">
+                                            <input type="hidden" name="id_santri" placeholder="" value="{{ $santri->id }}"  required class="py-2 px-3 block w-full bg-transparent border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-300" />
+                                            <input type="number" name="score" placeholder="%" value="{{ $santri->attendance_mdnu  }}" required autocomplete="nilai" required class="py-2 px-3 block w-full bg-transparent border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-300" />
+                                        </div>
+                                    </td>
+                                    <td class="text-left py-3 px-4">
+                                        <div class="relative z-0 w-full">
+                                        <input type="number" name="score" placeholder="%" value="{{ $santri->attendance_asrama }}" required autocomplete="nilai" required class="py-2 px-3 block w-full bg-transparent border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-300" />
+                                    </div>
+                                </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                        <div class="flex flex-row-reverse object-left text-center text-white text-base pt-8 px-3">
+                            <button type="submit" class="bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-3 px-8">Simpan</button>
                         </div>
                     </div>
-                    <div class="flex flex-row-reverse object-left text-center text-white text-base pt-8 px-3">
-                        <button type="submit" class="bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-3 px-8">Simpan</button>
-                    </div>
-                    @endforeach 
                 </form>
             </div>
         </main>

@@ -19,20 +19,23 @@ class DataNilaiController extends Controller
      */
     public function index()
     {
-        $grades = Grade::all();
-        $schedules = Schedule::all();
         $courses = Course::leftjoin('users', 'courses.id_ustadz', '=', 'users.id')
                         ->leftjoin('grades', 'courses.id_grade', '=', 'grades.id_grade')
                         ->leftjoin('schedules', 'courses.id_schedule', '=', 'schedules.id_schedule')->get();
 
-        return view('administrator.data-nilai', compact('grades', 'schedules', 'courses'));
+        $santris = User::where('role', 'Santri')->get();
+
+        return view('administrator.data-nilai', compact('courses', 'santris'));
     }
 
     public function formCreate($id)
     {
-        $santris = CumulativeStudy::where('id_course', $id)->leftjoin('users', 'cumulative_studies.id_santri', '=', 'users.id')->get();
+        $cumulativestudys = CumulativeStudy::leftjoin('users', 'cumulative_studies.id_santri', '=', 'users.id')
+                                    ->leftjoin('courses', 'cumulative_studies.id_course', '=', 'courses.id_course')
+                                    ->orderBy('semester')
+                                    ->where('id_santri', $id)->get();
 
-        return view('administrator.tambah-data-nilai', compact('santris'));
+        return view('administrator.tambah-data-nilai', compact('cumulativestudys'));
     }
     
     public function create(Request $request)

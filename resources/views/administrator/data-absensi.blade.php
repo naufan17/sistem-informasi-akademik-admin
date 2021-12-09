@@ -13,11 +13,9 @@
                         <thead class="bg-gray-800 text-white">
                             <tr>
                                 <th class="text-left py-3 px-4 uppercase font-semibold text-sm">No</th>
-                                <th class="text-left w-1/5 py-3 px-4 uppercase font-semibold text-sm">NIS</th>
-                                <th class="text-left w-1/5 py-3 px-4 uppercase font-semibold text-sm">Nama</th>
-                                <th class="text-left w-1/5 py-3 px-4 uppercase font-semibold text-sm">Absensi MDNU</th>
-                                <th class="text-left w-1/5 py-3 px-4 uppercase font-semibold text-sm">Absensi Asrama</td>
-                                <th class="text-left w-1/5 py-3 px-4 uppercase font-semibold text-sm">Absensi</td>
+                                <th class="text-left w-1/3 py-3 px-4 uppercase font-semibold text-sm">NIS</th>
+                                <th class="text-left w-1/3 py-3 px-4 uppercase font-semibold text-sm">Nama</th>
+                                <th class="text-left w-1/3 py-3 px-4 uppercase font-semibold text-sm">Absensi</td>
                             </tr>
                         </thead>
                         <tbody class="text-gray-700">
@@ -26,8 +24,6 @@
                                 <td class="text-left py-3 px-4">{{ $loop->iteration }}</td>
                                 <td class="text-left py-3 px-4">{{ $santri->id }}</td>
                                 <td class="text-left py-3 px-4">{{ $santri->name }}</td>
-                                <td class="text-left py-3 px-4">{{ $santri->attendance_mdnu }} %</td>
-                                <td class="text-left py-3 px-4">{{ $santri->attendance_asrama }} %</td>
                                 <td class="py-3 px-4">
                                     <a href="{{ url('administrator/data-absensi/form-create') }}/{{ $santri->id }}" class="transform hover:text-purple-500 hover:scale-110">
                                     <i class="fas fa-external-link-alt"></i></a>
