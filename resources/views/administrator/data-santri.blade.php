@@ -41,22 +41,22 @@
                     <table class="table-auto bg-white">
                         <thead class="bg-gray-800 text-white">
                             <tr>
-                                <th class="text-left py-3 px-4 uppercase font-semibold text-sm">No</th>
-                                <th class="text-left w-1/5 py-3 px-4 uppercase font-semibold text-sm">NIS</th>
-                                <th class="text-left w-1/5 py-3 px-4 uppercase font-semibold text-sm">Nama</th>
-                                <th class="text-left w-1/5 py-3 px-4 uppercase font-semibold text-sm">Email</th>
-                                <th class="text-left w-1/5 py-3 px-4 uppercase font-semibold text-sm">Status</td>
-                                <th class="text-left w-1/5 py-3 px-4 uppercase font-semibold text-sm">Aksi</td>
+                                <th class="text-center py-3 px-4 uppercase font-semibold text-sm">No</th>
+                                <th class="text-center w-1/5 py-3 px-4 uppercase font-semibold text-sm">NIS</th>
+                                <th class="text-center w-1/5 py-3 px-4 uppercase font-semibold text-sm">Nama</th>
+                                <th class="text-center w-1/5 py-3 px-4 uppercase font-semibold text-sm">Email</th>
+                                <th class="text-center w-1/5 py-3 px-4 uppercase font-semibold text-sm">Status</td>
+                                <th class="text-center w-1/5 py-3 px-4 uppercase font-semibold text-sm">Aksi</td>
                             </tr>
                         </thead>
                         <tbody class="text-gray-700">
                             @foreach($santris as $santri)
                             <tr>
-                                <td class="text-left py-3 px-4">{{ $loop->iteration }}</td>
-                                <td class="text-left py-3 px-4">{{ $santri->id }}</td>
-                                <td class="text-left py-3 px-4">{{ $santri->name }}</td>
-                                <td class="text-left py-3 px-4">{{ $santri->email }}</td>
-                                <td class="text-left py-3 px-4">{{ $santri->status }}</td>
+                                <td class="text-center py-3 px-4">{{ $loop->iteration }}</td>
+                                <td class="text-center py-3 px-4">{{ $santri->id }}</td>
+                                <td class="text-center py-3 px-4">{{ $santri->name }}</td>
+                                <td class="text-center py-3 px-4">{{ $santri->email }}</td>
+                                <td class="text-center py-3 px-4">{{ $santri->status }}</td>
                                 <td>
                                     <div class="flex py-3 px-4">
                                         <div class="w-5 mr-2 transform hover:text-purple-500 hover:scale-110">

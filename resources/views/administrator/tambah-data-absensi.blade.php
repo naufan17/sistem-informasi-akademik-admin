@@ -22,20 +22,20 @@
                         <table class="table-auto bg-white">
                             <thead class="bg-gray-800 text-white">
                                 <tr>
-                                    <th class="text-left py-3 px-4 uppercase font-semibold text-sm">No</th>
-                                    <th class="text-left w-1/4 py-3 px-4 uppercase font-semibold text-sm">Tahun Ajaran</th>
-                                    <th class="text-left w-1/4 py-3 px-4 uppercase font-semibold text-sm">Semester</th>
-                                    <th class="text-left w-1/4 py-3 px-4 uppercase font-semibold text-sm">Presentase Absensi MDNU</th>
-                                    <th class="text-left w-1/4 py-3 px-4 uppercase font-semibold text-sm">Presentase Absensi Asrama</th>
+                                    <th class="text-center py-3 px-4 uppercase font-semibold text-sm">No</th>
+                                    <th class="text-center w-1/4 py-3 px-4 uppercase font-semibold text-sm">Tahun Ajaran</th>
+                                    <th class="text-center w-1/4 py-3 px-4 uppercase font-semibold text-sm">Semester</th>
+                                    <th class="text-center w-1/4 py-3 px-4 uppercase font-semibold text-sm">Presentase Absensi MDNU</th>
+                                    <th class="text-center w-1/4 py-3 px-4 uppercase font-semibold text-sm">Presentase Absensi Asrama</th>
                                 </tr>
                             </thead>
                             <tbody class="text-gray-700">
                                 @foreach($santris as $santri)
                                 <tr>
-                                    <td class="text-left py-3 px-4">{{ $loop->iteration }}</td>
-                                    <td class="text-left py-3 px-4"></td>
-                                    <td class="text-left py-3 px-4"></td>
-                                    <td class="text-left py-3 px-4">
+                                    <td class="text-center py-3 px-4">{{ $loop->iteration }}</td>
+                                    <td class="text-center py-3 px-4"></td>
+                                    <td class="text-center py-3 px-4"></td>
+                                    <td class="text-center py-3 px-4">
                                         <div class="relative z-0 w-full">
                                             <input type="hidden" name="id_santri" placeholder="" value="{{ $santri->id }}"  required class="py-2 px-3 block w-full bg-transparent border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-300" />
                                             <input type="number" name="score" placeholder="%" value="{{ $santri->attendance_mdnu  }}" required autocomplete="nilai" required class="py-2 px-3 block w-full bg-transparent border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-300" />

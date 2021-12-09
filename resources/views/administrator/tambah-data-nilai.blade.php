@@ -22,19 +22,19 @@
                         <table class="table-auto bg-white">
                             <thead class="bg-gray-800 text-white">
                                 <tr>
-                                    <th class="text-left py-3 px-4 uppercase font-semibold text-sm">No</th>
-                                    <th class="text-left w-1/3 py-3 px-4 uppercase font-semibold text-sm">Mata Pelajaran</th>
-                                    <th class="text-left w-1/3 py-3 px-4 uppercase font-semibold text-sm">Semester</th>
-                                    <th class="text-left w-1/3 py-3 px-4 uppercase font-semibold text-sm">Nilai</th>
+                                    <th class="text-center py-3 px-4 uppercase font-semibold text-sm">No</th>
+                                    <th class="text-center w-1/3 py-3 px-4 uppercase font-semibold text-sm">Mata Pelajaran</th>
+                                    <th class="text-center w-1/3 py-3 px-4 uppercase font-semibold text-sm">Semester</th>
+                                    <th class="text-center w-1/3 py-3 px-4 uppercase font-semibold text-sm">Nilai</th>
                                 </tr>
                             </thead>
                             <tbody class="text-gray-700">
                                 @foreach($cumulativestudys as $cumulativestudy)
                                 <tr>
-                                    <td class="text-left py-3 px-4">{{ $loop->iteration }}</td>
-                                    <td class="text-left py-3 px-4">{{ $cumulativestudy->course }}</td>
-                                    <td class="text-left py-3 px-4">{{ $cumulativestudy->semester }}</td>
-                                    <td class="text-left py-3 px-4">
+                                    <td class="text-center py-3 px-4">{{ $loop->iteration }}</td>
+                                    <td class="text-center py-3 px-4">{{ $cumulativestudy->course }}</td>
+                                    <td class="text-center py-3 px-4">{{ $cumulativestudy->semester }}</td>
+                                    <td class="text-center py-3 px-4">
                                         <div class="relative z-0 w-full">
                                             <input type="hidden" name="id_cumulative_study" placeholder="" value="{{ $cumulativestudy->id_cumulative_study }}"  required class="py-2 px-3 block w-full bg-transparent border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-300" />
                                             <input type="number" name="score" placeholder="" value="{{ $cumulativestudy->score }}" required autocomplete="nilai" required class="py-2 px-3 block w-full bg-transparent border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-300" />

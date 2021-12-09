@@ -42,18 +42,18 @@
                     <table class="table-auto bg-white">
                         <thead class="bg-gray-800 text-white">
                             <tr>
-                                <th class="text-left py-3 px-4 uppercase font-semibold text-sm">No</th>
-                                <th class="text-left w-1/3 py-3 px-4 uppercase font-semibold text-sm">Tingkat</th>
-                                <th class="text-left w-1/3 py-3 px-4 uppercase font-semibold text-sm">Nama Tingkat</th>
-                                <th class="text-left w-1/3 py-3 px-4 uppercase font-semibold text-sm">Aksi</th>
+                                <th class="text-center py-3 px-4 uppercase font-semibold text-sm">No</th>
+                                <th class="text-center w-1/3 py-3 px-4 uppercase font-semibold text-sm">Tingkat</th>
+                                <th class="text-center w-1/3 py-3 px-4 uppercase font-semibold text-sm">Nama Tingkat</th>
+                                <th class="text-center w-1/3 py-3 px-4 uppercase font-semibold text-sm">Aksi</th>
                             </tr>
                         </thead>
                         <tbody class="text-gray-700">
                             @foreach($grades as $grade)
                             <tr>
-                                <td class="text-left py-3 px-4">{{ $loop->iteration }}</td>
-                                <td class="text-left py-3 px-4">{{ $grade->grade_number }}</td>
-                                <td class="text-left py-3 px-4">{{ $grade->grade_name }}</td>
+                                <td class="text-center py-3 px-4">{{ $loop->iteration }}</td>
+                                <td class="text-center py-3 px-4">{{ $grade->grade_number }}</td>
+                                <td class="text-center py-3 px-4">{{ $grade->grade_name }}</td>
                                 <td>
                                     <div class="flex py-3 px-4">
                                         <div class="w-5 mr-2 transform hover:text-purple-500 hover:scale-110">
