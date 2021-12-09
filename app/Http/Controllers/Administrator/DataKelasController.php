@@ -39,18 +39,17 @@ class DataKelasController extends Controller
 
     public function formCreate($id)
     {
-        $coursein = Course::leftjoin('users', 'courses.id_ustadz', '=', 'users.id')
-                        ->leftjoin('grades', 'courses.id_grade', '=', 'grades.id_grade')
-                        ->leftjoin('schedules', 'courses.id_schedule', '=', 'schedules.id_schedule')->get();
+        $cumulativestudys = CumulativeStudy::leftjoin('users', 'cumulative_studies.id_santri', '=', 'users.id')
+                                            ->leftjoin('courses', 'cumulative_studies.id_course', '=', 'courses.id_course')
+                                            ->orderBy('semester')
+                                            ->where('id_santri', $id)->get();
 
         $courses = Course::leftjoin('users', 'courses.id_ustadz', '=', 'users.id')
                         ->leftjoin('grades', 'courses.id_grade', '=', 'grades.id_grade')
-                        ->leftjoin('schedules', 'courses.id_schedule', '=', 'schedules.id_schedule')->where('id_santri', $id)->get();
+                        ->leftjoin('schedules', 'courses.id_schedule', '=', 'schedules.id_schedule')
+                        ->orderBy('semester')->get();
 
-        $santriin = CumulativeStudy::where('id_course', $id)
-                                    ->leftjoin('users', 'cumulative_studies.id_santri', '=', 'users.id')->get();
-
-        return view('administrator.tambah-santri-kelas', compact('santriin', 'santris', 'courses'));
+        return view('administrator.tambah-santri-kelas', compact('cumulativestudys', 'courses', 'id'));
     }
 
     public function create(Request $request)
@@ -60,6 +59,18 @@ class DataKelasController extends Controller
             'id_course' => $request['id_course'],
         ]);
 
-        return redirect()->route('administrator.data-kelas.list-santri', ['id_course' => $request->id_course]);
+        return redirect()->route('administrator.data-kelas.form-create', ['id_santri' => $request->id_santri]);
+    }
+
+    public function delete($id)
+    {
+        CumulativeStudy::where('id_cumulative_study', $id)->delete();
+
+        $id = 0;
+        foreach(CumulativeStudy::where('id_cumulative_study', $id)->get() as $cumulativestudys){
+            $id = $cumulativestudys->id_santri;
+        }
+        
+        return redirect()->route('administrator.data-kelas.form-create', ['id_santri' => $id]);
     }
 }

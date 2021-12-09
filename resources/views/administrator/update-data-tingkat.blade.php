@@ -28,8 +28,8 @@
                         <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 px-4 py-2 space-y-1">
                             <p class="self-center text-gray-600">Tingkat</p>
                             <div class="relative z-0 w-full mb-5">
-                                <select type="number" name="grade_number" value="{{ $grade->number }}"  class="block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker py-3 px-4 pr-8 rounded" id="grid-state">
-                                    <option selected value="{{ $grade->number }}">{{ $grade->number }}</option>
+                                <select type="number" name="grade_number" value="{{ $grade->grade_number }}"  class="block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker py-3 px-4 pr-8 rounded" id="grid-state">
+                                    <option selected value="{{ $grade->grade_number }}">{{ $grade->grade_number }}</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
@@ -40,8 +40,8 @@
                         <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 px-4 py-2 space-y-1">
                             <p class="self-center text-gray-600">Nama Tingkat</p>
                             <div class="relative z-0 w-full mb-5">
-                                <select type="text" name="grade_name" value="{{ $grade->name }}"  class="block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker py-3 px-4 pr-8 rounded" id="grid-state">
-                                    <option selected value="{{ $grade->name }}">{{ $grade->name }}</option>
+                                <select type="text" name="grade_name" value="{{ $grade->grade_name }}"  class="block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker py-3 px-4 pr-8 rounded" id="grid-state">
+                                    <option selected value="{{ $grade->grade_name }}">{{ $grade->grade_name }}</option>
                                     <option value="Awaliyah">Awaliyah</option>
                                     <option value="Wustho">Wustho</option>
                                     <option value="Ulya">Ulya</option>
