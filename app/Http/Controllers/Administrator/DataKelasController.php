@@ -54,23 +54,23 @@ class DataKelasController extends Controller
 
     public function create(Request $request)
     {
-        CumulativeStudy::create([
+        CumulativeStudy::firstOrCreate([
             'id_santri' => $request['id_santri'],
             'id_course' => $request['id_course'],
         ]);
 
-        return redirect()->route('administrator.data-kelas.form-create', ['id_santri' => $request->id_santri]);
+        return redirect()->route('administrator.data-kelas.form-create', [$request->id_santri]);
     }
 
     public function delete($id)
     {
-        CumulativeStudy::where('id_cumulative_study', $id)->delete();
-
-        $id = 0;
+        $id_santri = 0;
         foreach(CumulativeStudy::where('id_cumulative_study', $id)->get() as $cumulativestudys){
-            $id = $cumulativestudys->id_santri;
+            $id_santri = $cumulativestudys->id_santri;
         }
-        
-        return redirect()->route('administrator.data-kelas.form-create', ['id_santri' => $id]);
+
+        CumulativeStudy::where('id_cumulative_study', $id)->delete();
+   
+        return redirect()->route('administrator.data-kelas.form-create', [$id_santri]);
     }
 }

@@ -38,12 +38,12 @@
                                     <td class="text-center py-3 px-4">
                                         <div class="relative z-0 w-full">
                                             <input type="hidden" name="id_santri" placeholder="" value="{{ $santri->id }}"  required class="py-2 px-3 block w-full bg-transparent border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-300" />
-                                            <input type="number" name="score" placeholder="%" value="{{ $santri->attendance_mdnu  }}" required autocomplete="nilai" required class="py-2 px-3 block w-full bg-transparent border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-300" />
+                                            <input type="number" name="attendance_mdnu" placeholder="%" value="{{ $santri->attendance_mdnu }}" required autocomplete="attendance_mdnu" required class="py-2 px-3 block w-full bg-transparent border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-300" />
                                         </div>
                                     </td>
                                     <td class="text-left py-3 px-4">
                                         <div class="relative z-0 w-full">
-                                        <input type="number" name="score" placeholder="%" value="{{ $santri->attendance_asrama }}" required autocomplete="nilai" required class="py-2 px-3 block w-full bg-transparent border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-300" />
+                                        <input type="number" name="attendance_asrama" placeholder="%" value="{{ $santri->attendance_asrama }}" required autocomplete="attendance_asrama" required class="py-2 px-3 block w-full bg-transparent border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-300" />
                                     </div>
                                 </tr>
                                 @endforeach

@@ -52,14 +52,13 @@ class DataAbsensiController extends Controller
         //     ]);            
         // }
 
-
-        Attendance::updateOrCreate(
-            ['id_santri' => $request->id_santri],
+        Attendance::updateOrCreate([
+            'id_santri' => $request->id_santri],
             ['minimum_attendance_mdnu' => '10', 
             'attendance_mdnu' => $request->attendance_mdnu,
             'minimum_attendance_asrama' => '15',
-            'attendance_asrama' => $request->attendance_asrama]
-        );
+            'attendance_asrama' => $request->attendance_asrama,
+        ]);
 
         // Attendance::upsert([
         //     'id_santri' => $request->id_santri,
