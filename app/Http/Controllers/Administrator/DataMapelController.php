@@ -56,7 +56,7 @@ class DataMapelController extends Controller
             'id_ustadz' => 'required', 'number',
         ]);
 
-        Course::create([
+        Course::firstOrCreate([
             'id' => $request['id'],
             'course' => $request['course'],
             'book' => $request['book'],

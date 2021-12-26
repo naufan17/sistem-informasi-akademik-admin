@@ -39,7 +39,7 @@ class DataTingkatController extends Controller
             'grade_name' => 'required', 'string','max:255',
         ]);
 
-        Grade::create([
+        Grade::firstOrCreate([
             'grade_number' => $request['grade_number'],
             'grade_name' => $request['grade_name'],
         ]);

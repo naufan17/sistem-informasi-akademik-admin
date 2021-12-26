@@ -40,7 +40,7 @@ class DataJadwalController extends Controller
             'time_end' => 'required', 'string','max:255',
         ]);
 
-        Schedule::create([
+        Schedule::firstOrCreate([
             'day' => $request['day'],
             'time_begin' => $request['time_begin'],
             'time_end' => $request['time_end'],
