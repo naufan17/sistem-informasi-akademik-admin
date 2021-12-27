@@ -21,7 +21,8 @@ class DataNilaiController extends Controller
     {
         $courses = Course::leftjoin('users', 'courses.id_ustadz', '=', 'users.id')
                         ->leftjoin('grades', 'courses.id_grade', '=', 'grades.id_grade')
-                        ->leftjoin('schedules', 'courses.id_schedule', '=', 'schedules.id_schedule')->get();
+                        ->leftjoin('schedules', 'courses.id_schedule', '=', 'schedules.id_schedule')
+                        ->get();
 
         $santris = User::where('role', 'Santri')->get();
 
@@ -33,7 +34,8 @@ class DataNilaiController extends Controller
         $cumulativestudys = CumulativeStudy::leftjoin('users', 'cumulative_studies.id_santri', '=', 'users.id')
                                     ->leftjoin('courses', 'cumulative_studies.id_course', '=', 'courses.id_course')
                                     ->orderBy('semester')
-                                    ->where('id_santri', $id)->get();
+                                    ->where('id_santri', $id)
+                                    ->get();
 
         return view('administrator.tambah-data-nilai', compact('cumulativestudys'));
     }

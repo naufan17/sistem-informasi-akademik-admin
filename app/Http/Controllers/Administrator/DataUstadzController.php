@@ -50,14 +50,18 @@ class DataUstadzController extends Controller
 
     public function filter(Request $request)
     {
-        $ustadzs = User::where('role', 'ustadz')->where('status', $request->status)->get();
+        $ustadzs = User::where('role', 'ustadz')
+                        ->where('status', $request->status)
+                        ->get();
 
         return view('administrator.data-ustadz', compact('ustadzs'));
     }
 
     public function formUpdate($id)
     {
-        $ustadzs = User::where('role', 'ustadz')->where('id', $id)->get();
+        $ustadzs = User::where('role', 'ustadz')
+                        ->where('id', $id)
+                        ->get();
 
         return view('administrator.update-data-ustadz', compact('ustadzs'));
     }

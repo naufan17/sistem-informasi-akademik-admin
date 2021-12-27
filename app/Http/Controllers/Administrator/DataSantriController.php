@@ -50,14 +50,18 @@ class DataSantriController extends Controller
 
     public function filter(Request $request)
     {
-        $santris = User::where('role', 'santri')->where('status', $request->status)->get();
+        $santris = User::where('role', 'santri')
+                        ->where('status', $request->status)
+                        ->get();
         
         return view('administrator.data-santri', compact('santris'));
     }
 
     public function formUpdate($id)
     {
-        $santris = User::where('role', 'santri')->where('id', $id)->get();
+        $santris = User::where('role', 'santri')
+                        ->where('id', $id)
+                        ->get();
 
         return view('administrator.update-data-santri', compact('santris'));
     }

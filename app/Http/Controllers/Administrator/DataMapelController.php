@@ -21,7 +21,8 @@ class DataMapelController extends Controller
         $courses = Course::leftjoin('users', 'courses.id_ustadz', '=', 'users.id')
                         ->leftjoin('grades', 'courses.id_grade', '=', 'grades.id_grade')
                         ->leftjoin('schedules', 'courses.id_schedule', '=', 'schedules.id_schedule')
-                        ->orderBy('semester')->get();
+                        ->orderBy('semester')
+                        ->get();
 
         return view('administrator.data-mapel', compact('courses'));
     }
@@ -30,7 +31,9 @@ class DataMapelController extends Controller
     {
         $courses = Course::leftjoin('users', 'courses.id_ustadz', '=', 'users.id')
                         ->leftjoin('grades', 'courses.id_grade', '=', 'grades.id_grade')
-                        ->leftjoin('schedules', 'courses.id_schedule', '=', 'schedules.id_schedule')->where('semester', $request->semester)->get();
+                        ->leftjoin('schedules', 'courses.id_schedule', '=', 'schedules.id_schedule')
+                        ->where('semester', $request->semester)
+                        ->get();
 
         return view('administrator.data-mapel', compact('courses'));
     }
@@ -77,7 +80,8 @@ class DataMapelController extends Controller
         $courses = Course::where('id_course', $id)
                         ->leftjoin('users', 'courses.id_ustadz', '=', 'users.id')
                         ->leftjoin('grades', 'courses.id_grade', '=', 'grades.id_grade')
-                        ->leftjoin('schedules', 'courses.id_schedule', '=', 'schedules.id_schedule')->get();
+                        ->leftjoin('schedules', 'courses.id_schedule', '=', 'schedules.id_schedule')
+                        ->get();
 
         return view('administrator.update-data-mapel', compact('grades', 'schedules', 'ustadzs', 'courses'));
     }

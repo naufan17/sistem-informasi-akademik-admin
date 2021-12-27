@@ -23,7 +23,9 @@ class DataAbsensiController extends Controller
 
     public function formCreate($id)
     {
-        $santris = User::leftjoin('attendances', 'users.id', '=', 'attendances.id_santri')->where('id', $id)->get();
+        $santris = User::leftjoin('attendances', 'users.id', '=', 'attendances.id_santri')
+                        ->where('id', $id)
+                        ->get();
 
         return view('administrator.tambah-data-absensi', compact('santris'));
     }
