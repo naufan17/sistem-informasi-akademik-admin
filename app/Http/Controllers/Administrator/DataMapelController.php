@@ -21,7 +21,7 @@ class DataMapelController extends Controller
         $courses = Course::leftjoin('users', 'courses.id_ustadz', '=', 'users.id')
                         ->leftjoin('grades', 'courses.id_grade', '=', 'grades.id_grade')
                         ->leftjoin('schedules', 'courses.id_schedule', '=', 'schedules.id_schedule')
-                        ->orderBy('semester')
+                        ->orderBy('sem')
                         ->get();
 
         return view('administrator.data-mapel', compact('courses'));
@@ -32,7 +32,7 @@ class DataMapelController extends Controller
         $courses = Course::leftjoin('users', 'courses.id_ustadz', '=', 'users.id')
                         ->leftjoin('grades', 'courses.id_grade', '=', 'grades.id_grade')
                         ->leftjoin('schedules', 'courses.id_schedule', '=', 'schedules.id_schedule')
-                        ->where('semester', $request->semester)
+                        ->where('sem', $request->sem)
                         ->get();
 
         return view('administrator.data-mapel', compact('courses'));
@@ -53,7 +53,7 @@ class DataMapelController extends Controller
             'id' => 'required', 'number',
             'course' => 'required', 'string','max:255',
             'book' => 'required', 'string','max:255',
-            'semester' => 'required', 'number',
+            'sem' => 'required', 'number',
             'id_grade' => 'required', 'number',
             'id_schedule' => 'required', 'number',
             'id_ustadz' => 'required', 'number',
@@ -63,7 +63,7 @@ class DataMapelController extends Controller
             'id' => $request['id'],
             'course' => $request['course'],
             'book' => $request['book'],
-            'semester' => $request['semester'],
+            'sem' => $request['sem'],
             'id_grade' => $request['id_grade'],
             'id_schedule' => $request['id_schedule'],
             'id_ustadz' => $request['id_ustadz'],
@@ -92,7 +92,7 @@ class DataMapelController extends Controller
             'id_course' => $request->id_course,
             'course' => $request->course,
             'book' => $request->book,
-            'semester' => $request->semester,
+            'sem' => $request->sem,
             'id_grade' => $request->id_grade,
             'id_schedule' => $request->id_schedule,
             'id_ustadz' => $request->id_ustadz,

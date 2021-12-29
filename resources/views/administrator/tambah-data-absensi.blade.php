@@ -33,8 +33,8 @@
                                 @foreach($santris as $santri)
                                 <tr>
                                     <td class="text-center py-3 px-4">{{ $loop->iteration }}</td>
-                                    <td class="text-center py-3 px-4"></td>
-                                    <td class="text-center py-3 px-4"></td>
+                                    <td class="text-center py-3 px-4">{{ $santri->year }}</td>
+                                    <td class="text-center py-3 px-4">{{ $santri->semester }}</td>
                                     <td class="text-center py-3 px-4">
                                         <div class="relative z-0 w-full">
                                             <input type="hidden" name="id_santri" placeholder="" value="{{ $santri->id }}"  required class="py-2 px-3 block w-full bg-transparent border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-300" />

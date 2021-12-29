@@ -36,7 +36,7 @@
                                 <td class="text-center py-3 px-4">{{ $cumulativestudy->id_course }}</td>
                                 <td class="text-center py-3 px-4">{{ $cumulativestudy->course }}</td>
                                 <td class="text-center py-3 px-4">{{ $cumulativestudy->book }}</td>
-                                <td class="text-center py-3 px-4">{{ $cumulativestudy->semester }}</td>
+                                <td class="text-center py-3 px-4">{{ $cumulativestudy->sem }}</td>
                                 <td>
                                     <div class="flex py-3 px-4">
                                         <div class="w-5 mr-2 transform hover:text-purple-500 hover:scale-110">
@@ -76,7 +76,7 @@
                                 <td class="text-center py-3 px-4">{{ $course->id_course }}</td>
                                 <td class="text-center py-3 px-4">{{ $course->course }}</td>
                                 <td class="text-center py-3 px-4">{{ $course->book }}</td>
-                                <td class="text-center py-3 px-4">{{ $course->semester }}</td>
+                                <td class="text-center py-3 px-4">{{ $course->sem }}</td>
                                 <td class="text-center py-3 px-4">{{ $course->grade_number }} {{ $course->grade_name }}</td>
                                 <td class="text-center py-3 px-4">{{ $course->day }}, {{ $course->time_begin }} - {{ $course->time_end }}</td>  
                                 <td class="text-center py-3 px-4">{{ $course->name }}</td>

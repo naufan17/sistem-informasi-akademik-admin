@@ -15,6 +15,8 @@ class CreateAttendancesTable extends Migration
     {
         Schema::create('attendances', function (Blueprint $table) {
             $table->id('id_attendance');
+            $table->string('year');
+            $table->enum('semester', ['Genap', 'Ganjil']);
             $table->float('minimum_attendance_mdnu');
             $table->float('attendance_mdnu');
             $table->float('minimum_attendance_asrama');

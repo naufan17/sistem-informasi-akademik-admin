@@ -34,7 +34,7 @@ class DataKelasController extends Controller
         $courses = Course::leftjoin('users', 'courses.id_ustadz', '=', 'users.id')
                         ->leftjoin('grades', 'courses.id_grade', '=', 'grades.id_grade')
                         ->leftjoin('schedules', 'courses.id_schedule', '=', 'schedules.id_schedule')
-                        ->where('semester', $request->semester)
+                        ->where('sem', $request->sem)
                         ->get();
 
         return view('administrator.data-kelas', compact('courses'));
@@ -44,14 +44,14 @@ class DataKelasController extends Controller
     {
         $cumulativestudys = CumulativeStudy::leftjoin('users', 'cumulative_studies.id_santri', '=', 'users.id')
                                             ->leftjoin('courses', 'cumulative_studies.id_course', '=', 'courses.id_course')
-                                            ->orderBy('semester')
+                                            ->orderBy('sem')
                                             ->where('id_santri', $id)
                                             ->get();
 
         $courses = Course::leftjoin('users', 'courses.id_ustadz', '=', 'users.id')
                         ->leftjoin('grades', 'courses.id_grade', '=', 'grades.id_grade')
                         ->leftjoin('schedules', 'courses.id_schedule', '=', 'schedules.id_schedule')
-                        ->orderBy('semester')
+                        ->orderBy('sem')
                         ->get();
 
         return view('administrator.tambah-santri-kelas', compact('cumulativestudys', 'courses', 'id'));

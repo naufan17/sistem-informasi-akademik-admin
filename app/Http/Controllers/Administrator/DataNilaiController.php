@@ -33,7 +33,7 @@ class DataNilaiController extends Controller
     {
         $cumulativestudys = CumulativeStudy::leftjoin('users', 'cumulative_studies.id_santri', '=', 'users.id')
                                     ->leftjoin('courses', 'cumulative_studies.id_course', '=', 'courses.id_course')
-                                    ->orderBy('semester')
+                                    ->orderBy('sem')
                                     ->where('id_santri', $id)
                                     ->get();
 
