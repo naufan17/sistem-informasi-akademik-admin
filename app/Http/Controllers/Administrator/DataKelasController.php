@@ -24,7 +24,9 @@ class DataKelasController extends Controller
                         ->leftjoin('schedules', 'courses.id_schedule', '=', 'schedules.id_schedule')
                         ->get();
         
-        $santris = User::where('role', 'Santri')->get();
+        $santris = User::where('role', 'Santri')
+                        ->where('status', 'Aktif')
+                        ->get();
 
         return view('administrator.data-kelas', compact('courses', 'santris'));
     }

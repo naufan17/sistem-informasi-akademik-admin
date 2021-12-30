@@ -17,7 +17,9 @@ class DataSantriController extends Controller
      */
     public function index()
     {
-        $santris = User::where('role', 'santri')->get();
+        $santris = User::where('role', 'santri')
+                        ->orderBy('id')
+                        ->get();
 
         return view('administrator.data-santri', compact('santris'));
     }

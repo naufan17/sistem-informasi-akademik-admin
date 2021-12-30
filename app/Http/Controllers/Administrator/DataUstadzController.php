@@ -17,7 +17,9 @@ class DataUstadzController extends Controller
      */
     public function index()
     {
-        $ustadzs = User::where('role', 'ustadz')->get();
+        $ustadzs = User::where('role', 'ustadz')
+                        ->orderBy('id')
+                        ->get();
 
         return view('administrator.data-ustadz', compact('ustadzs'));
     }
