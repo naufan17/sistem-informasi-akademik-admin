@@ -25,7 +25,7 @@
                                 <td class="text-center py-3 px-4">{{ $santri->id }}</td>
                                 <td class="text-center py-3 px-4">{{ $santri->name }}</td>
                                 <td class="py-3 px-4">
-                                    <a href="{{ url('administrator/data-nilai/form-create') }}/{{ $santri->id }}" class="transform hover:text-purple-500 hover:scale-110">
+                                    <a href="{{ url('administrator/data-nilai') }}/{{ $santri->id }}" class="transform hover:text-purple-500 hover:scale-110">
                                     <i class="fas fa-external-link-alt"></i></a>
                                 </td>
                             </tr>
