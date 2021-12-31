@@ -18,7 +18,7 @@
                 </div>
                 <p class="text-xl pt-8 flex items-center border-b-2">Input Presentase Absensi ke Santri</p>
                 <div class="flex flex-row-reverse object-left text-center text-white text-base py-8">
-                    <a href="{{ url('administrator/data-absensi/form-create') }}" class="button bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-3 px-8">
+                    <a href="{{ url('administrator/data-absensi/form-create') }}/{{ $idSantri }}" class="button bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-3 px-8">
                         Tambah Absensi
                     </a>
                 </div>

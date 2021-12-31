@@ -28,13 +28,17 @@ class DataAbsensiController extends Controller
         $santris = User::leftjoin('attendances', 'users.id', '=', 'attendances.id_santri')
                         ->where('id', $id)
                         ->get();
+        
+        $idSantri = $id;    
 
-        return view('administrator.list-data-absensi', compact('santris'));
+        return view('administrator.list-data-absensi', compact('santris', 'idSantri'));
     }
 
-    public function formCreate()
+    public function formCreate($id)
     {
-        return view('administrator.tambah-data-absensi');
+        $idSantri = $id;
+
+        return view('administrator.tambah-data-absensi', compact('idSantri'));
     }
 
     public function create(Request $request)
@@ -60,6 +64,8 @@ class DataAbsensiController extends Controller
             'attendance_asrama' => $request->attendance_asrama,
         ]);
 
-        return redirect('/administrator/data-absensi');
+        return redirect()->route('administrator.data-absensi.list', [$request->id_santri]);
+
+        // return redirect('/administrator/data-absensi');
     }
 }

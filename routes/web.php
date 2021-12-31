@@ -65,17 +65,17 @@ Route::get('/administrator/data-santri/delete/{id}', [DataSantriController::clas
 
 Route::get('/administrator/data-kelas/filter-semester', [DataKelasController::class, 'filterSemester'])->name('administrator.data-kelaas.filter-semester');
 Route::get('/administrator/data-kelas', [DataKelasController::class, 'index'])->name('administrator.data-kelas');
-Route::get('/administrator/data-kelas/{id}', [DataKelasController::class, 'formCreate'])->name('administrator.data-kelas');
+Route::get('/administrator/data-kelas/form-create/{id}', [DataKelasController::class, 'formCreate'])->name('administrator.data-kelas.form-create');
 Route::get('/administrator/data-kelas/create', [DataKelasController::class, 'create'])->name('administrator.data-kelas.create');
 Route::get('/administrator/data-kelas/delete/{id}', [DataKelasController::class, 'delete'])->name('administrator.data-kelas.delete');
 
 Route::get('/administrator/data-nilai', [DataNilaiController::class, 'index'])->name('administrator.data-nilai');
-Route::get('/administrator/data-nilai/{id}', [DataNilaiController::class, 'formCreate'])->name('administrator.data-nilai');
+Route::get('/administrator/data-nilai/form-create/{id}', [DataNilaiController::class, 'formCreate'])->name('administrator.data-nilai.form-create');
 Route::get('/administrator/data-nilai/create', [DataNilaiController::class, 'create'])->name('administrator.data-nilai.create');
 
 Route::get('/administrator/data-absensi', [DataAbsensiController::class, 'index'])->name('administrator.data-absensi');
-Route::get('/administrator/data-absensi/{id}', [DataAbsensiController::class, 'listAbsensi'])->name('administrator.data-absensi');
-Route::get('/administrator/data-absensi/form-create', [DataAbsensiController::class, 'formCreate'])->name('administrator.data-absensi.form-create');
+Route::get('/administrator/data-absensi/list/{id}', [DataAbsensiController::class, 'listAbsensi'])->name('administrator.data-absensi.list');
+Route::get('/administrator/data-absensi/form-create/{id}', [DataAbsensiController::class, 'formCreate'])->name('administrator.data-absensi.form-create');
 Route::get('/administrator/data-absensi/create', [DataAbsensiController::class, 'create'])->name('administrator.data-absensi.create');
 
 Route::get('/administrator/data-jadwal/filter-hari', [DataJadwalController::class, 'filterHari'])->name('administrator.data-jadwal.filter-hari');
