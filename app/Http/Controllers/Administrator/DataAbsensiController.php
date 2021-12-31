@@ -44,40 +44,21 @@ class DataAbsensiController extends Controller
             'attendance_asrama' => 'required', 'number',
         ]);
 
-        // $Attendance = Attendance::where('id_santri', $request->id_santri)->get();
+        // Attendance::updateOrCreate([
+        //     'id_santri' => $request->id_santri],
+        //     ['minimum_attendance_mdnu' => '10', 
+        //     'attendance_mdnu' => $request->attendance_mdnu,
+        //     'minimum_attendance_asrama' => '15',
+        //     'attendance_asrama' => $request->attendance_asrama,
+        // ]);
 
-        // if($Attendance !== null){
-        //     Attendance::where('id_santri', $request->id_santri)->update([
-        //         'attendance_mdnu' => $request->attendance_mdnu,
-        //         'attendance_asrama' => $request->attendance_asrama,
-        //     ]);
-        // }else{
-        //     Attendance::create([
-        //         'minimum_attendance_mdnu' => '10',
-        //         'attendance_mdnu' => $request['attendance_mdnu'],
-        //         'minimum_attendance_asrama' => '15',
-        //         'attendance_asrama' => $request['attendance_asrama'],
-        //         'id_santri' => $request['id_santri'],
-        //     ]);            
-        // }
-
-        Attendance::updateOrCreate([
-            'id_santri' => $request->id_santri],
-            ['minimum_attendance_mdnu' => '10', 
+        Attendance::create([
+            'id_santri' => $request->id_santri,
+            'minimum_attendance_mdnu' => '10', 
             'attendance_mdnu' => $request->attendance_mdnu,
             'minimum_attendance_asrama' => '15',
             'attendance_asrama' => $request->attendance_asrama,
         ]);
-
-        // Attendance::upsert([
-        //     'id_santri' => $request->id_santri,
-        //     'minimum_attendance_mdnu' => '10',
-        //     'attendance_mdnu' => $request->attendance_mdnu,
-        //     'minimum_attendance_asrama' => '15',
-        //     'attendance_asrama' => $request->attendance_asrama],
-        //     ['id_santri'], 
-        //     ['minimum_attendance_mdnu', 'attendance_mdnu', 'minimum_attendance_asrama', 'attendance_asrama']
-        // );
 
         return redirect('/administrator/data-absensi');
     }
