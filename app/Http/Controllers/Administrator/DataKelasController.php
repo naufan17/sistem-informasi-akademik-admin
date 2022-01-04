@@ -61,10 +61,22 @@ class DataKelasController extends Controller
 
     public function create(Request $request)
     {
-        CumulativeStudy::firstOrCreate([
-            'id_santri' => $request['id_santri'],
-            'id_course' => $request['id_course'],
-        ]);
+        if(date('m') <= 06 ){
+            CumulativeStudy::firstOrCreate([
+                'year' => date('Y'),
+                'semester' => 'Genap',
+                'id_santri' => $request['id_santri'],
+                'id_course' => $request['id_course'],
+            ]);
+    
+        }elseif(date('m') > 06 ){
+            CumulativeStudy::firstOrCreate([
+                'year' => date('Y'),
+                'semester' => 'Ganjil',
+                'id_santri' => $request['id_santri'],
+                'id_course' => $request['id_course'],
+            ]);
+        }
 
         return redirect()->route('administrator.data-kelas.form-create', [$request->id_santri]);
     }

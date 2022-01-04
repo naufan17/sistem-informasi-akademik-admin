@@ -56,13 +56,37 @@ class DataAbsensiController extends Controller
         //     'attendance_asrama' => $request->attendance_asrama,
         // ]);
 
-        Attendance::create([
-            'id_santri' => $request->id_santri,
-            'minimum_attendance_mdnu' => '10', 
-            'attendance_mdnu' => $request->attendance_mdnu,
-            'minimum_attendance_asrama' => '15',
-            'attendance_asrama' => $request->attendance_asrama,
-        ]);
+        // Attendance::create([
+        //     'id_santri' => $request->id_santri,
+        //     'minimum_attendance_mdnu' => '10', 
+        //     'attendance_mdnu' => $request->attendance_mdnu,
+        //     'minimum_attendance_asrama' => '15',
+        //     'attendance_asrama' => $request->attendance_asrama,
+        // ]);
+
+
+        if(date('m') <= 06 ){
+            Attendance::create([
+                'year' => date('Y'),
+                'semester' => 'Genap',
+                'id_santri' => $request->id_santri,
+                'minimum_attendance_mdnu' => '10', 
+                'attendance_mdnu' => $request->attendance_mdnu,
+                'minimum_attendance_asrama' => '15',
+                'attendance_asrama' => $request->attendance_asrama,
+            ]);
+    
+        }elseif(date('m') > 06 ){
+            Attendance::create([
+                'year' => date('Y'),
+                'semester' => 'Ganjil',
+                'id_santri' => $request->id_santri,
+                'minimum_attendance_mdnu' => '10', 
+                'attendance_mdnu' => $request->attendance_mdnu,
+                'minimum_attendance_asrama' => '15',
+                'attendance_asrama' => $request->attendance_asrama,
+            ]);
+        }
 
         return redirect()->route('administrator.data-absensi.list', [$request->id_santri]);
 

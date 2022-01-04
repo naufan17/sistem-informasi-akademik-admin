@@ -49,6 +49,16 @@ class DataNilaiController extends Controller
             'score' => $request->score,
         ]);
 
+        // CumulativeStudy::upsert([
+        //     'id_cumulative_study' => $request->id_cumulative_study,
+        //     'year' => $request->year,
+        //     'semester' => $request->semester,
+        //     'minimum_score' => '75',
+        //     'score' => $request->score,
+        //     'id_santri' => $request->id_santri,
+        //     'id_course' => $request->id_course,
+        // ],['id_cumulative_study', 'year', 'semester', 'id_santri', 'id_course'],['minimum_score', 'score']);
+
         return redirect('/administrator/data-nilai');
     }
 }
