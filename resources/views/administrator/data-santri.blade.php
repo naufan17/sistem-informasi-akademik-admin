@@ -27,14 +27,14 @@
                             </div>
                         </div>
                         <div class="object-left text-center text-white text-base">
-                            <button type="submit" class="bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-3 px-8">Lihat Santri</button>
+                            <button type="submit" class="bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-3 px-8">Lihat</button>
                         </div>
                     </div>
                 </form>
                 <p class="text-xl pt-8 flex items-center border-b-2">Daftar List Santri</p>
                 <div class="flex flex-row-reverse object-left text-center text-white text-base py-8">
                     <a href="{{ url('administrator/data-santri/form-create') }}" class="button bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-3 px-8">
-                        Tambah Santri
+                        Tambah
                     </a>
                 </div>
                 <div class="bg-white overflow-auto pb-8">

@@ -10,7 +10,7 @@
                 <p class="text-xl pt-8 flex items-center border-b-2">Daftar Anggota Admin</p>
                 <div class="flex flex-row-reverse object-left text-center text-white text-base py-8">
                     <a href="{{ url('administrator/data-admin/form-create') }}" class="button bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-3 px-8">
-                        Tambah Admin
+                        Tambah
                     </a>
                 </div>
                 <div class="bg-white overflow-auto pb-8">
@@ -18,17 +18,15 @@
                         <thead class="bg-gray-800 text-white">
                             <tr>
                                 <th class="text-center py-3 px-4 uppercase font-semibold text-sm">No</th>
-                                <th class="text-center w-1/4 py-3 px-4 uppercase font-semibold text-sm">ID</th>
-                                <th class="text-center w-1/4 py-3 px-4 uppercase font-semibold text-sm">Nama</th>
-                                <th class="text-center w-1/4 py-3 px-4 uppercase font-semibold text-sm">Username</th>
-                                <th class="text-center w-1/4 py-3 px-4 uppercase font-semibold text-sm">Aksi</td>
+                                <th class="text-center w-1/3 py-3 px-4 uppercase font-semibold text-sm">Nama</th>
+                                <th class="text-center w-1/3 py-3 px-4 uppercase font-semibold text-sm">Username</th>
+                                <th class="text-center w-1/3 py-3 px-4 uppercase font-semibold text-sm">Aksi</td>
                             </tr>
                         </thead>
                         <tbody class="text-gray-700">
                             @foreach($administrators as $administrator)
                             <tr>
                                 <td class="text-center py-3 px-4">{{ $loop->iteration }}</td>
-                                <td class="text-center py-3 px-4">{{ $administrator->id }}</td>
                                 <td class="text-center py-3 px-4">{{ $administrator->name }}</td>
                                 <td class="text-center py-3 px-4">{{ $administrator->username }}</td>
                                 <td>

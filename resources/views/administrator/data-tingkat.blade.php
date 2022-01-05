@@ -28,14 +28,14 @@
                             </div>
                         </div>
                         <div class="object-left text-center text-white text-base">
-                            <button class="bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-3 px-8" href="#">Lihat Tingkat</button>
+                            <button class="bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-3 px-8">Lihat</button>
                         </div>
                     </div>
                 </form>
                 <p class="text-xl pt-8 flex items-center border-b-2">Daftar List Tingkat</p>
                 <div class="flex flex-row-reverse object-left text-center text-white text-base py-8">
                     <a href="{{ url('administrator/data-tingkat/form-create') }}" class="button bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-3 px-8">
-                        Tambah Tingkat
+                        Tambah
                     </a>
                 </div>
                 <div class="bg-white overflow-auto pb-8">

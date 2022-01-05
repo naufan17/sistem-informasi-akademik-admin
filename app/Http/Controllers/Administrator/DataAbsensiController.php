@@ -58,7 +58,6 @@ class DataAbsensiController extends Controller
                 'minimum_attendance_asrama' => '15',
                 'attendance_asrama' => $request->attendance_asrama,
             ]);
-    
         }elseif(date('m') > 06 ){
             Attendance::create([
                 'year' => date('Y'),
@@ -72,5 +71,41 @@ class DataAbsensiController extends Controller
         }
 
         return redirect()->route('administrator.data-absensi.list', [$request->id_santri]);
+    }
+
+    public function formUpdate($id)
+    {
+        $attendances = Attendance::where('id_attendance', $id)->get();
+
+        return view('administrator.update-data-absensi', compact('attendances'));
+    }
+
+    public function update(Request $request)
+    {
+        $request->validate([
+            'attendance_mdnu' => 'required', 'number',
+            'attendance_asrama' => 'required', 'number',
+        ]);
+        
+        Attendance::where('id_attendance', $request->id_attendance)->update([
+            'minimum_attendance_mdnu' => '10', 
+            'attendance_mdnu' => $request->attendance_mdnu,
+            'minimum_attendance_asrama' => '15',
+            'attendance_asrama' => $request->attendance_asrama,
+        ]);
+
+        return redirect()->route('administrator.data-absensi.list', [$request->id_santri]);
+    }
+
+    public function delete($id)
+    {
+        $id_santri = 0;
+        foreach(Attendance::where('id_attendance', $id)->get() as $attendances){
+            $id_santri = $attendances->id_santri;
+        }
+
+        Attendance::where('id_attendance', $id)->delete();
+
+        return redirect()->route('administrator.data-absensi.list', [$id_santri]);
     }
 }

@@ -77,6 +77,9 @@ Route::get('/administrator/data-absensi', [DataAbsensiController::class, 'index'
 Route::get('/administrator/data-absensi/list/{id}', [DataAbsensiController::class, 'listAbsensi'])->name('administrator.data-absensi.list');
 Route::get('/administrator/data-absensi/form-create/{id}', [DataAbsensiController::class, 'formCreate'])->name('administrator.data-absensi.form-create');
 Route::get('/administrator/data-absensi/create', [DataAbsensiController::class, 'create'])->name('administrator.data-absensi.create');
+Route::get('/administrator/data-absensi/form-update/{id}', [DataAbsensiController::class, 'formUpdate'])->name('administrator.data-absensi.form-update');
+Route::get('/administrator/data-absensi/update', [DataAbsensiController::class, 'update'])->name('administrator.data-absensi.update');
+Route::get('/administrator/data-absensi/delete/{id}', [DataAbsensiController::class, 'delete'])->name('administrator.data-absensi.delete');
 
 Route::get('/administrator/data-jadwal/filter-hari', [DataJadwalController::class, 'filterHari'])->name('administrator.data-jadwal.filter-hari');
 Route::get('/administrator/data-jadwal', [DataJadwalController::class, 'index'])->name('administrator.data-jadwal');
