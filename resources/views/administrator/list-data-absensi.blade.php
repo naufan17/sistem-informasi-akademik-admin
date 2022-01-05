@@ -17,11 +17,27 @@
                     </a>
                 </div>
                 <p class="text-xl pt-8 flex items-center border-b-2">Input Presentase Absensi ke Santri</p>
-                <div class="flex flex-row-reverse object-left text-center text-white text-base py-8">
-                    <a href="{{ url('administrator/data-absensi/form-create') }}/{{ $idSantri }}" class="button bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-3 px-8">
-                        Tambah Absensi
-                    </a>
-                </div>
+                @foreach($santris as $santri)
+                    @if(date('m') <= 06 )
+                        @if($santri->year == date('Y') && $santri->semester == 'Genap')
+                        @else
+                        <div class="flex flex-row-reverse object-left text-center text-white text-base py-8">
+                            <a href="{{ url('administrator/data-absensi/form-create') }}/{{ $idSantri }}" class="button bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-3 px-8">
+                                Tambah Absensi
+                            </a>
+                        </div>
+                        @endif
+                    @elseif(date('m') > 06 )
+                        @if($santri->year == date('Y') && $santri->semester == 'Ganjil')
+                        @else
+                        <div class="flex flex-row-reverse object-left text-center text-white text-base py-8">
+                            <a href="{{ url('administrator/data-absensi/form-create') }}/{{ $idSantri }}" class="button bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-3 px-8">
+                                Tambah Absensi
+                            </a>
+                        </div>
+                        @endif
+                    @endif
+                @endforeach
                 <div class="bg-white overflow-auto pb-8">
                     <table class="table-auto bg-white">
                         <thead class="bg-gray-800 text-white">
