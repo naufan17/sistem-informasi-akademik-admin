@@ -17,6 +17,8 @@ class Attendance extends Model
      */
     protected $fillable = [
         'id_attendance',
+        'year',
+        'semester',
         'minimum_attendance_mdnu',
         'attendance_mdnu',
         'minimum_attendance_asrama',

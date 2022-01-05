@@ -61,20 +61,25 @@ class DataKelasController extends Controller
 
     public function create(Request $request)
     {
+        $request->validate([
+            'id_santri' => 'required', 'number',
+            'id_course' => 'required', 'number',
+        ]);
+
         if(date('m') <= 06 ){
             CumulativeStudy::firstOrCreate([
                 'year' => date('Y'),
                 'semester' => 'Genap',
-                'id_santri' => $request['id_santri'],
-                'id_course' => $request['id_course'],
+                'id_santri' => $request->id_santri,
+                'id_course' => $request->id_course,
             ]);
     
         }elseif(date('m') > 06 ){
             CumulativeStudy::firstOrCreate([
                 'year' => date('Y'),
                 'semester' => 'Ganjil',
-                'id_santri' => $request['id_santri'],
-                'id_course' => $request['id_course'],
+                'id_santri' => $request->id_santri,
+                'id_course' => $request->id_course,
             ]);
         }
 

@@ -40,11 +40,11 @@ class DataUstadzController extends Controller
         ]);
 
         User::create([
-            'id' => $request['id'],
-            'name' => $request['name'],
-            'email' => $request['email'],
-            'password' => Hash::make($request['password']),
-            'role' => $request['role'],
+            'id' => $request->id,
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+            'role' => 'Ustadz',
         ]);
 
         return redirect('/administrator/data-ustadz');
@@ -70,6 +70,12 @@ class DataUstadzController extends Controller
 
     public function updateProfile(Request $request)
     {
+        $request->validate([
+            'name' => 'required', 'string', 'max:255',
+            'email' => 'required', 'string', 'email', 'max:255', 'unique:users',
+            'status' => 'required', 'string',
+        ]);
+        
         User::where('id', $request->id)->update([
             'name' => $request->name, 
             'email' => $request->email, 
@@ -81,6 +87,10 @@ class DataUstadzController extends Controller
 
     public function updatePassword(Request $request)
     {
+        $request->validate([
+            'password' => 'required', 'string', 'min:8', 'confirmed',
+        ]);
+
         User::where('id', $request->id)->update([
             'password' => Hash::make($request->password),
         ]);

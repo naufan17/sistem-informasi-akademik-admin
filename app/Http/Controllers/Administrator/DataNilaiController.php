@@ -44,9 +44,13 @@ class DataNilaiController extends Controller
     
     public function create(Request $request)
     {
-        CumulativeStudy::where('id_cumulative_study', $request->id_cumulative_study)->update([
+        $request->validate([
+            'score' => 'required', 'number',
+        ]);
+
+        CumulativeStudy::where('id_cumulative_study', $request['id_cumulative_study'])->update([
             'minimum_score' => '75',
-            'score' => $request->score,
+            'score' => $request['score'],
         ]);
 
         // CumulativeStudy::upsert([

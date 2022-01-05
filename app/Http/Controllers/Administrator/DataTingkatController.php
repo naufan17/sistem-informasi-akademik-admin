@@ -40,8 +40,8 @@ class DataTingkatController extends Controller
         ]);
 
         Grade::firstOrCreate([
-            'grade_number' => $request['grade_number'],
-            'grade_name' => $request['grade_name'],
+            'grade_number' => $request->grade_number, 
+            'grade_name' => $request->grade_name, 
         ]);
 
         return redirect('/administrator/data-tingkat');
@@ -56,6 +56,11 @@ class DataTingkatController extends Controller
 
     public function update(Request $request)
     {
+        $request->validate([
+            'grade_number' => 'required', 'number',
+            'grade_name' => 'required', 'string','max:255',
+        ]);
+        
         Grade::where('id_grade', $request->id_grade)->update([
             'grade_number' => $request->grade_number, 
             'grade_name' => $request->grade_name, 

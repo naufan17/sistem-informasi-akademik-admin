@@ -41,9 +41,9 @@ class DataJadwalController extends Controller
         ]);
 
         Schedule::firstOrCreate([
-            'day' => $request['day'],
-            'time_begin' => $request['time_begin'],
-            'time_end' => $request['time_end'],
+            'day' => $request->day, 
+            'time_begin' => $request->time_begin, 
+            'time_end' => $request->time_end,
         ]);
 
         return redirect('/administrator/data-jadwal');
@@ -58,6 +58,12 @@ class DataJadwalController extends Controller
 
     public function update(Request $request)
     {
+        $request->validate([
+            'day' => 'required', 'string','max:255',
+            'time_begin' => 'required', 'string','max:255',
+            'time_end' => 'required', 'string','max:255',
+        ]);
+        
         Schedule::where('id_schedule', $request->id_schedule)->update([
             'day' => $request->day, 
             'time_begin' => $request->time_begin, 
