@@ -36,7 +36,6 @@ class DataUstadzController extends Controller
             'name' => 'required', 'string', 'max:255',
             'email' => 'required', 'string', 'email', 'max:255', 'unique:users',
             'password' => 'required', 'string', 'min:8', 'confirmed',
-            'role' => 'required', 'string',
         ]);
 
         User::create([
@@ -45,6 +44,7 @@ class DataUstadzController extends Controller
             'email' => $request->email,
             'password' => Hash::make($request->password),
             'role' => 'Ustadz',
+            'status' => 'Aktif',
         ]);
 
         return redirect('/administrator/data-ustadz');

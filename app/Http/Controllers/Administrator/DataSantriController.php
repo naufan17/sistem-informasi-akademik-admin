@@ -44,6 +44,7 @@ class DataSantriController extends Controller
             'email' => $request->email,
             'password' => Hash::make($request->password),
             'role' => 'Santri',
+            'status' => 'Aktif',
         ]);
 
         return redirect('/administrator/data-santri');

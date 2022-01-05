@@ -37,6 +37,7 @@
                                 <td class="text-center py-3 px-4">{{ $cumulativestudy->course }}</td>
                                 <td class="text-center py-3 px-4">{{ $cumulativestudy->book }}</td>
                                 <td class="text-center py-3 px-4">{{ $cumulativestudy->sem }}</td>
+                                @if(empty($cumulativestudy->score))
                                 <td>
                                     <div class="flex py-3 px-4">
                                         <div class="w-5 mr-2 transform hover:text-purple-500 hover:scale-110">
@@ -48,6 +49,9 @@
                                         </div>
                                     </div>
                                 </td>
+                                @else
+                                <td class="text-center py-3 px-4"></td>
+                                @endif
                             </tr>
                             @endforeach
                         </tbody>

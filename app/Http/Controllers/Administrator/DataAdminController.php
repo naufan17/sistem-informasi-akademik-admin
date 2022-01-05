@@ -36,10 +36,10 @@ class DataAdminController extends Controller
     public function create(Request $request)
     {
         $request->validate([
-            'name' => 'required|string|max:255',
-            'username' => 'required|string|max:255',
-            // 'email' => 'required|string|email|max:255|unique:administrators',
-            'password' => 'required|string|confirmed|min:8',
+            'name' => 'required', 'string', 'max:255',
+            'username' => 'required', 'string', 'max:255',
+            // 'email' => 'required', 'string', 'email', 'max:255', 'unique:administrators',
+            'password' => 'required', 'string', 'confirmed', 'min:8',
         ]);
 
         Administrator::create([
@@ -73,9 +73,9 @@ class DataAdminController extends Controller
     public function updateProfile(Request $request)
     {
         $request->validate([
-            'name' => 'required|string|max:255',
-            'username' => 'required|string|max:255',
-            // 'email' => 'required|string|email|max:255|unique:administrators',
+            'name' => 'required', 'string', 'max:255',
+            'username' => 'required', 'string', 'max:255',
+            // 'email' => 'required', 'string', 'email', 'max:255', 'unique:administrators',
         ]);
 
         Administrator::where('id', $request->id)->update([
@@ -90,7 +90,7 @@ class DataAdminController extends Controller
     public function updatePassword(Request $request)
     {
         $request->validate([
-            'password' => 'required|string|confirmed|min:8',
+            'password' => 'required', 'string', 'confirmed', 'min:8',
         ]);
         
         Administrator::where('id', $request->id)->update([

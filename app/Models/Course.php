@@ -19,7 +19,7 @@ class Course extends Model
         'id_course',
         'course',
         'book',
-        'semester',
+        'sem',
         'id_grade',
         'id_schedule',
         'id_ustadz',

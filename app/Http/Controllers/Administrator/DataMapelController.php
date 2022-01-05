@@ -89,7 +89,7 @@ class DataMapelController extends Controller
     public function update(Request $request)
     {
         $request->validate([
-            'id' => 'required', 'number',
+            'id_course' => 'required', 'number',
             'course' => 'required', 'string','max:255',
             'book' => 'required', 'string','max:255',
             'sem' => 'required', 'number',
