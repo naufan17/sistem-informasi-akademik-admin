@@ -90,9 +90,6 @@
                         </tbody>
                     </table>
                 </div>
-                <div class="flex object-left text-center text-white text-base pt-6">
-                    <button class="bg-blue-600 hover:bg-blue-800 shadow-lg rounded py-3 px-8" href="#">Cetak MP</button>
-                </div>
             </div>
         </main>
     </div>

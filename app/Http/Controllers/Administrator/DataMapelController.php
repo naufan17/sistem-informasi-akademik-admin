@@ -42,7 +42,9 @@ class DataMapelController extends Controller
     {
         $grades = Grade::all();
         $schedules = Schedule::all();
-        $ustadzs = User::where('role', 'ustadz')->get();
+        $ustadzs = User::where('role', 'ustadz')
+                        ->where('status', 'Aktif')
+                        ->get();
 
         return view('administrator.tambah-data-mapel', compact('schedules', 'ustadzs', 'grades'));
     }
