@@ -21,12 +21,9 @@
                                     </svg>
                                 </div>
                                 <select type="text" name="day" value=""  class="block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker py-3 px-4 pr-8 rounded" id="grid-state">
-                                    <option value="Senin">Senin</option>
-                                    <option value="Selasa">Selasa</option>
-                                    <option value="Rabu">Rabu</option>
-                                    <option value="Kamis">Kamis</option>
-                                    <option value="Jumat">Jumat</option>
-                                    <option value="Sabtu">Sabtu</option>
+                                    @foreach($filters as $filter)
+|                                    <option value="{{ $filter->day }}">{{ $filter->day }}</option>
+                                    @endforeach
                                 </select>
                             </div>
                         </div>

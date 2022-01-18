@@ -21,9 +21,9 @@
                                     </svg>
                                 </div>
                                 <select type="text" name="grade_name" value=""  class="block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker py-3 px-4 pr-8 rounded" id="grid-state">
-                                    <option value="Awaliyah">Awaliyah</option>
-                                    <option value="Wustho">Wustho</option>
-                                    <option value="Ulya">Ulya</option>
+                                    @foreach($filters as $filter)
+|                                    <option value="{{ $filter->grade_name }}">{{ $filter->grade_name }}</option>
+                                    @endforeach
                                 </select>
                             </div>
                         </div>

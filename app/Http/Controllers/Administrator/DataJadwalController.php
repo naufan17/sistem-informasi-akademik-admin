@@ -17,14 +17,23 @@ class DataJadwalController extends Controller
     {
         $schedules = Schedule::all();
 
-        return view('administrator.data-jadwal', compact('schedules'));
+        $filters = Schedule::select('day')
+                            ->distinct()
+                            ->get();
+
+        return view('administrator.data-jadwal', compact('schedules', 'filters'));
     }
 
     public function filterHari(Request $request)
     {
         $schedules = Schedule::where('day', $request->day)->get();
 
-        return view('administrator.data-jadwal', compact('schedules'));
+        $filters = Schedule::select('day')
+                            ->where('day', $request->day)
+                            ->distinct()
+                            ->get();
+
+        return view('administrator.data-jadwal', compact('schedules', 'filters'));
     }
 
     public function formCreate()

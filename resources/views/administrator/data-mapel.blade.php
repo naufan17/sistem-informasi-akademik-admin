@@ -21,12 +21,9 @@
                                     </svg>
                                 </div>
                                 <select type="number" name="sem" value="sem"  class="block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker py-3 px-4 pr-8 rounded" id="grid-state">
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                    <option value="6">6</option>
+                                    @foreach($filters as $filter)
+|                                    <option value="{{ $filter->sem }}">{{ $filter->sem }}</option>
+                                    @endforeach
                                 </select>
                             </div>
                         </div>

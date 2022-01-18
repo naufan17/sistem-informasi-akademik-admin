@@ -17,14 +17,23 @@ class DataTingkatController extends Controller
     {
         $grades = Grade::all();
 
-        return view('administrator.data-tingkat', compact('grades'));
+        $filters = Grade::select('grade_name')
+                        ->distinct()
+                        ->get();
+
+        return view('administrator.data-tingkat', compact('grades', 'filters'));
     }
 
     public function filterNamaTingkat(Request $request)
     {
         $grades = Grade::where('grade_name', $request->grade_name)->get();
 
-        return view('administrator.data-tingkat', compact('grades'));
+        $filters = Grade::select('grade_name')
+                        ->where('grade_name', $request->grade_name)
+                        ->distinct()
+                        ->get();
+
+        return view('administrator.data-tingkat', compact('grades', 'filters'));
     }
 
     public function formCreate()

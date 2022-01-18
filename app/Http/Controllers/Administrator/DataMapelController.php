@@ -24,7 +24,11 @@ class DataMapelController extends Controller
                         ->orderBy('sem')
                         ->get();
 
-        return view('administrator.data-mapel', compact('courses'));
+        $filters = Course::select('sem')
+                        ->distinct()
+                        ->get();
+
+        return view('administrator.data-mapel', compact('courses', 'filters'));
     }
 
     public function filterSemester(Request $request)
@@ -35,7 +39,12 @@ class DataMapelController extends Controller
                         ->where('sem', $request->sem)
                         ->get();
 
-        return view('administrator.data-mapel', compact('courses'));
+        $filters = Course::select('sem')
+                        ->where('sem', $request->sem)
+                        ->distinct()
+                        ->get();
+
+        return view('administrator.data-mapel', compact('courses', 'filters'));
     }
 
     public function formCreate()
