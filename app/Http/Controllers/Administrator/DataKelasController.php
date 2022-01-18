@@ -6,8 +6,6 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Course;
 use App\Models\CumulativeStudy;
-use App\Models\Grade;
-use App\Models\Schedule;
 use App\Models\User;
 
 class DataKelasController extends Controller
