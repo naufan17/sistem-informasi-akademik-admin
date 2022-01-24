@@ -47,7 +47,7 @@ class DataNilaiController extends Controller
         ]);
 
         CumulativeStudy::where('id_cumulative_study', $request['id_cumulative_study'])->update([
-            'minimum_score' => '75',
+            'minimum_score' => '60',
             'score' => $request['score'],
         ]);
 

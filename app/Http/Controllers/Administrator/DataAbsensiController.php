@@ -53,9 +53,9 @@ class DataAbsensiController extends Controller
                 'year' => date('Y')-1 . '/' . date('Y'),
                 'semester' => 'Genap',
                 'id_santri' => $request->id_santri,
-                'minimum_attendance_mdnu' => '10', 
+                'minimum_attendance_mdnu' => '15', 
                 'attendance_mdnu' => $request->attendance_mdnu,
-                'minimum_attendance_asrama' => '15',
+                'minimum_attendance_asrama' => '10',
                 'attendance_asrama' => $request->attendance_asrama,
             ]);
         }elseif(date('m') > 06 ){
@@ -63,9 +63,9 @@ class DataAbsensiController extends Controller
                 'year' => date('Y') . '/' . date('Y')+1,
                 'semester' => 'Ganjil',
                 'id_santri' => $request->id_santri,
-                'minimum_attendance_mdnu' => '10', 
+                'minimum_attendance_mdnu' => '15', 
                 'attendance_mdnu' => $request->attendance_mdnu,
-                'minimum_attendance_asrama' => '15',
+                'minimum_attendance_asrama' => '10',
                 'attendance_asrama' => $request->attendance_asrama,
             ]);
         }
