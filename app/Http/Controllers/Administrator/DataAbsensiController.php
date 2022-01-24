@@ -50,7 +50,7 @@ class DataAbsensiController extends Controller
 
         if(date('m') <= 06 ){
             Attendance::create([
-                'year' => date('Y'),
+                'year' => date('Y')-1 . '/' . date('Y'),
                 'semester' => 'Genap',
                 'id_santri' => $request->id_santri,
                 'minimum_attendance_mdnu' => '10', 
@@ -60,7 +60,7 @@ class DataAbsensiController extends Controller
             ]);
         }elseif(date('m') > 06 ){
             Attendance::create([
-                'year' => date('Y'),
+                'year' => date('Y') . '/' . date('Y')+1,
                 'semester' => 'Ganjil',
                 'id_santri' => $request->id_santri,
                 'minimum_attendance_mdnu' => '10', 

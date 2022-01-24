@@ -66,7 +66,7 @@ class DataKelasController extends Controller
 
         if(date('m') <= 06 ){
             CumulativeStudy::firstOrCreate([
-                'year' => date('Y'),
+                'year' => date('Y')-1 . '/' . date('Y'),
                 'semester' => 'Genap',
                 'id_santri' => $request->id_santri,
                 'id_course' => $request->id_course,
@@ -74,7 +74,7 @@ class DataKelasController extends Controller
     
         }elseif(date('m') > 06 ){
             CumulativeStudy::firstOrCreate([
-                'year' => date('Y'),
+                'year' => date('Y') . '/' . date('Y')+1,
                 'semester' => 'Ganjil',
                 'id_santri' => $request->id_santri,
                 'id_course' => $request->id_course,
