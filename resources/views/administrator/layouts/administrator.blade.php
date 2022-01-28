@@ -6,8 +6,7 @@
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>SIAKAD MDNU</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -37,7 +36,7 @@
                     <div class="flex space-x-4 py-2">
                         <!--LOGO-->
                         <div class="object-left">
-                            <img src="https://drive.google.com/file/d/1cmaYv3B2petkuK-dczI_UnpzHn9Bx1Qu/view?usp=sharing" class="w-24">
+                            <img src="{{ ('images/logo.png ') }}" class="w-24">
                         </div>
                         <!--NAME-->
                         <div class="text-center font-bold font-sans text-yellow-800 mt-2">
@@ -73,13 +72,6 @@
                                 Data Admin
                             </a>
                         </div>
-                        <!--
-                        <div class="group border-indigo-500 hover:bg-blue-600 hover:shadow-lg hover:border-transparent">
-                            <a href="{{ url('administrator/data-mapel') }}" class="text-gray-800 group-hover:text-white flex items-center py-3 pl-8">
-                                Mata Pelajaran
-                            </a>
-                        </div>
-                        -->
                         <div @click.away="open = false" class="group border-indigo-500 hover:bg-blue-600 hover:shadow-lg hover:border-transparent" x-data="{ open: false }">
                             <button @click="open = !open" class="flex flex-row text-gray-800 group-hover:text-white items-center py-3 pl-8">
                                 <span class="w-full text-left font-bold">List Data</span>
@@ -112,38 +104,6 @@
                                 </div>
                             </div>
                         </div>
-                        <!--
-                        <div class="group border-indigo-500 hover:bg-blue-600 hover:shadow-lg hover:border-transparent">
-                            <a href="{{ url('administrator/data-ustadz') }}" class="text-gray-800 group-hover:text-white flex items-center py-3 pl-8">
-                                Ustadz
-                            </a>
-                        </div>
-                        <div class="group border-indigo-500 hover:bg-blue-600 hover:shadow-lg hover:border-transparent">
-                            <a href="{{ url('administrator/data-santri') }}" class="text-gray-800 group-hover:text-white flex items-center py-3 pl-8">  
-                                Santri
-                            </a>
-                        </div>
-                        <div class="group border-indigo-500 hover:bg-blue-600 hover:shadow-lg hover:border-transparent">
-                            <a href="{{ url('administrator/data-tingkat') }}" class="text-gray-800 group-hover:text-white flex items-center py-3 pl-8">     
-                                Tingkat
-                            </a>
-                        </div>
-                        <div class="group border-indigo-500 hover:bg-blue-600 hover:shadow-lg hover:border-transparent">
-                            <a href="{{ url('administrator/data-kelas') }}" class="text-gray-800 group-hover:text-white flex items-center py-3 pl-8"> 
-                                Kelas
-                            </a>
-                        </div>
-                        <div class="group border-indigo-500 hover:bg-blue-600 hover:shadow-lg hover:border-transparent">
-                            <a href="{{ url('administrator/data-jadwal') }}" class="text-gray-800 group-hover:text-white flex items-center py-3 pl-8">     
-                                Jadwal
-                            </a>
-                        </div>
-                        <div class="group border-indigo-500 hover:bg-blue-600 hover:shadow-lg hover:border-transparent">
-                            <a href="{{ url('administrator/data-nilai') }}" class="text-gray-800 group-hover:text-white flex items-center py-3 pl-8">     
-                                Nilai
-                            </a>
-                        </div>
-                        -->
                         <button class="w-full hover:bg-blue-600 cta-btn font-semibold justify-center ">
                             <a class="text-gray-800 hover:text-white items-center py-3 pl-8 flex item-center" href="{{ route('administrator.logout') }}" onclick="event.preventDefault();
                                 document.getElementById('logout-form').submit();">{{ __('Logout') }}
