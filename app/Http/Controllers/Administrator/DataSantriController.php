@@ -34,14 +34,12 @@ class DataSantriController extends Controller
         $request->validate([
             'id' => 'required', 'number', 'max:255',
             'name' => 'required', 'string', 'max:255',
-            'email' => 'required', 'string', 'email', 'max:255', 'unique:users',
             'password' => 'required', 'string', 'min:8', 'confirmed',
         ]);
 
         User::create([
             'id' => $request->id,
             'name' => $request->name,
-            'email' => $request->email,
             'password' => Hash::make($request->password),
             'role' => 'Santri',
             'status' => 'Aktif',
@@ -71,14 +69,14 @@ class DataSantriController extends Controller
     public function updateProfile(Request $request)
     {
         $request->validate([
+            'id' => 'required', 'number', 'max:255',
             'name' => 'required', 'string', 'max:255',
-            'email' => 'required', 'string', 'email', 'max:255', 'unique:users',
             'status' => 'required', 'string',
         ]);
 
         User::where('id', $request->id)->update([
-            'name' => $request->name, 
-            'email' => $request->email, 
+            'id' => $request->id,
+            'name' => $request->name,  
             'status' => $request->status,  
         ]);
 
