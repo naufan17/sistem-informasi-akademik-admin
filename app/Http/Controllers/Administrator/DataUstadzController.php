@@ -103,4 +103,11 @@ class DataUstadzController extends Controller
         return redirect('/administrator/data-ustadz');
     }
 
+    public function detailUstadz($id)
+    {
+        $ustadzs = User::where('id', $id)->get();
+        
+        return view('administrator.detail-data-ustadz', compact('ustadzs'));
+    }
+
 }

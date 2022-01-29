@@ -102,4 +102,11 @@ class DataSantriController extends Controller
 
         return redirect('/administrator/data-santri');
     }
+
+    public function detailSantri($id)
+    {
+        $santris = User::where('id', $id)->get();
+        
+        return view('administrator.detail-data-santri', compact('santris'));
+    }
 }

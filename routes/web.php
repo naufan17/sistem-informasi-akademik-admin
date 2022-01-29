@@ -47,6 +47,7 @@ Route::get('/administrator/data-mapel/delete/{id}', [DataMapelController::class,
 
 Route::get('/administrator/filter-ustadz', [DataUstadzController::class, 'filter'])->name('administrator.filter-ustadz');
 Route::get('/administrator/data-ustadz', [DataUstadzController::class, 'index'])->name('administrator.data-ustadz');
+Route::get('/administrator/data-ustadz/detail/{id}', [DataUstadzController::class, 'detailUstadz'])->name('administrator.data-ustadz.detail');
 Route::get('/administrator/data-ustadz/form-create', [DataUstadzController::class, 'formCreate'])->name('administrator.data-ustadz.form-create');
 Route::get('/administrator/data-ustadz/create', [DataUstadzController::class, 'create'])->name('administrator.data-ustadz.create');
 Route::get('/administrator/data-ustadz/form-update/{id}', [DataUstadzController::class, 'formUpdate'])->name('administrator.data-ustadz.form-update');
@@ -56,6 +57,7 @@ Route::get('/administrator/data-ustadz/delete/{id}', [DataUstadzController::clas
 
 Route::get('/administrator/filter-santri', [DataSantriController::class, 'filter'])->name('administrator.filter-santri');
 Route::get('/administrator/data-santri', [DataSantriController::class, 'index'])->name('administrator.data-santri');
+Route::get('/administrator/data-santri/detail/{id}', [DataSantriController::class, 'detailSantri'])->name('administrator.data-santri.detail');
 Route::get('/administrator/data-santri/form-create', [DataSantriController::class, 'formCreate'])->name('administrator.data-santri.form-create');
 Route::get('/administrator/data-santri/create', [DataSantriController::class, 'create'])->name('administrator.data-santri.create');
 Route::get('/administrator/data-santri/form-update/{id}', [DataSantriController::class, 'formUpdate'])->name('administrator.data-santri.form-update');
