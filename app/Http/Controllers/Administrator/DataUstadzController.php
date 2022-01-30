@@ -21,7 +21,12 @@ class DataUstadzController extends Controller
                         ->orderBy('id')
                         ->paginate(50);
 
-        return view('administrator.data-ustadz', compact('ustadzs'));
+        $filter_status = User::select('status')
+                        ->where('role', 'ustadz')
+                        ->distinct()
+                        ->get();
+
+        return view('administrator.data-ustadz', compact('ustadzs', 'filter_status'));
     }
 
     public function formCreate()
@@ -54,7 +59,13 @@ class DataUstadzController extends Controller
                         ->where('status', $request->status)
                         ->paginate(50);
 
-        return view('administrator.data-ustadz', compact('ustadzs'));
+        $filter_status = User::select('status')
+                        ->where('role', 'ustadz')
+                        ->where('status', $request->status)
+                        ->distinct()
+                        ->get();
+
+        return view('administrator.data-ustadz', compact('ustadzs', 'filter_status'));
     }
 
     public function formUpdate($id)

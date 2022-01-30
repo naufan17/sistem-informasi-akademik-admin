@@ -21,7 +21,12 @@ class DataSantriController extends Controller
                         ->orderBy('id')
                         ->paginate(50);
 
-        return view('administrator.data-santri', compact('santris'));
+        $filter_status = User::select('status')
+                        ->where('role', 'santri')
+                        ->distinct()
+                        ->get();
+
+        return view('administrator.data-santri', compact('santris', 'filter_status'));
     }
 
     public function formCreate()
@@ -53,8 +58,14 @@ class DataSantriController extends Controller
         $santris = User::where('role', 'santri')
                         ->where('status', $request->status)
                         ->paginate(50);
+
+        $filter_status = User::select('status')
+                        ->where('role', 'santri')
+                        ->where('status', $request->status)
+                        ->distinct()
+                        ->get();
         
-        return view('administrator.data-santri', compact('santris'));
+        return view('administrator.data-santri', compact('santris', 'filter_status'));
     }
 
     public function formUpdate($id)
