@@ -19,7 +19,8 @@
                     <h2 class="text-2xl ">Tambah Admin
                     </h2>
                 </div>
-                <form method="GET" action="{{ url('administrator/data-admin/create') }}">
+                <form method="POST" action="{{ url('administrator/data-admin/create') }}">
+                    @csrf
                     <div class="pb-8">
                         <div class="pt-8">
                             <p class="self-center bg-gray-50 py-4 px-4">Identitas Diri</p>

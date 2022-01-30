@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Administrator;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use App\Models\Course;
 use App\Models\CumulativeStudy;
@@ -43,12 +44,13 @@ class DataNilaiController extends Controller
     public function create(Request $request)
     {
         $request->validate([
+            'id_cumulative_study' => 'required', 'number',
             'score' => 'required', 'number',
         ]);
-
-        CumulativeStudy::where('id_cumulative_study', $request['id_cumulative_study'])->update([
+        
+        CumulativeStudy::where('id_cumulative_study', $request->id_cumulative_study)->update([
             'minimum_score' => '60',
-            'score' => $request['score'],
+            'score' => $request->score,
         ]);
 
         // CumulativeStudy::upsert([

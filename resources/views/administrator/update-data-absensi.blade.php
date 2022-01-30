@@ -18,7 +18,8 @@
                 <div class="p-4">
                     <h2 class="text-2xl ">Update Absensi</h2>
                 </div>
-                <form method="GET" action="{{ url('administrator/data-absensi/update') }}">
+                <form method="POST" action="{{ url('administrator/data-absensi/update') }}">
+                    @csrf
                     <div class="pb-8">
                         <div class="pt-8">
                             <p class="self-center bg-gray-50 py-4 px-4">Absensi</p>

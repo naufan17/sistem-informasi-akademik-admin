@@ -57,6 +57,8 @@
                         </tbody>
                     </table>
                 </div>
+            </div>
+            <div class="bg-white rounded-lg shadow-md p-8 my-8">
                 <p class="text-xl py-8 flex items-center">Daftar Mata Pelajaran</p>
                 <div class="bg-white overflow-auto pb-8">
                     <table class="table-auto bg-white">
@@ -85,7 +87,8 @@
                                 <td class="text-center py-3 px-4">{{ $course->day }}, {{ $course->time_begin }} - {{ $course->time_end }}</td>  
                                 <td class="text-center py-3 px-4">{{ $course->name }}</td>
                                 <td>
-                                    <form method="GET" action="{{ url('administrator/data-kelas/create') }}">
+                                    <form method="POST" action="{{ url('administrator/data-kelas/create') }}">
+                                        @csrf
                                         <div class="flex flex-row-reverse object-left text-center text-white text-base py-3 px-4">
                                             <input type="hidden" name="id_santri" placeholder="" value="{{ $id }}" required autocomplete="name" required class="py-2 px-3 block w-full bg-transparent border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-300" />
                                             <input type="hidden" name="id_course" placeholder="" value="{{ $course->id_course }}" required autocomplete="name" required class="py-2 px-3 block w-full bg-transparent border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-300" />

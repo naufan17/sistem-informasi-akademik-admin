@@ -17,7 +17,8 @@
                     </a>
                 </div>
                 <p class="text-xl py-8 flex items-center">Input Nilai MP ke Santri</p>
-                <form method="GET" action="{{ url('administrator/data-nilai/create') }}">
+                <form method="POST" action="{{ url('administrator/data-nilai/create') }}">
+                    @csrf
                     <div class="bg-white overflow-auto pb-8">
                         <table class="table-auto bg-white">
                             <thead class="bg-gray-800 text-white">

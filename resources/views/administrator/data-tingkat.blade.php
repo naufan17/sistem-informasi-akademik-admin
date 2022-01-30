@@ -8,7 +8,8 @@
             <h1 class="text-3xl text-black pb-2 mt-2">Data Tingkat</h1>
             <div class="bg-white rounded-lg shadow-md p-8 my-8">
                 <!-- OPTION -->
-                <form method="GET" action="{{ url('administrator/data-tingkat/filter-nama-tingkat') }}">
+                <form method="POST" action="{{ url('administrator/data-tingkat') }}">
+                    @csrf
                     <div class="flex space-x-4 items-center pb-8">
                         <div class="flex-none w-36">
                             <a class="self-center">Nama Tingkat</a>

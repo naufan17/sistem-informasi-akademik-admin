@@ -28,7 +28,7 @@
                         </div>
                         @endif
                     @elseif(date('m') > 06 )
-                        @if($santri->year == date('Y') && $santri->semester == 'Ganjil')
+                        @if($santri->year == date('Y') . '/' . date('Y')+1 && $santri->semester == 'Ganjil')
                         @else
                         <div class="flex flex-row-reverse object-left text-center text-white text-base py-8">
                             <a href="{{ url('administrator/data-absensi/form-create') }}/{{ $idSantri }}" class="button bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-3 px-8">

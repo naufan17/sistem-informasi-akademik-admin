@@ -18,7 +18,8 @@
                 <div class="p-4">
                     <h2 class="text-2xl ">Update Tingkat</h2>
                 </div>
-                <form method="GET" action="{{ url('administrator/data-tingkat/update') }}">
+                <form method="POST" action="{{ url('administrator/data-tingkat/update') }}">
+                    @csrf
                     <div class="pb-8">
                         <div class="pt-8">
                             <p class="self-center bg-gray-50 py-4 px-4">Tingkatan Kelas</p>

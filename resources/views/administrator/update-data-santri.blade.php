@@ -18,7 +18,8 @@
                 <div class="p-4">
                     <h2 class="text-2xl ">Update Santri</h2>
                 </div>
-                <form method="GET" action="{{ url('administrator/data-santri/update-profile') }}">
+                <form method="POST" action="{{ url('administrator/data-santri/update-profile') }}">
+                    @csrf
                     <div class="pb-8">
                         <div class="pt-8">
                             <p class="self-center bg-gray-50 py-4 px-4">Update Profile</p>
@@ -47,7 +48,8 @@
                         <button type="submit" class="bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-3 px-8" >Simpan</button>
                     </div>
                 </form>
-                <form method="GET" action="{{ url('administrator/data-santri/update-password') }}">
+                <form method="POST" action="{{ url('administrator/data-santri/update-password') }}">
+                    @csrf
                     <div class="pb-8">
                         <div class="pt-8">
                             <p class="self-center bg-gray-50 py-4 px-4">Update Password</p>

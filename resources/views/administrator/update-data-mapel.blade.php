@@ -18,7 +18,8 @@
                 <div class="p-4">
                     <h2 class="text-2xl ">Tambah Mata Pelajaran</h2>
                 </div>
-                <form method="GET" action="{{ url('administrator/data-mapel/update') }}">
+                <form method="POST" action="{{ url('administrator/data-mapel/update') }}">
+                    @csrf
                     @foreach($courses as $course)
                     <div class="pb-8">
                         <div class="pt-8">
