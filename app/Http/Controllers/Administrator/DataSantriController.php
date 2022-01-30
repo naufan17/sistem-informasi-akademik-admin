@@ -19,7 +19,7 @@ class DataSantriController extends Controller
     {
         $santris = User::where('role', 'santri')
                         ->orderBy('id')
-                        ->get();
+                        ->paginate(50);
 
         return view('administrator.data-santri', compact('santris'));
     }
@@ -52,7 +52,7 @@ class DataSantriController extends Controller
     {
         $santris = User::where('role', 'santri')
                         ->where('status', $request->status)
-                        ->get();
+                        ->paginate(50);
         
         return view('administrator.data-santri', compact('santris'));
     }

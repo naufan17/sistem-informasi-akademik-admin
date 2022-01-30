@@ -118,7 +118,7 @@
                     <a class="text-lg font-bold">Masuk untuk melihat informasi akademik</a><br>
                 </div>
                 <div class=" text-center text-white text-xl py-4">
-                    <a href="{{ route('administrator.login') }}" class="button text-sm underline transform hover:scale-110 motion-reduce:transform-none bg-blue-800 p-3 mt-1 rounded py-3 px-8">Masuk</a>
+                    <a href="{{ route('administrator.login') }}" class="button text-sm transform hover:scale-110 motion-reduce:transform-none bg-blue-800 p-3 mt-1 rounded py-3 px-8">Masuk</a>
                 </div>
             </div>
         </div>

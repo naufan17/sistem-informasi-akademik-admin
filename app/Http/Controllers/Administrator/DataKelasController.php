@@ -16,17 +16,12 @@ class DataKelasController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index()
-    {
-        $courses = Course::leftjoin('users', 'courses.id_ustadz', '=', 'users.id')
-                        ->leftjoin('grades', 'courses.id_grade', '=', 'grades.id_grade')
-                        ->leftjoin('schedules', 'courses.id_schedule', '=', 'schedules.id_schedule')
-                        ->get();
-        
+    {   
         $santris = User::where('role', 'Santri')
                         ->where('status', 'Aktif')
-                        ->get();
+                        ->paginate(50);
 
-        return view('administrator.data-kelas', compact('courses', 'santris'));
+        return view('administrator.data-kelas', compact('santris'));
     }
 
     public function filterSemester(Request $request)

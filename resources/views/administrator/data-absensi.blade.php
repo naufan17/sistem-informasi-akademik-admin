@@ -33,6 +33,7 @@
                         </tbody>
                     </table>
                 </div>
+                {{ $santris->links() }}
             </div>
         </main>
     </div>

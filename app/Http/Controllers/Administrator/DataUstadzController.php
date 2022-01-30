@@ -19,7 +19,7 @@ class DataUstadzController extends Controller
     {
         $ustadzs = User::where('role', 'ustadz')
                         ->orderBy('id')
-                        ->get();
+                        ->paginate(50);
 
         return view('administrator.data-ustadz', compact('ustadzs'));
     }
@@ -52,7 +52,7 @@ class DataUstadzController extends Controller
     {
         $ustadzs = User::where('role', 'ustadz')
                         ->where('status', $request->status)
-                        ->get();
+                        ->paginate(50);
 
         return view('administrator.data-ustadz', compact('ustadzs'));
     }

@@ -17,16 +17,16 @@ class DataNilaiController extends Controller
      */
     public function index()
     {
-        $courses = Course::leftjoin('users', 'courses.id_ustadz', '=', 'users.id')
-                        ->leftjoin('grades', 'courses.id_grade', '=', 'grades.id_grade')
-                        ->leftjoin('schedules', 'courses.id_schedule', '=', 'schedules.id_schedule')
-                        ->get();
+        // $courses = Course::leftjoin('users', 'courses.id_ustadz', '=', 'users.id')
+        //                 ->leftjoin('grades', 'courses.id_grade', '=', 'grades.id_grade')
+        //                 ->leftjoin('schedules', 'courses.id_schedule', '=', 'schedules.id_schedule')
+        //                 ->get();
 
         $santris = User::where('role', 'Santri')
                         ->where('status', 'Aktif')
-                        ->get();
+                        ->paginate(50);
 
-        return view('administrator.data-nilai', compact('courses', 'santris'));
+        return view('administrator.data-nilai', compact('santris'));
     }
 
     public function formCreate($id)
