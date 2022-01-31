@@ -4,9 +4,11 @@ namespace App\Http\Controllers\Administrator;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Models\User;
+use App\Models\ImportUstadz;
 
 class DataUstadzController extends Controller
 {
@@ -49,6 +51,25 @@ class DataUstadzController extends Controller
             'role' => 'Ustadz',
             'status' => 'Aktif',
         ]);
+
+        return redirect('/administrator/data-ustadz');
+    }
+
+    public function formImport()
+    {
+        return view('administrator.import-data-ustadz');
+    }
+
+    public function import(Request $request)
+    {
+        $request->validate([
+            'file' => 'required|mimes:csv,xls,xlsx'
+        ]);
+
+        $file = $request->file('file');
+        $nama_file = rand().$file->getClientOriginalName();
+        $file->move('file_ustadz', $nama_file);
+        Excel::import(new ImportUstadz, public_path('/file_ustadz/'.$nama_file));
 
         return redirect('/administrator/data-ustadz');
     }

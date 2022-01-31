@@ -4,9 +4,11 @@ namespace App\Http\Controllers\Administrator;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Models\User;
+use App\Models\ImportSantri;
 
 class DataSantriController extends Controller
 {
@@ -49,6 +51,25 @@ class DataSantriController extends Controller
             'role' => 'Santri',
             'status' => 'Aktif',
         ]);
+
+        return redirect('/administrator/data-santri');
+    }
+
+    public function formImport()
+    {
+        return view('administrator.import-data-santri');
+    }
+
+    public function import(Request $request)
+    {
+        $request->validate([
+            'file' => 'required|mimes:csv,xls,xlsx'
+        ]);
+
+        $file = $request->file('file');
+        $nama_file = rand().$file->getClientOriginalName();
+        $file->move('file_santri', $nama_file);
+        Excel::import(new ImportSantri, public_path('/file_santri/'.$nama_file));
 
         return redirect('/administrator/data-santri');
     }

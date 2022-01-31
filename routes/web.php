@@ -50,6 +50,8 @@ Route::post('/administrator/data-ustadz', [DataUstadzController::class, 'filter'
 Route::get('/administrator/data-ustadz/detail/{id}', [DataUstadzController::class, 'detailUstadz'])->name('administrator.data-ustadz.detail');
 Route::get('/administrator/data-ustadz/form-create', [DataUstadzController::class, 'formCreate'])->name('administrator.data-ustadz.form-create');
 Route::post('/administrator/data-ustadz/create', [DataUstadzController::class, 'create'])->name('administrator.data-ustadz.create');
+Route::get('/administrator/data-ustadz/form-import', [DataUstadzController::class, 'formImport'])->name('administrator.data-ustadz.form-import');
+Route::post('/administrator/data-ustadz/import', [DataUstadzController::class, 'import'])->name('administrator.data-ustadz.import');
 Route::get('/administrator/data-ustadz/form-update/{id}', [DataUstadzController::class, 'formUpdate'])->name('administrator.data-ustadz.form-update');
 Route::post('/administrator/data-ustadz/update-profile', [DataUstadzController::class, 'updateProfile'])->name('administrator.data-ustadz.update-profile');
 Route::post('/administrator/data-ustadz/update-password', [DataUstadzController::class, 'updatePassword'])->name('administrator.data-ustadz.update-password');
@@ -60,6 +62,8 @@ Route::post('/administrator/data-santri', [DataSantriController::class, 'filter'
 Route::get('/administrator/data-santri/detail/{id}', [DataSantriController::class, 'detailSantri'])->name('administrator.data-santri.detail');
 Route::get('/administrator/data-santri/form-create', [DataSantriController::class, 'formCreate'])->name('administrator.data-santri.form-create');
 Route::post('/administrator/data-santri/create', [DataSantriController::class, 'create'])->name('administrator.data-santri.create');
+Route::get('/administrator/data-santri/form-import', [DataSantriController::class, 'formImport'])->name('administrator.data-santri.form-import');
+Route::post('/administrator/data-santri/import', [DataSantriController::class, 'import'])->name('administrator.data-santri.import');
 Route::get('/administrator/data-santri/form-update/{id}', [DataSantriController::class, 'formUpdate'])->name('administrator.data-santri.form-update');
 Route::post('/administrator/data-santri/update-profile', [DataSantriController::class, 'updateProfile'])->name('administrator.data-santri.update-profile');
 Route::post('/administrator/data-santri/update-password', [DataSantriController::class, 'updatePassword'])->name('administrator.data-santri.update-password');

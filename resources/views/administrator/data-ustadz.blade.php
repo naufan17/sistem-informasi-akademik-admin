@@ -38,6 +38,9 @@
                     <a href="{{ url('administrator/data-ustadz/form-create') }}" class="button bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-3 px-8">
                         Tambah
                     </a>
+                    <a href="{{ url('administrator/data-ustadz/form-import') }}" class="button bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-3 px-8 mr-6">
+                        Import
+                    </a>
                 </div>
                 <div class="bg-white overflow-auto pb-8">
                     <table class="table-auto bg-white">
