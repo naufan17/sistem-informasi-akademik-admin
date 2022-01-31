@@ -33,7 +33,7 @@
                         </div>
                     </div>
                 </form>
-                <p class="text-xl pt-8 flex items-center border-b-2">Daftar List Santri</p>
+                <p class="text-xl pt-4 flex items-center border-b-2">Daftar List Santri</p>
                 <div class="flex flex-row-reverse object-left text-center text-white text-base py-8">
                     <a href="{{ url('administrator/data-santri/form-create') }}" class="button bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-3 px-8">
                         Tambah
@@ -59,7 +59,7 @@
                                 <td class="text-center py-3 px-4">{{ $santri->name }}</td>
                                 <td class="text-center py-3 px-4">{{ $santri->status }}</td>
                                 <td class="text-center py-3 px-4">
-                                    <a href="{{ url('administrator/data-ustadz/detail') }}/{{ $santri->id }}" class="button bg-blue-600 hover:bg-blue-800 hover:text-white hover:no-underline text-white rounded shadow-md py-2 px-8">Detail</a>
+                                    <a href="{{ url('administrator/data-santri/detail') }}/{{ $santri->id }}" class="button bg-blue-600 hover:bg-blue-800 hover:text-white hover:no-underline text-white rounded shadow-md py-2 px-8">Detail</a>
                                 </td>
                                 <td>
                                     <div class="flex py-3 px-4">

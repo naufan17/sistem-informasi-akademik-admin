@@ -7,7 +7,7 @@
         <main class="pt-6 px-6">
             <h1 class="text-3xl text-black pb-2 mt-2">Data Admin</h1>
             <div class="bg-white rounded-lg shadow-md p-8 my-8">
-                <p class="text-xl pt-8 flex items-center border-b-2">Daftar Anggota Admin</p>
+                <p class="text-xl flex items-center border-b-2">Daftar Anggota Admin</p>
                 <div class="flex flex-row-reverse object-left text-center text-white text-base py-8">
                     <a href="{{ url('administrator/data-admin/form-create') }}" class="button bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-3 px-8">
                         Tambah

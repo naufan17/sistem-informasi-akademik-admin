@@ -59,7 +59,7 @@
                 </div>
             </div>
             <div class="bg-white rounded-lg shadow-md p-8 my-8">
-                <p class="text-xl py-8 flex items-center">Daftar Mata Pelajaran</p>
+                <p class="text-xl mb-8 flex items-center">Daftar Mata Pelajaran</p>
                 <div class="bg-white overflow-auto pb-8">
                     <table class="table-auto bg-white">
                         <thead class="bg-gray-800 text-white">

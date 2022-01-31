@@ -16,7 +16,7 @@
                         Kembali
                     </a>
                 </div>
-                <p class="text-xl pt-8 flex items-center border-b-2">Input Presentase Absensi ke Santri</p>
+                <p class="text-xl pt-4 flex items-center border-b-2">Input Presentase Absensi ke Santri</p>
                 @foreach($santris as $santri)
                     @if(date('m') <= 06 )
                         @if($santri->year == date('Y')-1 . '/' . date('Y') && $santri->semester == 'Genap')
