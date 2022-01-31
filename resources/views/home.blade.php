@@ -20,6 +20,7 @@
 
     <!-- Tailwind -->
     <link href="https://unpkg.com/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
 
     <!--Replace with your tailwind.css once created-->
     <link href="https://fonts.googleapis.com/css?family=Work+Sans:200,400&display=swap" rel="stylesheet">
@@ -28,7 +29,7 @@
     <!--HEADER-->
     <nav id="header" class="w-full z-30 top-0 py-1">
         <div class="w-full container mx-auto flex flex-wrap items-center justify-between">
-            <div class="flex space-x-4 py-5">
+            <div class="flex space-x-4 py-2">
                 <!--LOGO-->
                 <div class="object-left">
                     <img src="{{ ('images/logo.png ') }}" class="w-24">
