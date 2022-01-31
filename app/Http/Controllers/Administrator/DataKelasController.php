@@ -17,66 +17,31 @@ class DataKelasController extends Controller
      */
     public function index()
     {   
-        $santris = User::where('role', 'Santri')
-                        ->where('status', 'Aktif')
-                        ->paginate(50);
-
-        return view('administrator.data-kelas', compact('santris'));
-    }
-
-    public function formCreate($id)
-    {
-        $cumulativestudys = CumulativeStudy::leftjoin('users', 'cumulative_studies.id_santri', '=', 'users.id')
-                                            ->leftjoin('courses', 'cumulative_studies.id_course', '=', 'courses.id_course')
-                                            ->orderBy('sem')
-                                            ->where('id_santri', $id)
-                                            ->get();
-
         $courses = Course::leftjoin('users', 'courses.id_ustadz', '=', 'users.id')
-                        ->leftjoin('grades', 'courses.id_grade', '=', 'grades.id_grade')
                         ->leftjoin('schedules', 'courses.id_schedule', '=', 'schedules.id_schedule')
+                        ->leftjoin('grades', 'courses.id_grade', '=', 'grades.id_grade')
                         ->orderBy('sem')
                         ->get();
 
-        return view('administrator.tambah-santri-kelas', compact('cumulativestudys', 'courses', 'id'));
+        return view('administrator.data-kelas', compact('courses'));
     }
 
-    public function create(Request $request)
+    public function detailKelas($id)
     {
-        $request->validate([
-            'id_santri' => 'required', 'number',
-            'id_course' => 'required', 'number',
-        ]);
-
         if(date('m') <= 06 ){
-            CumulativeStudy::firstOrCreate([
-                'year' => date('Y')-1 . '/' . date('Y'),
-                'semester' => 'Genap',
-                'id_santri' => $request->id_santri,
-                'id_course' => $request->id_course,
-            ]);
-    
+            $santris = CumulativeStudy::where('id_course', $id)
+                                    ->leftjoin('users', 'cumulative_studies.id_santri', '=', 'users.id')
+                                    ->where('year', date('Y')-1 . '/' . date('Y'))
+                                    ->where('semester', 'Genap')
+                                    ->get();
         }elseif(date('m') > 06 ){
-            CumulativeStudy::firstOrCreate([
-                'year' => date('Y') . '/' . date('Y')+1,
-                'semester' => 'Ganjil',
-                'id_santri' => $request->id_santri,
-                'id_course' => $request->id_course,
-            ]);
+            $santris = CumulativeStudy::where('id_course', $id)
+                                    ->leftjoin('users', 'cumulative_studies.id_santri', '=', 'users.id')
+                                    ->where('year', date('Y') . '/' . date('Y')+1)
+                                    ->where('semester', 'Ganjil')
+                                    ->get();
         }
 
-        return redirect()->route('administrator.data-kelas.form-create', [$request->id_santri]);
-    }
-
-    public function delete($id)
-    {
-        $id_santri = 0;
-        foreach(CumulativeStudy::where('id_cumulative_study', $id)->get() as $cumulativestudys){
-            $id_santri = $cumulativestudys->id_santri;
-        }
-
-        CumulativeStudy::where('id_cumulative_study', $id)->delete();
-   
-        return redirect()->route('administrator.data-kelas.form-create', [$id_santri]);
+        return view('administrator.data-santri-kelas', compact('santris'));
     }
 }
