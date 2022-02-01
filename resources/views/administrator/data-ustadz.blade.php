@@ -22,6 +22,9 @@
                                     </svg>
                                 </div>
                                 <select type="text" name="status" value="" class="block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker py-3 px-4 pr-8 rounded" id="grid-state">
+                                    @foreach($status as $filter)
+                                    <option selected value="{{ $filter->status }}">{{ $filter->status }}</option>
+                                    @endforeach 
                                     @foreach($filter_status as $filter)
                                     <option value="{{ $filter->status }}">{{ $filter->status }}</option>
                                     @endforeach

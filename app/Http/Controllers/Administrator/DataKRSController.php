@@ -35,6 +35,7 @@ class DataKRSController extends Controller
         $courses = Course::leftjoin('users', 'courses.id_ustadz', '=', 'users.id')
                         ->leftjoin('grades', 'courses.id_grade', '=', 'grades.id_grade')
                         ->leftjoin('schedules', 'courses.id_schedule', '=', 'schedules.id_schedule')
+                        ->where('status_course', 'Aktif')
                         ->orderBy('sem')
                         ->get();
 

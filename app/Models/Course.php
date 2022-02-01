@@ -20,6 +20,7 @@ class Course extends Model
         'course',
         'book',
         'sem',
+        'status_course',
         'id_grade',
         'id_schedule',
         'id_ustadz',

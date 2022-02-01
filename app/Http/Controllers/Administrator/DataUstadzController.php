@@ -20,15 +20,22 @@ class DataUstadzController extends Controller
     public function index()
     {
         $ustadzs = User::where('role', 'ustadz')
+                        ->where('status', 'Aktif')
                         ->orderBy('id')
                         ->paginate(50);
 
         $filter_status = User::select('status')
+                            ->where('role', 'ustadz')
+                            ->distinct()
+                            ->get();
+
+        $status = User::select('status')
                         ->where('role', 'ustadz')
+                        ->where('status', 'Aktif')
                         ->distinct()
                         ->get();
 
-        return view('administrator.data-ustadz', compact('ustadzs', 'filter_status'));
+        return view('administrator.data-ustadz', compact('ustadzs', 'status', 'filter_status'));
     }
 
     public function formCreate()
@@ -80,13 +87,19 @@ class DataUstadzController extends Controller
                         ->where('status', $request->status)
                         ->paginate(50);
 
+        $status = User::select('status')
+                        ->where('role', 'ustadz')
+                        ->where('status', 'Aktif')
+                        ->distinct()
+                        ->get();
+
         $filter_status = User::select('status')
                         ->where('role', 'ustadz')
                         ->where('status', $request->status)
                         ->distinct()
                         ->get();
 
-        return view('administrator.data-ustadz', compact('ustadzs', 'filter_status'));
+        return view('administrator.data-ustadz', compact('ustadzs', 'status', 'filter_status'));
     }
 
     public function formUpdate($id)

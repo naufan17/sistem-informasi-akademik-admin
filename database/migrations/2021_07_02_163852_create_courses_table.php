@@ -18,6 +18,7 @@ class CreateCoursesTable extends Migration
             $table->string('course');
             $table->string('book');
             $table->integer('sem');
+            $table->enum('status', ['Aktif', 'Tidak aktif'])->default('Aktif');
             $table->unsignedBigInteger('id_grade');
             $table->unsignedBigInteger('id_schedule');
             $table->unsignedBigInteger('id_ustadz');

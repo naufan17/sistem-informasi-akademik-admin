@@ -16,14 +16,59 @@ class DataKelasController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index()
-    {   
+    {           
+        if(date('m') <= 06 ){
         $courses = Course::leftjoin('users', 'courses.id_ustadz', '=', 'users.id')
                         ->leftjoin('schedules', 'courses.id_schedule', '=', 'schedules.id_schedule')
                         ->leftjoin('grades', 'courses.id_grade', '=', 'grades.id_grade')
+                        ->where('status_course', 'Aktif')
+                        ->whereIn('sem', [2,4,6,8,10,12,14,16])
                         ->orderBy('sem')
                         ->get();
 
-        return view('administrator.data-kelas', compact('courses'));
+            $semester = "Genap";
+
+        }elseif(date('m') > 06 ){
+            $courses = Course::leftjoin('users', 'courses.id_ustadz', '=', 'users.id')
+                            ->leftjoin('schedules', 'courses.id_schedule', '=', 'schedules.id_schedule')
+                            ->leftjoin('grades', 'courses.id_grade', '=', 'grades.id_grade')
+                            ->where('status_course', 'Aktif')
+                            ->whereIn('sem', [1,3,5,7,9,11,13,15])
+                            ->orderBy('sem')
+                            ->get();
+
+            $semester = "Ganjil";
+        }
+
+        return view('administrator.data-kelas', compact('courses', 'semester'));
+    }
+
+    public function filter(Request $request)
+    {           
+        if($request->semester == 'Genap'){
+            $courses = Course::leftjoin('users', 'courses.id_ustadz', '=', 'users.id')
+                            ->leftjoin('schedules', 'courses.id_schedule', '=', 'schedules.id_schedule')
+                            ->leftjoin('grades', 'courses.id_grade', '=', 'grades.id_grade')
+                            ->where('status_course', 'Aktif')
+                            ->whereIn('sem', [2,4,6,8,10,12,14,16])
+                            ->orderBy('sem')
+                            ->get();
+
+            $semester = "Genap";
+
+        }elseif($request->semester == 'Ganjil'){
+            $courses = Course::leftjoin('users', 'courses.id_ustadz', '=', 'users.id')
+                            ->leftjoin('schedules', 'courses.id_schedule', '=', 'schedules.id_schedule')
+                            ->leftjoin('grades', 'courses.id_grade', '=', 'grades.id_grade')
+                            ->where('status_course', 'Aktif')
+                            ->whereIn('sem', [1,3,5,7,9,11,13,15])
+                            ->orderBy('sem')
+                            ->get();
+
+            $semester = "Ganjil";
+        }
+
+        return view('administrator.data-kelas', compact('courses', 'semester'));
     }
 
     public function detailKelas($id)

@@ -39,7 +39,8 @@ Route::post('/administrator/data-admin/update-password', [DataAdminController::c
 Route::get('/administrator/data-admin/delete/{id}', [DataAdminController::class, 'destroy'])->name('administrator.data-admin.delete');
 
 Route::get('/administrator/data-mapel', [DataMapelController::class, 'index'])->name('administrator.data-mapel');
-Route::post('/administrator/data-mapel', [DataMapelController::class, 'filterSemester'])->name('administrator.data-mapel');
+Route::post('/administrator/data-mapel/filter-semester', [DataMapelController::class, 'filterSemester'])->name('administrator.data-mapel.filter-semester');
+Route::post('/administrator/data-mapel/filter-status', [DataMapelController::class, 'filterStatus'])->name('administrator.data-mapel.filter-status');
 Route::get('/administrator/data-mapel/form-create', [DataMapelController::class, 'formCreate'])->name('administrator.data-mapel.form-create');
 Route::post('/administrator/data-mapel/create', [DataMapelController::class, 'create'])->name('administrator.data-mapel.create');
 Route::get('/administrator/data-mapel/form-update/{id}', [DataMapelController::class, 'formUpdate'])->name('administrator.data-mapel.form-update');
@@ -76,6 +77,7 @@ Route::post('/administrator/data-krs/create', [DataKRSController::class, 'create
 Route::get('/administrator/data-krs/delete/{id}', [DataKRSController::class, 'delete'])->name('administrator.data-krs.delete');
 
 Route::get('/administrator/data-kelas', [DataKelasController::class, 'index'])->name('administrator.data-kelas');
+Route::post('/administrator/data-kelas', [DataKelasController::class, 'filter'])->name('administrator.data-kelas');
 Route::get('/administrator/data-kelas/detail/{id}', [DataKelasController::class, 'detailKelas'])->name('administrator.data-kelas.detail');
 
 Route::get('/administrator/data-nilai', [DataNilaiController::class, 'index'])->name('administrator.data-nilai');
