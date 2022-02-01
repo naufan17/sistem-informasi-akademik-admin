@@ -18,11 +18,6 @@ class DataNilaiController extends Controller
      */
     public function index()
     {
-        // $courses = Course::leftjoin('users', 'courses.id_ustadz', '=', 'users.id')
-        //                 ->leftjoin('grades', 'courses.id_grade', '=', 'grades.id_grade')
-        //                 ->leftjoin('schedules', 'courses.id_schedule', '=', 'schedules.id_schedule')
-        //                 ->get();
-
         $santris = User::where('role', 'Santri')
                         ->where('status', 'Aktif')
                         ->paginate(50);
@@ -52,16 +47,6 @@ class DataNilaiController extends Controller
             'minimum_score' => '60',
             'score' => $request->score,
         ]);
-
-        // CumulativeStudy::upsert([
-        //     'id_cumulative_study' => $request->id_cumulative_study,
-        //     'year' => $request->year,
-        //     'semester' => $request->semester,
-        //     'minimum_score' => '75',
-        //     'score' => $request->score,
-        //     'id_santri' => $request->id_santri,
-        //     'id_course' => $request->id_course,
-        // ],['id_cumulative_study', 'year', 'semester', 'id_santri', 'id_course'],['minimum_score', 'score']);
 
         return redirect('/administrator/data-nilai');
     }

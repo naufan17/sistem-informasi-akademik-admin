@@ -22,7 +22,7 @@ class DataKelasController extends Controller
                         ->leftjoin('schedules', 'courses.id_schedule', '=', 'schedules.id_schedule')
                         ->leftjoin('grades', 'courses.id_grade', '=', 'grades.id_grade')
                         ->where('status_course', 'Aktif')
-                        ->whereIn('sem', [2,4,6,8,10,12,14,16])
+                        ->whereIn('sem', [2, 4, 6, 8, 10, 12, 14, 16])
                         ->orderBy('sem')
                         ->get();
 
@@ -33,7 +33,7 @@ class DataKelasController extends Controller
                             ->leftjoin('schedules', 'courses.id_schedule', '=', 'schedules.id_schedule')
                             ->leftjoin('grades', 'courses.id_grade', '=', 'grades.id_grade')
                             ->where('status_course', 'Aktif')
-                            ->whereIn('sem', [1,3,5,7,9,11,13,15])
+                            ->whereIn('sem', [1, 3, 5, 7, 9, 11, 13, 15])
                             ->orderBy('sem')
                             ->get();
 
@@ -50,7 +50,7 @@ class DataKelasController extends Controller
                             ->leftjoin('schedules', 'courses.id_schedule', '=', 'schedules.id_schedule')
                             ->leftjoin('grades', 'courses.id_grade', '=', 'grades.id_grade')
                             ->where('status_course', 'Aktif')
-                            ->whereIn('sem', [2,4,6,8,10,12,14,16])
+                            ->whereIn('sem', [2, 4, 6, 8, 10, 12, 14, 16])
                             ->orderBy('sem')
                             ->get();
 
@@ -61,7 +61,7 @@ class DataKelasController extends Controller
                             ->leftjoin('schedules', 'courses.id_schedule', '=', 'schedules.id_schedule')
                             ->leftjoin('grades', 'courses.id_grade', '=', 'grades.id_grade')
                             ->where('status_course', 'Aktif')
-                            ->whereIn('sem', [1,3,5,7,9,11,13,15])
+                            ->whereIn('sem', [1, 3, 5, 7, 9, 11, 13, 15])
                             ->orderBy('sem')
                             ->get();
 
