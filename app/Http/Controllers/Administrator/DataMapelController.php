@@ -8,6 +8,7 @@ use App\Models\Course;
 use App\Models\Grade;
 use App\Models\Schedule;
 use App\Models\User;
+use Illuminate\Support\Facades\Session;
 
 class DataMapelController extends Controller
 {
@@ -124,6 +125,8 @@ class DataMapelController extends Controller
             'id_ustadz' => $request->id_ustadz,
         ]);
 
+        Session::flash('tambah','Data Berhasil Ditambahkan!');
+
         return redirect('administrator/data-mapel');
     }
 
@@ -165,12 +168,16 @@ class DataMapelController extends Controller
             'id_ustadz' => $request->id_ustadz,
         ]);
 
+        Session::flash('update','Data Berhasil Diupdate');
+
         return redirect('/administrator/data-mapel');
     }
 
     public function destroy($id)
     {
         Course::where('id_course', $id)->delete();
+
+        Session::flash('hapus','Data Berhasil Dihapus');
 
         return redirect('/administrator/data-mapel');
     }

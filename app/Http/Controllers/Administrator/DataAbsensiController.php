@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Models\Attendance;
+use Illuminate\Support\Facades\Session;
 
 class DataAbsensiController extends Controller
 {
@@ -70,6 +71,8 @@ class DataAbsensiController extends Controller
             ]);
         }
 
+        Session::flash('tambah','Data Berhasil Ditambahkan!');
+
         return redirect()->route('administrator.data-absensi.list', [$request->id_santri]);
     }
 
@@ -94,6 +97,8 @@ class DataAbsensiController extends Controller
             'attendance_asrama' => $request->attendance_asrama,
         ]);
 
+        Session::flash('update','Data Berhasil Diupdate');
+
         return redirect()->route('administrator.data-absensi.list', [$request->id_santri]);
     }
 
@@ -105,6 +110,8 @@ class DataAbsensiController extends Controller
         }
 
         Attendance::where('id_attendance', $id)->delete();
+
+        Session::flash('hapus','Data Berhasil Dihapus');
 
         return redirect()->route('administrator.data-absensi.list', [$id_santri]);
     }

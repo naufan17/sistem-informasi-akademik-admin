@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Administrator;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Schedule;
+use Illuminate\Support\Facades\Session;
 
 class DataJadwalController extends Controller
 {
@@ -55,6 +56,8 @@ class DataJadwalController extends Controller
             'time_end' => $request->time_end,
         ]);
 
+        Session::flash('tambah','Data Berhasil Ditambahkan!');
+
         return redirect('/administrator/data-jadwal');
     }
 
@@ -79,12 +82,16 @@ class DataJadwalController extends Controller
             'time_end' => $request->time_end, 
         ]);
 
+        Session::flash('update','Data Berhasil Diupdate');
+
         return redirect('/administrator/data-jadwal');
     }
 
     public function delete($id)
     {
         Schedule::where('id_schedule', $id)->delete();
+
+        Session::flash('hapus','Data Berhasil Dihapus');
 
         return redirect('/administrator/data-jadwal');
     }

@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\URL;
+use Illuminate\Support\Facades\Session;
 
 class DataAdminController extends Controller
 {
@@ -60,6 +61,8 @@ class DataAdminController extends Controller
             );
         });
 
+        Session::flash('tambah','Data Berhasil Ditambahkan!');
+
         return redirect(route('administrator.data-admin'));
     }
 
@@ -84,6 +87,8 @@ class DataAdminController extends Controller
             // 'email' => $request->email,  
         ]);
 
+        Session::flash('update','Data Berhasil Diupdate');
+
         return redirect('/administrator/data-admin');
     }
 
@@ -97,12 +102,16 @@ class DataAdminController extends Controller
             'password' => Hash::make($request->password), 
         ]);
 
+        Session::flash('update','Data Berhasil Diupdate');
+
         return redirect('/administrator/data-admin');
     }
 
     public function destroy($id)
     {
         Administrator::where('id', $id)->delete();
+
+        Session::flash('hapus','Data Berhasil Dihapus');
 
         return redirect('/administrator/data-admin');
     }

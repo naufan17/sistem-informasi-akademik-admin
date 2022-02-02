@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Course;
 use App\Models\CumulativeStudy;
 use App\Models\User;
+use Illuminate\Support\Facades\Session;
 
 class DataNilaiController extends Controller
 {
@@ -47,6 +48,8 @@ class DataNilaiController extends Controller
             'minimum_score' => '60',
             'score' => $request->score,
         ]);
+
+        Session::flash('tambah','Data Berhasil Disimpan!');
 
         return redirect('/administrator/data-nilai');
     }

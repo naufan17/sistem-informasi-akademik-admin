@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Administrator;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Grade;
+use Illuminate\Support\Facades\Session;
 
 class DataTingkatController extends Controller
 {
@@ -53,6 +54,8 @@ class DataTingkatController extends Controller
             'grade_name' => $request->grade_name, 
         ]);
 
+        Session::flash('tambah','Data Berhasil Ditambahkan!');
+
         return redirect('/administrator/data-tingkat');
     }
 
@@ -75,12 +78,16 @@ class DataTingkatController extends Controller
             'grade_name' => $request->grade_name, 
         ]);
 
+        Session::flash('update','Data Berhasil Diupdate');
+
         return redirect('/administrator/data-tingkat');
     }
 
     public function delete($id)
     {
         Grade::where('id_grade', $id)->delete();
+
+        Session::flash('hapus','Data Berhasil Dihapus');
 
         return redirect('/administrator/data-tingkat');
     }

@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Validator;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Models\User;
 use App\Models\ImportSantri;
+use Illuminate\Support\Facades\Session;
 
 class DataSantriController extends Controller
 {
@@ -59,6 +60,8 @@ class DataSantriController extends Controller
             'status' => 'Aktif',
         ]);
 
+        Session::flash('tambah','Data Berhasil Ditambahkan!');
+
         return redirect('/administrator/data-santri');
     }
 
@@ -77,6 +80,8 @@ class DataSantriController extends Controller
         $nama_file = rand().$file->getClientOriginalName();
         $file->move('file_santri', $nama_file);
         Excel::import(new ImportSantri, public_path('/file_santri/'.$nama_file));
+
+        Session::flash('tambah','Data Berhasil Diimport!');
 
         return redirect('/administrator/data-santri');
     }
@@ -124,6 +129,8 @@ class DataSantriController extends Controller
             'status' => $request->status,  
         ]);
 
+        Session::flash('update','Data Berhasil Diupdate');
+
         return redirect('/administrator/data-santri');
     }
 
@@ -137,12 +144,16 @@ class DataSantriController extends Controller
             'password' => Hash::make($request->password), 
         ]);
 
+        Session::flash('update','Data Berhasil Diupdate');
+
         return redirect('/administrator/data-santri');
     }
 
     public function destroy($id)
     {
         User::where('id', $id)->delete();
+
+        Session::flash('hapus','Data Berhasil Dihapus');
 
         return redirect('/administrator/data-santri');
     }

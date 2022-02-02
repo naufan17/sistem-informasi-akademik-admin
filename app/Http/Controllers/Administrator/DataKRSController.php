@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Course;
 use App\Models\CumulativeStudy;
 use App\Models\User;
+use Illuminate\Support\Facades\Session;
 
 class DataKRSController extends Controller
 {
@@ -66,6 +67,8 @@ class DataKRSController extends Controller
             ]);
         }
 
+        Session::flash('tambah','Data Berhasil Ditambahkan!');
+
         return redirect()->route('administrator.data-krs.form-create', [$request->id_santri]);
     }
 
@@ -77,6 +80,8 @@ class DataKRSController extends Controller
         }
 
         CumulativeStudy::where('id_cumulative_study', $id)->delete();
+
+        Session::flash('hapus','Data Berhasil Dihapus');
    
         return redirect()->route('administrator.data-krs.form-create', [$id_santri]);
     }
