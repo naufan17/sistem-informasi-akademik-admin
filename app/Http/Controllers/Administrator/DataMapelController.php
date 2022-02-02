@@ -168,7 +168,7 @@ class DataMapelController extends Controller
             'id_ustadz' => $request->id_ustadz,
         ]);
 
-        Session::flash('update','Data Berhasil Diupdate');
+        Session::flash('perbarui','Data Berhasil Diperbarui!');
 
         return redirect('/administrator/data-mapel');
     }
@@ -177,7 +177,7 @@ class DataMapelController extends Controller
     {
         Course::where('id_course', $id)->delete();
 
-        Session::flash('hapus','Data Berhasil Dihapus');
+        Session::flash('hapus','Data Berhasil Dihapus!');
 
         return redirect('/administrator/data-mapel');
     }

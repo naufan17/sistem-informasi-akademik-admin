@@ -97,7 +97,7 @@ class DataAbsensiController extends Controller
             'attendance_asrama' => $request->attendance_asrama,
         ]);
 
-        Session::flash('update','Data Berhasil Diupdate');
+        Session::flash('perbarui','Data Berhasil Diperbarui!');
 
         return redirect()->route('administrator.data-absensi.list', [$request->id_santri]);
     }
@@ -111,7 +111,7 @@ class DataAbsensiController extends Controller
 
         Attendance::where('id_attendance', $id)->delete();
 
-        Session::flash('hapus','Data Berhasil Dihapus');
+        Session::flash('hapus','Data Berhasil Dihapus!');
 
         return redirect()->route('administrator.data-absensi.list', [$id_santri]);
     }

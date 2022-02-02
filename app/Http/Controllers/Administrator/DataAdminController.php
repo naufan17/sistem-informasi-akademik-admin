@@ -87,7 +87,7 @@ class DataAdminController extends Controller
             // 'email' => $request->email,  
         ]);
 
-        Session::flash('update','Data Berhasil Diupdate');
+        Session::flash('perbarui','Data Berhasil Diperbarui!');
 
         return redirect('/administrator/data-admin');
     }
@@ -102,7 +102,7 @@ class DataAdminController extends Controller
             'password' => Hash::make($request->password), 
         ]);
 
-        Session::flash('update','Data Berhasil Diupdate');
+        Session::flash('perbarui','Data Berhasil Diupdate');
 
         return redirect('/administrator/data-admin');
     }
@@ -111,7 +111,7 @@ class DataAdminController extends Controller
     {
         Administrator::where('id', $id)->delete();
 
-        Session::flash('hapus','Data Berhasil Dihapus');
+        Session::flash('hapus','Data Berhasil Dihapus!');
 
         return redirect('/administrator/data-admin');
     }

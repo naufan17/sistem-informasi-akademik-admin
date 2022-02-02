@@ -130,7 +130,7 @@ class DataUstadzController extends Controller
             'status' => $request->status, 
         ]);
 
-        Session::flash('update','Data Berhasil Diupdate');
+        Session::flash('perbarui','Data Berhasil Diperbarui');
 
         return redirect('/administrator/data-ustadz');
     }
@@ -145,7 +145,7 @@ class DataUstadzController extends Controller
             'password' => Hash::make($request->password),
         ]);
 
-        Session::flash('update','Data Berhasil Diupdate');
+        Session::flash('uperbarui','Data Berhasil Diperbarui');
 
         return redirect('/administrator/data-ustadz');
     }
@@ -154,7 +154,7 @@ class DataUstadzController extends Controller
     {
         User::where('id', $id)->delete();
 
-        Session::flash('hapus','Data Berhasil Dihapus');
+        Session::flash('hapus','Data Berhasil Dihapus!');
 
         return redirect('/administrator/data-ustadz');
     }

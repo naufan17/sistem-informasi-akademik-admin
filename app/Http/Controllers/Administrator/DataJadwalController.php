@@ -82,7 +82,7 @@ class DataJadwalController extends Controller
             'time_end' => $request->time_end, 
         ]);
 
-        Session::flash('update','Data Berhasil Diupdate');
+        Session::flash('perbarui','Data Berhasil Diperbarui');
 
         return redirect('/administrator/data-jadwal');
     }
@@ -91,7 +91,7 @@ class DataJadwalController extends Controller
     {
         Schedule::where('id_schedule', $id)->delete();
 
-        Session::flash('hapus','Data Berhasil Dihapus');
+        Session::flash('hapus','Data Berhasil Dihapus!');
 
         return redirect('/administrator/data-jadwal');
     }

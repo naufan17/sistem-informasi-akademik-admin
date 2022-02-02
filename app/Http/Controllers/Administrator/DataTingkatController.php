@@ -78,7 +78,7 @@ class DataTingkatController extends Controller
             'grade_name' => $request->grade_name, 
         ]);
 
-        Session::flash('update','Data Berhasil Diupdate');
+        Session::flash('perbarui','Data Berhasil Diperbarui!');
 
         return redirect('/administrator/data-tingkat');
     }
@@ -87,7 +87,7 @@ class DataTingkatController extends Controller
     {
         Grade::where('id_grade', $id)->delete();
 
-        Session::flash('hapus','Data Berhasil Dihapus');
+        Session::flash('hapus','Data Berhasil Dihapus!');
 
         return redirect('/administrator/data-tingkat');
     }

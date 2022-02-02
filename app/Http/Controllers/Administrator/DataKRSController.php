@@ -81,7 +81,7 @@ class DataKRSController extends Controller
 
         CumulativeStudy::where('id_cumulative_study', $id)->delete();
 
-        Session::flash('hapus','Data Berhasil Dihapus');
+        Session::flash('hapus','Data Berhasil Dihapus!');
    
         return redirect()->route('administrator.data-krs.form-create', [$id_santri]);
     }

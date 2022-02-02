@@ -129,7 +129,7 @@ class DataSantriController extends Controller
             'status' => $request->status,  
         ]);
 
-        Session::flash('update','Data Berhasil Diupdate');
+        Session::flash('perbarui','Data Berhasil Diperbarui!');
 
         return redirect('/administrator/data-santri');
     }
@@ -144,7 +144,7 @@ class DataSantriController extends Controller
             'password' => Hash::make($request->password), 
         ]);
 
-        Session::flash('update','Data Berhasil Diupdate');
+        Session::flash('perbarui','Data Berhasil Diupdate');
 
         return redirect('/administrator/data-santri');
     }
@@ -153,7 +153,7 @@ class DataSantriController extends Controller
     {
         User::where('id', $id)->delete();
 
-        Session::flash('hapus','Data Berhasil Dihapus');
+        Session::flash('hapus','Data Berhasil Dihapus!');
 
         return redirect('/administrator/data-santri');
     }
