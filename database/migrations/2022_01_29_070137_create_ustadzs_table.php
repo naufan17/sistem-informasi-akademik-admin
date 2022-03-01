@@ -22,7 +22,7 @@ class CreateUstadzsTable extends Migration
             $table->bigInteger('id_number')->nullable();
             $table->string('blood')->nullable();
             $table->string('phone_number')->nullable();
-            $table->string('email')->unique();
+            $table->string('email')->unique()->nullable();
             $table->string('address')->nullable();
             $table->integer('RT')->nullable();
             $table->integer('RW')->nullable();
@@ -30,8 +30,8 @@ class CreateUstadzsTable extends Migration
             $table->string('districs')->nullable();
             $table->string('regency')->nullable();
             $table->string('province')->nullable();
-            $table->enum('role', ['ustadz'])->default('ustadz');
             $table->enum('status', ['Aktif', 'Tidak aktif'])->default('Aktif');
+            $table->string('photo')->nullable();
             $table->string('password');
             $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();

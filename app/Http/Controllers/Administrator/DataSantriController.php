@@ -5,11 +5,11 @@ namespace App\Http\Controllers\Administrator;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
 use Maatwebsite\Excel\Facades\Excel;
-use App\Models\User;
 use App\Models\ImportSantri;
-use Illuminate\Support\Facades\Session;
+use App\Models\Santri;
 
 class DataSantriController extends Controller
 {
@@ -20,18 +20,15 @@ class DataSantriController extends Controller
      */
     public function index()
     {
-        $santris = User::where('role', 'santri')
-                        ->where('status', 'Aktif')
+        $santris = Santri::where('status', 'Aktif')
                         ->orderBy('id')
                         ->paginate(50);
 
-        $filter_status = User::select('status')
-                            ->where('role', 'santri')
-                            ->distinct()
-                            ->get();
+        $filter_status = Santri::select('status')
+                                ->distinct()
+                                ->get();
 
-        $status = User::select('status')
-                        ->where('role', 'santri')
+        $status = Santri::select('status')
                         ->where('status', 'Aktif')
                         ->distinct()
                         ->get();
@@ -52,7 +49,7 @@ class DataSantriController extends Controller
             'password' => 'required', 'string', 'min:8', 'confirmed',
         ]);
 
-        User::create([
+        Santri::create([
             'id' => $request->id,
             'name' => $request->name,
             'password' => Hash::make($request->password),
@@ -88,28 +85,25 @@ class DataSantriController extends Controller
 
     public function filter(Request $request)
     {
-        $santris = User::where('role', 'santri')
-                        ->where('status', $request->status)
+        $santris = Santri::where('status', $request->status)
+                        ->orderBy('id')
                         ->paginate(50);
 
-        $status = User::select('status')
-                        ->where('role', 'santri')
+        $status = Santri::select('status')
                         ->where('status', $request->status)
                         ->distinct()
                         ->get();
 
-        $filter_status = User::select('status')
-                            ->where('role', 'santri')
-                            ->distinct()
-                            ->get();
+        $filter_status = Santri::select('status')
+                                ->distinct()
+                                ->get();
         
         return view('administrator.data-santri', compact('santris', 'status', 'filter_status'));
     }
 
     public function formUpdate($id)
     {
-        $santris = User::where('role', 'santri')
-                        ->where('id', $id)
+        $santris = Santri::where('id', $id)
                         ->get();
 
         return view('administrator.update-data-santri', compact('santris'));
@@ -123,7 +117,7 @@ class DataSantriController extends Controller
             'status' => 'required', 'string',
         ]);
 
-        User::where('id', $request->id)->update([
+        Santri::where('id', $request->id)->update([
             'id' => $request->id,
             'name' => $request->name,  
             'status' => $request->status,  
@@ -140,7 +134,7 @@ class DataSantriController extends Controller
             'password' => 'required', 'string', 'min:8', 'confirmed',
         ]);
 
-        User::where('id', $request->id)->update([
+        Santri::where('id', $request->id)->update([
             'password' => Hash::make($request->password), 
         ]);
 
@@ -151,7 +145,7 @@ class DataSantriController extends Controller
 
     public function destroy($id)
     {
-        User::where('id', $id)->delete();
+        Santri::where('id', $id)->delete();
 
         Session::flash('hapus','Data Berhasil Dihapus!');
 
@@ -160,7 +154,7 @@ class DataSantriController extends Controller
 
     public function detailSantri($id)
     {
-        $santris = User::where('id', $id)->get();
+        $santris = Santri::where('id', $id)->get();
         
         return view('administrator.detail-data-santri', compact('santris'));
     }

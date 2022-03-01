@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Administrator;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\User;
+use App\Models\Santri;
 use App\Models\Attendance;
 use Illuminate\Support\Facades\Session;
 
@@ -17,8 +17,7 @@ class DataAbsensiController extends Controller
      */
     public function index()
     {
-        $santris = User::where('role', 'Santri')
-                        ->where('status', 'Aktif')
+        $santris = Santri::where('status', 'Aktif')
                         ->paginate(50);
 
         return view('administrator.data-absensi', compact('santris'));
@@ -26,7 +25,7 @@ class DataAbsensiController extends Controller
 
     public function listAbsensi($id)
     {
-        $santris = User::leftjoin('attendances', 'users.id', '=', 'attendances.id_santri')
+        $santris = Santri::leftjoin('attendances', 'santris.id', '=', 'attendances.id_santri')
                         ->where('id', $id)
                         ->get();
         

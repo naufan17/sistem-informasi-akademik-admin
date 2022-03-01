@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Course;
 use App\Models\CumulativeStudy;
-use App\Models\User;
+use Illuminate\Support\Facades\Session;
 
 class DataKelasController extends Controller
 {
@@ -18,23 +18,19 @@ class DataKelasController extends Controller
     public function index()
     {           
         if(date('m') <= 06 ){
-        $courses = Course::leftjoin('users', 'courses.id_ustadz', '=', 'users.id')
+        $courses = Course::leftjoin('ustadzs', 'courses.id_ustadz', '=', 'ustadzs.id')
                         ->leftjoin('schedules', 'courses.id_schedule', '=', 'schedules.id_schedule')
                         ->leftjoin('grades', 'courses.id_grade', '=', 'grades.id_grade')
                         ->where('status_course', 'Aktif')
-                        ->whereIn('sem', [2, 4, 6, 8, 10, 12, 14, 16])
-                        ->orderBy('sem')
                         ->get();
 
             $semester = "Genap";
 
         }elseif(date('m') > 06 ){
-            $courses = Course::leftjoin('users', 'courses.id_ustadz', '=', 'users.id')
+            $courses = Course::leftjoin('ustadzs', 'courses.id_ustadz', '=', 'ustadzs.id')
                             ->leftjoin('schedules', 'courses.id_schedule', '=', 'schedules.id_schedule')
                             ->leftjoin('grades', 'courses.id_grade', '=', 'grades.id_grade')
                             ->where('status_course', 'Aktif')
-                            ->whereIn('sem', [1, 3, 5, 7, 9, 11, 13, 15])
-                            ->orderBy('sem')
                             ->get();
 
             $semester = "Ganjil";
@@ -46,23 +42,19 @@ class DataKelasController extends Controller
     public function filter(Request $request)
     {           
         if($request->semester == 'Genap'){
-            $courses = Course::leftjoin('users', 'courses.id_ustadz', '=', 'users.id')
+            $courses = Course::leftjoin('ustadzs', 'courses.id_ustadz', '=', 'ustadzs.id')
                             ->leftjoin('schedules', 'courses.id_schedule', '=', 'schedules.id_schedule')
                             ->leftjoin('grades', 'courses.id_grade', '=', 'grades.id_grade')
                             ->where('status_course', 'Aktif')
-                            ->whereIn('sem', [2, 4, 6, 8, 10, 12, 14, 16])
-                            ->orderBy('sem')
                             ->get();
 
             $semester = "Genap";
 
         }elseif($request->semester == 'Ganjil'){
-            $courses = Course::leftjoin('users', 'courses.id_ustadz', '=', 'users.id')
+            $courses = Course::leftjoin('ustadzs', 'courses.id_ustadz', '=', 'ustadzs.id')
                             ->leftjoin('schedules', 'courses.id_schedule', '=', 'schedules.id_schedule')
                             ->leftjoin('grades', 'courses.id_grade', '=', 'grades.id_grade')
                             ->where('status_course', 'Aktif')
-                            ->whereIn('sem', [1, 3, 5, 7, 9, 11, 13, 15])
-                            ->orderBy('sem')
                             ->get();
 
             $semester = "Ganjil";
@@ -75,18 +67,60 @@ class DataKelasController extends Controller
     {
         if(date('m') <= 06 ){
             $santris = CumulativeStudy::where('id_course', $id)
-                                    ->leftjoin('users', 'cumulative_studies.id_santri', '=', 'users.id')
+                                    ->leftjoin('santris', 'cumulative_studies.id_santri', '=', 'santris.id')
                                     ->where('year', date('Y')-1 . '/' . date('Y'))
                                     ->where('semester', 'Genap')
                                     ->get();
         }elseif(date('m') > 06 ){
             $santris = CumulativeStudy::where('id_course', $id)
-                                    ->leftjoin('users', 'cumulative_studies.id_santri', '=', 'users.id')
+                                    ->leftjoin('santris', 'cumulative_studies.id_santri', '=', 'santris.id')
                                     ->where('year', date('Y') . '/' . date('Y')+1)
                                     ->where('semester', 'Ganjil')
                                     ->get();
         }
 
         return view('administrator.data-santri-kelas', compact('santris'));
+    }
+
+    public function createNilai(Request $request)
+    {
+        $request->validate([
+            'id_cumulative_study' => 'required', 'number',
+            'score' => 'required', 'number',
+        ]);
+
+        // dump($request);
+        
+        CumulativeStudy::where('id_cumulative_study', $request->id_cumulative_study)->update([
+            'minimum_score' => 60,
+            'score' => $request->score,
+        ]);
+
+        // if(date('m') <= 06 ){
+        //     CumulativeStudy::upsert([
+        //         'id_cumulative_study' => $request->id_cumulative_study,
+        //         'year' => date('Y')-1 . '/' . date('Y'),
+        //         'semester' => 'Genap',
+        //         'id_santri' => $request->id_santri,
+        //         'id_course' => $request->id_course,
+        //         'minimum_score' => 60,
+        //         'score' => $request->score,
+        //     ], ['id_cumulative_study', 'year', 'semester', 'id_santri', 'id_course'], ['minimum_score', 'score']);
+    
+        // }elseif(date('m') > 06 ){
+        //     CumulativeStudy::upsert([
+        //         'id_cumulative_study' => $request->id_cumulative_study,
+        //         'year' => date('Y') . '/' . date('Y')+1,
+        //         'semester' => 'Ganjil',
+        //         'id_santri' => $request->id_santri,
+        //         'id_course' => $request->id_course,
+        //         'minimum_score' => 60,
+        //         'score' => $request->score,
+        //     ],['id_cumulative_study', 'year', 'semester', 'id_santri', 'id_course'], ['minimum_score', 'score']);
+        // }
+
+        Session::flash('tambah','Data Berhasil Disimpan!');
+
+        return redirect('/administrator/data-kelas');
     }
 }

@@ -22,7 +22,7 @@ class CreateCumulativeStudiesTable extends Migration
             $table->unsignedBigInteger('id_santri');
             $table->unsignedBigInteger('id_course');
             $table->timestamps();
-            $table->foreign('id_santri')->references('id')->on('users');
+            $table->foreign('id_santri')->references('id_santri')->on('santris');
             $table->foreign('id_course')->references('id_course')->on('courses');
         });
     }

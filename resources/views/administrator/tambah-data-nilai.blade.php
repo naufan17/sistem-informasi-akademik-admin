@@ -38,6 +38,8 @@
                                     <td class="text-center py-3 px-4">
                                         <div class="relative z-0 w-full">
                                             <input type="hidden" name="id_cumulative_study" placeholder="" value="{{ $cumulativestudy->id_cumulative_study }}"  required class="py-2 px-3 block w-full bg-transparent border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-300" />
+                                            <!-- <input type="hidden" name="id_santri" placeholder="" value="{{ $cumulativestudy->id_santri }}" required autocomplete="name" required class="py-2 px-3 block w-full bg-transparent border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-300" />
+                                            <input type="hidden" name="id_course" placeholder="" value="{{ $cumulativestudy->id_course }}" required autocomplete="name" required class="py-2 px-3 block w-full bg-transparent border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-300" /> -->
                                             <input type="number" name="score" placeholder="" value="{{ $cumulativestudy->score }}" required autocomplete="nilai" required class="py-2 px-3 block w-full bg-transparent border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-300" />
                                         </div>
                                     </td>

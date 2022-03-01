@@ -23,7 +23,7 @@ class CreateAttendancesTable extends Migration
             $table->float('attendance_asrama');
             $table->unsignedBigInteger('id_santri');
             $table->timestamps();
-            $table->foreign('id_santri')->references('id')->on('users');
+            $table->foreign('id_santri')->references('id_santri')->on('santris');
         });
     }
 

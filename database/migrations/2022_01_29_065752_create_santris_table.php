@@ -22,7 +22,7 @@ class CreateSantrisTable extends Migration
             $table->bigInteger('id_number')->nullable();
             $table->string('blood')->nullable();
             $table->string('phone_number')->nullable();
-            $table->string('email')->unique();
+            $table->string('email')->unique()->nullable();
             $table->string('address')->nullable();
             $table->integer('RT')->nullable();
             $table->integer('RW')->nullable();
@@ -38,8 +38,8 @@ class CreateSantrisTable extends Migration
             $table->date('birthday_mother')->nullable();
             $table->string('parent_address')->nullable();
             $table->string('phone_number_parent')->nullable();
-            $table->enum('role', ['santri'])->default('santri');
             $table->enum('status', ['Aktif', 'Tidak aktif'])->default('Aktif');
+            $table->string('photo')->nullable();
             $table->string('password');
             $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();

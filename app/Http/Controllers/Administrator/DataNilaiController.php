@@ -5,9 +5,8 @@ namespace App\Http\Controllers\Administrator;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
-use App\Models\Course;
 use App\Models\CumulativeStudy;
-use App\Models\User;
+use App\Models\Santri;
 use Illuminate\Support\Facades\Session;
 
 class DataNilaiController extends Controller
@@ -19,8 +18,7 @@ class DataNilaiController extends Controller
      */
     public function index()
     {
-        $santris = User::where('role', 'Santri')
-                        ->where('status', 'Aktif')
+        $santris = Santri::where('status', 'Aktif')
                         ->paginate(50);
 
         return view('administrator.data-nilai', compact('santris'));
@@ -28,9 +26,8 @@ class DataNilaiController extends Controller
 
     public function formCreate($id)
     {
-        $cumulativestudys = CumulativeStudy::leftjoin('users', 'cumulative_studies.id_santri', '=', 'users.id')
+        $cumulativestudys = CumulativeStudy::leftjoin('santris', 'cumulative_studies.id_santri', '=', 'santris.id')
                                     ->leftjoin('courses', 'cumulative_studies.id_course', '=', 'courses.id_course')
-                                    ->orderBy('sem')
                                     ->where('id_santri', $id)
                                     ->get();
 
@@ -43,11 +40,36 @@ class DataNilaiController extends Controller
             'id_cumulative_study' => 'required', 'number',
             'score' => 'required', 'number',
         ]);
+
+        // dump($request);
         
         CumulativeStudy::where('id_cumulative_study', $request->id_cumulative_study)->update([
-            'minimum_score' => '60',
+            'minimum_score' => 60,
             'score' => $request->score,
         ]);
+
+        // if(date('m') <= 06 ){
+        //     CumulativeStudy::upsert([
+        //         'id_cumulative_study' => $request->id_cumulative_study,
+        //         'year' => date('Y')-1 . '/' . date('Y'),
+        //         'semester' => 'Genap',
+        //         'id_santri' => $request->id_santri,
+        //         'id_course' => $request->id_course,
+        //         'minimum_score' => 60,
+        //         'score' => $request->score,
+        //     ], ['id_cumulative_study', 'year', 'semester', 'id_santri', 'id_course'], ['minimum_score', 'score']);
+    
+        // }elseif(date('m') > 06 ){
+        //     CumulativeStudy::upsert([
+        //         'id_cumulative_study' => $request->id_cumulative_study,
+        //         'year' => date('Y') . '/' . date('Y')+1,
+        //         'semester' => 'Ganjil',
+        //         'id_santri' => $request->id_santri,
+        //         'id_course' => $request->id_course,
+        //         'minimum_score' => 60,
+        //         'score' => $request->score,
+        //     ],['id_cumulative_study', 'year', 'semester', 'id_santri', 'id_course'], ['minimum_score', 'score']);
+        // }
 
         Session::flash('tambah','Data Berhasil Disimpan!');
 

@@ -18,26 +18,42 @@
                     </a>
                 </div>
                 <p class="text-xl py-4 flex items-center">Daftar Santri</p>
-                <div class="bg-white overflow-auto pb-8">
-                    <table class="table-auto bg-white">
-                        <thead class="bg-gray-800 text-white">
-                            <tr>
-                                <th class="text-center py-3 px-4 uppercase font-semibold text-sm">No</th>
-                                <th class="text-center w-1/2 py-3 px-4 uppercase font-semibold text-sm">NIS</th>
-                                <th class="text-center w-1/2 py-3 px-4 uppercase font-semibold text-sm">Nama Santri</th>
-                            </tr>
-                        </thead>
-                        <tbody class="text-gray-700">
-                            @foreach($santris as $santri)
-                            <tr>
-                                <td class="text-center py-3 px-4">{{ $loop->iteration }}</td>
-                                <td class="text-center py-3 px-4">{{ $santri->id }}</td>
-                                <td class="text-center py-3 px-4">{{ $santri->name }}</td>
-                            </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
-                </div>
+                <form method="POST" action="{{ url('administrator/data-kelas/create') }}">
+                    @csrf
+                    <div class="bg-white overflow-auto pb-8">
+                        <table class="table-auto bg-white">
+                            <thead class="bg-gray-800 text-white">
+                                <tr>
+                                    <th class="text-center py-3 px-4 uppercase font-semibold text-sm">No</th>
+                                    <th class="text-center w-1/3 py-3 px-4 uppercase font-semibold text-sm">NIS</th>
+                                    <th class="text-center w-1/3 py-3 px-4 uppercase font-semibold text-sm">Nama Santri</th>
+                                    <th class="text-center w-1/3 py-3 px-4 uppercase font-semibold text-sm">Nilai</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-gray-700">
+                                @foreach($santris as $santri)
+                                <tr>
+                                    <td class="text-center py-3 px-4">{{ $loop->iteration }}</td>
+                                    <td class="text-center py-3 px-4">{{ $santri->id }}</td>
+                                    <td class="text-center py-3 px-4">{{ $santri->name }}</td>
+                                    <td class="text-center py-3 px-4">
+                                        <div class="relative z-0 w-full">
+                                            <input type="hidden" name="id_cumulative_study" placeholder="" value="{{ $santri->id_cumulative_study }}"  required class="py-2 px-3 block w-full bg-transparent border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-300" />
+                                            <!-- <input type="hidden" name="id_santri" placeholder="" value="{{ $santri->id_santri }}" required autocomplete="name" required class="py-2 px-3 block w-full bg-transparent border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-300" />
+                                            <input type="hidden" name="id_course" placeholder="" value="{{ $santri->id_course }}" required autocomplete="name" required class="py-2 px-3 block w-full bg-transparent border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-300" /> -->
+                                            <input type="number" name="score" placeholder="" value="{{ $santri->score }}" required autocomplete="nilai" required class="py-2 px-3 block w-full bg-transparent border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-300" />
+                                        </div>
+                                    </td>
+                                </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                        <div class="flex flex-row-reverse object-left text-center text-white text-base pt-8 px-3">
+                            <button type="submit" class="bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-3 px-8">Simpan</button>
+                        </div>
+
+                    </div>
+                </form>
             </div>
         </main>
     </div>

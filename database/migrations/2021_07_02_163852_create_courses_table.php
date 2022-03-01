@@ -25,7 +25,7 @@ class CreateCoursesTable extends Migration
             $table->timestamps();
             $table->foreign('id_grade')->references('id_grade')->on('grades');
             $table->foreign('id_schedule')->references('id_schedule')->on('schedules');
-            $table->foreign('id_ustadz')->references('id')->on('users');
+            $table->foreign('id_ustadz')->references('id_ustadz')->on('ustadzs');
         });
     }
 

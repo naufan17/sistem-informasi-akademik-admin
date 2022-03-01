@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Maatwebsite\Excel\Facades\Excel;
-use App\Models\User;
+use App\Models\Ustadz;
 use App\Models\ImportUstadz;
 use Illuminate\Support\Facades\Session;
 
@@ -20,18 +20,15 @@ class DataUstadzController extends Controller
      */
     public function index()
     {
-        $ustadzs = User::where('role', 'ustadz')
-                        ->where('status', 'Aktif')
+        $ustadzs = Ustadz::where('status', 'Aktif')
                         ->orderBy('id')
                         ->paginate(50);
 
-        $filter_status = User::select('status')
-                            ->where('role', 'ustadz')
-                            ->distinct()
-                            ->get();
+        $filter_status = Ustadz::select('status')
+                                ->distinct()
+                                ->get();
 
-        $status = User::select('status')
-                        ->where('role', 'ustadz')
+        $status = Ustadz::select('status')
                         ->where('status', 'Aktif')
                         ->distinct()
                         ->get();
@@ -52,7 +49,7 @@ class DataUstadzController extends Controller
             'password' => 'required', 'string', 'min:8', 'confirmed',
         ]);
 
-        User::create([
+        Ustadz::create([
             'id' => $request->id,
             'name' => $request->name,
             'password' => Hash::make($request->password),
@@ -88,29 +85,25 @@ class DataUstadzController extends Controller
 
     public function filter(Request $request)
     {
-        $ustadzs = User::where('role', 'ustadz')
-                        ->where('status', $request->status)
+        $ustadzs = Ustadz::where('status', $request->status)
                         ->paginate(50);
 
-        $status = User::select('status')
-                        ->where('role', 'ustadz')
+        $status = Ustadz::select('status')
                         ->where('status', 'Aktif')
                         ->distinct()
                         ->get();
 
-        $filter_status = User::select('status')
-                        ->where('role', 'ustadz')
-                        ->where('status', $request->status)
-                        ->distinct()
-                        ->get();
+        $filter_status = Ustadz::select('status')
+                                ->where('status', $request->status)
+                                ->distinct()
+                                ->get();
 
         return view('administrator.data-ustadz', compact('ustadzs', 'status', 'filter_status'));
     }
 
     public function formUpdate($id)
     {
-        $ustadzs = User::where('role', 'ustadz')
-                        ->where('id', $id)
+        $ustadzs = Ustadz::where('id', $id)
                         ->get();
 
         return view('administrator.update-data-ustadz', compact('ustadzs'));
@@ -124,7 +117,7 @@ class DataUstadzController extends Controller
             'status' => 'required', 'string',
         ]);
         
-        User::where('id', $request->id)->update([
+        Ustadz::where('id', $request->id)->update([
             'id' => $request->id,
             'name' => $request->name, 
             'status' => $request->status, 
@@ -141,7 +134,7 @@ class DataUstadzController extends Controller
             'password' => 'required', 'string', 'min:8', 'confirmed',
         ]);
 
-        User::where('id', $request->id)->update([
+        Ustadz::where('id', $request->id)->update([
             'password' => Hash::make($request->password),
         ]);
 
@@ -152,7 +145,7 @@ class DataUstadzController extends Controller
 
     public function destroy($id)
     {
-        User::where('id', $id)->delete();
+        Ustadz::where('id', $id)->delete();
 
         Session::flash('hapus','Data Berhasil Dihapus!');
 
@@ -161,7 +154,7 @@ class DataUstadzController extends Controller
 
     public function detailUstadz($id)
     {
-        $ustadzs = User::where('id', $id)->get();
+        $ustadzs = Ustadz::where('id', $id)->get();
         
         return view('administrator.detail-data-ustadz', compact('ustadzs'));
     }

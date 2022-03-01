@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Course;
 use App\Models\Grade;
 use App\Models\Schedule;
-use App\Models\User;
+use App\Models\Ustadz;
 use Illuminate\Support\Facades\Session;
 
 class DataMapelController extends Controller
@@ -19,42 +19,12 @@ class DataMapelController extends Controller
      */
     public function index()
     {
-        $courses = Course::leftjoin('users', 'courses.id_ustadz', '=', 'users.id')
+        $courses = Course::leftjoin('ustadzs', 'courses.id_ustadz', '=', 'ustadzs.id')
                         ->leftjoin('grades', 'courses.id_grade', '=', 'grades.id_grade')
                         ->leftjoin('schedules', 'courses.id_schedule', '=', 'schedules.id_schedule')
                         ->where('status_course', 'Aktif')
-                        ->orderBy('sem')
                         ->get();
 
-        $filters_semester = Course::select('sem')
-                                ->distinct()
-                                ->get();
-
-        $status = Course::select('status_course')
-                                ->where('status_course', 'Aktif')
-                                ->distinct()
-                                ->get();
-
-        $filters_status = Course::select('status_course')
-                                ->distinct()
-                                ->get();
-
-        return view('administrator.data-mapel', compact('courses', 'filters_semester', 'status', 'filters_status'));
-    }
-
-    public function filterSemester(Request $request)
-    {
-        $courses = Course::leftjoin('users', 'courses.id_ustadz', '=', 'users.id')
-                        ->leftjoin('grades', 'courses.id_grade', '=', 'grades.id_grade')
-                        ->leftjoin('schedules', 'courses.id_schedule', '=', 'schedules.id_schedule')
-                        ->where('sem', $request->sem)
-                        ->get();
-
-        $filters_semester = Course::select('sem')
-                                ->where('sem', $request->sem)
-                                ->distinct()
-                                ->get();
-                                
         $status = Course::select('status_course')
                         ->where('status_course', 'Aktif')
                         ->distinct()
@@ -64,20 +34,16 @@ class DataMapelController extends Controller
                                 ->distinct()
                                 ->get();
 
-        return view('administrator.data-mapel', compact('courses', 'filters_semester', 'status', 'filters_status'));
+        return view('administrator.data-mapel', compact('courses', 'status', 'filters_status'));
     }
 
     public function filterStatus(Request $request)
     {
-        $courses = Course::leftjoin('users', 'courses.id_ustadz', '=', 'users.id')
+        $courses = Course::leftjoin('ustadzs', 'courses.id_ustadz', '=', 'ustadzs.id')
                         ->leftjoin('grades', 'courses.id_grade', '=', 'grades.id_grade')
                         ->leftjoin('schedules', 'courses.id_schedule', '=', 'schedules.id_schedule')
                         ->where('status_course', $request->status_course)
                         ->get();
-
-        $filters_semester = Course::select('sem')
-                                ->distinct()
-                                ->get();
 
         $status = Course::select('status_course')
                         ->where('status_course', $request->status_course)
@@ -88,15 +54,16 @@ class DataMapelController extends Controller
                                 ->distinct()
                                 ->get();
 
-        return view('administrator.data-mapel', compact('courses', 'filters_semester', 'status', 'filters_status'));
+        return view('administrator.data-mapel', compact('courses', 'status', 'filters_status'));
     }
 
     public function formCreate()
     {
         $grades = Grade::all();
+
         $schedules = Schedule::all();
-        $ustadzs = User::where('role', 'ustadz')
-                        ->where('status', 'Aktif')
+
+        $ustadzs = Ustadz::where('status', 'Aktif')
                         ->get();
 
         return view('administrator.tambah-data-mapel', compact('schedules', 'ustadzs', 'grades'));
@@ -108,7 +75,6 @@ class DataMapelController extends Controller
             'id_course' => 'required', 'number',
             'course' => 'required', 'string','max:255',
             'book' => 'required', 'string','max:255',
-            'sem' => 'required', 'number',
             'id_grade' => 'required', 'number',
             'id_schedule' => 'required', 'number',
             'id_ustadz' => 'required', 'number',
@@ -118,7 +84,6 @@ class DataMapelController extends Controller
             'id_course' => $request->id_course,
             'course' => $request->course,
             'book' => $request->book,
-            'sem' => $request->sem,
             'status_course' => 'Aktif',
             'id_grade' => $request->id_grade,
             'id_schedule' => $request->id_schedule,
@@ -133,10 +98,14 @@ class DataMapelController extends Controller
     public function formUpdate($id)
     {
         $grades = Grade::all();
+
         $schedules = Schedule::all();
-        $ustadzs = User::where('role', 'ustadz')->get();
+
+        $ustadzs = Ustadz::where('status', 'Aktif')
+                        ->get();
+
         $courses = Course::where('id_course', $id)
-                        ->leftjoin('users', 'courses.id_ustadz', '=', 'users.id')
+                        ->leftjoin('ustadzs', 'courses.id_ustadz', '=', 'ustadzs.id')
                         ->leftjoin('grades', 'courses.id_grade', '=', 'grades.id_grade')
                         ->leftjoin('schedules', 'courses.id_schedule', '=', 'schedules.id_schedule')
                         ->get();
@@ -150,7 +119,6 @@ class DataMapelController extends Controller
             'id_course' => 'required', 'number',
             'course' => 'required', 'string','max:255',
             'book' => 'required', 'string','max:255',
-            'sem' => 'required', 'number',
             'status_course' => 'required', 'string',
             'id_grade' => 'required', 'number',
             'id_schedule' => 'required', 'number',
@@ -161,7 +129,6 @@ class DataMapelController extends Controller
             'id_course' => $request->id_course,
             'course' => $request->course,
             'book' => $request->book,
-            'sem' => $request->sem,
             'status_course' => $request->status_course,
             'id_grade' => $request->id_grade,
             'id_schedule' => $request->id_schedule,

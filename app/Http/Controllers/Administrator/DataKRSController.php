@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Course;
 use App\Models\CumulativeStudy;
-use App\Models\User;
+use App\Models\Santri;
 use Illuminate\Support\Facades\Session;
 
 class DataKRSController extends Controller
@@ -18,8 +18,7 @@ class DataKRSController extends Controller
      */
     public function index()
     {   
-        $santris = User::where('role', 'Santri')
-                        ->where('status', 'Aktif')
+        $santris = Santri::where('status', 'Aktif')
                         ->paginate(50);
 
         return view('administrator.data-krs', compact('santris'));
@@ -27,17 +26,15 @@ class DataKRSController extends Controller
 
     public function formCreate($id)
     {
-        $cumulativestudys = CumulativeStudy::leftjoin('users', 'cumulative_studies.id_santri', '=', 'users.id')
+        $cumulativestudys = CumulativeStudy::leftjoin('santris', 'cumulative_studies.id_santri', '=', 'santris.id')
                                             ->leftjoin('courses', 'cumulative_studies.id_course', '=', 'courses.id_course')
-                                            ->orderBy('sem')
                                             ->where('id_santri', $id)
                                             ->get();
 
-        $courses = Course::leftjoin('users', 'courses.id_ustadz', '=', 'users.id')
+        $courses = Course::leftjoin('ustadzs', 'courses.id_ustadz', '=', 'ustadzs.id')
                         ->leftjoin('grades', 'courses.id_grade', '=', 'grades.id_grade')
                         ->leftjoin('schedules', 'courses.id_schedule', '=', 'schedules.id_schedule')
                         ->where('status_course', 'Aktif')
-                        ->orderBy('sem')
                         ->get();
 
         return view('administrator.tambah-santri-krs', compact('cumulativestudys', 'courses', 'id'));
