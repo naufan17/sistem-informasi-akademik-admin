@@ -16,7 +16,9 @@ class DataTingkatController extends Controller
      */
     public function index()
     {
-        $grades = Grade::all();
+        $grades = Grade::orderBy('grade_name')
+                        ->orderBy('grade_number')
+                        ->get();
 
         $filters = Grade::select('grade_name')
                         ->distinct()
@@ -27,7 +29,10 @@ class DataTingkatController extends Controller
 
     public function filterNamaTingkat(Request $request)
     {
-        $grades = Grade::where('grade_name', $request->grade_name)->get();
+        $grades = Grade::where('grade_name', $request->grade_name)
+                        ->orderBy('grade_name')
+                        ->orderBy('grade_number')
+                        ->get();
 
         $filters = Grade::select('grade_name')
                         ->where('grade_name', $request->grade_name)

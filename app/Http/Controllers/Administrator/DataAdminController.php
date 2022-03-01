@@ -24,7 +24,7 @@ class DataAdminController extends Controller
      */
     public function index()
     {
-        $administrators = Administrator::paginate(50);
+        $administrators = Administrator::orderBy('name')->paginate(50);
 
         return view('administrator.data-admin', compact('administrators'));
     }

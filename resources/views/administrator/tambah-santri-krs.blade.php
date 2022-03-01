@@ -37,10 +37,13 @@
                         <thead class="bg-gray-800 text-white">
                             <tr>
                                 <th class="text-center py-3 px-4 uppercase font-semibold text-sm">No</th>
-                                <th class="text-center w-1/4 py-3 px-4 uppercase font-semibold text-sm">Kode MP</th>
-                                <th class="text-center w-1/4 py-3 px-4 uppercase font-semibold text-sm">Mata pelajaran</th>
-                                <th class="text-center w-1/4 py-3 px-4 uppercase font-semibold text-sm">Kitab</th>
-                                <th class="text-center w-1/4 py-3 px-4 uppercase font-semibold text-sm">Aksi</th>
+                                <th class="text-center w-1/7 py-3 px-4 uppercase font-semibold text-sm">Kode MP</th>
+                                <th class="text-center w-1/7 py-3 px-4 uppercase font-semibold text-sm">Mata pelajaran</th>
+                                <th class="text-center w-1/7 py-3 px-4 uppercase font-semibold text-sm">Kitab</th>
+                                <th class="text-center w-1/7 py-3 px-4 uppercase font-semibold text-sm">Kelas</th>
+                                <th class="text-center w-1/7 py-3 px-4 uppercase font-semibold text-sm">Jadwal</th>
+                                <th class="text-center w-1/7 py-3 px-4 uppercase font-semibold text-sm">Nama Ustadz</th>
+                                <th class="text-center w-1/7 py-3 px-4 uppercase font-semibold text-sm">Aksi</th>
                             </tr>
                         </thead>
                         <tbody class="text-gray-700">
@@ -50,6 +53,9 @@
                                 <td class="text-center py-3 px-4">{{ $cumulativestudy->id_course }}</td>
                                 <td class="text-center py-3 px-4">{{ $cumulativestudy->course }}</td>
                                 <td class="text-center py-3 px-4">{{ $cumulativestudy->book }}</td>
+                                <td class="text-center py-3 px-4">{{ $cumulativestudy->grade_number }} {{ $cumulativestudy->grade_name }}</td>
+                                <td class="text-center py-3 px-4">{{ $cumulativestudy->day }}, {{ $cumulativestudy->time_begin }} - {{ $cumulativestudy->time_end }}</td>  
+                                <td class="text-center py-3 px-4">{{ $cumulativestudy->name }}</td>
                                 @if(empty($cumulativestudy->score))
                                 <td>
                                     <div class="flex py-3 px-4">

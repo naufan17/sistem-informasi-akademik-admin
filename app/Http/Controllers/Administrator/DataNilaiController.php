@@ -3,10 +3,9 @@
 namespace App\Http\Controllers\Administrator;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
+use App\Models\Course;
 use App\Models\CumulativeStudy;
-use App\Models\Santri;
 use Illuminate\Support\Facades\Session;
 
 class DataNilaiController extends Controller
@@ -17,24 +16,51 @@ class DataNilaiController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index()
-    {
-        $santris = Santri::where('status', 'Aktif')
-                        ->paginate(50);
+    {           
+        if(date('m') <= 06 ){
+        $courses = Course::leftjoin('ustadzs', 'courses.id_ustadz', '=', 'ustadzs.id')
+                        ->leftjoin('schedules', 'courses.id_schedule', '=', 'schedules.id_schedule')
+                        ->leftjoin('grades', 'courses.id_grade', '=', 'grades.id_grade')
+                        ->where('status_course', 'Aktif')
+                        ->get();
 
-        return view('administrator.data-nilai', compact('santris'));
+            $semester = "Genap";
+
+        }elseif(date('m') > 06 ){
+            $courses = Course::leftjoin('ustadzs', 'courses.id_ustadz', '=', 'ustadzs.id')
+                            ->leftjoin('schedules', 'courses.id_schedule', '=', 'schedules.id_schedule')
+                            ->leftjoin('grades', 'courses.id_grade', '=', 'grades.id_grade')
+                            ->where('status_course', 'Aktif')
+                            ->get();
+
+            $semester = "Ganjil";
+        }
+
+        return view('administrator.data-nilai', compact('courses', 'semester'));
     }
 
-    public function formCreate($id)
+    public function santriNilai($id)
     {
-        $cumulativestudys = CumulativeStudy::leftjoin('santris', 'cumulative_studies.id_santri', '=', 'santris.id')
-                                    ->leftjoin('courses', 'cumulative_studies.id_course', '=', 'courses.id_course')
-                                    ->where('id_santri', $id)
+        if(date('m') <= 06 ){
+            $santris = CumulativeStudy::where('id_course', $id)
+                                    ->leftjoin('santris', 'cumulative_studies.id_santri', '=', 'santris.id')
+                                    ->where('year', date('Y')-1 . '/' . date('Y'))
+                                    ->where('semester', 'Genap')
+                                    ->orderBy('name')
                                     ->get();
+        }elseif(date('m') > 06 ){
+            $santris = CumulativeStudy::where('id_course', $id)
+                                    ->leftjoin('santris', 'cumulative_studies.id_santri', '=', 'santris.id')
+                                    ->where('year', date('Y') . '/' . date('Y')+1)
+                                    ->where('semester', 'Ganjil')
+                                    ->orderBy('name')
+                                    ->get();
+        }
 
-        return view('administrator.tambah-data-nilai', compact('cumulativestudys'));
+        return view('administrator.update-data-nilai', compact('santris'));
     }
-    
-    public function create(Request $request)
+
+    public function createNilai(Request $request)
     {
         $request->validate([
             'id_cumulative_study' => 'required', 'number',

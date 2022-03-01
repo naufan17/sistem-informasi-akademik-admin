@@ -16,7 +16,9 @@ class DataJadwalController extends Controller
      */
     public function index()
     {
-        $schedules = Schedule::all();
+        $schedules = Schedule::orderBy('day', 'desc')
+                            ->orderBy('time_begin')
+                            ->get();
 
         $filters = Schedule::select('day')
                             ->distinct()
@@ -27,7 +29,10 @@ class DataJadwalController extends Controller
 
     public function filterHari(Request $request)
     {
-        $schedules = Schedule::where('day', $request->day)->get();
+        $schedules = Schedule::where('day', $request->day)
+                            ->orderBy('day', 'desc')
+                            ->orderBy('time_begin')
+                            ->get();
 
         $filters = Schedule::select('day')
                             ->where('day', $request->day)

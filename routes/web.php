@@ -7,7 +7,6 @@ use App\Http\Controllers\Administrator\DataAdminController;
 use App\Http\Controllers\Administrator\DataMapelController;
 use App\Http\Controllers\Administrator\DataSantriController;
 use App\Http\Controllers\Administrator\DataUstadzController;
-use App\Http\Controllers\Administrator\DataKelasController;
 use App\Http\Controllers\Administrator\DataKRSController;
 use App\Http\Controllers\Administrator\DataNilaiController;
 use App\Http\Controllers\Administrator\DataJadwalController;
@@ -75,14 +74,10 @@ Route::get('/administrator/data-krs/form-create/{id}', [DataKRSController::class
 Route::post('/administrator/data-krs/create', [DataKRSController::class, 'create'])->name('administrator.data-krs.create');
 Route::get('/administrator/data-krs/delete/{id}', [DataKRSController::class, 'delete'])->name('administrator.data-krs.delete');
 
-Route::get('/administrator/data-kelas', [DataKelasController::class, 'index'])->name('administrator.data-kelas');
-Route::post('/administrator/data-kelas', [DataKelasController::class, 'filter'])->name('administrator.data-kelas');
-Route::get('/administrator/data-kelas/detail/{id}', [DataKelasController::class, 'detailKelas'])->name('administrator.data-kelas.detail');
-Route::post('/administrator/data-kelas/create', [DataKelasController::class, 'createNilai'])->name('administrator.data-kelas.create');
-
 Route::get('/administrator/data-nilai', [DataNilaiController::class, 'index'])->name('administrator.data-nilai');
-Route::get('/administrator/data-nilai/form-create/{id}', [DataNilaiController::class, 'formCreate'])->name('administrator.data-nilai.form-create');
-Route::post('/administrator/data-nilai/create', [DataNilaiController::class, 'create'])->name('administrator.data-nilai.create');
+Route::post('/administrator/data-nilai', [DataNilaiController::class, 'filter'])->name('administrator.data-nilai');
+Route::get('/administrator/data-nilai/santri/{id}', [DataNilaiController::class, 'santriNilai'])->name('administrator.data-nilai.santri');
+Route::post('/administrator/data-nilai/create', [DataNilaiController::class, 'createNilai'])->name('administrator.data-nilai.create');
 
 Route::get('/administrator/data-absensi', [DataAbsensiController::class, 'index'])->name('administrator.data-absensi');
 Route::get('/administrator/data-absensi/list/{id}', [DataAbsensiController::class, 'listAbsensi'])->name('administrator.data-absensi.list');

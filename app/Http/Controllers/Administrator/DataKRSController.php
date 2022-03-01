@@ -19,6 +19,7 @@ class DataKRSController extends Controller
     public function index()
     {   
         $santris = Santri::where('status', 'Aktif')
+                        ->orderBy('name')
                         ->paginate(50);
 
         return view('administrator.data-krs', compact('santris'));
@@ -28,13 +29,19 @@ class DataKRSController extends Controller
     {
         $cumulativestudys = CumulativeStudy::leftjoin('santris', 'cumulative_studies.id_santri', '=', 'santris.id')
                                             ->leftjoin('courses', 'cumulative_studies.id_course', '=', 'courses.id_course')
+                                            ->leftjoin('grades', 'courses.id_grade', '=', 'grades.id_grade')
+                                            ->leftjoin('schedules', 'courses.id_schedule', '=', 'schedules.id_schedule')
                                             ->where('id_santri', $id)
+                                            ->orderBy('grade_name')
+                                            ->orderBy('grade_number')
                                             ->get();
 
         $courses = Course::leftjoin('ustadzs', 'courses.id_ustadz', '=', 'ustadzs.id')
                         ->leftjoin('grades', 'courses.id_grade', '=', 'grades.id_grade')
                         ->leftjoin('schedules', 'courses.id_schedule', '=', 'schedules.id_schedule')
                         ->where('status_course', 'Aktif')
+                        ->orderBy('grade_name')
+                        ->orderBy('grade_number')
                         ->get();
 
         return view('administrator.tambah-santri-krs', compact('cumulativestudys', 'courses', 'id'));

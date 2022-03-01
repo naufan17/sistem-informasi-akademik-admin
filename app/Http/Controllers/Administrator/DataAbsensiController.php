@@ -18,6 +18,7 @@ class DataAbsensiController extends Controller
     public function index()
     {
         $santris = Santri::where('status', 'Aktif')
+                        ->orderBy('name')
                         ->paginate(50);
 
         return view('administrator.data-absensi', compact('santris'));

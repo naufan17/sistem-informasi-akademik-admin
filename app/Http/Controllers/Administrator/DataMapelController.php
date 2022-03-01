@@ -23,6 +23,8 @@ class DataMapelController extends Controller
                         ->leftjoin('grades', 'courses.id_grade', '=', 'grades.id_grade')
                         ->leftjoin('schedules', 'courses.id_schedule', '=', 'schedules.id_schedule')
                         ->where('status_course', 'Aktif')
+                        ->orderBy('grade_name')
+                        ->orderBy('grade_number')
                         ->get();
 
         $status = Course::select('status_course')
@@ -63,8 +65,7 @@ class DataMapelController extends Controller
 
         $schedules = Schedule::all();
 
-        $ustadzs = Ustadz::where('status', 'Aktif')
-                        ->get();
+        $ustadzs = Ustadz::where('status', 'Aktif')->get();
 
         return view('administrator.tambah-data-mapel', compact('schedules', 'ustadzs', 'grades'));
     }
@@ -101,8 +102,7 @@ class DataMapelController extends Controller
 
         $schedules = Schedule::all();
 
-        $ustadzs = Ustadz::where('status', 'Aktif')
-                        ->get();
+        $ustadzs = Ustadz::where('status', 'Aktif')->get();
 
         $courses = Course::where('id_course', $id)
                         ->leftjoin('ustadzs', 'courses.id_ustadz', '=', 'ustadzs.id')
