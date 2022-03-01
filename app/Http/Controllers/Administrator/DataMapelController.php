@@ -36,7 +36,11 @@ class DataMapelController extends Controller
                                 ->distinct()
                                 ->get();
 
-        return view('administrator.data-mapel', compact('courses', 'status', 'filters_status'));
+        $filters_tingkat = Grade::select('grade_name')
+                                ->distinct()
+                                ->get();
+
+        return view('administrator.data-mapel', compact('courses', 'status', 'filters_status', 'filters_tingkat'));
     }
 
     public function filterStatus(Request $request)
@@ -57,6 +61,30 @@ class DataMapelController extends Controller
                                 ->get();
 
         return view('administrator.data-mapel', compact('courses', 'status', 'filters_status'));
+    }
+
+    public function filterTingkat(Request $request)
+    {
+        $courses = Course::leftjoin('ustadzs', 'courses.id_ustadz', '=', 'ustadzs.id')
+                        ->leftjoin('grades', 'courses.id_grade', '=', 'grades.id_grade')
+                        ->leftjoin('schedules', 'courses.id_schedule', '=', 'schedules.id_schedule')
+                        ->where('status_course', $request->status_course)
+                        ->get();
+
+        $status = Course::select('status_course')
+                        ->where('status_course', $request->status_course)
+                        ->distinct()
+                        ->get();
+
+        $filters_status = Course::select('status_course')
+                                ->distinct()
+                                ->get();
+
+        $filters_tingkat = Grade::select('grade_name')
+                                ->distinct()
+                                ->get();
+
+        return view('administrator.data-mapel', compact('courses', 'status', 'filters_status', 'filters_tingkat'));
     }
 
     public function formCreate()

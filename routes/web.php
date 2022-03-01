@@ -75,8 +75,8 @@ Route::post('/administrator/data-krs/create', [DataKRSController::class, 'create
 Route::get('/administrator/data-krs/delete/{id}', [DataKRSController::class, 'delete'])->name('administrator.data-krs.delete');
 
 Route::get('/administrator/data-nilai', [DataNilaiController::class, 'index'])->name('administrator.data-nilai');
-Route::post('/administrator/data-nilai', [DataNilaiController::class, 'filter'])->name('administrator.data-nilai');
 Route::get('/administrator/data-nilai/santri/{id}', [DataNilaiController::class, 'santriNilai'])->name('administrator.data-nilai.santri');
+Route::post('/administrator/data-nilai/santri', [DataNilaiController::class, 'filter'])->name('administrator.data-nilai');
 Route::post('/administrator/data-nilai/create', [DataNilaiController::class, 'createNilai'])->name('administrator.data-nilai.create');
 
 Route::get('/administrator/data-absensi', [DataAbsensiController::class, 'index'])->name('administrator.data-absensi');

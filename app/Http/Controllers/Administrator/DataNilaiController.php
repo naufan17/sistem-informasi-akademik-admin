@@ -41,23 +41,95 @@ class DataNilaiController extends Controller
 
     public function santriNilai($id)
     {
+        $filter_semesters = CumulativeStudy::select('semester')
+                                            ->distinct()
+                                            ->get();
+
+        $filter_years = CumulativeStudy::select('year')
+                                        ->distinct()
+                                        ->get();
+        
+        $id_course = $id;
+
         if(date('m') <= 06 ){
-            $santris = CumulativeStudy::where('id_course', $id)
-                                    ->leftjoin('santris', 'cumulative_studies.id_santri', '=', 'santris.id')
+            $santris = CumulativeStudy::leftjoin('santris', 'cumulative_studies.id_santri', '=', 'santris.id')
                                     ->where('year', date('Y')-1 . '/' . date('Y'))
                                     ->where('semester', 'Genap')
+                                    ->where('id_course', $id)
                                     ->orderBy('name')
                                     ->get();
+
+            $semesters = CumulativeStudy::select('semester')
+                                        ->where('id_course', $id)
+                                        ->where('semester', 'Genap')
+                                        ->where('year', date('Y')-1 . '/' . date('Y'))
+                                        ->distinct()
+                                        ->get();
+
+            $years = CumulativeStudy::select('year')
+                                    ->where('id_course', $id)
+                                    ->where('semester', 'Genap')
+                                    ->where('year', date('Y')-1 . '/' . date('Y'))
+                                    ->distinct()
+                                    ->get();
+
         }elseif(date('m') > 06 ){
-            $santris = CumulativeStudy::where('id_course', $id)
-                                    ->leftjoin('santris', 'cumulative_studies.id_santri', '=', 'santris.id')
+            $santris = CumulativeStudy::leftjoin('santris', 'cumulative_studies.id_santri', '=', 'santris.id')
                                     ->where('year', date('Y') . '/' . date('Y')+1)
                                     ->where('semester', 'Ganjil')
+                                    ->where('id_course', $id)
                                     ->orderBy('name')
+                                    ->get();
+
+            $semesters = CumulativeStudy::select('semester')
+                                        ->where('id_course', $id)
+                                        ->where('semester', 'Ganjil')
+                                        ->where('year', date('Y') . '/' . date('Y')+1)
+                                        ->distinct()
+                                        ->get();
+
+            $years = CumulativeStudy::select('year')
+                                    ->where('id_course', $id)
+                                    ->where('semester', 'Ganjil')
+                                    ->where('year', date('Y') . '/' . date('Y')+1)
+                                    ->distinct()
                                     ->get();
         }
 
-        return view('administrator.update-data-nilai', compact('santris'));
+        return view('administrator.update-data-nilai', compact('santris', 'filter_semesters', 'filter_years', 'semesters', 'years', 'id_course'));
+    }
+
+    public function filter(Request $request)
+    {
+        $filter_semesters = CumulativeStudy::select('semester')
+                                            ->distinct()
+                                            ->get();
+
+        $filter_years = CumulativeStudy::select('year')
+                                        ->distinct()
+                                        ->get();
+
+        $id_course = $request->id;
+
+        $santris = CumulativeStudy::leftjoin('santris', 'cumulative_studies.id_santri', '=', 'santris.id')
+                                ->where('id_course', $request->id)
+                                ->where('semester', $request->semester)
+                                ->where('year', $request->tahun_ajaran)
+                                ->get();
+                
+        $semesters = CumulativeStudy::select('semester')
+                                    ->where('id_course', $request->id)
+                                    ->where('semester', $request->semester)
+                                    ->distinct()
+                                    ->get();
+        
+        $years = CumulativeStudy::select('year')
+                                ->where('id_course', $request->id)
+                                ->where('year', $request->tahun_ajaran)
+                                ->distinct()
+                                ->get();
+
+        return view('administrator.update-data-nilai', compact('santris', 'filter_semesters', 'filter_years', 'semesters', 'years', 'id_course'));
     }
 
     public function createNilai(Request $request)

@@ -7,7 +7,7 @@
         <main class="pt-6 px-6">
             <h1 class="text-3xl text-black pb-2 mt-2">Nilai</h1>
             <div class="bg-white rounded-lg shadow-md p-8 my-8">
-                <p class="text-xl pb-4 flex items-center">Daftar Meta Pelajaran</p>
+                <p class="text-xl pb-4 flex items-center">Daftar Mata Pelajaran</p>
                 <div class="bg-white overflow-auto pb-8">
                     <table class="table-auto bg-white">
                         <thead class="bg-gray-800 text-white">

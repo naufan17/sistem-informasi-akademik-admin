@@ -27,14 +27,21 @@ class DataKRSController extends Controller
 
     public function formCreate($id)
     {
-        $cumulativestudys = CumulativeStudy::leftjoin('santris', 'cumulative_studies.id_santri', '=', 'santris.id')
-                                            ->leftjoin('courses', 'cumulative_studies.id_course', '=', 'courses.id_course')
-                                            ->leftjoin('grades', 'courses.id_grade', '=', 'grades.id_grade')
-                                            ->leftjoin('schedules', 'courses.id_schedule', '=', 'schedules.id_schedule')
-                                            ->where('id_santri', $id)
-                                            ->orderBy('grade_name')
-                                            ->orderBy('grade_number')
-                                            ->get();
+        if(date('m') <= 06 ){
+            $cumulativestudys = CumulativeStudy::leftjoin('santris', 'cumulative_studies.id_santri', '=', 'santris.id')
+                                                ->leftjoin('courses', 'cumulative_studies.id_course', '=', 'courses.id_course')
+                                                ->where('id_santri', $id)
+                                                ->where('semester', 'Genap')
+                                                ->where('year', date('Y')-1 . '/' . date('Y'))
+                                                ->get();
+        }elseif(date('m') > 06 ){
+            $cumulativestudys = CumulativeStudy::leftjoin('santris', 'cumulative_studies.id_santri', '=', 'santris.id')
+                                                ->leftjoin('courses', 'cumulative_studies.id_course', '=', 'courses.id_course')
+                                                ->where('id_santri', $id)
+                                                ->where('semester', 'Genap')
+                                                ->where('year', date('Y')-1 . '/' . date('Y'))
+                                                ->get();
+        }
 
         $courses = Course::leftjoin('ustadzs', 'courses.id_ustadz', '=', 'ustadzs.id')
                         ->leftjoin('grades', 'courses.id_grade', '=', 'grades.id_grade')
@@ -61,11 +68,25 @@ class DataKRSController extends Controller
                 'id_santri' => $request->id_santri,
                 'id_course' => $request->id_course,
             ]);
+            
+            CumulativeStudy::firstOrCreate([
+                'year' => date('Y')-1 . '/' . date('Y'),
+                'semester' => 'Ganjil',
+                'id_santri' => $request->id_santri,
+                'id_course' => $request->id_course,
+            ]);
     
         }elseif(date('m') > 06 ){
             CumulativeStudy::firstOrCreate([
                 'year' => date('Y') . '/' . date('Y')+1,
                 'semester' => 'Ganjil',
+                'id_santri' => $request->id_santri,
+                'id_course' => $request->id_course,
+            ]);
+            
+            CumulativeStudy::firstOrCreate([
+                'year' => date('Y') . '/' . date('Y')+1,
+                'semester' => 'Genap',
                 'id_santri' => $request->id_santri,
                 'id_course' => $request->id_course,
             ]);
