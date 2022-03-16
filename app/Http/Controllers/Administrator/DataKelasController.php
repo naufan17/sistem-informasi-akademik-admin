@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Grade;
 use Illuminate\Support\Facades\Session;
 
-class DataTingkatController extends Controller
+class DataKelasController extends Controller
 {
     /**
      * Show the application dashboard.
@@ -24,10 +24,10 @@ class DataTingkatController extends Controller
                         ->distinct()
                         ->get();
 
-        return view('administrator.data-tingkat', compact('grades', 'filters'));
+        return view('administrator.data-kelas', compact('grades', 'filters'));
     }
 
-    public function filterNamaTingkat(Request $request)
+    public function filterNamaKelas(Request $request)
     {
         $grades = Grade::where('grade_name', $request->grade_name)
                         ->orderBy('grade_name')
@@ -39,12 +39,12 @@ class DataTingkatController extends Controller
                         ->distinct()
                         ->get();
 
-        return view('administrator.data-tingkat', compact('grades', 'filters'));
+        return view('administrator.data-kelas', compact('grades', 'filters'));
     }
 
     public function formCreate()
     {
-        return view('administrator.tambah-data-tingkat');
+        return view('administrator.tambah-data-kelas');
     }
 
     public function create(Request $request)
@@ -61,14 +61,14 @@ class DataTingkatController extends Controller
 
         Session::flash('tambah','Data Berhasil Ditambahkan!');
 
-        return redirect('/administrator/data-tingkat');
+        return redirect('/administrator/data-kelas');
     }
 
     public function formUpdate($id)
     {
         $grades = Grade::where('id_grade', $id)->get();
 
-        return view('administrator.update-data-tingkat', compact('grades'));
+        return view('administrator.update-data-kelas', compact('grades'));
     }
 
     public function update(Request $request)
@@ -85,7 +85,7 @@ class DataTingkatController extends Controller
 
         Session::flash('perbarui','Data Berhasil Diperbarui!');
 
-        return redirect('/administrator/data-tingkat');
+        return redirect('/administrator/data-kelas');
     }
 
     public function delete($id)
@@ -94,6 +94,6 @@ class DataTingkatController extends Controller
 
         Session::flash('hapus','Data Berhasil Dihapus!');
 
-        return redirect('/administrator/data-tingkat');
+        return redirect('/administrator/data-kelas');
     }
 }

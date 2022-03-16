@@ -10,7 +10,7 @@ use App\Http\Controllers\Administrator\DataUstadzController;
 use App\Http\Controllers\Administrator\DataKRSController;
 use App\Http\Controllers\Administrator\DataNilaiController;
 use App\Http\Controllers\Administrator\DataJadwalController;
-use App\Http\Controllers\Administrator\DataTingkatController;
+use App\Http\Controllers\Administrator\DataKelasController;
 
 /*
 |--------------------------------------------------------------------------
@@ -95,10 +95,10 @@ Route::get('/administrator/data-jadwal/form-update/{id}', [DataJadwalController:
 Route::post('/administrator/data-jadwal/update', [DataJadwalController::class, 'update'])->name('administrator.data-jadwal.update');
 Route::get('/administrator/data-jadwal/delete/{id}', [DataJadwalController::class, 'delete'])->name('administrator.data-jadwal.delete');
 
-Route::get('/administrator/data-tingkat', [DataTingkatController::class, 'index'])->name('administrator.data-tingkat');
-Route::post('/administrator/data-tingkat', [DataTingkatController::class, 'filterNamaTingkat'])->name('administrator.data-jadwal');
-Route::get('/administrator/data-tingkat/form-create', [DataTingkatController::class, 'formCreate'])->name('administrator.data-tingkat.form-create');
-Route::post('/administrator/data-tingkat/create', [DataTingkatController::class, 'create'])->name('administrator.data-tingkat.create');
-Route::get('/administrator/data-tingkat/form-update/{id}', [DataTingkatController::class, 'formUpdate'])->name('administrator.data-tingkat.form-update');
-Route::post('/administrator/data-tingkat/update', [DataTingkatController::class, 'update'])->name('administrator.data-tingkat.update');
-Route::get('/administrator/data-tingkat/delete/{id}', [DataTingkatController::class, 'delete'])->name('administrator.data-tingkat.delete');
+Route::get('/administrator/data-kelas', [DataKelasController::class, 'index'])->name('administrator.data-kelas');
+Route::post('/administrator/data-kelas', [DataKelasController::class, 'filterNamaKelas'])->name('administrator.data-kelas');
+Route::get('/administrator/data-kelas/form-create', [DataKelasController::class, 'formCreate'])->name('administrator.data-kelas.form-create');
+Route::post('/administrator/data-kelas/create', [DataKelasController::class, 'create'])->name('administrator.data-kelas.create');
+Route::get('/administrator/data-kelas/form-update/{id}', [DataKelasController::class, 'formUpdate'])->name('administrator.data-kelas.form-update');
+Route::post('/administrator/data-kelas/update', [DataKelasController::class, 'update'])->name('administrator.data-kelas.update');
+Route::get('/administrator/data-kelas/delete/{id}', [DataKelasController::class, 'delete'])->name('administrator.data-kelas.delete');

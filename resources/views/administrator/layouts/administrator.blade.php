@@ -32,12 +32,12 @@
     <div id="app">
         <main>
             <!-- HEADER -->
-            <nav id="header" class="w-full z-30 top-0 bg-white border-b-2 pb-3">
+            <nav id="header" class="w-full z-30 top-0 bg-white border-b-2">
                 <div class="w-full container mx-auto flex flex-wrap items-center justify-between">
                     <div class="flex space-x-4 py-2">
                         <!--LOGO-->
                         <div class="object-left">
-                            <img src="{{ ('images/logo.png ') }}" class="w-24">
+                            <img src="{{ URL::to('/') }}/images/logo.png" class="w-24">
                         </div>
                         <!--NAME-->
                         <div class="text-center font-bold font-sans text-yellow-800 mt-2">
@@ -96,7 +96,7 @@
                             </button>
                             <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-md">
                                 <div class="px-2 py-2 bg-white rounded-md shadow">
-                                    <a class="block px-4 py-3 mt-2 text-sm font-semibold rounded-lg hover:bg-blue-600 hover:text-white hover:shadow-lg hover:border-transparent" href="{{ url('administrator/data-tingkat') }}">Tingkat</a>
+                                    <a class="block px-4 py-3 mt-2 text-sm font-semibold rounded-lg hover:bg-blue-600 hover:text-white hover:shadow-lg hover:border-transparent" href="{{ url('administrator/data-kelas') }}">Kelas</a>
                                     <a class="block px-4 py-3 mt-2 text-sm font-semibold rounded-lg hover:bg-blue-600 hover:text-white hover:shadow-lg hover:border-transparent" href="{{ url('administrator/data-jadwal') }}">Jadwal</a>
                                     <a class="block px-4 py-3 mt-2 text-sm font-semibold rounded-lg hover:bg-blue-600 hover:text-white hover:shadow-lg hover:border-transparent" href="{{ url('administrator/data-mapel') }}">Mata Pelajaran</a>
                                 </div>
