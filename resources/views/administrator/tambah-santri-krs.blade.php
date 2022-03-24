@@ -17,7 +17,7 @@
                     </a>
                 </div>
                 <p class="text-xl py-8 flex items-center">Daftar Kelas yang Diikuti oleh Sdr. {{ Auth::guard('administrator')->user()->name }}</p>
-                <form method="POST" action="">
+                <!-- <form method="POST" action="">
                     @csrf
                     <div class="flex flex-wrap space-x-4 items-center pb-8">
                         <div class="flex w-36">
@@ -35,17 +35,14 @@
                                     <option>2</option>
                                     <option>3</option>
                                     <option>4</option>
-                                    
                                 </select>
                             </div>
                         </div>
-
                         <div class="object-left text-center text-white text-base">
                             <button type="submit" class="bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-2.5 px-8">Lihat</button>
                         </div>
                     </div>
-                </form>
-
+                </form> -->
                 @if($tambah = Session::get('tambah'))
                 <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mb-2" role="alert">
                     <span class="block sm:inline">{{ $tambah }}</span>
@@ -80,7 +77,7 @@
                                 <td class="text-center py-3 px-4">{{ $cumulativestudy->course }}</td>
                                 <td class="text-center py-3 px-4">{{ $cumulativestudy->book }}</td>
                                 @if(empty($cumulativestudy->score))
-                                <td>
+                                <td class="grid justify-items-center py-3 px-4">
                                     <div class="flex py-3 px-4">
                                         <div class="w-5 mr-2 transform hover:text-purple-500 hover:scale-110">
                                             <a href="{{ url('administrator/data-krs/delete') }}/{{ $cumulativestudy->id_cumulative_study }}">
@@ -107,13 +104,13 @@
                         <thead class="bg-gray-800 text-white">
                             <tr>
                                 <th class="text-center py-3 px-4 uppercase font-semibold text-sm">No</th>
-                                <th class="text-center w-1/7 py-3 px-4 uppercase font-semibold text-sm">Kode MP</th>
-                                <th class="text-center w-1/7 py-3 px-4 uppercase font-semibold text-sm">Mata pelajaran</th>
-                                <th class="text-center w-1/7 py-3 px-4 uppercase font-semibold text-sm">Kitab</th>
-                                <th class="text-center w-1/7 py-3 px-4 uppercase font-semibold text-sm">Kelas</th>
-                                <th class="text-center w-1/7 py-3 px-4 uppercase font-semibold text-sm">Jadwal</th>
-                                <th class="text-center w-1/7 py-3 px-4 uppercase font-semibold text-sm">Nama Ustadz</th>
-                                <th class="text-center w-1/7 py-3 px-4 uppercase font-semibold text-sm">Aksi</th>
+                                <th class="text-center w-1/6 py-3 px-4 uppercase font-semibold text-sm">Kode MP</th>
+                                <th class="text-center w-1/6 py-3 px-4 uppercase font-semibold text-sm">Mata pelajaran</th>
+                                <th class="text-center w-1/6 py-3 px-4 uppercase font-semibold text-sm">Kitab</th>
+                                <th class="text-center w-1/6 py-3 px-4 uppercase font-semibold text-sm">Kelas</th>
+                                <th class="text-center w-1/6 py-3 px-4 uppercase font-semibold text-sm">Jadwal</th>
+                                <th class="text-center w-1/6 py-3 px-4 uppercase font-semibold text-sm">Nama Ustadz</th>
+                                <th class="text-center w-1/6 py-3 px-4 uppercase font-semibold text-sm">Aksi</th>
                             </tr>
                         </thead>
                         <tbody class="text-gray-700">

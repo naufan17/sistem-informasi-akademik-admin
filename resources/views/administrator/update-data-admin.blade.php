@@ -44,8 +44,8 @@
                         <div class="object-left text-center text-white text-base pt-8 px-3">
                             <button type="submit" class="bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-3 px-8">Simpan</button>
                         </div>
-                        <div class="object-left text-center text-black-500 hover:text-white text-base pt-8 px-3">
-                            <button type="submit" class="border border-black-800 bg-white hover:bg-red-700 rounded py-3 px-10">Hapus</button>
+                        <div class="object-left text-center text-white text-base pt-8 px-3">
+                            <button type="submit" class="border bg-red-600 hover:bg-red-700 rounded py-3 px-10">Hapus</button>
                         </div>
                     </div>
                 </form>

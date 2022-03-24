@@ -21,15 +21,17 @@
                                         <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
                                     </svg>
                                 </div>
-                                <select type="text" name="day" value="" class="block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker px-4 pr-8 rounded" id="grid-state">
-                                    @foreach($filters as $filter)
-                                    | <option value="{{ $filter->day }}">{{ $filter->day }}</option>
-                                    @endforeach
+                                <select type="text" name="status" value="" class="block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker px-4 pr-8 rounded" id="grid-state">
+                                    <option>1 Awwaliyah</option>
+                                    <option>2 Awwaliyah</option>
+                                    <option>1 Wustho</option>
+                                    <option>2 Wustho</option>
+                                    <option>1 Ulya</option>
+                                    <option>2 Ulya</option>
                                 </select>
                             </div>
                         </div>
                     </div>
-
                     <div class="flex space-x-4 items-center pb-8">
                         <div class="flex-none w-36">
                             <a class="self-center">Hari</a>

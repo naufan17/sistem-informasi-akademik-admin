@@ -22,18 +22,16 @@
                                     </svg>
                                 </div>
                                 <select type="text" name="status" value="" class="block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker px-4 pr-8 rounded" id="grid-state">
-                                    @foreach($status as $filter)
-                                    <option selected value="{{ $filter->status }}">{{ $filter->status }}</option>
-                                    @endforeach
-                                    @foreach($filter_status as $filter)
-                                    <option value="{{ $filter->status }}">{{ $filter->status }}</option>
-                                    @endforeach
+                                    <option>1 Awwaliyah</option>
+                                    <option>2 Awwaliyah</option>
+                                    <option>1 Wustho</option>
+                                    <option>2 Wustho</option>
+                                    <option>1 Ulya</option>
+                                    <option>2 Ulya</option>
                                 </select>
                             </div>
                         </div>
                     </div>
-
-
                     <div class="flex flex-wrap space-x-4 items-center pb-8">
                         <div class="flex w-36">
                             <a class="self-center">Status</a>
@@ -55,12 +53,10 @@
                                 </select>
                             </div>
                         </div>
-
                         <div class="object-left text-center text-white text-base">
                             <button type="submit" class="bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-2.5 px-8">Lihat</button>
                         </div>
                     </div>
-                    
                 </form>
                 <p class="text-xl pt-4 flex items-center border-b-2">Daftar List Santri</p>
                 <div class="flex flex-row-reverse object-left text-center text-white text-base py-8">

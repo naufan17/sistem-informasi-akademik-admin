@@ -7,10 +7,8 @@
         <main class="pt-6 px-6">
             <h1 class="text-3xl text-black pb-2 mt-2">Absensi</h1>
             <div class="bg-white rounded-lg shadow-md p-8 my-8">
-
                 <form method="POST" action="">
                     @csrf
-
                     <div class="flex flex-wrap space-x-4 items-center pb-4">
                         <div class="flex w-36">
                             <a class="self-center">Kelas</a>
@@ -37,7 +35,6 @@
                         </div>
                     </div>
                 </form>
-
                 <p class="text-xl mb-8 flex items-center">Input Presentase Absensi</p>
                 <div class="bg-white overflow-auto pb-8">
                     <table class="table-auto bg-white">

@@ -21,17 +21,21 @@
                                         <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
                                     </svg>
                                 </div>
-                                <select type="number" name="sem" value=""  class="block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker px-4 pr-8 rounded" id="grid-state">
-                                    
-                                    <option value="#">#</option>
-                                    
+                                <select type="text" name="status" value="" class="block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker px-4 pr-8 rounded" id="grid-state">
+                                    <option>1 Awwaliyah</option>
+                                    <option>2 Awwaliyah</option>
+                                    <option>1 Wustho</option>
+                                    <option>2 Wustho</option>
+                                    <option>1 Ulya</option>
+                                    <option>2 Ulya</option>
                                 </select>
                             </div>
                         </div>
-                        
+                        <div class="object-left text-center text-white text-base">
+                            <button class="bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-2.5 px-8">Lihat</button>
+                        </div>
                     </div>
-
-                    <div class="flex space-x-4 items-center pb-8">
+                    <!-- <div class="flex space-x-4 items-center pb-8">
                         <div class="flex-none w-36">
                             <a class="self-center">Semester</a>
                         </div>
@@ -43,18 +47,15 @@
                                     </svg>
                                 </div>
                                 <select type="number" name="sem" value=""  class="block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker px-4 pr-8 rounded" id="grid-state">
-                                    
                                     <option value="#">#</option>
-                                    
                                 </select>
                             </div>
                         </div>
                         <div class="object-left text-center text-white text-base">
                             <button class="bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-2.5 px-8">Lihat</button>
                         </div>
-                    </div>
+                    </div> -->
                 </form>
-
                 <p class="text-xl pt-4 flex items-center border-b-2">Daftar Paket Mata Pelajaran</p>
                 <div class="flex flex-row-reverse object-left text-center text-white text-base py-8">
                     <a href="{{ url('administrator/data-mapel/form-create') }}" class="button bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-3 px-8">
@@ -88,13 +89,13 @@
                         <thead class="bg-gray-800 text-white">
                             <tr>
                                 <th class="text-center py-3 px-4 uppercase font-semibold text-sm">No</th>
-                                <th class="text-center w-1/7 py-3 px-4 uppercase font-semibold text-sm">Kode MP</th>
-                                <th class="text-center w-1/7 py-3 px-4 uppercase font-semibold text-sm">Mata pelajaran</th>
-                                <th class="text-center w-1/7 py-3 px-4 uppercase font-semibold text-sm">Kitab</th>
-                                <th class="text-center w-1/7 py-3 px-4 uppercase font-semibold text-sm">Kelas</th>
-                                <th class="text-center w-1/7 py-3 px-4 uppercase font-semibold text-sm">Jadwal</th>
-                                <th class="text-center w-1/7 py-3 px-4 uppercase font-semibold text-sm">Nama Ustadz</th>
-                                <th class="text-center w-1/7 py-3 px-4 uppercase font-semibold text-sm">Aksi</th>
+                                <th class="text-center w-1/6 py-3 px-4 uppercase font-semibold text-sm">Kode MP</th>
+                                <th class="text-center w-1/6 py-3 px-4 uppercase font-semibold text-sm">Mata pelajaran</th>
+                                <th class="text-center w-1/6 py-3 px-4 uppercase font-semibold text-sm">Kitab</th>
+                                <th class="text-center w-1/6 py-3 px-4 uppercase font-semibold text-sm">Kelas</th>
+                                <th class="text-center w-1/6 py-3 px-4 uppercase font-semibold text-sm">Jadwal</th>
+                                <th class="text-center w-1/6 py-3 px-4 uppercase font-semibold text-sm">Nama Ustadz</th>
+                                <th class="text-center w-1/6 py-3 px-4 uppercase font-semibold text-sm">Aksi</th>
                             </tr>
                         </thead>
                         <tbody class="text-gray-700">

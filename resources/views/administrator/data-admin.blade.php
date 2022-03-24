@@ -40,10 +40,10 @@
                         <thead class="bg-gray-800 text-white">
                             <tr>
                                 <th class="text-center py-3 px-4 uppercase font-semibold text-sm">No</th>
-                                <th class="text-center w-1/3 py-3 px-4 uppercase font-semibold text-sm">Nama</th>
-                                <th class="text-center w-1/3 py-3 px-4 uppercase font-semibold text-sm">Username</th>
-                                <th class="text-center w-1/3 py-3 px-4 uppercase font-semibold text-sm">Password</th>
-                                <th class="text-center w-1/3 py-3 px-4 uppercase font-semibold text-sm">Aksi</td>
+                                <th class="text-center w-1/4 py-3 px-4 uppercase font-semibold text-sm">Nama</th>
+                                <th class="text-center w-1/4 py-3 px-4 uppercase font-semibold text-sm">Username</th>
+                                <th class="text-center w-1/4 py-3 px-4 uppercase font-semibold text-sm">Password</th>
+                                <th class="text-center w-1/4 py-3 px-4 uppercase font-semibold text-sm">Aksi</td>
                             </tr>
                         </thead>
                         <tbody class="text-gray-700">
