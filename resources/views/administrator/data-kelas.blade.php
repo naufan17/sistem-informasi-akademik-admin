@@ -17,7 +17,7 @@
                         <div class="flex-none md:w-1/5">
                             <div class="relative">
                                 <div class="pointer-events-none absolute inset-y-0 right-3 flex items-center text-grey-darker">
-                                    <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+ x                                     <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                                         <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
                                     </svg>
                                 </div>
@@ -77,7 +77,7 @@
                                 <td class="text-center py-3 px-4">{{ $loop->iteration }}</td>
                                 <td class="text-center py-3 px-4">{{ $grade->grade_number }}</td>
                                 <td class="text-center py-3 px-4">{{ $grade->grade_name }}</td>
-                                <td>
+                                <td class="grid justify-items-center py-3 px-4">
                                     <div class="flex py-3 px-4">
                                         <div class="w-5 mr-2 transform hover:text-purple-500 hover:scale-110">
                                             <a href="{{ url('administrator/data-kelas/form-update') }}/{{ $grade->id_grade }}">

@@ -72,9 +72,10 @@
                         <thead class="bg-gray-800 text-white">
                             <tr>
                                 <th class="text-center py-3 px-4 uppercase font-semibold text-sm">No</th>
-                                <th class="text-center w-1/5 py-3 px-4 uppercase font-semibold text-sm">NIU</th>
+                                <th class="text-center py-3 px-4 uppercase font-semibold text-sm">NIU</th>
                                 <th class="text-center w-1/5 py-3 px-4 uppercase font-semibold text-sm">Nama</th>
                                 <th class="text-center w-1/5 py-3 px-4 uppercase font-semibold text-sm">Status</th>
+                                <th class="text-center w-1/5 py-3 px-4 uppercase font-semibold text-sm">Password</th>
                                 <th class="text-center w-1/5 py-3 px-4 uppercase font-semibold text-sm">Profil</td>
                                 <th class="text-center w-1/5 py-3 px-4 uppercase font-semibold text-sm">Aksi</td>
                             </tr>
@@ -86,11 +87,12 @@
                                 <td class="text-center py-3 px-4">{{ $ustadz->id }}</td>
                                 <td class="text-center py-3 px-4">{{ $ustadz->name }}</td>
                                 <td class="text-center py-3 px-4">{{ $ustadz->status }}</td>
+                                <td class="text-center py-3 px-4">{{ $ustadz->status }}</td>
                                 <td class="text-center py-3 px-4">
                                     <a href="{{ url('administrator/data-ustadz/detail') }}/{{ $ustadz->id }}" class="button bg-blue-600 hover:bg-blue-800 hover:text-white hover:no-underline text-white rounded shadow-md py-2 px-8">Detail</a>
                                 </td>
-                                <td>
-                                    <div class="flex py-3 px-4">
+                                <td class="grid justify-items-center py-3 px-4">
+                                    <div class="flex">
                                         <div class="w-5 mr-2 transform hover:text-purple-500 hover:scale-110">
                                             <a href="{{ url('administrator/data-ustadz/form-update') }}/{{ $ustadz->id }}">
                                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -111,7 +113,7 @@
                             @endforeach
                         </tbody>
                     </table>
-                </div>
+                </div>  
                 {{ $ustadzs->links() }}
             </div>
         </main>

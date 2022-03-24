@@ -42,6 +42,7 @@
                                 <th class="text-center py-3 px-4 uppercase font-semibold text-sm">No</th>
                                 <th class="text-center w-1/3 py-3 px-4 uppercase font-semibold text-sm">Nama</th>
                                 <th class="text-center w-1/3 py-3 px-4 uppercase font-semibold text-sm">Username</th>
+                                <th class="text-center w-1/3 py-3 px-4 uppercase font-semibold text-sm">Password</th>
                                 <th class="text-center w-1/3 py-3 px-4 uppercase font-semibold text-sm">Aksi</td>
                             </tr>
                         </thead>
@@ -51,7 +52,8 @@
                                 <td class="text-center py-3 px-4">{{ $loop->iteration }}</td>
                                 <td class="text-center py-3 px-4">{{ $administrator->name }}</td>
                                 <td class="text-center py-3 px-4">{{ $administrator->username }}</td>
-                                <td>
+                                <td class="text-center py-3 px-4">{{ $administrator->username }}</td>
+                                <td class="grid justify-items-center py-3 px-4">
                                     <div class="flex py-3 px-4">
                                         @if(Auth::guard('administrator')->user()->name != $administrator->name )
                                         <div class="w-5 mr-2 transform hover:text-purple-500 hover:scale-110">

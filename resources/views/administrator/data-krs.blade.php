@@ -24,9 +24,9 @@
                                 <td class="text-center py-3 px-4">{{ $loop->iteration }}</td>
                                 <td class="text-center py-3 px-4">{{ $santri->id }}</td>
                                 <td class="text-center py-3 px-4">{{ $santri->name }}</td>
-                                <td class="py-3 px-4">
+                                <td class="grid justify-items-center py-3 px-4">
                                     <a href="{{ url('administrator/data-krs/form-create') }}/{{ $santri->id }}" class="transform hover:text-purple-500 hover:scale-110">
-                                    <i class="fas fa-external-link-alt"></i></a>
+                                    <i class="text-center fas fa-external-link-alt"></i></a>
                                 </td>
                             </tr>
                             @endforeach
