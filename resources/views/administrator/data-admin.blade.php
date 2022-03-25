@@ -8,8 +8,8 @@
             <h1 class="text-3xl text-black pb-2 mt-2">Data Admin</h1>
             <div class="bg-white rounded-lg shadow-md p-8 my-8">
                 <p class="text-xl flex items-center border-b-2">Daftar Anggota Admin</p>
-                <div class="flex flex-row-reverse object-left text-center text-white text-base py-8">
-                    <a href="{{ url('administrator/data-admin/form-create') }}" class="button bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-3 px-8">
+                <div class="flex flex-row-reverse object-left text-center text-white text-base py-4">
+                    <a href="{{ url('administrator/data-admin/form-create') }}" class="button bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-2.5 px-6">
                         Tambah
                     </a>
                 </div>
@@ -40,10 +40,10 @@
                         <thead class="bg-gray-800 text-white">
                             <tr>
                                 <th class="text-center py-3 px-4 uppercase font-semibold text-sm">No</th>
-                                <th class="text-center w-1/4 py-3 px-4 uppercase font-semibold text-sm">Nama</th>
-                                <th class="text-center w-1/4 py-3 px-4 uppercase font-semibold text-sm">Username</th>
-                                <th class="text-center w-1/4 py-3 px-4 uppercase font-semibold text-sm">Password</th>
-                                <th class="text-center w-1/4 py-3 px-4 uppercase font-semibold text-sm">Aksi</td>
+                                <th class="text-center w-1/3 py-3 px-4 uppercase font-semibold text-sm">Nama</th>
+                                <th class="text-center w-1/3 py-3 px-4 uppercase font-semibold text-sm">Username</th>
+                                <!-- <th class="text-center w-1/3 py-3 px-4 uppercase font-semibold text-sm">Password</th> -->
+                                <th class="text-center w-1/3 py-3 px-4 uppercase font-semibold text-sm">Aksi</td>
                             </tr>
                         </thead>
                         <tbody class="text-gray-700">
@@ -51,7 +51,7 @@
                             <tr>
                                 <td class="text-center py-3 px-4">{{ $loop->iteration }}</td>
                                 <td class="text-center py-3 px-4">{{ $administrator->name }}</td>
-                                <td class="text-center py-3 px-4">{{ $administrator->username }}</td>
+                                <!-- <td class="text-center py-3 px-4">passwordadmin</td> -->
                                 <td class="text-center py-3 px-4">{{ $administrator->username }}</td>
                                 <td class="grid justify-items-center py-3 px-4">
                                     <div class="flex py-3 px-4">

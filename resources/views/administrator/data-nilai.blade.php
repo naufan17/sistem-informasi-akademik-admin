@@ -52,7 +52,7 @@
                         </div>
                     </div>
                 </form>
-                <p class="text-xl pb-4 flex items-center">Daftar Mata Pelajaran</p>
+                <p class="text-xl pb-4 pt-4 flex items-center">Daftar Mata Pelajaran</p>
                 @if($tambah = Session::get('tambah'))
                 <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mb-2" role="alert">
                     <span class="block sm:inline">{{ $tambah }}</span>

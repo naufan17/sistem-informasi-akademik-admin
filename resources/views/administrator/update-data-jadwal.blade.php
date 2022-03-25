@@ -29,7 +29,7 @@
                         <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 px-4 py-2 space-y-1">
                             <p class="self-center text-gray-600">Tingkat</p>
                             <div class="relative z-0 w-full mb-5">
-                                <select type="text" name="day" value="{{ $schedule->day }}" class="block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker py-3 px-4 pr-8 rounded" id="grid-state">
+                                <select type="text" name="day" value="{{ $schedule->day }}" class="block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker px-4 pr-8 rounded" id="grid-state">
                                     <option selected value="{{ $schedule->day }}">{{ $schedule->day }}</option>
                                     <option value="Senin">Senin</option>
                                     <option value="Selasa">Selasa</option>

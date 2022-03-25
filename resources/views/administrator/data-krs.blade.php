@@ -52,7 +52,7 @@
                         </div>
                     </div>
                 </form>
-                <p class="text-xl mb-8 flex items-center">Input Santri pada MP Kelas</p>
+                <p class="text-xl mb-4 pt-4 flex items-center">Input Santri pada MP Kelas</p>
                 <div class="bg-white overflow-auto pb-8">
                     <table class="table-auto bg-white">
                         <thead class="bg-gray-800 text-white">

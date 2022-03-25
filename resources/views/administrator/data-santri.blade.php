@@ -8,7 +8,7 @@
             <h1 class="text-3xl text-black pb-2 mt-2">Data Santri</h1>
             <div class="bg-white rounded-lg shadow-md p-8 my-8">
                 <!-- OPTION -->
-                <form method="POST" action="{{ url('administrator/data-absensi') }}">
+                <form method="POST" action="{{ url('administrator/data-santri') }}">
                     @csrf
                     <div class="flex space-x-4 items-center pb-4">
                         <div class="flex-none w-36">
@@ -49,7 +49,7 @@
                             </div>
                         </div>
                         <div class="object-left text-center text-white text-base">
-                            <button class="bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-2.5 px-8">Lihat</button>
+                            <button class="bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-2.5 px-6">Lihat</button>
                         </div>
                     </div>
                 </form>
@@ -77,16 +77,16 @@
                             </div>
                         </div>
                         <div class="object-left text-center text-white text-base">
-                            <button type="submit" class="bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-2.5 px-8">Lihat</button>
+                            <button type="submit" class="bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-2.5 px-6">Lihat</button>
                         </div>
                     </div>
                 </form>
                 <p class="text-xl pt-4 flex items-center border-b-2">Daftar List Santri</p>
-                <div class="flex flex-row-reverse object-left text-center text-white text-base py-8">
-                    <a href="{{ url('administrator/data-santri/form-create') }}" class="button bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-3 px-8">
+                <div class="flex flex-row-reverse object-left text-center text-white text-base py-4">
+                    <a href="{{ url('administrator/data-santri/form-create') }}" class="button bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-2.5 px-6">
                         Tambah
                     </a>
-                    <a href="{{ url('administrator/data-santri/form-import') }}" class="button bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-3 px-8 mr-6">
+                    <a href="{{ url('administrator/data-santri/form-import') }}" class="button bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-2.5 px-6 mr-6">
                         Import
                     </a>
                 </div>
