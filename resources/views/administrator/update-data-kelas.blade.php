@@ -25,11 +25,11 @@
                             <p class="self-center bg-gray-50 py-4 px-4">Tingkatan Kelas</p>
                         </div>
                         @foreach($grades as $grade)
-                        <input type="hidden" name="id_grade" value="{{ $grade->id_grade }}" placeholder="" required autocomplete="id_grade" required class="pt-3 pb-2 px-3 block w-full mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-200" />
+                        <input type="hidden" name="id_grade" value="{{ $grade->id_grade }}" class="pt-3 pb-2 px-3 block w-full mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-200" />
                         <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 px-4 py-2 space-y-1">
                             <p class="self-center text-gray-600">Tingkat</p>
                             <div class="relative z-0 w-full mb-5">
-                                <select type="number" name="grade_number" value="{{ $grade->grade_number }}"  class="block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker px-4 pr-8 rounded" id="grid-state">
+                                <select type="number" name="grade_number" value="{{ $grade->grade_number }}" required onclick="this.setAttribute('value', this.value);"  class="pt-3 pb-2 px-3 block w-full mt-0 bg-transparent border-0 border-b-2 appearance-none z-1 focus:outline-none focus:ring-0 focus:border-black border-gray-200">
                                     <option selected value="{{ $grade->grade_number }}">{{ $grade->grade_number }}</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -41,7 +41,7 @@
                         <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 px-4 py-2 space-y-1">
                             <p class="self-center text-gray-600">Nama Kelas</p>
                             <div class="relative z-0 w-full mb-5">
-                                <select type="text" name="grade_name" value="{{ $grade->grade_name }}"  class="block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker px-4 pr-8 rounded" id="grid-state">
+                                <select type="text" name="grade_name" value="{{ $grade->grade_name }}" required onclick="this.setAttribute('value', this.value);"  class="pt-3 pb-2 px-3 block w-full mt-0 bg-transparent border-0 border-b-2 appearance-none z-1 focus:outline-none focus:ring-0 focus:border-black border-gray-200">
                                     <option selected value="{{ $grade->grade_name }}">{{ $grade->grade_name }}</option>
                                     <option value="Awwaliyah">Awwaliyah</option>
                                     <option value="Wustho">Wustho</option>

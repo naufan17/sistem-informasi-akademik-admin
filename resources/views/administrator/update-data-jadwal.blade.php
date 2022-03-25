@@ -25,11 +25,11 @@
                             <p class="self-center bg-gray-50 py-4 px-4">Jadwal Kelas</p>
                         </div>
                         @foreach($schedules as $schedule)
-                        <input type="hidden" name="id_schedule" value="{{ $schedule->id_schedule }}" placeholder="" required autocomplete="id_schedule" required class="pt-3 pb-2 px-3 block w-full mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-200" />
+                        <input type="hidden" name="id_schedule" value="{{ $schedule->id_schedule }}"class="pt-3 pb-2 px-3 block w-full mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-200" />
                         <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 px-4 py-2 space-y-1">
                             <p class="self-center text-gray-600">Tingkat</p>
                             <div class="relative z-0 w-full mb-5">
-                                <select type="text" name="day" value="{{ $schedule->day }}" class="block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker px-4 pr-8 rounded" id="grid-state">
+                                <select type="text" name="day" value="{{ $schedule->day }}" required onclick="this.setAttribute('value', this.value);" class="pt-3 pb-2 px-3 block w-full mt-0 bg-transparent border-0 border-b-2 appearance-none z-1 focus:outline-none focus:ring-0 focus:border-black border-gray-200">
                                     <option selected value="{{ $schedule->day }}">{{ $schedule->day }}</option>
                                     <option value="Senin">Senin</option>
                                     <option value="Selasa">Selasa</option>
@@ -44,19 +44,19 @@
                         <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 px-4 py-2 space-y-1">
                             <p class="self-center text-gray-600">Waktu Mulai</p>
                             <div class="relative z-0 w-full mb-5">
-                                <input type="text" name="time_begin" value="{{ $schedule->time_begin }}" placeholder="" required autocomplete="time_begin" required class="pt-3 pb-2 px-3 block w-full mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-200" />
+                                <input type="text" name="time_begin" value="{{ $schedule->time_begin }}" required class="pt-3 pb-2 px-3 block w-full mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-200" />
                             </div>
                         </div>
                         <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 px-4 py-2 space-y-1">
                             <p class="self-center text-gray-600">Waktu Selesai</p>
                             <div class="relative z-0 w-full mb-5">
-                                <input type="text" name="time_end" value="{{ $schedule->time_end }}" placeholder="" required autocomplete="time_end" required class="pt-3 pb-2 px-3 block w-full mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-200" />
+                                <input type="text" name="time_end" value="{{ $schedule->time_end }}" required class="pt-3 pb-2 px-3 block w-full mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-200" />
                             </div>
                         </div>
                         @endforeach
                     </div>
                     <div class="flex flex-row-reverse object-left text-center text-white text-base pt-8 px-3">
-                    <div class="object-left text-center text-white text-base pt-8 px-3">
+                        <div class="object-left text-center text-white text-base pt-8 px-3">
                             <button type="submit" class="bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-2.5 px-6">Simpan</button>
                         </div>
                         <div class="object-left text-center text-white text-base pt-8 px-3">

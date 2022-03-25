@@ -127,8 +127,8 @@
                                     <form method="POST" action="{{ url('administrator/data-krs/create') }}">
                                         @csrf
                                         <div class="flex flex-row-reverse object-left text-center text-white text-base py-3 px-4">
-                                            <input type="hidden" name="id_santri" placeholder="" value="{{ $id }}" required autocomplete="name" required class="py-2 px-3 block w-full bg-transparent border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-300" />
-                                            <input type="hidden" name="id_course" placeholder="" value="{{ $course->id_course }}" required autocomplete="name" required class="py-2 px-3 block w-full bg-transparent border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-300" />
+                                            <input type="hidden" name="id_santri" value="{{ $id }}" class="py-2 px-3 block w-full bg-transparent border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-300" />
+                                            <input type="hidden" name="id_course" value="{{ $course->id_course }}" class="py-2 px-3 block w-full bg-transparent border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-300" />
                                             <button type="submit" class="bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-2 px-4">Tambah</button>
                                         </div>
                                     </form>

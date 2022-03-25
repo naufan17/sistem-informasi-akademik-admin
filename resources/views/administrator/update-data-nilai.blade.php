@@ -90,10 +90,10 @@
                                     <td class="text-center py-3 px-4">{{ $santri->name }}</td>
                                     <td class="text-center py-3 px-4">
                                         <div class="relative z-0 w-full">
-                                            <input type="hidden" name="id_cumulative_study" placeholder="" value="{{ $santri->id_cumulative_study }}"  required class="py-2 px-3 block w-full bg-transparent border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-300" />
-                                            <!-- <input type="hidden" name="id_santri" placeholder="" value="{{ $santri->id_santri }}" required autocomplete="name" required class="py-2 px-3 block w-full bg-transparent border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-300" />
-                                            <input type="hidden" name="id_course" placeholder="" value="{{ $santri->id_course }}" required autocomplete="name" required class="py-2 px-3 block w-full bg-transparent border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-300" /> -->
-                                            <input type="number" name="score" placeholder="" value="{{ $santri->score }}" required autocomplete="nilai" required class="py-2 px-3 block w-full bg-transparent border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-300" />
+                                            <input type="hidden" name="id_cumulative_study" value="{{ $santri->id_cumulative_study }}" class="py-2 px-3 block w-full bg-transparent border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-300" />
+                                            <!-- <input type="hidden" name="id_santri" value="{{ $santri->id_santri }}" class="py-2 px-3 block w-full bg-transparent border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-300" />
+                                            <input type="hidden" name="id_course" value="{{ $santri->id_course }}" class="py-2 px-3 block w-full bg-transparent border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-300" /> -->
+                                            <input type="number" name="score" value="{{ $santri->score }}" required class="py-2 px-3 block w-full bg-transparent border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-300" />
                                         </div>
                                     </td>
                                 </tr>

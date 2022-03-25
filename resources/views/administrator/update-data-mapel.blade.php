@@ -28,25 +28,25 @@
                         <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 px-4 py-2 space-y-1">
                             <p class="self-center text-gray-600">Kode Mata Pelajaran</p>
                             <div class="relative z-0 w-full mb-5">
-                                <input type="number" name="id_course" value="{{ $course->id_course }}" placeholder="" required class="pt-3 pb-2 px-3 block w-full mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-200" />
+                                <input type="number" name="id_course" value="{{ $course->id_course }}" required class="pt-3 pb-2 px-3 block w-full mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-200" />
                             </div>
                         </div>
                         <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 px-4 py-2 space-y-1">
                             <p class="self-center text-gray-600">Nama Mata Pelajaran</p>
                             <div class="relative z-0 w-full mb-5">
-                                <input type="text" name="course" value="{{ $course->course }}" placeholder="" required class="pt-3 pb-2 px-3 block w-full mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-200" />
+                                <input type="text" name="course" value="{{ $course->course }}" required class="pt-3 pb-2 px-3 block w-full mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-200" />
                             </div>
                         </div>
                         <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 px-4 py-2 space-y-1">
                             <p class="self-center text-gray-600">Nama Kitab</p>
                             <div class="relative z-0 w-full mb-5">
-                                <input type="text" name="book" value="{{ $course->book }}" placeholder="" required class="pt-3 pb-2 px-3 block w-full mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-200" />
+                                <input type="text" name="book" value="{{ $course->book }}" required class="pt-3 pb-2 px-3 block w-full mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-200" />
                             </div>
                         </div>
                         <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 px-4 py-2 space-y-1">
                             <p class="self-center text-gray-600">Status</p>
                             <div class="relative z-0 w-full mb-5">
-                                <select type="text" name="status_course" value="{{ $course->status_course }}" onclick="this.setAttribute('value', this.value);" required class="pt-3 pb-2 px-3 block w-full mt-0 bg-transparent border-0 border-b-2 appearance-none z-1 focus:outline-none focus:ring-0 focus:border-black border-gray-200">
+                                <select type="text" name="status_course" value="{{ $course->status_course }}" required onclick="this.setAttribute('value', this.value);" required class="pt-3 pb-2 px-3 block w-full mt-0 bg-transparent border-0 border-b-2 appearance-none z-1 focus:outline-none focus:ring-0 focus:border-black border-gray-200">
                                     <option selected value="{{ $course->status_course }}">{{ $course->status_course }}</option>
                                     <option value="Aktif">Aktif</option>
                                     <option value="Tidak Aktif">Tidak Aktif</option>
@@ -56,7 +56,7 @@
                         <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 px-4 py-2 space-y-1">
                             <p class="self-center text-gray-600">Kelas</p>
                             <div class="relative z-0 w-full mb-5">
-                                <select type="number" name="id_grade" value="{{ $course->id_grade }}" onclick="this.setAttribute('value', this.value);" class="pt-3 pb-2 px-3 block w-full mt-0 bg-transparent border-0 border-b-2 appearance-none z-1 focus:outline-none focus:ring-0 focus:border-black border-gray-200">
+                                <select type="number" name="id_grade" value="{{ $course->id_grade }}" required onclick="this.setAttribute('value', this.value);" class="pt-3 pb-2 px-3 block w-full mt-0 bg-transparent border-0 border-b-2 appearance-none z-1 focus:outline-none focus:ring-0 focus:border-black border-gray-200">
                                     <option selected value="{{ $course->id_grade }}">{{ $course->grade_number }} {{ $course->grade_name }}</option>
                                     @foreach($grades as $grade)
                                     <option value="{{ $grade->id_grade }}">{{ $grade->grade_number }} {{ $grade->grade_name }}</option>
@@ -67,7 +67,7 @@
                         <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 px-4 py-2 space-y-1">
                             <p class="self-center text-gray-600">Jadwal</p>
                             <div class="relative z-0 w-full mb-5">
-                                <select type="number" name="id_schedule" value="{{ $course->id_schedule }}" onclick="this.setAttribute('value', this.value);" class="pt-3 pb-2 px-3 block w-full mt-0 bg-transparent border-0 border-b-2 appearance-none z-1 focus:outline-none focus:ring-0 focus:border-black border-gray-200">
+                                <select type="number" name="id_schedule" value="{{ $course->id_schedule }}" required onclick="this.setAttribute('value', this.value);" class="pt-3 pb-2 px-3 block w-full mt-0 bg-transparent border-0 border-b-2 appearance-none z-1 focus:outline-none focus:ring-0 focus:border-black border-gray-200">
                                     <option selected value="{{ $course->id_schedule }}">{{ $course->day }}, {{ $course->time_begin }} - {{ $course->time_end }}</option>
                                     @foreach($schedules as $schedule)
                                     <option value="{{ $schedule->id_schedule }}">{{ $schedule->day }}, {{ $schedule->time_begin }} - {{ $schedule->time_end }}</option>
@@ -78,7 +78,7 @@
                         <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 px-4 py-2 space-y-1">
                             <p class="self-center text-gray-600">Nama Ustadz</p>
                             <div class="relative z-0 w-full mb-5">
-                                <select type="number" name="id_ustadz" value="{{ $course->id }}" onclick="this.setAttribute('value', this.value);" class="pt-3 pb-2 px-3 block w-full mt-0 bg-transparent border-0 border-b-2 appearance-none z-1 focus:outline-none focus:ring-0 focus:border-black border-gray-200">
+                                <select type="number" name="id_ustadz" value="{{ $course->id }}" required onclick="this.setAttribute('value', this.value);" class="pt-3 pb-2 px-3 block w-full mt-0 bg-transparent border-0 border-b-2 appearance-none z-1 focus:outline-none focus:ring-0 focus:border-black border-gray-200">
                                     <option selected value="{{ $course->id }}">{{ $course->name }}</option>
                                     @foreach($ustadzs as $ustadz)
                                     <option value="{{ $ustadz->id }}">{{ $ustadz->name }}</option>
