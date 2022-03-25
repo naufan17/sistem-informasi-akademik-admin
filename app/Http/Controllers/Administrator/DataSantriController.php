@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Models\CumulativeStudy;
+use App\Models\Grade;
 use App\Models\ImportSantri;
 use App\Models\Santri;
 
@@ -25,6 +26,20 @@ class DataSantriController extends Controller
                         ->orderBy('name')
                         ->paginate(50);
 
+        $filter_grade_number = Grade::select('grade_number')
+                                    ->distinct()
+                                    ->get();
+                                    
+        $filter_grade_name = Grade::select('grade_name')
+                                ->distinct()
+                                ->get();
+
+        $grade_number = Grade::select('grade_number')
+                            ->limit(1);
+
+        $grade_name = Grade::select('grade_name')
+                            ->limit(1);
+
         $filter_status = Santri::select('status')
                                 ->distinct()
                                 ->get();
@@ -34,7 +49,7 @@ class DataSantriController extends Controller
                         ->distinct()
                         ->get();
 
-        return view('administrator.data-santri', compact('santris', 'status', 'filter_status'));
+        return view('administrator.data-santri', compact('santris', 'grade_number', 'grade_name', 'filter_grade_number', 'filter_grade_name', 'status', 'filter_status'));
     }
 
     public function formCreate()
@@ -111,6 +126,24 @@ class DataSantriController extends Controller
                                     ->paginate(50);
         }
 
+        $filter_grade_number = Grade::select('grade_number')
+                                    ->distinct()
+                                    ->get();
+
+        $filter_grade_name = Grade::select('grade_name')
+                                ->distinct()
+                                ->get();
+
+        $grade_number = Grade::select('grade_number')
+                            ->where('grade_number', $request->grade_number)
+                            ->distinct()
+                            ->get();
+
+        $grade_name = Grade::select('grade_name')
+                            ->where('grade_name', $request->grade_name)
+                            ->distinct()
+                            ->get();
+
         $status = Santri::select('status')
                         ->where('status', 'Aktif')
                         ->distinct()
@@ -120,7 +153,7 @@ class DataSantriController extends Controller
                                 ->distinct()
                                 ->get();
         
-        return view('administrator.data-santri', compact('santris', 'status', 'filter_status'));
+        return view('administrator.data-santri', compact('santris', 'grade_number', 'grade_name', 'filter_grade_number', 'filter_grade_name', 'status', 'filter_status'));
     }
 
     public function filterStatus(Request $request)
@@ -128,6 +161,20 @@ class DataSantriController extends Controller
         $santris = Santri::where('status', $request->status)
                         ->orderBy('name')
                         ->paginate(50);
+
+        $filter_grade_number = Grade::select('grade_number')
+                                    ->distinct()
+                                    ->get();
+
+        $filter_grade_name = Grade::select('grade_name')
+                                ->distinct()
+                                ->get();
+
+        $grade_number = Grade::select('grade_number')
+                            ->limit(1);
+
+        $grade_name = Grade::select('grade_name')
+                            ->limit(1);
 
         $status = Santri::select('status')
                         ->where('status', $request->status)
@@ -138,7 +185,7 @@ class DataSantriController extends Controller
                                 ->distinct()
                                 ->get();
         
-        return view('administrator.data-santri', compact('santris', 'status', 'filter_status'));
+        return view('administrator.data-santri', compact('santris', 'grade_number', 'grade_name', 'filter_grade_number', 'filter_grade_name', 'status', 'filter_status'));
     }
 
     public function formUpdate($id)

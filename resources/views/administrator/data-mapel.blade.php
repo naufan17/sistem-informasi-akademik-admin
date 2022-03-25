@@ -22,10 +22,12 @@
                                     </svg>
                                 </div>
                                 <select type="number" name="grade_number" value="" class="block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker px-4 pr-8 rounded" id="grid-state">
-                                    <option>1</option>
-                                    <option>2 </option>
-                                    <option>3</option>
-                                    <option>4</option>
+                                    @foreach($grade_number as $filter)
+                                    <option selected value="{{ $filter->grade_number }}">{{ $filter->grade_number }}</option>
+                                    @endforeach       
+                                    @foreach($filter_grade_number as $filter)
+                                    <option value="{{ $filter->grade_number }}">{{ $filter->grade_number }}</option>
+                                    @endforeach
                                 </select>
                             </div>
                         </div>
@@ -42,9 +44,12 @@
                                     </svg>
                                 </div>
                                 <select type="text" name="grade_name" value="" class="block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker px-4 pr-8 rounded" id="grid-state">
-                                    <option>Awwaliyah</option>
-                                    <option>Wustho</option>
-                                    <option>Ulya</option>
+                                    @foreach($grade_name as $filter)
+                                    <option selected value="{{ $filter->grade_name }}">{{ $filter->grade_name }}</option>
+                                    @endforeach      
+                                    @foreach($filter_grade_name as $filter)
+                                    <option value="{{ $filter->grade_name }}">{{ $filter->grade_name }}</option>
+                                    @endforeach
                                 </select>
                             </div>
                         </div>

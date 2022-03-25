@@ -20,11 +20,14 @@ class DataKelasController extends Controller
                         ->orderBy('grade_number')
                         ->get();
 
-        $filters = Grade::select('grade_name')
-                        ->distinct()
-                        ->get();
+        $filter_grade_name = Grade::select('grade_name')
+                                ->distinct()
+                                ->get();
 
-        return view('administrator.data-kelas', compact('grades', 'filters'));
+        $grade_name = Grade::select('grade_name')
+                            ->limit(1);
+
+        return view('administrator.data-kelas', compact('grades', 'filter_grade_name', 'grade_name'));
     }
 
     public function filter(Request $request)
@@ -34,12 +37,16 @@ class DataKelasController extends Controller
                         ->orderBy('grade_number')
                         ->get();
 
-        $filters = Grade::select('grade_name')
-                        ->where('grade_name', $request->grade_name)
-                        ->distinct()
-                        ->get();
+        $filter_grade_name = Grade::select('grade_name')
+                                ->distinct()
+                                ->get();
 
-        return view('administrator.data-kelas', compact('grades', 'filters'));
+        $grade_name  = Grade::select('grade_name')
+                            ->where('grade_name', $request->grade_name)
+                            ->distinct()
+                            ->get();
+
+        return view('administrator.data-kelas', compact('grades', 'filter_grade_name', 'grade_name'));
     }
 
     public function formCreate()

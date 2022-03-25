@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Administrator;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Course;
+use App\Models\Grade;
 use App\Models\Schedule;
 use Illuminate\Support\Facades\Session;
 
@@ -21,23 +22,62 @@ class DataJadwalController extends Controller
                             ->orderBy('time_begin')
                             ->get();
 
-        return view('administrator.data-jadwal', compact('schedules'));
+        $filter_grade_number = Grade::select('grade_number')
+                                    ->distinct()
+                                    ->get();
+
+        $filter_grade_name = Grade::select('grade_name')
+                                    ->distinct()
+                                    ->get();
+
+        $filter_day = Schedule::select('day')
+                            ->distinct()
+                            ->get();
+        
+        $grade_number = Grade::select('grade_number')
+                            ->limit(1);
+        
+        $grade_name = Grade::select('grade_name')
+                            ->limit(1);
+        
+        $day = Schedule::select('day')
+                        ->limit(1);     
+
+        return view('administrator.data-jadwal', compact('schedules', 'grade_number', 'grade_name', 'day', 'filter_grade_number', 'filter_grade_name', 'filter_day'));
     }
 
-    // public function filterHari(Request $request)
-    // {
-    //     $schedules = Schedule::where('day', $request->day)
-    //                         ->orderBy('day', 'desc')
-    //                         ->orderBy('time_begin')
-    //                         ->get();
+    public function filterHari(Request $request)
+    {
+        $schedules = Schedule::where('day', $request->day)
+                            ->orderBy('day', 'desc')
+                            ->orderBy('time_begin')
+                            ->get();
 
-    //     $filters = Schedule::select('day')
-    //                         ->where('day', $request->day)
-    //                         ->distinct()
-    //                         ->get();
+        $filter_grade_number = Grade::select('grade_number')
+                                    ->distinct()
+                                    ->get();
 
-    //     return view('administrator.data-jadwal', compact('schedules', 'filters'));
-    // }
+        $filter_grade_name = Grade::select('grade_name')
+                                    ->distinct()
+                                    ->get();
+
+        $filter_day = Schedule::select('day')
+                            ->distinct()
+                            ->get();
+
+        $grade_number = Grade::select('grade_number')
+                            ->limit(1);
+
+        $grade_name = Grade::select('grade_name')
+                            ->limit(1);
+
+        $day = Schedule::select('day')
+                        ->where('day', $request->day)
+                        ->distinct()
+                        ->get();
+
+        return view('administrator.data-jadwal', compact('schedules', 'grade_number', 'grade_name', 'day', 'filter_grade_number', 'filter_grade_name', 'filter_day'));
+    }
 
     public function filterKelas(Request $request)
     {
@@ -50,7 +90,32 @@ class DataJadwalController extends Controller
                         ->orderBy('time_begin')
                         ->get();
 
-        return view('administrator.data-jadwal', compact('schedules'));
+        $grade_number = Grade::select('grade_number')
+                            ->where('grade_number', $request->grade_number)
+                            ->distinct()
+                            ->get();
+
+        $grade_name = Grade::select('grade_name')
+                            ->where('grade_name', $request->grade_name)
+                            ->distinct()
+                            ->get();
+
+        $filter_day = Schedule::select('day')
+                            ->distinct()
+                            ->get();
+
+        $filter_grade_number = Grade::select('grade_number')
+                                    ->distinct()
+                                    ->get();
+
+        $filter_grade_name = Grade::select('grade_name')
+                                ->distinct()
+                                ->get();
+
+        $day = Schedule::select('day')
+                        ->limit(1); 
+
+        return view('administrator.data-jadwal', compact('schedules', 'grade_number', 'grade_name', 'day', 'filter_grade_number', 'filter_grade_name', 'filter_day'));
     }
 
     public function formCreate()

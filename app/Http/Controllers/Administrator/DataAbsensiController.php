@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Attendance;
 use App\Models\CumulativeStudy;
+use App\Models\Grade;
 use App\Models\Santri;
 use Illuminate\Support\Facades\Session;
 
@@ -22,7 +23,21 @@ class DataAbsensiController extends Controller
                         ->orderBy('name')
                         ->paginate(50);
 
-        return view('administrator.data-absensi', compact('santris'));
+        $filter_grade_number = Grade::select('grade_number')
+                                    ->distinct()
+                                    ->get();
+                        
+        $filter_grade_name = Grade::select('grade_name')
+                                ->distinct()
+                                ->get();
+
+        $grade_number = Grade::select('grade_number')
+                            ->limit(1);
+
+        $grade_name = Grade::select('grade_name')
+                            ->limit(1);
+
+        return view('administrator.data-absensi', compact('santris', 'grade_number', 'grade_name', 'filter_grade_number', 'filter_grade_name'));
     }
 
     public function filter(Request $request)
@@ -52,7 +67,25 @@ class DataAbsensiController extends Controller
                                     ->paginate(50);
         }
 
-        return view('administrator.data-absensi', compact('santris'));
+        $filter_grade_number = Grade::select('grade_number')
+                                    ->distinct()
+                                    ->get();
+
+        $filter_grade_name = Grade::select('grade_name')
+                                ->distinct()
+                                ->get();
+
+        $grade_number = Grade::select('grade_number')
+                            ->where('grade_number', $request->grade_number)
+                            ->distinct()
+                            ->get();
+
+        $grade_name = Grade::select('grade_name')
+                        ->where('grade_name', $request->grade_name)
+                        ->distinct()
+                        ->get();
+
+        return view('administrator.data-absensi', compact('santris', 'grade_number', 'grade_name', 'filter_grade_number', 'filter_grade_name'));
     }
 
     public function listAbsensi($id)

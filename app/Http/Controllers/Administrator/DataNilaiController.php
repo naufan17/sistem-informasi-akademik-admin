@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Course;
 use App\Models\CumulativeStudy;
+use App\Models\Grade;
 use Illuminate\Support\Facades\Session;
 
 class DataNilaiController extends Controller
@@ -36,7 +37,21 @@ class DataNilaiController extends Controller
             $semester = "Ganjil";
         }
 
-        return view('administrator.data-nilai', compact('courses', 'semester'));
+        $filter_grade_number = Grade::select('grade_number')
+                                    ->distinct()
+                                    ->get();
+
+        $filter_grade_name = Grade::select('grade_name')
+                                ->distinct()
+                                ->get();
+
+        $grade_number = Grade::select('grade_number')
+                            ->limit(1);
+
+        $grade_name = Grade::select('grade_name')
+                            ->limit(1);
+
+        return view('administrator.data-nilai', compact('courses', 'semester', 'grade_number', 'grade_name', 'filter_grade_number', 'filter_grade_name'));
     }
 
     public function filter(Request $request)
@@ -64,7 +79,25 @@ class DataNilaiController extends Controller
             $semester = "Ganjil";
         }
 
-        return view('administrator.data-nilai', compact('courses', 'semester'));
+        $filter_grade_number = Grade::select('grade_number')
+                                    ->distinct()
+                                    ->get();
+
+        $filter_grade_name = Grade::select('grade_name')
+                                ->distinct()
+                                ->get();
+
+        $grade_number = Grade::select('grade_number')
+                            ->where('grade_number', $request->grade_number)
+                            ->distinct()
+                            ->get();
+
+        $grade_name = Grade::select('grade_name')
+                            ->where('grade_name', $request->grade_name)
+                            ->distinct()
+                            ->get();
+
+        return view('administrator.data-nilai', compact('courses', 'semester', 'grade_number', 'grade_name', 'filter_grade_number', 'filter_grade_name'));
     }
 
     public function santriNilai($id)

@@ -22,10 +22,12 @@
                                     </svg>
                                 </div>
                                 <select type="number" name="grade_number" value="" class="block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker px-4 pr-8 rounded" id="grid-state">
-                                    <option>1</option>
-                                    <option>2 </option>
-                                    <option>3</option>
-                                    <option>4</option>
+                                    @foreach($grade_number as $filter)
+                                    <option selected value="{{ $filter->grade_number }}">{{ $filter->grade_number }}</option>
+                                    @endforeach       
+                                    @foreach($filter_grade_number as $filter)
+                                    <option value="{{ $filter->grade_number }}">{{ $filter->grade_number }}</option>
+                                    @endforeach
                                 </select>
                             </div>
                         </div>
@@ -42,9 +44,40 @@
                                     </svg>
                                 </div>
                                 <select type="text" name="grade_name" value="" class="block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker px-4 pr-8 rounded" id="grid-state">
-                                    <option>Awwaliyah</option>
-                                    <option>Wustho</option>
-                                    <option>Ulya</option>
+                                    @foreach($grade_name as $filter)
+                                    <option selected value="{{ $filter->grade_name }}">{{ $filter->grade_name }}</option>
+                                    @endforeach    
+                                    @foreach($filter_grade_name as $filter)
+                                    <option value="{{ $filter->grade_name }}">{{ $filter->grade_name }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
+                        <div class="object-left text-center text-white text-base">
+                            <button class="bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-2.5 px-6">Lihat</button>
+                        </div>
+                    </div>
+                </form>
+                <form method="POST" action="{{ url('administrator/data-jadwal/filter-hari') }}">
+                    @csrf
+                    <div class="flex space-x-4 items-center pb-4">
+                        <div class="flex-none w-36">
+                            <a class="self-center">Hari</a>
+                        </div>
+                        <div class="flex-none w-1/5">
+                            <div class="relative">
+                                <div class="pointer-events-none absolute inset-y-0 right-3 flex items-center text-grey-darker">
+                                    <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0">
+                                        <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                                    </svg>
+                                </div>
+                                <select type="number" name="day" value="" class="block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker px-4 pr-8 rounded" id="grid-state">
+                                    @foreach($day as $filter)
+                                    <option selected value="{{ $filter->day }}">{{ $filter->day }}</option>
+                                    @endforeach       
+                                    @foreach($filter_day as $filter)
+                                    <option value="{{ $filter->day }}">{{ $filter->day }}</option>
+                                    @endforeach
                                 </select>
                             </div>
                         </div>

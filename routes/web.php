@@ -94,7 +94,7 @@ Route::get('/administrator/data-absensi/delete/{id}', [DataAbsensiController::cl
 
 Route::get('/administrator/data-jadwal', [DataJadwalController::class, 'index'])->name('administrator.data-jadwal');
 Route::post('/administrator/data-jadwal', [DataJadwalController::class, 'filterKelas'])->name('administrator.data-jadwal');
-// Route::post('/administrator/data-jadwal', [DataJadwalController::class, 'filterHari'])->name('administrator.data-jadwal');
+Route::post('/administrator/data-jadwal/filter-hari', [DataJadwalController::class, 'filterHari'])->name('administrator.data-jadwal.filter-hari');
 Route::get('/administrator/data-jadwal/form-create', [DataJadwalController::class, 'formCreate'])->name('administrator.data-jadwal.form-create');
 Route::post('/administrator/data-jadwal/create', [DataJadwalController::class, 'create'])->name('administrator.data-jadwal.create');
 Route::get('/administrator/data-jadwal/form-update/{id}', [DataJadwalController::class, 'formUpdate'])->name('administrator.data-jadwal.form-update');

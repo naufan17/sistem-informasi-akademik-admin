@@ -22,7 +22,10 @@
                                     </svg>
                                 </div>
                                 <select type="text" name="grade_name" value=""  class="block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker px-4 pr-8 rounded" id="grid-state">
-                                    @foreach($filters as $filter)
+                                    @foreach($grade_name as $filter)
+                                    <option selected value="{{ $filter->grade_name }}">{{ $filter->grade_name }}</option>
+                                    @endforeach
+                                    @foreach($filter_grade_name as $filter)
                                     <option value="{{ $filter->grade_name }}">{{ $filter->grade_name }}</option>
                                     @endforeach
                                 </select>

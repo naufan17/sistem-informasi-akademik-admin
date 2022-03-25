@@ -27,7 +27,21 @@ class DataMapelController extends Controller
                         ->orderBy('grade_number')
                         ->get();
 
-        return view('administrator.data-mapel', compact('courses'));
+        $filter_grade_number = Grade::select('grade_number')
+                                    ->distinct()
+                                    ->get();
+
+        $filter_grade_name = Grade::select('grade_name')
+                                ->distinct()
+                                ->get();
+
+        $grade_number = Grade::select('grade_number')
+                            ->limit(1);
+            
+        $grade_name = Grade::select('grade_name')
+                            ->limit(1);
+
+        return view('administrator.data-mapel', compact('courses', 'grade_number', 'grade_name', 'filter_grade_number', 'filter_grade_name'));
     }
 
     // public function filterStatus(Request $request)
@@ -62,7 +76,25 @@ class DataMapelController extends Controller
                         ->orderBy('grade_number')
                         ->get();
 
-        return view('administrator.data-mapel', compact('courses'));
+        $grade_number = Grade::select('grade_number')
+                            ->where('grade_number', $request->grade_number)
+                            ->distinct()
+                            ->get();
+
+        $grade_name = Grade::select('grade_name')
+                            ->where('grade_name', $request->grade_name)
+                            ->distinct()
+                            ->get();
+
+        $filter_grade_number = Grade::select('grade_number')
+                                    ->distinct()
+                                    ->get();
+            
+        $filter_grade_name = Grade::select('grade_name')
+                                ->distinct()
+                                ->get();
+
+        return view('administrator.data-mapel', compact('courses', 'grade_number', 'grade_name', 'filter_grade_number', 'filter_grade_name'));
     }
 
     public function formCreate()
