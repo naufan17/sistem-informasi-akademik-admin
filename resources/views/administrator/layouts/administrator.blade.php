@@ -34,7 +34,7 @@
     <div id="app">
         <main>
             <!-- HEADER -->
-            <nav id="header" class="w-full z-30 top-0 bg-white border-b-2">
+            <nav id="header" class="w-full z-30 top-0 bg-white border-b-1">
                 <div class="w-full container mx-auto flex flex-wrap items-center justify-between">
                     <div class="flex space-x-4 py-2">
                         <!--LOGO-->
@@ -75,7 +75,6 @@
                                 Admin
                             </a>
                         </div>
-
                         <button class="w-full">
                             <div @click.away="open = false" x-data="{ open: false }">
                                 <div @click="open = !open" class="w-full flex justify-between group border-indigo-500 hover:bg-blue-600 hover:shadow-lg hover:border-transparent">
@@ -94,7 +93,6 @@
                                 </div>
                             </div>
                         </button>
-
                         <button class="w-full">
                             <div @click.away="open = false" class="flex justify-between group border-indigo-500 hover:bg-blue-600 hover:shadow-lg hover:border-transparent" x-data="{ open: false }">
                                 <div @click="open = !open" class="w-full flex justify-between group border-indigo-500 hover:bg-blue-600 hover:shadow-lg hover:border-transparent">
@@ -105,7 +103,6 @@
                                         <i class="fas fa-caret-down"></i>
                                     </div>
                                 </div>
-
                                 <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="absolute w-full mt-2 origin-top-right rounded-md shadow-md">
                                     <div class="px-3 py-2 bg-white rounded-md shadow text-left">
                                         <a class="block px-8 py-3 mt-2 text-sm font-semibold rounded-md hover:bg-blue-600 hover:text-white hover:shadow-lg hover:border-transparent" href="{{ url('administrator/data-kelas') }}">Kelas</a>
@@ -115,7 +112,6 @@
                                 </div>
                             </div>
                         </button>
-
                         <button class="w-full">
                             <div @click.away="open = false" class="flex justify-between group border-indigo-500 hover:bg-blue-600 hover:shadow-lg hover:border-transparent" x-data="{ open: false }">
                                 <div @click="open = !open" class="w-full flex justify-between group border-indigo-500 hover:bg-blue-600 hover:shadow-lg hover:border-transparent">
@@ -126,7 +122,6 @@
                                         <i class="fas fa-caret-down"></i>
                                     </div>
                                 </div>
-
                                 <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="absolute w-full mt-2 origin-top-right rounded-md shadow-md">
                                     <div class="px-3 py-2 bg-white rounded-md shadow text-left">
                                         <a class="block px-8 py-3 mt-2 text-sm font-semibold rounded-md hover:bg-blue-600 hover:text-white hover:shadow-lg hover:border-transparent" href="{{ url('administrator/data-krs') }}">KRS</a>
@@ -136,15 +131,14 @@
                                 </div>
                             </div>
                         </button>
-                        
-                            <button class="w-full hover:bg-blue-600 cta-btn font-semibold justify-center ">
-                                <a class="text-gray-800 hover:text-white items-center py-3 pl-8 flex item-center" href="{{ route('administrator.logout') }}" onclick="event.preventDefault();
-                                document.getElementById('logout-form').submit();">{{ __('Logout') }}
-                                </a>
-                                <form id="logout-form" action="{{ route('administrator.logout') }}" method="POST" class="d-none">
-                                    @csrf
-                                </form>
-                            </button>
+                        <button class="w-full hover:bg-blue-600 cta-btn font-semibold justify-center ">
+                            <a class="text-gray-800 hover:text-white items-center py-3 pl-8 flex item-center" href="{{ route('administrator.logout') }}" onclick="event.preventDefault();
+                            document.getElementById('logout-form').submit();">{{ __('Logout') }}
+                            </a>
+                            <form id="logout-form" action="{{ route('administrator.logout') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>
+                        </button>
                     </nav>
                 </aside>
                 <!-- Page Content -->
@@ -163,5 +157,4 @@
         </main>
     </div>
 </body>
-
 </html>

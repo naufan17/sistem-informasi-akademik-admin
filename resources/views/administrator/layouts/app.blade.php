@@ -25,9 +25,9 @@
 </head>
 <body class="work-sans leading-normal text-base tracking-normal">
     <div id="app">
-        <main class="py-4">
+        <main class="py-1">
             <!-- HEADER -->
-            <nav id="header" class="w-full z-30 top-0 bg-white border-b-2">
+            <nav id="header" class="w-full z-30 top-0 bg-white border-b-1">
                 <div class="w-full container mx-auto flex flex-wrap items-center justify-between">
                     <div class="flex space-x-4 py-2">
                         <!--LOGO-->

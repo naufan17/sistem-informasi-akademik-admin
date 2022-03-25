@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
 use Maatwebsite\Excel\Facades\Excel;
+use App\Models\CumulativeStudy;
 use App\Models\ImportSantri;
 use App\Models\Santri;
 
@@ -84,6 +85,45 @@ class DataSantriController extends Controller
     }
 
     public function filter(Request $request)
+    {
+        if(date('m') <= 06 ){
+            $santris = CumulativeStudy::leftjoin('santris', 'cumulative_studies.id_santri', '=', 'santris.id')
+                                    ->leftjoin('courses', 'cumulative_studies.id_course', '=', 'courses.id_course')
+                                    ->leftjoin('grades', 'courses.id_grade', '=', 'grades.id_grade')
+                                    ->where('year', date('Y')-1 . '/' . date('Y'))
+                                    ->where('semester', 'Genap')
+                                    ->where('status', 'Aktif')
+                                    ->where('grade_number', $request->grade_number)
+                                    ->where('grade_name', $request->grade_name)
+                                    ->orderBy('name')
+                                    ->paginate(50);
+
+        }elseif(date('m') > 06 ){
+            $santris = CumulativeStudy::leftjoin('santris', 'cumulative_studies.id_santri', '=', 'santris.id')
+                                    ->leftjoin('courses', 'cumulative_studies.id_course', '=', 'courses.id_course')
+                                    ->leftjoin('grades', 'courses.id_grade', '=', 'grades.id_grade')
+                                    ->where('year', date('Y') . '/' . date('Y')+1)
+                                    ->where('semester', 'Ganjil')
+                                    ->where('status', 'Aktif')
+                                    ->where('grade_number', $request->grade_number)
+                                    ->where('grade_name', $request->grade_name)
+                                    ->orderBy('name')
+                                    ->paginate(50);
+        }
+
+        $status = Santri::select('status')
+                        ->where('status', 'Aktif')
+                        ->distinct()
+                        ->get();
+
+        $filter_status = Santri::select('status')
+                                ->distinct()
+                                ->get();
+        
+        return view('administrator.data-santri', compact('santris', 'status', 'filter_status'));
+    }
+
+    public function filterStatus(Request $request)
     {
         $santris = Santri::where('status', $request->status)
                         ->orderBy('name')

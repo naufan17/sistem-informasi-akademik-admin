@@ -53,7 +53,7 @@
                         </div>
                     </div>
                 </form>
-                <form method="POST" action="{{ url('administrator/data-santri') }}">
+                <form method="POST" action="{{ url('administrator/data-santri/filter-status') }}">
                     @csrf
                     <div class="flex flex-wrap space-x-4 items-center pb-8">
                         <div class="flex w-36">

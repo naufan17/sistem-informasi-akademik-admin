@@ -60,6 +60,7 @@ Route::get('/administrator/data-ustadz/delete/{id}', [DataUstadzController::clas
 
 Route::get('/administrator/data-santri', [DataSantriController::class, 'index'])->name('administrator.data-santri');
 Route::post('/administrator/data-santri', [DataSantriController::class, 'filter'])->name('administrator.data-santri');
+Route::post('/administrator/data-santri/filter-status', [DataSantriController::class, 'filterStatus'])->name('administrator.data-santri/filter-status');
 Route::get('/administrator/data-santri/detail/{id}', [DataSantriController::class, 'detailSantri'])->name('administrator.data-santri.detail');
 Route::get('/administrator/data-santri/form-create', [DataSantriController::class, 'formCreate'])->name('administrator.data-santri.form-create');
 Route::post('/administrator/data-santri/create', [DataSantriController::class, 'create'])->name('administrator.data-santri.create');

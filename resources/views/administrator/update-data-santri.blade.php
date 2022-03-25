@@ -49,7 +49,7 @@
                             <button type="submit" class="bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-2.5 px-6">Simpan</button>
                         </div>
                         <div class="object-left text-center text-white text-base pt-8 px-3">
-                            <button type="submit" class="bg-red-600 hover:bg-red-700 rounded py-2.5 px-6">Hapus</button>
+                            <a href="{{ url('administrator/data-santri/delete') }}/{{ $santri->id }}" type="submit" class="bg-red-600 hover:bg-red-700 rounded py-2.5 px-6">Hapus</a>
                         </div>
                     </div>
                 </form>
