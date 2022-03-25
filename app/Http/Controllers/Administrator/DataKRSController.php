@@ -25,6 +25,36 @@ class DataKRSController extends Controller
         return view('administrator.data-krs', compact('santris'));
     }
 
+    public function filter(Request $request)
+    {   
+        if(date('m') <= 06 ){
+            $santris = CumulativeStudy::leftjoin('santris', 'cumulative_studies.id_santri', '=', 'santris.id')
+                                    ->leftjoin('courses', 'cumulative_studies.id_course', '=', 'courses.id_course')
+                                    ->leftjoin('grades', 'courses.id_grade', '=', 'grades.id_grade')
+                                    ->where('year', date('Y')-1 . '/' . date('Y'))
+                                    ->where('semester', 'Genap')
+                                    ->where('status', 'Aktif')
+                                    ->where('grade_number', $request->grade_number)
+                                    ->where('grade_name', $request->grade_name)
+                                    ->orderBy('name')
+                                    ->paginate(50);
+
+        }elseif(date('m') > 06 ){
+            $santris = CumulativeStudy::leftjoin('santris', 'cumulative_studies.id_santri', '=', 'santris.id')
+                                    ->leftjoin('courses', 'cumulative_studies.id_course', '=', 'courses.id_course')
+                                    ->leftjoin('grades', 'courses.id_grade', '=', 'grades.id_grade')
+                                    ->where('year', date('Y') . '/' . date('Y')+1)
+                                    ->where('semester', 'Ganjil')
+                                    ->where('status', 'Aktif')
+                                    ->where('grade_number', $request->grade_number)
+                                    ->where('grade_name', $request->grade_name)
+                                    ->orderBy('name')
+                                    ->paginate(50);
+        }
+
+        return view('administrator.data-krs', compact('santris'));
+    }
+
     public function formCreate($id)
     {
         if(date('m') <= 06 ){

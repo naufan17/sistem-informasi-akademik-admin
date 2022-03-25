@@ -7,13 +7,11 @@
         <main class="pt-6 px-6">
             <h1 class="text-3xl text-black pb-2 mt-2">Nilai</h1>
             <div class="bg-white rounded-lg shadow-md p-8 my-8">
-
-                <form method="POST" action="">
+                <form method="POST" action="{{ url('administrator/data-nilai') }}">
                     @csrf
-
-                    <div class="flex flex-wrap space-x-4 items-center pb-8">
-                        <div class="flex w-36">
-                            <a class="self-center">Kelas</a>
+                    <div class="flex space-x-4 items-center pb-4">
+                        <div class="flex-none w-36">
+                            <a class="self-center">Tingkat</a>
                         </div>
                         <div class="flex-none w-1/5">
                             <div class="relative">
@@ -22,22 +20,38 @@
                                         <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
                                     </svg>
                                 </div>
-                                <select type="text" name="status" value="" class="block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker px-4 pr-8 rounded" id="grid-state">
-                                    <option>1 Awwaliyah</option>
-                                    <option>2 Awwaliyah</option>
-                                    <option>1 Wustho</option>
-                                    <option>2 Wustho</option>
-                                    <option>1 Ulya</option>
-                                    <option>2 Ulya</option>
+                                <select type="number" name="grade_number" value="" class="block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker px-4 pr-8 rounded" id="grid-state">
+                                    <option>1</option>
+                                    <option>2 </option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex space-x-4 items-center pb-4">
+                        <div class="flex-none w-36">
+                            <a class="self-center">Nama Kelas</a>
+                        </div>
+                        <div class="flex-none w-1/5">
+                            <div class="relative">
+                                <div class="pointer-events-none absolute inset-y-0 right-3 flex items-center text-grey-darker">
+                                    <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0">
+                                        <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                                    </svg>
+                                </div>
+                                <select type="text" name="grade_name" value="" class="block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker px-4 pr-8 rounded" id="grid-state">
+                                    <option>Awwaliyah</option>
+                                    <option>Wustho</option>
+                                    <option>Ulya</option>
                                 </select>
                             </div>
                         </div>
                         <div class="object-left text-center text-white text-base">
-                            <button type="submit" class="bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-2.5 px-8">Lihat</button>
+                            <button class="bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-2.5 px-6">Lihat</button>
                         </div>
                     </div>
                 </form>
-
                 <p class="text-xl pb-4 flex items-center">Daftar Mata Pelajaran</p>
                 @if($tambah = Session::get('tambah'))
                 <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mb-2" role="alert">
@@ -73,7 +87,8 @@
                                 <td class="text-center py-3 px-4">{{ $course->grade_number }} {{ $course->grade_name }}</td>
                                 <td class="text-center py-3 px-4">{{ $course->day }}, {{ $course->time_begin }} - {{ $course->time_end }}</td>
                                 <td class="text-center py-3 px-4">
-                                    <a href="{{ url('administrator/data-nilai/santri') }}/{{ $course->id_course }}" class="button bg-blue-600 hover:bg-blue-800 hover:text-white hover:no-underline text-white rounded shadow-md py-2 px-8">Lihat</a>
+                                    <a href="{{ url('administrator/data-nilai/santri') }}/{{ $course->id_course }}" class="transform hover:text-purple-500 hover:scale-110">
+                                    <i class="fas fa-external-link-alt"></i></a>
                                 </td>
                             </tr>
                             @endforeach

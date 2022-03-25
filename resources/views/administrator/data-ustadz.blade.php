@@ -89,7 +89,8 @@
                                 <td class="text-center py-3 px-4">{{ $ustadz->status }}</td>
                                 <td class="text-center py-3 px-4">{{ $ustadz->status }}</td>
                                 <td class="text-center py-3 px-4">
-                                    <a href="{{ url('administrator/data-ustadz/detail') }}/{{ $ustadz->id }}" class="button bg-blue-600 hover:bg-blue-800 hover:text-white hover:no-underline text-white rounded shadow-md py-2 px-8">Detail</a>
+                                    <a href="{{ url('administrator/data-ustadz/detail') }}/{{ $ustadz->id }}" class="transform hover:text-purple-500 hover:scale-110">
+                                    <i class="text-center fas fa-external-link-alt"></i></a>                                
                                 </td>
                                 <td class="grid justify-items-center py-3 px-4">
                                     <div class="flex">

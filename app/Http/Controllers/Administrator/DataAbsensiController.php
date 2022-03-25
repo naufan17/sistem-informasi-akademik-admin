@@ -4,8 +4,9 @@ namespace App\Http\Controllers\Administrator;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\Santri;
 use App\Models\Attendance;
+use App\Models\CumulativeStudy;
+use App\Models\Santri;
 use Illuminate\Support\Facades\Session;
 
 class DataAbsensiController extends Controller
@@ -20,6 +21,36 @@ class DataAbsensiController extends Controller
         $santris = Santri::where('status', 'Aktif')
                         ->orderBy('name')
                         ->paginate(50);
+
+        return view('administrator.data-absensi', compact('santris'));
+    }
+
+    public function filter(Request $request)
+    {
+        if(date('m') <= 06 ){
+            $santris = CumulativeStudy::leftjoin('santris', 'cumulative_studies.id_santri', '=', 'santris.id')
+                                    ->leftjoin('courses', 'cumulative_studies.id_course', '=', 'courses.id_course')
+                                    ->leftjoin('grades', 'courses.id_grade', '=', 'grades.id_grade')
+                                    ->where('year', date('Y')-1 . '/' . date('Y'))
+                                    ->where('semester', 'Genap')
+                                    ->where('status', 'Aktif')
+                                    ->where('grade_number', $request->grade_number)
+                                    ->where('grade_name', $request->grade_name)
+                                    ->orderBy('name')
+                                    ->paginate(50);
+
+        }elseif(date('m') > 06 ){
+            $santris = CumulativeStudy::leftjoin('santris', 'cumulative_studies.id_santri', '=', 'santris.id')
+                                    ->leftjoin('courses', 'cumulative_studies.id_course', '=', 'courses.id_course')
+                                    ->leftjoin('grades', 'courses.id_grade', '=', 'grades.id_grade')
+                                    ->where('year', date('Y') . '/' . date('Y')+1)
+                                    ->where('semester', 'Ganjil')
+                                    ->where('status', 'Aktif')
+                                    ->where('grade_number', $request->grade_number)
+                                    ->where('grade_name', $request->grade_name)
+                                    ->orderBy('name')
+                                    ->paginate(50);
+        }
 
         return view('administrator.data-absensi', compact('santris'));
     }

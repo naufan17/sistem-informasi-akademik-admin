@@ -27,7 +27,7 @@ class DataKelasController extends Controller
         return view('administrator.data-kelas', compact('grades', 'filters'));
     }
 
-    public function filterNamaKelas(Request $request)
+    public function filter(Request $request)
     {
         $grades = Grade::where('grade_name', $request->grade_name)
                         ->orderBy('grade_name')

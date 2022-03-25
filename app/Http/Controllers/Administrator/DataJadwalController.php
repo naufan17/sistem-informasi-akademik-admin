@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Administrator;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Course;
 use App\Models\Schedule;
 use Illuminate\Support\Facades\Session;
 
@@ -20,26 +21,36 @@ class DataJadwalController extends Controller
                             ->orderBy('time_begin')
                             ->get();
 
-        $filters = Schedule::select('day')
-                            ->distinct()
-                            ->get();
-
-        return view('administrator.data-jadwal', compact('schedules', 'filters'));
+        return view('administrator.data-jadwal', compact('schedules'));
     }
 
-    public function filterHari(Request $request)
+    // public function filterHari(Request $request)
+    // {
+    //     $schedules = Schedule::where('day', $request->day)
+    //                         ->orderBy('day', 'desc')
+    //                         ->orderBy('time_begin')
+    //                         ->get();
+
+    //     $filters = Schedule::select('day')
+    //                         ->where('day', $request->day)
+    //                         ->distinct()
+    //                         ->get();
+
+    //     return view('administrator.data-jadwal', compact('schedules', 'filters'));
+    // }
+
+    public function filterKelas(Request $request)
     {
-        $schedules = Schedule::where('day', $request->day)
-                            ->orderBy('day', 'desc')
-                            ->orderBy('time_begin')
-                            ->get();
+        $schedules = Course::leftjoin('grades', 'courses.id_grade', '=', 'grades.id_grade')
+                        ->leftjoin('schedules', 'courses.id_schedule', '=', 'schedules.id_schedule')
+                        ->where('status_course', 'Aktif')
+                        ->where('grade_number', $request->grade_number)
+                        ->where('grade_name', $request->grade_name)
+                        ->orderBy('day', 'desc')
+                        ->orderBy('time_begin')
+                        ->get();
 
-        $filters = Schedule::select('day')
-                            ->where('day', $request->day)
-                            ->distinct()
-                            ->get();
-
-        return view('administrator.data-jadwal', compact('schedules', 'filters'));
+        return view('administrator.data-jadwal', compact('schedules'));
     }
 
     public function formCreate()

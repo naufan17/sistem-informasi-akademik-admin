@@ -38,7 +38,8 @@ Route::post('/administrator/data-admin/update-password', [DataAdminController::c
 Route::get('/administrator/data-admin/delete/{id}', [DataAdminController::class, 'destroy'])->name('administrator.data-admin.delete');
 
 Route::get('/administrator/data-mapel', [DataMapelController::class, 'index'])->name('administrator.data-mapel');
-Route::post('/administrator/data-mapel/filter-status', [DataMapelController::class, 'filterStatus'])->name('administrator.data-mapel.filter-status');
+Route::post('/administrator/data-mapel', [DataMapelController::class, 'filterKelas'])->name('administrator.data-mapel');
+// Route::post('/administrator/data-mapel', [DataMapelController::class, 'filterStatus'])->name('administrator.data-mapel');
 Route::get('/administrator/data-mapel/form-create', [DataMapelController::class, 'formCreate'])->name('administrator.data-mapel.form-create');
 Route::post('/administrator/data-mapel/create', [DataMapelController::class, 'create'])->name('administrator.data-mapel.create');
 Route::get('/administrator/data-mapel/form-update/{id}', [DataMapelController::class, 'formUpdate'])->name('administrator.data-mapel.form-update');
@@ -70,16 +71,19 @@ Route::post('/administrator/data-santri/update-password', [DataSantriController:
 Route::get('/administrator/data-santri/delete/{id}', [DataSantriController::class, 'destroy'])->name('administrator.data-santri.delete');
 
 Route::get('/administrator/data-krs', [DataKRSController::class, 'index'])->name('administrator.data-krs');
+Route::post('/administrator/data-krs', [DataKRSController::class, 'filter'])->name('administrator.data-krs');
 Route::get('/administrator/data-krs/form-create/{id}', [DataKRSController::class, 'formCreate'])->name('administrator.data-krs.form-create');
 Route::post('/administrator/data-krs/create', [DataKRSController::class, 'create'])->name('administrator.data-krs.create');
 Route::get('/administrator/data-krs/delete/{id}', [DataKRSController::class, 'delete'])->name('administrator.data-krs.delete');
 
 Route::get('/administrator/data-nilai', [DataNilaiController::class, 'index'])->name('administrator.data-nilai');
+Route::post('/administrator/data-nilai', [DataNilaiController::class, 'filter'])->name('administrator.data-nilai');
 Route::get('/administrator/data-nilai/santri/{id}', [DataNilaiController::class, 'santriNilai'])->name('administrator.data-nilai.santri');
-Route::post('/administrator/data-nilai/santri', [DataNilaiController::class, 'filter'])->name('administrator.data-nilai');
+Route::post('/administrator/data-nilai/santri', [DataNilaiController::class, 'filterSemester'])->name('administrator.data-nilai');
 Route::post('/administrator/data-nilai/create', [DataNilaiController::class, 'createNilai'])->name('administrator.data-nilai.create');
 
 Route::get('/administrator/data-absensi', [DataAbsensiController::class, 'index'])->name('administrator.data-absensi');
+Route::post('/administrator/data-absensi', [DataAbsensiController::class, 'filter'])->name('administrator.data-absensi');
 Route::get('/administrator/data-absensi/list/{id}', [DataAbsensiController::class, 'listAbsensi'])->name('administrator.data-absensi.list');
 Route::get('/administrator/data-absensi/form-create/{id}', [DataAbsensiController::class, 'formCreate'])->name('administrator.data-absensi.form-create');
 Route::post('/administrator/data-absensi/create', [DataAbsensiController::class, 'create'])->name('administrator.data-absensi.create');
@@ -88,7 +92,8 @@ Route::post('/administrator/data-absensi/update', [DataAbsensiController::class,
 Route::get('/administrator/data-absensi/delete/{id}', [DataAbsensiController::class, 'delete'])->name('administrator.data-absensi.delete');
 
 Route::get('/administrator/data-jadwal', [DataJadwalController::class, 'index'])->name('administrator.data-jadwal');
-Route::post('/administrator/data-jadwal', [DataJadwalController::class, 'filterHari'])->name('administrator.data-jadwal');
+Route::post('/administrator/data-jadwal', [DataJadwalController::class, 'filterKelas'])->name('administrator.data-jadwal');
+// Route::post('/administrator/data-jadwal', [DataJadwalController::class, 'filterHari'])->name('administrator.data-jadwal');
 Route::get('/administrator/data-jadwal/form-create', [DataJadwalController::class, 'formCreate'])->name('administrator.data-jadwal.form-create');
 Route::post('/administrator/data-jadwal/create', [DataJadwalController::class, 'create'])->name('administrator.data-jadwal.create');
 Route::get('/administrator/data-jadwal/form-update/{id}', [DataJadwalController::class, 'formUpdate'])->name('administrator.data-jadwal.form-update');
@@ -96,7 +101,7 @@ Route::post('/administrator/data-jadwal/update', [DataJadwalController::class, '
 Route::get('/administrator/data-jadwal/delete/{id}', [DataJadwalController::class, 'delete'])->name('administrator.data-jadwal.delete');
 
 Route::get('/administrator/data-kelas', [DataKelasController::class, 'index'])->name('administrator.data-kelas');
-Route::post('/administrator/data-kelas', [DataKelasController::class, 'filterNamaKelas'])->name('administrator.data-kelas');
+Route::post('/administrator/data-kelas', [DataKelasController::class, 'filter'])->name('administrator.data-kelas');
 Route::get('/administrator/data-kelas/form-create', [DataKelasController::class, 'formCreate'])->name('administrator.data-kelas.form-create');
 Route::post('/administrator/data-kelas/create', [DataKelasController::class, 'create'])->name('administrator.data-kelas.create');
 Route::get('/administrator/data-kelas/form-update/{id}', [DataKelasController::class, 'formUpdate'])->name('administrator.data-kelas.form-update');

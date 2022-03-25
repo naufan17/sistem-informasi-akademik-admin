@@ -39,6 +39,34 @@ class DataNilaiController extends Controller
         return view('administrator.data-nilai', compact('courses', 'semester'));
     }
 
+    public function filter(Request $request)
+    {           
+        if(date('m') <= 06 ){
+        $courses = Course::leftjoin('ustadzs', 'courses.id_ustadz', '=', 'ustadzs.id')
+                        ->leftjoin('schedules', 'courses.id_schedule', '=', 'schedules.id_schedule')
+                        ->leftjoin('grades', 'courses.id_grade', '=', 'grades.id_grade')
+                        ->where('status_course', 'Aktif')
+                        ->where('grade_number', $request->grade_number)
+                        ->where('grade_name', $request->grade_name)
+                        ->get();
+
+            $semester = "Genap";
+
+        }elseif(date('m') > 06 ){
+            $courses = Course::leftjoin('ustadzs', 'courses.id_ustadz', '=', 'ustadzs.id')
+                            ->leftjoin('schedules', 'courses.id_schedule', '=', 'schedules.id_schedule')
+                            ->leftjoin('grades', 'courses.id_grade', '=', 'grades.id_grade')
+                            ->where('status_course', 'Aktif')
+                            ->where('grade_number', $request->grade_number)
+                            ->where('grade_name', $request->grade_name)
+                            ->get();
+
+            $semester = "Ganjil";
+        }
+
+        return view('administrator.data-nilai', compact('courses', 'semester'));
+    }
+
     public function santriNilai($id)
     {
         $filter_semesters = CumulativeStudy::select('semester')
@@ -99,7 +127,7 @@ class DataNilaiController extends Controller
         return view('administrator.update-data-nilai', compact('santris', 'filter_semesters', 'filter_years', 'semesters', 'years', 'id_course'));
     }
 
-    public function filter(Request $request)
+    public function filterSemester(Request $request)
     {
         $filter_semesters = CumulativeStudy::select('semester')
                                             ->distinct()
