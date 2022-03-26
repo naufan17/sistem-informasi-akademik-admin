@@ -97,13 +97,42 @@ class DataKRSController extends Controller
                                                 ->where('semester', 'Genap')
                                                 ->where('year', date('Y')-1 . '/' . date('Y'))
                                                 ->get();
+
+            $semesters = CumulativeStudy::select('semester')
+                                        ->where('id_santri', $id)
+                                        ->where('semester', 'Genap')
+                                        ->where('year', date('Y')-1 . '/' . date('Y'))
+                                        ->distinct()
+                                        ->get();
+        
+            $years = CumulativeStudy::select('year')
+                                    ->where('id_santri', $id)
+                                    ->where('semester', 'Genap')
+                                    ->where('year', date('Y')-1 . '/' . date('Y'))
+                                    ->distinct()
+                                    ->get();
+        
         }elseif(date('m') > 06 ){
             $cumulativestudys = CumulativeStudy::leftjoin('santris', 'cumulative_studies.id_santri', '=', 'santris.id')
                                                 ->leftjoin('courses', 'cumulative_studies.id_course', '=', 'courses.id_course')
                                                 ->where('id_santri', $id)
-                                                ->where('semester', 'Genap')
-                                                ->where('year', date('Y')-1 . '/' . date('Y'))
+                                                ->where('semester', 'Ganjil')
+                                                ->where('year', date('Y') . '/' . date('Y')+1)
                                                 ->get();
+            
+            $semesters = CumulativeStudy::select('semester')
+                                        ->where('id_santri', $id)
+                                        ->where('semester', 'Ganjil')
+                                        ->where('year', date('Y') . '/' . date('Y')+1)
+                                        ->distinct()
+                                        ->get();
+                
+            $years = CumulativeStudy::select('year')
+                                    ->where('id_santri', $id)
+                                    ->where('semester', 'Ganjil')
+                                    ->where('year', date('Y') . '/' . date('Y')+1)
+                                    ->distinct()
+                                    ->get();
         }
 
         $courses = Course::leftjoin('ustadzs', 'courses.id_ustadz', '=', 'ustadzs.id')
@@ -114,7 +143,185 @@ class DataKRSController extends Controller
                         ->orderBy('grade_number')
                         ->get();
 
-        return view('administrator.tambah-santri-krs', compact('cumulativestudys', 'courses', 'id'));
+        $filter_grade_number = Grade::select('grade_number')
+                                    ->distinct()
+                                    ->get();
+
+        $filter_grade_name = Grade::select('grade_name')
+                                ->distinct()
+                                ->get();
+
+        $grade_number = Grade::select('grade_number')
+                            ->limit(1);
+    
+        $grade_name = Grade::select('grade_name')
+                            ->limit(1);
+
+        $filter_semesters = CumulativeStudy::select('semester')
+                                        ->where('id_santri', $id)
+                                        ->distinct()
+                                        ->get();
+
+        $filter_years = CumulativeStudy::select('year')
+                                        ->where('id_santri', $id)
+                                        ->distinct()
+                                        ->get();
+
+        $id_santri = $id;
+
+        return view('administrator.tambah-santri-krs', compact('cumulativestudys', 'courses', 'filter_semesters', 'filter_years', 'semesters', 'years', 'filter_grade_number', 'filter_grade_name', 'grade_number', 'grade_name', 'id_santri'));
+    }
+
+    public function filterSemester(Request $request)
+    {
+        $cumulativestudys = CumulativeStudy::leftjoin('santris', 'cumulative_studies.id_santri', '=', 'santris.id')
+                                            ->leftjoin('courses', 'cumulative_studies.id_course', '=', 'courses.id_course')
+                                            ->where('id_santri', $request->id)
+                                            ->where('semester', $request->semester)
+                                            ->where('year', $request->year)
+                                            ->get();
+
+        $semesters = CumulativeStudy::select('semester')
+                                    ->where('id_santri', $request->id)
+                                    ->where('semester', $request->semester)
+                                    ->where('year', $request->year)
+                                    ->distinct()
+                                    ->get();
+            
+        $years = CumulativeStudy::select('year')
+                                ->where('id_santri', $request->id)
+                                ->where('semester', $request->semester)
+                                ->where('year', $request->year)
+                                ->distinct()
+                                ->get();
+
+        $courses = Course::leftjoin('ustadzs', 'courses.id_ustadz', '=', 'ustadzs.id')
+                        ->leftjoin('grades', 'courses.id_grade', '=', 'grades.id_grade')
+                        ->leftjoin('schedules', 'courses.id_schedule', '=', 'schedules.id_schedule')
+                        ->where('status_course', 'Aktif')
+                        ->orderBy('grade_name')
+                        ->orderBy('grade_number')
+                        ->get();
+
+        $filter_grade_number = Grade::select('grade_number')
+                                    ->distinct()
+                                    ->get();
+
+        $filter_grade_name = Grade::select('grade_name')
+                                ->distinct()
+                                ->get();
+
+        $grade_number = Grade::select('grade_number')
+                            ->limit(1);
+    
+        $grade_name = Grade::select('grade_name')
+                            ->limit(1);
+
+        $filter_semesters = CumulativeStudy::select('semester')
+                                        ->where('id_santri', $request->id)
+                                        ->distinct()
+                                        ->get();
+
+        $filter_years = CumulativeStudy::select('year')
+                                        ->where('id_santri', $request->id)
+                                        ->distinct()
+                                        ->get();
+                                    
+        $id_santri = $request->id;
+        
+        return view('administrator.tambah-santri-krs', compact('cumulativestudys', 'courses', 'filter_semesters', 'filter_years', 'semesters', 'years', 'filter_grade_number', 'filter_grade_name', 'grade_number', 'grade_name', 'id_santri'));
+    }
+
+    public function filterKelas(Request $request)
+    {   
+        if(date('m') <= 06 ){
+            $cumulativestudys = CumulativeStudy::leftjoin('santris', 'cumulative_studies.id_santri', '=', 'santris.id')
+                                                ->leftjoin('courses', 'cumulative_studies.id_course', '=', 'courses.id_course')
+                                                ->where('id_santri', $request->id)
+                                                ->where('semester', 'Genap')
+                                                ->where('year', date('Y')-1 . '/' . date('Y'))
+                                                ->distinct()
+                                                ->get();
+
+            $semesters = CumulativeStudy::select('semester')
+                                        ->where('id_santri', $request->id)
+                                        ->where('semester', 'Genap')
+                                        ->where('year', date('Y')-1 . '/' . date('Y'))
+                                        ->distinct()
+                                        ->get();
+        
+            $years = CumulativeStudy::select('year')
+                                    ->where('id_santri', $request->id)
+                                    ->where('semester', 'Genap')
+                                    ->where('year', date('Y')-1 . '/' . date('Y'))
+                                    ->distinct()
+                                    ->get();
+
+        }elseif(date('m') > 06 ){
+            $cumulativestudys = CumulativeStudy::leftjoin('santris', 'cumulative_studies.id_santri', '=', 'santris.id')
+                                                ->leftjoin('courses', 'cumulative_studies.id_course', '=', 'courses.id_course')
+                                                ->where('id_santri', $request->id)
+                                                ->where('semester', 'Ganjil')
+                                                ->where('year', date('Y') . '/' . date('Y')+1)
+                                                ->distinct()
+                                                ->get();
+            
+            $semesters = CumulativeStudy::select('semester')
+                                        ->where('id_santri', $request->id)
+                                        ->where('semester', 'Ganjil')
+                                        ->where('year', date('Y') . '/' . date('Y')+1)
+                                        ->distinct()
+                                        ->get();
+                
+            $years = CumulativeStudy::select('year')
+                                    ->where('id_santri', $request->id)
+                                    ->where('semester', 'Ganjil')
+                                    ->where('year', date('Y') . '/' . date('Y')+1)
+                                    ->distinct()
+                                    ->get();                                       
+        }
+
+        $courses = Course::leftjoin('ustadzs', 'courses.id_ustadz', '=', 'ustadzs.id')
+                        ->leftjoin('grades', 'courses.id_grade', '=', 'grades.id_grade')
+                        ->leftjoin('schedules', 'courses.id_schedule', '=', 'schedules.id_schedule')
+                        ->where('status_course', 'Aktif')
+                        ->where('grade_name', $request->grade_name)
+                        ->where('grade_number', $request->grade_number)
+                        ->orderBy('grade_name')
+                        ->orderBy('grade_number')
+                        ->get();
+
+        $filter_grade_number = Grade::select('grade_number')
+                                    ->distinct()
+                                    ->get();
+
+        $filter_grade_name = Grade::select('grade_name')
+                                ->distinct()
+                                ->get();
+
+        $grade_number = Grade::select('grade_number')
+                            ->where('grade_name', $request->grade_name)
+                            ->where('grade_number', $request->grade_number)
+                            ->get();
+    
+        $grade_name = Grade::select('grade_name')
+                            ->where('grade_name', $request->grade_name)
+                            ->where('grade_number', $request->grade_number)
+                            ->get();
+
+        $filter_semesters = CumulativeStudy::select('semester')
+                                        ->where('id_santri', $request->id)
+                                        ->distinct()
+                                        ->get();
+
+        $filter_years = CumulativeStudy::select('year')
+                                        ->where('id_santri', $request->id)
+                                        ->distinct()
+                                        ->get();
+
+        $id_santri = $request->id;
+
+        return view('administrator.tambah-santri-krs', compact('cumulativestudys', 'courses', 'filter_semesters', 'filter_years', 'semesters', 'years', 'filter_grade_number', 'filter_grade_name', 'grade_number', 'grade_name', 'id_santri'));
     }
 
     public function create(Request $request)

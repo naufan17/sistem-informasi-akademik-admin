@@ -30,7 +30,7 @@
                                 <button type="submit" class="bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-3 px-8">Import</button>
                             </div>
                         </div>
-                        <p class="px-4 py-2">Download template import <a href="" class="text-blue-800 underline">disini</a></p>
+                        <p class="px-4 py-2">Download template import <a href="{{ url('administrator/data-ustadz/sample-import') }}" class="text-blue-800 underline">disini</a></p>
                     </div>
                 </form>
             </div>

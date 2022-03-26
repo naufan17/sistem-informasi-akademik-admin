@@ -57,6 +57,7 @@ Route::get('/administrator/data-ustadz/form-update/{id}', [DataUstadzController:
 Route::post('/administrator/data-ustadz/update-profile', [DataUstadzController::class, 'updateProfile'])->name('administrator.data-ustadz.update-profile');
 Route::post('/administrator/data-ustadz/update-password', [DataUstadzController::class, 'updatePassword'])->name('administrator.data-ustadz.update-password');
 Route::get('/administrator/data-ustadz/delete/{id}', [DataUstadzController::class, 'destroy'])->name('administrator.data-ustadz.delete');
+Route::get('/administrator/data-ustadz/sample-import', [DataUstadzController::class, 'sampleImport'])->name('administrator.data-ustadz.sample-import');
 
 Route::get('/administrator/data-santri', [DataSantriController::class, 'index'])->name('administrator.data-santri');
 Route::post('/administrator/data-santri', [DataSantriController::class, 'filter'])->name('administrator.data-santri');
@@ -70,11 +71,14 @@ Route::get('/administrator/data-santri/form-update/{id}', [DataSantriController:
 Route::post('/administrator/data-santri/update-profile', [DataSantriController::class, 'updateProfile'])->name('administrator.data-santri.update-profile');
 Route::post('/administrator/data-santri/update-password', [DataSantriController::class, 'updatePassword'])->name('administrator.data-santri.update-password');
 Route::get('/administrator/data-santri/delete/{id}', [DataSantriController::class, 'destroy'])->name('administrator.data-santri.delete');
+Route::get('/administrator/data-santri/sample-import', [DataSantriController::class, 'sampleImport'])->name('administrator.data-santri.sample-import');
 
 Route::get('/administrator/data-krs', [DataKRSController::class, 'index'])->name('administrator.data-krs');
 Route::post('/administrator/data-krs', [DataKRSController::class, 'filter'])->name('administrator.data-krs');
 Route::get('/administrator/data-krs/form-create/{id}', [DataKRSController::class, 'formCreate'])->name('administrator.data-krs.form-create');
+Route::post('/administrator/data-krs/form-create/filter-semester', [DataKRSController::class, 'filterSemester'])->name('administrator.data-krs.form-create.filter-semester');
 Route::post('/administrator/data-krs/create', [DataKRSController::class, 'create'])->name('administrator.data-krs.create');
+Route::post('/administrator/data-krs/form-create/filter-kelas', [DataKRSController::class, 'filterKelas'])->name('administrator.data-krs.form-create.filter-kelas');
 Route::get('/administrator/data-krs/delete/{id}', [DataKRSController::class, 'delete'])->name('administrator.data-krs.delete');
 
 Route::get('/administrator/data-nilai', [DataNilaiController::class, 'index'])->name('administrator.data-nilai');

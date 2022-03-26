@@ -24,7 +24,7 @@
                         <div class="flex-none w-36">
                             <a class="self-center hover:no-underline">Semester</a>
                         </div>
-                        <input type="hidden" name="id" placeholder="" value="{{ $id_course }}" required class="self-center w-full bg-transparent border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-200" />
+                        <input type="hidden" name="id" placeholder="" value="{{ $id_course }}" class="self-center w-full bg-transparent border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-200" />
                         <div class="flex-none md:w-1/5">
                             <div class="relative">
                                 <div class="pointer-events-none absolute inset-y-0 right-3 flex items-center text-grey-darker">
@@ -54,7 +54,7 @@
                                         <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
                                     </svg>
                                 </div>
-                                <select type="text" name="tahun_ajaran" value=""  class="block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker px-4 pr-8 rounded" id="grid-state">
+                                <select type="text" name="year" value=""  class="block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker px-4 pr-8 rounded" id="grid-state">
                                     @foreach($years as $filter)    
                                     <option value="{{ $filter->year }}">{{ $filter->year }}</option>
                                     @endforeach

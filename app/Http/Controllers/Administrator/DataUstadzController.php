@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Administrator;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Models\Ustadz;
@@ -90,12 +91,11 @@ class DataUstadzController extends Controller
                         ->paginate(50);
 
         $status = Ustadz::select('status')
-                        ->where('status', 'Aktif')
+                        ->where('status', $request->status)
                         ->distinct()
                         ->get();
 
         $filter_status = Ustadz::select('status')
-                                ->where('status', $request->status)
                                 ->distinct()
                                 ->get();
 
@@ -160,4 +160,10 @@ class DataUstadzController extends Controller
         return view('administrator.detail-data-ustadz', compact('ustadzs'));
     }
 
+    public function sampleImport()
+    {
+        $path = storage_path('app/public/' . 'data_sample_ustadz.xlsx');
+
+        return response()->download($path);
+    }
 }

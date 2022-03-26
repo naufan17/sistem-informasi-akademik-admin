@@ -25,16 +25,12 @@ class DataNilaiController extends Controller
                         ->where('status_course', 'Aktif')
                         ->get();
 
-            $semester = "Genap";
-
         }elseif(date('m') > 06 ){
             $courses = Course::leftjoin('ustadzs', 'courses.id_ustadz', '=', 'ustadzs.id')
                             ->leftjoin('schedules', 'courses.id_schedule', '=', 'schedules.id_schedule')
                             ->leftjoin('grades', 'courses.id_grade', '=', 'grades.id_grade')
                             ->where('status_course', 'Aktif')
                             ->get();
-
-            $semester = "Ganjil";
         }
 
         $filter_grade_number = Grade::select('grade_number')
@@ -51,7 +47,7 @@ class DataNilaiController extends Controller
         $grade_name = Grade::select('grade_name')
                             ->limit(1);
 
-        return view('administrator.data-nilai', compact('courses', 'semester', 'grade_number', 'grade_name', 'filter_grade_number', 'filter_grade_name'));
+        return view('administrator.data-nilai', compact('courses', 'grade_number', 'grade_name', 'filter_grade_number', 'filter_grade_name'));
     }
 
     public function filter(Request $request)
@@ -65,8 +61,6 @@ class DataNilaiController extends Controller
                         ->where('grade_name', $request->grade_name)
                         ->get();
 
-            $semester = "Genap";
-
         }elseif(date('m') > 06 ){
             $courses = Course::leftjoin('ustadzs', 'courses.id_ustadz', '=', 'ustadzs.id')
                             ->leftjoin('schedules', 'courses.id_schedule', '=', 'schedules.id_schedule')
@@ -75,8 +69,6 @@ class DataNilaiController extends Controller
                             ->where('grade_number', $request->grade_number)
                             ->where('grade_name', $request->grade_name)
                             ->get();
-
-            $semester = "Ganjil";
         }
 
         $filter_grade_number = Grade::select('grade_number')
@@ -103,10 +95,12 @@ class DataNilaiController extends Controller
     public function santriNilai($id)
     {
         $filter_semesters = CumulativeStudy::select('semester')
+                                            ->where('id_course', $id)
                                             ->distinct()
                                             ->get();
 
         $filter_years = CumulativeStudy::select('year')
+                                        ->where('id_course', $id)
                                         ->distinct()
                                         ->get();
         
@@ -163,10 +157,12 @@ class DataNilaiController extends Controller
     public function filterSemester(Request $request)
     {
         $filter_semesters = CumulativeStudy::select('semester')
+                                            ->where('id_course', $request->id)
                                             ->distinct()
                                             ->get();
 
         $filter_years = CumulativeStudy::select('year')
+                                        ->where('id_course', $request->id)
                                         ->distinct()
                                         ->get();
 
@@ -175,7 +171,8 @@ class DataNilaiController extends Controller
         $santris = CumulativeStudy::leftjoin('santris', 'cumulative_studies.id_santri', '=', 'santris.id')
                                 ->where('id_course', $request->id)
                                 ->where('semester', $request->semester)
-                                ->where('year', $request->tahun_ajaran)
+                                ->where('year', $request->year)
+                                ->orderBy('name')
                                 ->get();
                 
         $semesters = CumulativeStudy::select('semester')
@@ -186,7 +183,7 @@ class DataNilaiController extends Controller
         
         $years = CumulativeStudy::select('year')
                                 ->where('id_course', $request->id)
-                                ->where('year', $request->tahun_ajaran)
+                                ->where('year', $request->year)
                                 ->distinct()
                                 ->get();
 
