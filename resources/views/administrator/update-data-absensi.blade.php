@@ -28,7 +28,41 @@
                         </div>
                         @foreach($attendances as $attendance)
                         <input type="hidden" name="id_attendance" value="{{ $attendance->id_attendance }}" class="pt-3 pb-2 px-3 block w-full mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-200" />
-                        <input type="hidden" name="id_santri" value="{{ $attendance->id_santri }}" class="pt-3 pb-2 px-3 block w-full mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-200" />
+                        @if(date('m') <= 06 )
+                        <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 px-4 py-2 space-y-1">
+                            <p class="self-center text-gray-600">Semester</p>
+                            <div class="relative z-0 w-full mb-5">
+                                <select type="text" name="semester" required onclick="this.setAttribute('value', this.value);" class="pt-3 pb-2 px-3 block w-full mt-0 bg-transparent border-0 border-b-2 appearance-none z-1 focus:outline-none focus:ring-0 focus:border-black border-gray-200">
+                                    <option selected value="{{ $attendance->semester }}">{{ $attendance->semester }}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 px-4 py-2 space-y-1">
+                            <p class="self-center text-gray-600">Tahun Ajaran</p>
+                            <div class="relative z-0 w-full mb-5">
+                                <select type="text" name="year" required onclick="this.setAttribute('value', this.value);" class="pt-3 pb-2 px-3 block w-full mt-0 bg-transparent border-0 border-b-2 appearance-none z-1 focus:outline-none focus:ring-0 focus:border-black border-gray-200">
+                                    <option selected value="{{ $attendance->year }}">{{ $attendance->year }}</option>
+                                </select>
+                            </div>
+                        </div>
+                        @elseif(date('m') > 06 )
+                        <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 px-4 py-2 space-y-1">
+                            <p class="self-center text-gray-600">Semester</p>
+                            <div class="relative z-0 w-full mb-5">
+                                <select type="text" name="semester" required onclick="this.setAttribute('value', this.value);" class="pt-3 pb-2 px-3 block w-full mt-0 bg-transparent border-0 border-b-2 appearance-none z-1 focus:outline-none focus:ring-0 focus:border-black border-gray-200">
+                                    <option selected value="{{ $attendance->semester }}">{{ $attendance->semester }}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 px-4 py-2 space-y-1">
+                            <p class="self-center text-gray-600">Tahun Ajaran</p>
+                            <div class="relative z-0 w-full mb-5">
+                                <select type="text" name="year" required onclick="this.setAttribute('value', this.value);" class="pt-3 pb-2 px-3 block w-full mt-0 bg-transparent border-0 border-b-2 appearance-none z-1 focus:outline-none focus:ring-0 focus:border-black border-gray-200">
+                                    <option selected value="{{ $attendance->year }}">{{ $attendance->year }}</option>
+                                </select>
+                            </div>
+                        </div>
+                        @endif
                         <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 px-4 py-2 space-y-1">
                             <p class="self-center text-gray-600">Presentasi Absensi MDNU</p>
                             <div class="relative z-0 w-full mb-5">
