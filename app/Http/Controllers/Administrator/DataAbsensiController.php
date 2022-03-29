@@ -158,15 +158,10 @@ class DataAbsensiController extends Controller
 
     public function delete($id)
     {
-        $id_santri = 0;
-        foreach(Attendance::where('id_attendance', $id)->get() as $attendances){
-            $id_santri = $attendances->id_santri;
-        }
-
         Attendance::where('id_attendance', $id)->delete();
 
         Session::flash('hapus','Data Berhasil Dihapus!');
 
-        return redirect()->route('administrator.data-absensi.list', [$id_santri]);
+        return redirect()->back();
     }
 }

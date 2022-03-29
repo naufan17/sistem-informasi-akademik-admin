@@ -364,20 +364,15 @@ class DataKRSController extends Controller
 
         Session::flash('tambah','Data Berhasil Ditambahkan!');
 
-        return redirect()->route('administrator.data-krs.form-create', [$request->id_santri]);
+        return redirect()->back();
     }
 
     public function delete($id)
     {
-        $id_santri = 0;
-        foreach(CumulativeStudy::where('id_cumulative_study', $id)->get() as $cumulativestudys){
-            $id_santri = $cumulativestudys->id_santri;
-        }
-
         CumulativeStudy::where('id_cumulative_study', $id)->delete();
 
         Session::flash('hapus','Data Berhasil Dihapus!');
    
-        return redirect()->route('administrator.data-krs.form-create', [$id_santri]);
+        return redirect()->back();
     }
 }
