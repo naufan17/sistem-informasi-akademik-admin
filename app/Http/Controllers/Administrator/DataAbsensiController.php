@@ -111,29 +111,19 @@ class DataAbsensiController extends Controller
         $request->validate([
             'attendance_mdnu' => 'required', 'number',
             'attendance_asrama' => 'required', 'number',
+            'semester' => 'required', 'number', 'string',
+            'year' => 'required', 'number', 'string',
         ]);
 
-        if(date('m') <= 06 ){
-            Attendance::create([
-                'year' => date('Y')-1 . '/' . date('Y'),
-                'semester' => 'Genap',
-                'id_santri' => $request->id_santri,
-                'minimum_attendance_mdnu' => '15', 
-                'attendance_mdnu' => $request->attendance_mdnu,
-                'minimum_attendance_asrama' => '10',
-                'attendance_asrama' => $request->attendance_asrama,
-            ]);
-        }elseif(date('m') > 06 ){
-            Attendance::create([
-                'year' => date('Y') . '/' . date('Y')+1,
-                'semester' => 'Ganjil',
-                'id_santri' => $request->id_santri,
-                'minimum_attendance_mdnu' => '15', 
-                'attendance_mdnu' => $request->attendance_mdnu,
-                'minimum_attendance_asrama' => '10',
-                'attendance_asrama' => $request->attendance_asrama,
-            ]);
-        }
+        Attendance::create([
+            'year' => $request->year,
+            'semester' => $request->semester,
+            'id_santri' => $request->id_santri,
+            'minimum_attendance_mdnu' => '15', 
+            'attendance_mdnu' => $request->attendance_mdnu,
+            'minimum_attendance_asrama' => '10',
+            'attendance_asrama' => $request->attendance_asrama,
+        ]);
 
         Session::flash('tambah','Data Berhasil Ditambahkan!');
 

@@ -28,6 +28,7 @@
                         </div>
                         @foreach($attendances as $attendance)
                         <input type="hidden" name="id_attendance" value="{{ $attendance->id_attendance }}" class="pt-3 pb-2 px-3 block w-full mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-200" />
+                        <input type="hidden" name="id_santri" value="{{ $attendance->id_santri }}" class="pt-3 pb-2 px-3 block w-full mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-200" />
                         @if(date('m') <= 06 )
                         <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 px-4 py-2 space-y-1">
                             <p class="self-center text-gray-600">Semester</p>

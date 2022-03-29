@@ -93,7 +93,7 @@
                                             <input type="hidden" name="id_cumulative_study" value="{{ $santri->id_cumulative_study }}" class="py-2 px-3 block w-full bg-transparent border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-300" />
                                             <!-- <input type="hidden" name="id_santri" value="{{ $santri->id_santri }}" class="py-2 px-3 block w-full bg-transparent border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-300" />
                                             <input type="hidden" name="id_course" value="{{ $santri->id_course }}" class="py-2 px-3 block w-full bg-transparent border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-300" /> -->
-                                            <input type="number" name="score" value="{{ $santri->score }}" required class="py-2 px-3 block w-full bg-transparent border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-300" />
+                                            <input type="number" name="score" value="{{ $santri->score }}" placeholder="1-100" required class="py-2 px-3 block w-full bg-transparent border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-300" />
                                         </div>
                                     </td>
                                 </tr>
@@ -103,7 +103,6 @@
                         <div class="flex flex-row-reverse object-left text-center text-white text-base pt-8 px-2.5">
                             <button type="submit" class="bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-2.5 px-6">Simpan</button>
                         </div>
-
                     </div>
                 </form>
             </div>
