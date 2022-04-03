@@ -115,19 +115,17 @@ class DataAbsensiController extends Controller
             'year' => 'required', 'number', 'string',
         ]);
 
-        Attendance::create([
+        Attendance::firstOrCreate([
             'year' => $request->year,
             'semester' => $request->semester,
             'id_santri' => $request->id_santri,
             'minimum_attendance_mdnu' => '15', 
-            'attendance_mdnu' => $request->attendance_mdnu,
-            'minimum_attendance_asrama' => '10',
+            'minimum_attendance_asrama' => '10'],
+            ['attendance_mdnu' => $request->attendance_mdnu,
             'attendance_asrama' => $request->attendance_asrama,
         ]);
 
-        Session::flash('tambah','Data Berhasil Ditambahkan!');
-
-        return redirect()->route('administrator.data-absensi.list', [$request->id_santri]);
+        return redirect()->route('administrator.data-absensi.list', [$request->id_santri])->with('tambah','Data Berhasil Ditambahkan!');
     }
 
     public function formUpdate($id)
@@ -151,17 +149,13 @@ class DataAbsensiController extends Controller
             'attendance_asrama' => $request->attendance_asrama,
         ]);
 
-        Session::flash('perbarui','Data Berhasil Diperbarui!');
-
-        return redirect()->route('administrator.data-absensi.list', [$request->id_santri]);
+        return redirect()->route('administrator.data-absensi.list', [$request->id_santri])->with('perbarui','Data Berhasil Diperbarui!');
     }
 
     public function delete($id)
     {
         Attendance::where('id_attendance', $id)->delete();
 
-        Session::flash('hapus','Data Berhasil Dihapus!');
-
-        return redirect()->back();
+        return redirect()->back()->with('hapus','Data Berhasil Dihapus!');
     }
 }

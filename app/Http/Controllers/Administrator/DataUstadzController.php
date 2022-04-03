@@ -5,8 +5,6 @@ namespace App\Http\Controllers\Administrator;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Facades\Validator;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Models\Ustadz;
 use App\Models\ImportUstadz;
@@ -58,9 +56,7 @@ class DataUstadzController extends Controller
             'status' => 'Aktif',
         ]);
 
-        Session::flash('tambah','Data Berhasil Ditambahkan!');
-
-        return redirect('/administrator/data-ustadz');
+        return redirect('/administrator/data-ustadz')->with('tambah','Data Berhasil Ditambahkan!');
     }
 
     public function formImport()
@@ -79,9 +75,7 @@ class DataUstadzController extends Controller
         $file->move('file_ustadz', $nama_file);
         Excel::import(new ImportUstadz, public_path('/file_ustadz/'.$nama_file));
 
-        Session::flash('tambah','Data Berhasil Diimport!');
-
-        return redirect('/administrator/data-ustadz');
+        return redirect('/administrator/data-ustadz')->with('tambah','Data Berhasil Diimport!');
     }
 
     public function filter(Request $request)
@@ -124,9 +118,7 @@ class DataUstadzController extends Controller
             'status' => $request->status, 
         ]);
 
-        Session::flash('perbarui','Data Berhasil Diperbarui');
-
-        return redirect('/administrator/data-ustadz');
+        return redirect('/administrator/data-ustadz')->with('perbarui','Data Berhasil Diperbarui');
     }
 
     public function updatePassword(Request $request)
@@ -139,18 +131,14 @@ class DataUstadzController extends Controller
             'password' => Hash::make($request->password),
         ]);
 
-        Session::flash('uperbarui','Data Berhasil Diperbarui');
-
-        return redirect('/administrator/data-ustadz');
+        return redirect('/administrator/data-ustadz')->with('perbarui','Data Berhasil Diperbarui');
     }
 
     public function destroy($id)
     {
         Ustadz::where('id', $id)->delete();
 
-        Session::flash('hapus','Data Berhasil Dihapus!');
-
-        return redirect('/administrator/data-ustadz');
+        return redirect('/administrator/data-ustadz')->with('hapus','Data Berhasil Dihapus!');
     }
 
     public function detailUstadz($id)

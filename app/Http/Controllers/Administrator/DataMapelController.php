@@ -129,9 +129,7 @@ class DataMapelController extends Controller
             'id_ustadz' => $request->id_ustadz,
         ]);
 
-        Session::flash('tambah','Data Berhasil Ditambahkan!');
-
-        return redirect('administrator/data-mapel');
+        return redirect('administrator/data-mapel')->with('tambah','Data Berhasil Ditambahkan!');
     }
 
     public function formUpdate($id)
@@ -173,17 +171,13 @@ class DataMapelController extends Controller
             'id_ustadz' => $request->id_ustadz,
         ]);
 
-        Session::flash('perbarui','Data Berhasil Diperbarui!');
-
-        return redirect('/administrator/data-mapel');
+        return redirect('/administrator/data-mapel')->with('perbarui','Data Berhasil Diperbarui!');
     }
 
     public function destroy($id)
     {
         Course::where('id_course', $id)->delete();
 
-        Session::flash('hapus','Data Berhasil Dihapus!');
-
-        return redirect('/administrator/data-mapel');
+        return redirect('/administrator/data-mapel')->with('hapus','Data Berhasil Dihapus!');
     }
 }

@@ -5,8 +5,6 @@ namespace App\Http\Controllers\Administrator;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Administrator;
-use App\Providers\RouteServiceProvider;
-use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Notifications\VerifyEmail;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
@@ -61,9 +59,7 @@ class DataAdminController extends Controller
             );
         });
 
-        Session::flash('tambah','Data Berhasil Ditambahkan!');
-
-        return redirect(route('administrator.data-admin'));
+        return redirect('/administrator/data-admin')->with('tambah','Data Berhasil Ditambahkan!');
     }
 
     public function formUpdate($id)
@@ -87,9 +83,7 @@ class DataAdminController extends Controller
             // 'email' => $request->email,  
         ]);
 
-        Session::flash('perbarui','Data Berhasil Diperbarui!');
-
-        return redirect('/administrator/data-admin');
+        return redirect('/administrator/data-admin')->with('perbarui','Data Berhasil Diperbarui!');
     }
 
     public function updatePassword(Request $request)
@@ -102,17 +96,16 @@ class DataAdminController extends Controller
             'password' => Hash::make($request->password), 
         ]);
 
-        Session::flash('perbarui','Data Berhasil Diupdate');
-
-        return redirect('/administrator/data-admin');
+        return redirect('/administrator/data-admin')->with('perbarui','Data Berhasil Diupdate');
     }
 
     public function destroy($id)
     {
-        Administrator::where('id', $id)->delete();
-
-        Session::flash('hapus','Data Berhasil Dihapus!');
-
-        return redirect('/administrator/data-admin');
+        if(Auth::guard('administrator')->user()->id !=  $id){
+            Administrator::where('id', $id)->delete();
+            return redirect('/administrator/data-admin')->with('hapus','Data Berhasil Dihapus!');
+        } else {
+            return redirect('/administrator/data-admin')->with('hapus','Data Gagal Dihapus!');
+        }
     }
 }

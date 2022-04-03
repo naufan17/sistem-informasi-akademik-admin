@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
-use Illuminate\Support\Facades\Validator;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Models\CumulativeStudy;
 use App\Models\Grade;
@@ -73,9 +72,7 @@ class DataSantriController extends Controller
             'status' => 'Aktif',
         ]);
 
-        Session::flash('tambah','Data Berhasil Ditambahkan!');
-
-        return redirect('/administrator/data-santri');
+        return redirect('/administrator/data-santri')->with('tambah','Data Berhasil Ditambahkan!');
     }
 
     public function formImport()
@@ -94,9 +91,7 @@ class DataSantriController extends Controller
         $file->move('file_santri', $nama_file);
         Excel::import(new ImportSantri, public_path('/file_santri/'.$nama_file));
 
-        Session::flash('tambah','Data Berhasil Diimport!');
-
-        return redirect('/administrator/data-santri');
+        return redirect('/administrator/data-santri')->with('tambah','Data Berhasil Diimport!');
     }
 
     public function filter(Request $request)
@@ -210,9 +205,7 @@ class DataSantriController extends Controller
             'status' => $request->status,  
         ]);
 
-        Session::flash('perbarui','Data Berhasil Diperbarui!');
-
-        return redirect('/administrator/data-santri');
+        return redirect('/administrator/data-santri')->with('perbarui','Data Berhasil Diperbarui!');
     }
 
     public function updatePassword(Request $request)
@@ -225,18 +218,14 @@ class DataSantriController extends Controller
             'password' => Hash::make($request->password), 
         ]);
 
-        Session::flash('perbarui','Data Berhasil Diupdate');
-
-        return redirect('/administrator/data-santri');
+        return redirect('/administrator/data-santri')->with('perbarui','Data Berhasil Diupdate');
     }
 
     public function destroy($id)
     {
         Santri::where('id', $id)->delete();
 
-        Session::flash('hapus','Data Berhasil Dihapus!');
-
-        return redirect('/administrator/data-santri');
+        return redirect('/administrator/data-santri')->with('hapus','Data Berhasil Dihapus!');
     }
 
     public function detailSantri($id)

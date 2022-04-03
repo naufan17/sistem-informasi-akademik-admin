@@ -362,17 +362,13 @@ class DataKRSController extends Controller
             ]);
         }
 
-        Session::flash('tambah','Data Berhasil Ditambahkan!');
-
-        return redirect()->back();
+        return redirect()->back()->with('tambah','Data Berhasil Ditambahkan!');
     }
 
     public function delete($id)
     {
         CumulativeStudy::where('id_cumulative_study', $id)->delete();
-
-        Session::flash('hapus','Data Berhasil Dihapus!');
    
-        return redirect()->back();
+        return redirect()->back()->with('hapus','Data Berhasil Dihapus!');
     }
 }

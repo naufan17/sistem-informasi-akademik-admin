@@ -40,6 +40,7 @@
                         </div>
                         @endforeach
                     </div>
+                    @if(Auth::guard('administrator')->user()->id != $administrator->id )
                     <div class="flex flex-nowrap flex-row-reverse">
                         <div class="object-left text-center text-white text-base pt-8 px-3">
                             <button type="submit" class="bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-2.5 px-6">Simpan</button>
@@ -48,6 +49,13 @@
                             <a href="{{ url('administrator/data-admin/delete') }}/{{ $administrator->id }}" type="submit" class="border bg-red-600 hover:bg-red-700 rounded py-2.5 px-6">Hapus</a>
                         </div>
                     </div>
+                    @else
+                    <div class="flex flex-nowrap flex-row-reverse">
+                        <div class="object-left text-center text-white text-base pt-8 px-3">
+                            <button type="submit" class="bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-2.5 px-6">Simpan</button>
+                        </div>
+                    </div>
+                    @endif
                 </form>
                 <form method="POST" action="{{ url('administrator/data-admin/update-password') }}">
                     @csrf

@@ -227,8 +227,6 @@ class DataNilaiController extends Controller
         //     ],['id_cumulative_study', 'year', 'semester', 'id_santri', 'id_course'], ['minimum_score', 'score']);
         // }
 
-        Session::flash('tambah','Data Berhasil Disimpan!');
-
-        return redirect('/administrator/data-nilai');
+        return redirect('/administrator/data-nilai')->with('tambah','Data Berhasil Disimpan!');
     }
 }

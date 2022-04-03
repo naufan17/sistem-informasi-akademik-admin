@@ -137,9 +137,7 @@ class DataJadwalController extends Controller
             'time_end' => $request->time_end,
         ]);
 
-        Session::flash('tambah','Data Berhasil Ditambahkan!');
-
-        return redirect('/administrator/data-jadwal');
+        return redirect('/administrator/data-jadwal')->with('tambah','Data Berhasil Ditambahkan!');
     }
 
     public function formUpdate($id)
@@ -163,17 +161,13 @@ class DataJadwalController extends Controller
             'time_end' => $request->time_end, 
         ]);
 
-        Session::flash('perbarui','Data Berhasil Diperbarui');
-
-        return redirect('/administrator/data-jadwal');
+        return redirect('/administrator/data-jadwal')->with('perbarui','Data Berhasil Diperbarui');
     }
 
     public function delete($id)
     {
         Schedule::where('id_schedule', $id)->delete();
 
-        Session::flash('hapus','Data Berhasil Dihapus!');
-
-        return redirect('/administrator/data-jadwal');
+        return redirect('/administrator/data-jadwal')->with('hapus','Data Berhasil Dihapus!');
     }
 }

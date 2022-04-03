@@ -66,9 +66,7 @@ class DataKelasController extends Controller
             'grade_name' => $request->grade_name, 
         ]);
 
-        Session::flash('tambah','Data Berhasil Ditambahkan!');
-
-        return redirect('/administrator/data-kelas');
+        return redirect('/administrator/data-kelas')->with('tambah','Data Berhasil Ditambahkan!');
     }
 
     public function formUpdate($id)
@@ -90,17 +88,13 @@ class DataKelasController extends Controller
             'grade_name' => $request->grade_name, 
         ]);
 
-        Session::flash('perbarui','Data Berhasil Diperbarui!');
-
-        return redirect('/administrator/data-kelas');
+        return redirect('/administrator/data-kelas')->with('perbarui','Data Berhasil Diperbarui!');
     }
 
     public function delete($id)
     {
         Grade::where('id_grade', $id)->delete();
 
-        Session::flash('hapus','Data Berhasil Dihapus!');
-
-        return redirect('/administrator/data-kelas');
+        return redirect('/administrator/data-kelas')->with('hapus','Data Berhasil Dihapus!');
     }
 }
