@@ -65,7 +65,7 @@
                                 <td class="text-center py-3 px-4">{{ $santri->attendance_mdnu }}<a>%</a></td>
                                 <td class="text-center py-3 px-4">{{ $santri->attendance_asrama }}<a>%</a></td>
                                 <td class="grid justify-items-center py-3 px-4">
-                                    <div class="flex py-3 px-4">
+                                    <div class="flex">
                                         <div class="w-5 mr-2 transform hover:text-purple-500 hover:scale-110">
                                             <a href="{{ url('administrator/data-absensi/form-update') }}/{{ $santri->id_attendance }}">
                                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">

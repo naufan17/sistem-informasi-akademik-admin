@@ -25,7 +25,7 @@
                             <p class="self-center bg-gray-50 py-4 px-4">Jadwal Kelas</p>
                         </div>
                         <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 px-4 py-2 space-y-1">
-                            <p class="self-center text-gray-600">Tingkat</p>
+                            <p class="self-center text-gray-600">Hari</p>
                             <div class="relative z-0 w-full mb-5">
                                 <select type="text" name="day" required onclick="this.setAttribute('value', this.value);"  class="pt-3 pb-2 px-3 block w-full mt-0 bg-transparent border-0 border-b-2 appearance-none z-1 focus:outline-none focus:ring-0 focus:border-black border-gray-200">
                                     <option value="Senin">Senin</option>

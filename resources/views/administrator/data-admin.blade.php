@@ -54,7 +54,7 @@
                                 <!-- <td class="text-center py-3 px-4">passwordadmin</td> -->
                                 <td class="text-center py-3 px-4">{{ $administrator->username }}</td>
                                 <td class="grid justify-items-center py-3 px-4">
-                                    <div class="flex py-3 px-4">
+                                    <div class="flex">
                                         @if(Auth::guard('administrator')->user()->id != $administrator->id )
                                         <div class="w-5 mr-2 transform hover:text-purple-500 hover:scale-110">
                                             <a href="{{ url('administrator/data-admin/form-update') }}/{{ $administrator->id }}">
