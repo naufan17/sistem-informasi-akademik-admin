@@ -198,7 +198,7 @@ class DataNilaiController extends Controller
         ]);
 
         // dump($request);
-        
+
         for($x = 1; $x <= count($request->id_cumulative_study); $x++){
             CumulativeStudy::where('id_cumulative_study', $request->id_cumulative_study[$x])->update([
                 'minimum_score' => 60,
@@ -206,29 +206,6 @@ class DataNilaiController extends Controller
             ]);
         }
 
-        // if(date('m') <= 06 ){
-        //     CumulativeStudy::upsert([
-        //         'id_cumulative_study' => $request->id_cumulative_study,
-        //         'year' => date('Y')-1 . '/' . date('Y'),
-        //         'semester' => 'Genap',
-        //         'id_santri' => $request->id_santri,
-        //         'id_course' => $request->id_course,
-        //         'minimum_score' => 60,
-        //         'score' => $request->score,
-        //     ], ['id_cumulative_study', 'year', 'semester', 'id_santri', 'id_course'], ['minimum_score', 'score']);
-    
-        // }elseif(date('m') > 06 ){
-        //     CumulativeStudy::upsert([
-        //         'id_cumulative_study' => $request->id_cumulative_study,
-        //         'year' => date('Y') . '/' . date('Y')+1,
-        //         'semester' => 'Ganjil',
-        //         'id_santri' => $request->id_santri,
-        //         'id_course' => $request->id_course,
-        //         'minimum_score' => 60,
-        //         'score' => $request->score,
-        //     ],['id_cumulative_study', 'year', 'semester', 'id_santri', 'id_course'], ['minimum_score', 'score']);
-        // }
-
-        return redirect('/administrator/data-nilai')->with('tambah','Data Berhasil Disimpan!');
+        return redirect()->route('administrator.data-nilai.santri', [$request->id_course])->with('tambah','Data Berhasil Disimpan!');
     }
 }
