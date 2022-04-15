@@ -199,10 +199,12 @@ class DataNilaiController extends Controller
 
         // dump($request);
         
-        CumulativeStudy::where('id_cumulative_study', $request->id_cumulative_study)->update([
-            'minimum_score' => 60,
-            'score' => $request->score,
-        ]);
+        for($x = 1; $x <= count($request->id_cumulative_study); $x++){
+            CumulativeStudy::where('id_cumulative_study', $request->id_cumulative_study[$x])->update([
+                'minimum_score' => 60,
+                'score' => $request->score[$x],
+            ]);
+        }
 
         // if(date('m') <= 06 ){
         //     CumulativeStudy::upsert([
