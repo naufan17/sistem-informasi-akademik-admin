@@ -152,7 +152,6 @@ class DataMapelController extends Controller
     public function update(Request $request)
     {
         $request->validate([
-            'id_course' => 'required', 'number',
             'course' => 'required', 'string','max:255',
             'book' => 'required', 'string','max:255',
             'status_course' => 'required', 'string',
@@ -162,7 +161,6 @@ class DataMapelController extends Controller
         ]);
         
         Course::where('id_course', $request->id_course)->update([
-            'id_course' => $request->id_course,
             'course' => $request->course,
             'book' => $request->book,
             'status_course' => $request->status_course,

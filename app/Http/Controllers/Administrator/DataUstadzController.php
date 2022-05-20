@@ -20,7 +20,6 @@ class DataUstadzController extends Controller
     public function index()
     {
         $ustadzs = Ustadz::where('status', 'Aktif')
-                        ->orderBy('name')
                         ->paginate(50);
 
         $filter_status = Ustadz::select('status')
@@ -81,7 +80,6 @@ class DataUstadzController extends Controller
     public function filter(Request $request)
     {
         $ustadzs = Ustadz::where('status', $request->status)
-                        ->orderBy('name')
                         ->paginate(50);
 
         $status = Ustadz::select('status')

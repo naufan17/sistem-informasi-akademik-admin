@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use App\Models\User;
+use App\Models\Ustadz;
 use Maatwebsite\Excel\Concerns\ToModel;
 use Illuminate\Support\Facades\Hash;
 
@@ -15,7 +15,7 @@ class ImportUstadz implements ToModel
     */
     public function model(array $row)
     {
-        return new User([
+        return new Ustadz([
             'id' => $row[0],
             'name' => $row[1],
             'password' => Hash::make($row[2]),
