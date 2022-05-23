@@ -20,7 +20,6 @@ class DataAbsensiController extends Controller
     public function index()
     {
         $santris = Santri::where('status', 'Aktif')
-                        ->orderBy('name')
                         ->paginate(50);
 
         $filter_grade_number = Grade::select('grade_number')
@@ -51,7 +50,6 @@ class DataAbsensiController extends Controller
                                     ->where('status', 'Aktif')
                                     ->where('grade_number', $request->grade_number)
                                     ->where('grade_name', $request->grade_name)
-                                    ->orderBy('name')
                                     ->paginate(50);
 
         }elseif(date('m') > 06 ){
@@ -63,7 +61,6 @@ class DataAbsensiController extends Controller
                                     ->where('status', 'Aktif')
                                     ->where('grade_number', $request->grade_number)
                                     ->where('grade_name', $request->grade_name)
-                                    ->orderBy('name')
                                     ->paginate(50);
         }
 

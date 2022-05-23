@@ -32,7 +32,7 @@
                     <div class="flex space-x-4 py-2">
                         <!--LOGO-->
                         <div class="object-left">
-                            <img src="{{ URL::to('/') }}/images/logo.png" class="w-24">
+                            <a href="/"><img src="{{ URL::to('/') }}/images/logo.png" class="w-24"></a>
                         </div>
                         <!--NAME-->
                         <div class="text-center font-bold font-sans text-yellow-800 mt-2">

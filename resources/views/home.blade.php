@@ -32,7 +32,7 @@
             <div class="flex space-x-4 py-2">
                 <!--LOGO-->
                 <div class="object-left">
-                    <img src="{{ ('images/logo.png ') }}" class="w-24">
+                    <a href="/"><img src="{{ ('images/logo.png ') }}" class="w-24"></a>
                 </div>
                 <!--NAME-->
                 <div class="text-center font-sans font-bold text-yellow-800 mt-3">

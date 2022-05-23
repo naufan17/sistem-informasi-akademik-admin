@@ -20,7 +20,6 @@ class DataKRSController extends Controller
     public function index()
     {   
         $santris = Santri::where('status', 'Aktif')
-                        ->orderBy('name')
                         ->paginate(50);
 
         $filter_grade_number = Grade::select('grade_number')
@@ -51,7 +50,6 @@ class DataKRSController extends Controller
                                     ->where('status', 'Aktif')
                                     ->where('grade_number', $request->grade_number)
                                     ->where('grade_name', $request->grade_name)
-                                    ->orderBy('name')
                                     ->paginate(50);
 
         }elseif(date('m') > 06 ){
@@ -63,7 +61,6 @@ class DataKRSController extends Controller
                                     ->where('status', 'Aktif')
                                     ->where('grade_number', $request->grade_number)
                                     ->where('grade_name', $request->grade_name)
-                                    ->orderBy('name')
                                     ->paginate(50);
         }
 
@@ -339,12 +336,12 @@ class DataKRSController extends Controller
                 'id_course' => $request->id_course,
             ]);
             
-            CumulativeStudy::firstOrCreate([
-                'year' => date('Y')-1 . '/' . date('Y'),
-                'semester' => 'Ganjil',
-                'id_santri' => $request->id_santri,
-                'id_course' => $request->id_course,
-            ]);
+            // CumulativeStudy::firstOrCreate([
+            //     'year' => date('Y')-1 . '/' . date('Y'),
+            //     'semester' => 'Ganjil',
+            //     'id_santri' => $request->id_santri,
+            //     'id_course' => $request->id_course,
+            // ]);
     
         }elseif(date('m') > 06 ){
             CumulativeStudy::firstOrCreate([
@@ -354,12 +351,12 @@ class DataKRSController extends Controller
                 'id_course' => $request->id_course,
             ]);
             
-            CumulativeStudy::firstOrCreate([
-                'year' => date('Y') . '/' . date('Y')+1,
-                'semester' => 'Genap',
-                'id_santri' => $request->id_santri,
-                'id_course' => $request->id_course,
-            ]);
+            // CumulativeStudy::firstOrCreate([
+            //     'year' => date('Y') . '/' . date('Y')+1,
+            //     'semester' => 'Genap',
+            //     'id_santri' => $request->id_santri,
+            //     'id_course' => $request->id_course,
+            // ]);
         }
 
         return redirect()->back()->with('tambah','Data Berhasil Ditambahkan!');
