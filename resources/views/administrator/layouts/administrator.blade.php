@@ -29,7 +29,6 @@
     <link href="https://unpkg.com/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-
 <body class="work-sans leading-normal text-base tracking-normal">
     <div id="app">
         <main>
@@ -56,7 +55,7 @@
             </nav>
             <!-- MENU -->
             <div class="bg-gray-100 font-family-karla flex">
-                <aside class="relative bg-white h-screen w-64 hidden sm:block ">
+                <aside class="relative bg-gray-100 bg-sidebar h-screen w-64 hidden sm:block">
                     <nav class="font-semibold pt-3">
                         <div class="text-gray-900">
                             <div class="pt-6 px-6 mb-8">
@@ -65,7 +64,7 @@
                                     <div class="px-6 py-6">
                                         <img src="https://source.unsplash.com/random/350x350" alt="random image" class="object-center rounded-full">
                                     </div>
-                                -->
+                                    -->
                                     <h4 class="py-6 text-l font-semibold leading-tight truncate">Hai {{ Auth::guard('administrator')->user()->name }}</h4>
                                 </div>
                             </div>

@@ -190,7 +190,6 @@
     <footer class="container mx-auto bg-white py-8 border-t border-gray-400">
         <div class="container flex px-6 py-8 ">
             <div class="w-full mx-auto flex flex-wrap">
-
                 <div class="text-left flex w-full lg:w-1/2 ">
                     <div class="px-3 md:px-0">
                         <h3 class="font-bold text-gray-900">Madrasah Diniyyah Pondok Pesantren Nurul Ummah Yogyakarta</h3>
