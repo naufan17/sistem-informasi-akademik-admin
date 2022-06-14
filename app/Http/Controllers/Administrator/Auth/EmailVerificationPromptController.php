@@ -14,10 +14,10 @@ class EmailVerificationPromptController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return mixed
      */
-    public function __invoke(Request $request)
-    {
-        return $request->user('administrator')->hasVerifiedEmail()
-                    ? redirect()->intended(route('administrator.dashboard'))
-                    : view('administrator.auth.verify-email');
-    }
+    // public function __invoke(Request $request)
+    // {
+    //     return $request->user('administrator')->hasVerifiedEmail()
+    //                 ? redirect()->intended(route('administrator.dashboard'))
+    //                 : view('administrator.auth.verify-email');
+    // }
 }

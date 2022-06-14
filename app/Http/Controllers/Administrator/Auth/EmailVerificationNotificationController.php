@@ -20,23 +20,23 @@ class EmailVerificationNotificationController extends Controller
      */
     public function store(Request $request)
     {
-        if ($request->user('administrator')->hasVerifiedEmail()) {
-            return redirect()->intended(route('administrator.dashboard'));
-        }
+        // if ($request->user('administrator')->hasVerifiedEmail()) {
+        //     return redirect()->intended(route('administrator.dashboard'));
+        // }
 
-        VerifyEmail::createUrlUsing(function ($notifiable) {
-            return URL::temporarySignedRoute(
-                'administrator.verification.verify',
-                Carbon::now()->addMinutes(Config::get('auth.verification.expire', 60)),
-                [
-                    'id' => $notifiable->getKey(),
-                    'hash' => sha1($notifiable->getEmailForVerification()),
-                ]
-            );
-        });
+        // VerifyEmail::createUrlUsing(function ($notifiable) {
+        //     return URL::temporarySignedRoute(
+        //         'administrator.verification.verify',
+        //         Carbon::now()->addMinutes(Config::get('auth.verification.expire', 60)),
+        //         [
+        //             'id' => $notifiable->getKey(),
+        //             'hash' => sha1($notifiable->getEmailForVerification()),
+        //         ]
+        //     );
+        // });
 
-        $request->user('administrator')->sendEmailVerificationNotification();
+        // $request->user('administrator')->sendEmailVerificationNotification();
 
-        return back()->with('status', 'verification-link-sent');
+        // return back()->with('status', 'verification-link-sent');
     }
 }
