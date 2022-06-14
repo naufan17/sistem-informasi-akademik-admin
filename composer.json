@@ -14,7 +14,7 @@
         "laravel/tinker": "^2.5",
         "maatwebsite/excel": "^3.1",
         "phpoffice/phpspreadsheet": "^1.21",
-        "symfony/mailer": "^6.0"
+        "swiftmailer/swiftmailer": "^6.3"
     },
     "require-dev": {
         "facade/ignition": "^2.5",
