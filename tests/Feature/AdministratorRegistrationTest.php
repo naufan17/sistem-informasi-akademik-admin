@@ -21,7 +21,7 @@ class AdministratorRegistrationTest extends TestCase
     {
         $response = $this->post('administrator/register', [
             'name' => 'Test Administrator',
-            'email' => 'test@example.com',
+            'username' => 'Administrator',
             'password' => 'password',
             'password_confirmation' => 'password',
         ]);

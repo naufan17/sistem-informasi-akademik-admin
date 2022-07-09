@@ -17,7 +17,6 @@ class CreateadministratorsTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('username')->unique();
-            // $table->string('email')->unique();
             $table->enum('status', ['Aktif', 'Tidak aktif'])->default('Aktif');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');

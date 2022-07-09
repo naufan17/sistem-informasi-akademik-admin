@@ -23,7 +23,7 @@ class AdministratorAuthenticationTest extends TestCase
         $administrator = Administrator::factory()->create();
 
         $response = $this->post('administrator/login', [
-            'email' => $administrator->email,
+            'username' => $administrator->username,
             'password' => 'password',
         ]);
 
@@ -36,7 +36,7 @@ class AdministratorAuthenticationTest extends TestCase
         $administrator = Administrator::factory()->create();
 
         $this->post('administrator/login', [
-            'email' => $administrator->email,
+            'username' => $administrator->username,
             'password' => 'wrong-password',
         ]);
 
