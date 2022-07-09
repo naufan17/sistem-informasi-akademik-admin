@@ -17,8 +17,7 @@ class CreateCoursesTable extends Migration
             $table->id('id_course');
             $table->string('course');
             $table->string('book');
-            $table->integer('sem');
-            $table->enum('status', ['Aktif', 'Tidak aktif'])->default('Aktif');
+            $table->enum('status_course', ['Aktif', 'Tidak aktif'])->default('Aktif');
             $table->unsignedBigInteger('id_grade');
             $table->unsignedBigInteger('id_schedule');
             $table->unsignedBigInteger('id_ustadz');
@@ -26,7 +25,7 @@ class CreateCoursesTable extends Migration
             $table->softDeletes();
             $table->foreign('id_grade')->references('id_grade')->on('grades');
             $table->foreign('id_schedule')->references('id_schedule')->on('schedules');
-            $table->foreign('id_ustadz')->references('id_ustadz')->on('ustadzs');
+            $table->foreign('id_ustadz')->references('id')->on('ustadzs');
         });
     }
 

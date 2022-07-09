@@ -38,7 +38,6 @@ class CreateUsersTable extends Migration
             $table->date('birthday_mother')->nullable();
             $table->string('parent_address')->nullable();
             $table->string('phone_number_parent')->nullable();
-            $table->enum('role', ['santri', 'ustadz'])->default('santri');
             $table->enum('status', ['Aktif', 'Tidak aktif'])->default('Aktif');
             $table->string('password');
             $table->timestamp('email_verified_at')->nullable();

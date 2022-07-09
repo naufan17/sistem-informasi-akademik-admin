@@ -14,7 +14,7 @@ class CreateUstadzsTable extends Migration
     public function up()
     {
         Schema::create('ustadzs', function (Blueprint $table) {
-            $table->id('id_ustadz');
+            $table->id();
             $table->string('name');
             $table->string('place_born')->nullable();
             $table->date('birthday')->nullable();
