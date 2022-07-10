@@ -16,11 +16,6 @@
                         </div>
                         <div class="flex-none w-1/5">
                             <div class="relative">
-                                <div class="pointer-events-none absolute inset-y-0 right-3 flex items-center text-grey-darker">
-                                    <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0">
-                                        <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
-                                    </svg>
-                                </div>
                                 <select type="number" name="grade_number" value="" class="block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker px-4 pr-8 rounded" id="grid-state">
                                     @foreach($grade_number as $filter)
                                     <option selected value="{{ $filter->grade_number }}">{{ $filter->grade_number }}</option>
@@ -38,11 +33,6 @@
                         </div>
                         <div class="flex-none w-1/5">
                             <div class="relative">
-                                <div class="pointer-events-none absolute inset-y-0 right-3 flex items-center text-grey-darker">
-                                    <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0">
-                                        <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
-                                    </svg>
-                                </div>
                                 <select type="text" name="grade_name" value="" class="block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker px-4 pr-8 rounded" id="grid-state">
                                     @foreach($grade_name as $filter)
                                     <option selected value="{{ $filter->grade_name }}">{{ $filter->grade_name }}</option>
@@ -66,11 +56,6 @@
                         </div>
                         <div class="flex-none w-1/5">
                             <div class="relative">
-                                <div class="pointer-events-none absolute inset-y-0 right-3 flex items-center text-grey-darker">
-                                    <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0">
-                                        <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
-                                    </svg>
-                                </div>
                                 <select type="text" name="status" value="" class="block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker px-4 pr-8 rounded" id="grid-state">
                                     @foreach($status as $filter)
                                     <option selected value="{{ $filter->status }}">{{ $filter->status }}</option>

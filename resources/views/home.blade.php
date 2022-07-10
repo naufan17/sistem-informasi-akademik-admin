@@ -18,10 +18,6 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 
-    <!-- Tailwind -->
-    <link href="https://unpkg.com/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-
     <!--Replace with your tailwind.css once created-->
     <link href="https://fonts.googleapis.com/css?family=Work+Sans:200,400&display=swap" rel="stylesheet">
 </head>

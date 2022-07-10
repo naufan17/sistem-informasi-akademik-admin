@@ -25,11 +25,6 @@
                         <input type="hidden" name="id" value="{{ $id_santri }}" class="self-center w-full bg-transparent border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-200" />
                         <div class="flex-none md:w-1/5">
                             <div class="relative">
-                                <div class="pointer-events-none absolute inset-y-0 right-3 flex items-center text-grey-darker">
-                                    <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                                        <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
-                                    </svg>
-                                </div>
                                 <select type="text" name="semester" value=""  class="block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker px-4 pr-8 rounded" id="grid-state">
                                     @foreach($semesters as $filter)    
                                     <option selected value="{{ $filter->semester }}">{{ $filter->semester }}</option>
@@ -47,11 +42,6 @@
                         </div>
                         <div class="flex-none md:w-1/5">
                             <div class="relative">
-                                <div class="pointer-events-none absolute inset-y-0 right-3 flex items-center text-grey-darker">
-                                    <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                                        <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
-                                    </svg>
-                                </div>
                                 <select type="text" name="year" value=""  class="block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker px-4 pr-8 rounded" id="grid-state">
                                     @foreach($years as $filter)    
                                     <option selected value="{{ $filter->year }}">{{ $filter->year }}</option>
@@ -132,11 +122,6 @@
                         <input type="hidden" name="id" value="{{ $id_santri }}" class="self-center w-full bg-transparent border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-200" />
                         <div class="flex-none w-1/5">
                             <div class="relative">
-                                <div class="pointer-events-none absolute inset-y-0 right-3 flex items-center text-grey-darker">
-                                    <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0">
-                                        <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
-                                    </svg>
-                                </div>
                                 <select type="number" name="grade_number" value="" class="block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker px-4 pr-8 rounded" id="grid-state">
                                     @foreach($grade_number as $filter)
                                     <option selected value="{{ $filter->grade_number }}">{{ $filter->grade_number }}</option>
@@ -154,11 +139,6 @@
                         </div>
                         <div class="flex-none w-1/5">
                             <div class="relative">
-                                <div class="pointer-events-none absolute inset-y-0 right-3 flex items-center text-grey-darker">
-                                    <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0">
-                                        <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
-                                    </svg>
-                                </div>
                                 <select type="text" name="grade_name" value="" class="block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker px-4 pr-8 rounded" id="grid-state">
                                     @foreach($grade_name as $filter)
                                     <option selected value="{{ $filter->grade_name }}">{{ $filter->grade_name }}</option>

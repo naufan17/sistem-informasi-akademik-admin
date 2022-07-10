@@ -26,10 +26,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css" />
 
     <!-- Tailwind -->
-    <link href="https://unpkg.com/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- <link href="https://unpkg.com/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script> -->
 </head>
-<body class="work-sans leading-normal text-base tracking-normal">
+<body class="work-sans leading-normal sm:text-base text-sm tracking-normal">
     <div id="app">
         <main>
             <!-- HEADER -->
@@ -42,20 +42,20 @@
                         </div>
                         <!--NAME-->
                         <div class="text-center font-bold font-sans text-yellow-800 mt-2">
-                            <a class="text-base">MADRASAH DINIYYAH</a><br>
+                            <a>MADRASAH DINIYYAH</a><br>
                             <a class="text-2xl font-bold">NURUL UMMAH</a><br>
-                            <a class="text-base tracking-widest">YOGYAKARTA</a>
+                            <a class="tracking-widest">YOGYAKARTA</a>
                         </div>
                     </div>
                     <div class="font-bold text-yellow-600 text-right">
                         <a class="text-xl">SISTEM INFORMASI AKADEMIK <br></a>
-                        <a class="text-base tracking-widest">M D N U</a>
+                        <a class="tracking-widest">M D N U</a>
                     </div>
                 </div>
             </nav>
             <!-- MENU -->
             <div class="bg-gray-100 font-family-karla flex">
-                <aside class="relative bg-gray-100 bg-sidebar h-screen w-64 hidden sm:block">
+                <aside class="relative bg-gray-100 h-screen w-64 hidden sm:block">
                     <nav class="font-semibold pt-3">
                         <div class="text-gray-900">
                             <div class="pt-6 px-6 mb-8">
@@ -148,7 +148,7 @@
                 </div>
             </div>
             <!-- FOOTER -->
-            <footer class="w-full bg-white p-8 border-t border-gray-400">
+            <footer class="w-full bg-white p-6 border-t border-gray-400">
                 <div class="px-3">
                     <h3 class="text-center font-medium text-gray-900">Madrasah Diniyyah Pondok Pesantren Nurul Ummah Yogyakarta - 2021</h3>
                 </div>
