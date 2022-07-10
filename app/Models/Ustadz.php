@@ -19,26 +19,10 @@ class Ustadz extends Authenticatable
      *
      * @var array
      */
-
     protected $fillable = [
         'id',
         'name',
-        'place_born',
-        'birthday',
-        'gender',
-        'id_number',
-        'blood',
-        'phone_number',
-        'email',
-        'address',
-        'RT',
-        'RW',
-        'village',
-        'districs',
-        'regency',
-        'province',
         'status',
-        'password',
     ];
 
     /**

@@ -13,41 +13,17 @@ class Santri extends Authenticatable
 {
     use HasFactory, Notifiable, SoftDeletes;
 
-    // protected $guard = 'santri';
+    protected $guard = 'santri';
 
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
-
     protected $fillable = [
         'id',
         'name',
-        'place_born',
-        'birthday',
-        'gender',
-        'id_number',
-        'blood',
-        'phone_number',
-        'email',
-        'address',
-        'RT',
-        'RW',
-        'village',
-        'districs',
-        'regency',
-        'province',
-        'father_name',
-        'place_born_father', 
-        'birthday_father',
-        'mother_name',
-        'place_born_mother', 
-        'birthday_mother', 
-        'parent_address', 
-        'phone_number_parent', 
         'status',
-        'password',
     ];
 
     /**

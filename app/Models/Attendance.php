@@ -23,7 +23,6 @@ class Attendance extends Model
         'minimum_attendance_asrama',
         'attendance_asrama',
         'id_santri',
-        'id_course',
     ];
 
 }
