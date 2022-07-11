@@ -24,6 +24,7 @@ class Santri extends Authenticatable
         'id',
         'name',
         'status',
+        'password',
     ];
 
     /**
@@ -32,7 +33,6 @@ class Santri extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password',
         'remember_token',
     ];
 

@@ -10,6 +10,8 @@ class Attendance extends Model
 {
     use HasFactory, Notifiable;
 
+    protected $primaryKey = 'id_attendance';
+
     /**
      * The attributes that are mass assignable.
      *

@@ -10,6 +10,8 @@ class CumulativeStudy extends Model
 {
     use HasFactory, Notifiable;
 
+    protected $primaryKey = 'id_cumulative_study';
+
     /**
      * The attributes that are mass assignable.
      *

@@ -50,9 +50,8 @@ class DataUstadzController extends Controller
         Ustadz::create([
             'id' => $request->id,
             'name' => $request->name,
-            'password' => Hash::make($request->password),
-            'role' => 'Ustadz',
             'status' => 'Aktif',
+            'password' => Hash::make($request->password),
         ]);
 
         return redirect('/administrator/data-ustadz')->with('tambah','Data Berhasil Ditambahkan!');

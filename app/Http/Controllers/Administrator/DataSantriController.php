@@ -66,9 +66,8 @@ class DataSantriController extends Controller
         Santri::create([
             'id' => $request->id,
             'name' => $request->name,
-            'password' => Hash::make($request->password),
-            'role' => 'Santri',
             'status' => 'Aktif',
+            'password' => Hash::make($request->password),
         ]);
 
         return redirect('/administrator/data-santri')->with('tambah','Data Berhasil Ditambahkan!');

@@ -11,6 +11,8 @@ class Grade extends Model
 {
     use HasFactory, Notifiable, SoftDeletes;
 
+    protected $primaryKey = 'id_grade';
+
     /**
      * The attributes that are mass assignable.
      *

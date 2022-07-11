@@ -11,6 +11,8 @@ class Schedule extends Model
 {
     use HasFactory, Notifiable, SoftDeletes;
 
+    protected $primaryKey = 'id_schedule';
+
     /**
      * The attributes that are mass assignable.
      *

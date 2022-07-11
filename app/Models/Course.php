@@ -11,6 +11,8 @@ class Course extends Model
 {
     use HasFactory, Notifiable, SoftDeletes;
 
+    protected $primaryKey = 'id_course';
+
     /**
      * The attributes that are mass assignable.
      *
