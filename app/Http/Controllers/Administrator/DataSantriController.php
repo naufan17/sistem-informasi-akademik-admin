@@ -3,14 +3,14 @@
 namespace App\Http\Controllers\Administrator;
 
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Session;
-use Maatwebsite\Excel\Facades\Excel;
+use Illuminate\Validation\Rules\Password;
+use App\Http\Controllers\Controller;
 use App\Models\CumulativeStudy;
 use App\Models\Grade;
 use App\Models\ImportSantri;
 use App\Models\Santri;
+use Maatwebsite\Excel\Facades\Excel;
 
 class DataSantriController extends Controller
 {
@@ -60,7 +60,7 @@ class DataSantriController extends Controller
         $request->validate([
             'id' => 'required', 'number', 'max:255',
             'name' => 'required', 'string', 'max:255',
-            'password' => 'required', 'string', 'min:8', 'confirmed',
+            'password' => 'required', 'string', Password::min(8), 'confirmed',
         ]);
 
         Santri::create([
@@ -206,7 +206,7 @@ class DataSantriController extends Controller
     public function updatePassword(Request $request)
     {
         $request->validate([
-            'password' => 'required', 'string', 'min:8', 'confirmed',
+            'password' => 'required', 'string', Password::min(8), 'confirmed',
         ]);
 
         Santri::where('id', $request->id)->update([

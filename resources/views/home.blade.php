@@ -5,7 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
     <title>SIAKAD MDNU</title>
+
+    <!-- Browser tab logo -->
+    <link rel="icon" type="image/png" href="{{ asset('images/logo.png') }}"/>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
