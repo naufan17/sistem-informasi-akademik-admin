@@ -41,9 +41,9 @@ class DataUstadzController extends Controller
     public function create(Request $request)
     {
         $request->validate([
-            'id' => 'required', 'number', 'max:255',
-            'name' => 'required', 'string', 'max:255',
-            'password' => 'required', 'min:8', 'confirmed',
+            'id' => 'required|max:255',
+            'name' => 'required|string|max:255',
+            'password' => 'required|min:8|confirmed',
         ]);
 
         Ustadz::create([
@@ -103,13 +103,11 @@ class DataUstadzController extends Controller
     public function updateProfile(Request $request)
     {
         $request->validate([
-            'id' => 'required', 'number', 'max:255',
-            'name' => 'required', 'string', 'max:255',
-            'status' => 'required', 'string',
+            'name' => 'required|string|max:255',
+            'status' => 'required|string',
         ]);
         
         Ustadz::where('id', $request->id)->update([
-            'id' => $request->id,
             'name' => $request->name, 
             'status' => $request->status, 
         ]);
@@ -120,7 +118,7 @@ class DataUstadzController extends Controller
     public function updatePassword(Request $request)
     {
         $request->validate([
-            'password' => 'required', 'min:8', 'confirmed',
+            'password' => 'required|min:8|confirmed',
         ]);
 
         Ustadz::where('id', $request->id)->update([

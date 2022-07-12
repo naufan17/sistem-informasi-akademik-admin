@@ -53,7 +53,8 @@
                         </div>
                     </div>
                 </form>
-                <form method="GET" action="{{ url('administrator/data-ustadz/update-password') }}">
+                <form method="POST" action="{{ url('administrator/data-ustadz/update-password') }}">
+                    @csrf
                     <div class="pb-8">
                         <div class="pt-8">
                             <p class="self-center bg-gray-50 py-4 px-4">Update Password</p>

@@ -110,12 +110,12 @@ class DataMapelController extends Controller
     public function create(Request $request)
     {
         $request->validate([
-            'id_course' => 'required', 'number',
-            'course' => 'required', 'string', 'max:255',
-            'book' => 'required', 'string', 'max:255',
-            'id_grade' => 'required', 'number',
-            'id_schedule' => 'required', 'number',
-            'id_ustadz' => 'required', 'number',
+            'id_course' => 'required',
+            'course' => 'required|string|max:255',
+            'book' => 'required|string|max:255',
+            'id_grade' => 'required',
+            'id_schedule' => 'required',
+            'id_ustadz' => 'required',
         ]);
 
         Course::firstOrCreate([
@@ -151,12 +151,12 @@ class DataMapelController extends Controller
     public function update(Request $request)
     {
         $request->validate([
-            'course' => 'required', 'string', 'max:255',
-            'book' => 'required', 'string', 'max:255',
-            'status_course' => 'required', 'string',
-            'id_grade' => 'required', 'number',
-            'id_schedule' => 'required', 'number',
-            'id_ustadz' => 'required', 'number',
+            'course' => 'required|string|max:255',
+            'book' => 'required|string|max:255',
+            'status_course' => 'required|string',
+            'id_grade' => 'required',
+            'id_schedule' => 'required',
+            'id_ustadz' => 'required',
         ]);
         
         Course::where('id_course', $request->id_course)->update([

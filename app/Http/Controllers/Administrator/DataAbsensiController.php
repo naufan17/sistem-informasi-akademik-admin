@@ -105,10 +105,10 @@ class DataAbsensiController extends Controller
     public function create(Request $request)
     {
         $request->validate([
-            'attendance_mdnu' => 'required', 'number',
-            'attendance_asrama' => 'required', 'number',
-            'semester' => 'required', 'number', 'string',
-            'year' => 'required', 'number', 'string',
+            'attendance_mdnu' => 'required',
+            'attendance_asrama' => 'required',
+            'semester' => 'required|string',
+            'year' => 'required|string',
         ]);
 
         Attendance::firstOrCreate([
@@ -134,8 +134,8 @@ class DataAbsensiController extends Controller
     public function update(Request $request)
     {
         $request->validate([
-            'attendance_mdnu' => 'required', 'number',
-            'attendance_asrama' => 'required', 'number',
+            'attendance_mdnu' => 'required',
+            'attendance_asrama' => 'required',
         ]);
         
         Attendance::where('id_attendance', $request->id_attendance)->update([

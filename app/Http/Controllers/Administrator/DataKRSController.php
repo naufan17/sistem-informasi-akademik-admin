@@ -323,8 +323,8 @@ class DataKRSController extends Controller
     public function create(Request $request)
     {
         $request->validate([
-            'id_santri' => 'required', 'number',
-            'id_course' => 'required', 'number',
+            'id_santri' => 'required',
+            'id_course' => 'required',
         ]);
 
         if(date('m') <= 06 ){

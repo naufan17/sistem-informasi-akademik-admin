@@ -192,8 +192,7 @@ class DataNilaiController extends Controller
     public function createNilai(Request $request)
     {
         $request->validate([
-            'id_cumulative_study' => 'required', 'number',
-            'score' => 'required', 'number',
+            'score' => 'required',
         ]);
 
         // dump($request);

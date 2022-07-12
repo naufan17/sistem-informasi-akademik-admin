@@ -125,9 +125,9 @@ class DataJadwalController extends Controller
     public function create(Request $request)
     {
         $request->validate([
-            'day' => 'required', 'string', 'max:255',
-            'time_begin' => 'required', 'string', 'max:255',
-            'time_end' => 'required', 'string', 'max:255',
+            'day' => 'required|string',
+            'time_begin' => 'required|string',
+            'time_end' => 'required|string',
         ]);
 
         Schedule::firstOrCreate([
@@ -149,9 +149,9 @@ class DataJadwalController extends Controller
     public function update(Request $request)
     {
         $request->validate([
-            'day' => 'required', 'string', 'max:255',
-            'time_begin' => 'required', 'string', 'max:255',
-            'time_end' => 'required', 'string', 'max:255',
+            'day' => 'required|string',
+            'time_begin' => 'required|string',
+            'time_end' => 'required|string',
         ]);
         
         Schedule::where('id_schedule', $request->id_schedule)->update([

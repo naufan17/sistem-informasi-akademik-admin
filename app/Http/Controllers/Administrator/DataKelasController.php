@@ -56,8 +56,8 @@ class DataKelasController extends Controller
     public function create(Request $request)
     {
         $request->validate([
-            'grade_number' => 'required', 'number',
-            'grade_name' => 'required', 'string', 'max:255',
+            'grade_number' => 'required',
+            'grade_name' => 'required|string',
         ]);
 
         Grade::firstOrCreate([
@@ -78,8 +78,8 @@ class DataKelasController extends Controller
     public function update(Request $request)
     {
         $request->validate([
-            'grade_number' => 'required', 'number',
-            'grade_name' => 'required', 'string', 'max:255',
+            'grade_number' => 'required',
+            'grade_name' => 'required|string',
         ]);
         
         Grade::where('id_grade', $request->id_grade)->update([
