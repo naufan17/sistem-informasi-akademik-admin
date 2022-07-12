@@ -2,13 +2,12 @@
 
 namespace App\Http\Controllers\Administrator;
 
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Attendance;
 use App\Models\CumulativeStudy;
 use App\Models\Grade;
 use App\Models\Santri;
-use Illuminate\Support\Facades\Session;
+use Illuminate\Http\Request;
 
 class DataAbsensiController extends Controller
 {

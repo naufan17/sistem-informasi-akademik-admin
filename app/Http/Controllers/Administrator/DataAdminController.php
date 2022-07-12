@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\Administrator;
 
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Administrator;
 use Illuminate\Auth\Notifications\VerifyEmail;
+use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Config;
@@ -35,10 +35,10 @@ class DataAdminController extends Controller
     public function create(Request $request)
     {
         $request->validate([
-            'name' => 'required', 'string', 'max:255',
-            'username' => 'required', 'string', 'max:255',
-            // 'email' => 'required', 'string', 'email', 'max:255', 'unique:administrators',
-            'password' => 'required', 'string', 'confirmed', 'min:8',
+            'name' => 'required|string|max:255',
+            'username' => 'required|string|max:255',
+            // 'email' => 'required|string|email|max:255|unique:administrators',
+            'password' => 'required|min:8|confirmed',
         ]);
 
         Administrator::create([
@@ -72,9 +72,9 @@ class DataAdminController extends Controller
     public function updateProfile(Request $request)
     {
         $request->validate([
-            'name' => 'required', 'string', 'max:255',
-            'username' => 'required', 'string', 'max:255',
-            // 'email' => 'required', 'string', 'email', 'max:255', 'unique:administrators',
+            'name' => 'required|string|max:255',
+            'username' => 'required|string|max:255',
+            // 'email' => 'required|string|email|max:255|unique:administrators',
         ]);
 
         Administrator::where('id', $request->id)->update([
@@ -89,7 +89,7 @@ class DataAdminController extends Controller
     public function updatePassword(Request $request)
     {
         $request->validate([
-            'password' => 'required', 'string', 'confirmed', 'min:8',
+            'password' => 'required|min:8|confirmed',
         ]);
         
         Administrator::where('id', $request->id)->update([

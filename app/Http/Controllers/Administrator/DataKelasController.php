@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers\Administrator;
 
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Grade;
-use Illuminate\Support\Facades\Session;
+use Illuminate\Http\Request;
 
 class DataKelasController extends Controller
 {
@@ -58,7 +57,7 @@ class DataKelasController extends Controller
     {
         $request->validate([
             'grade_number' => 'required', 'number',
-            'grade_name' => 'required', 'string','max:255',
+            'grade_name' => 'required', 'string', 'max:255',
         ]);
 
         Grade::firstOrCreate([
@@ -80,7 +79,7 @@ class DataKelasController extends Controller
     {
         $request->validate([
             'grade_number' => 'required', 'number',
-            'grade_name' => 'required', 'string','max:255',
+            'grade_name' => 'required', 'string', 'max:255',
         ]);
         
         Grade::where('id_grade', $request->id_grade)->update([

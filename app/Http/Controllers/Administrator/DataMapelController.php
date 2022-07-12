@@ -2,13 +2,12 @@
 
 namespace App\Http\Controllers\Administrator;
 
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Course;
 use App\Models\Grade;
 use App\Models\Schedule;
 use App\Models\Ustadz;
-use Illuminate\Support\Facades\Session;
+use Illuminate\Http\Request;
 
 class DataMapelController extends Controller
 {
@@ -112,8 +111,8 @@ class DataMapelController extends Controller
     {
         $request->validate([
             'id_course' => 'required', 'number',
-            'course' => 'required', 'string','max:255',
-            'book' => 'required', 'string','max:255',
+            'course' => 'required', 'string', 'max:255',
+            'book' => 'required', 'string', 'max:255',
             'id_grade' => 'required', 'number',
             'id_schedule' => 'required', 'number',
             'id_ustadz' => 'required', 'number',
@@ -152,8 +151,8 @@ class DataMapelController extends Controller
     public function update(Request $request)
     {
         $request->validate([
-            'course' => 'required', 'string','max:255',
-            'book' => 'required', 'string','max:255',
+            'course' => 'required', 'string', 'max:255',
+            'book' => 'required', 'string', 'max:255',
             'status_course' => 'required', 'string',
             'id_grade' => 'required', 'number',
             'id_schedule' => 'required', 'number',

@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers\Administrator;
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Validation\Rules\Password;
 use App\Http\Controllers\Controller;
 use App\Models\Ustadz;
 use App\Models\ImportUstadz;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use Maatwebsite\Excel\Facades\Excel;
 
 class DataUstadzController extends Controller
@@ -44,7 +43,7 @@ class DataUstadzController extends Controller
         $request->validate([
             'id' => 'required', 'number', 'max:255',
             'name' => 'required', 'string', 'max:255',
-            'password' => 'required', 'string', Password::min(8), 'confirmed',
+            'password' => 'required', 'min:8', 'confirmed',
         ]);
 
         Ustadz::create([
@@ -121,7 +120,7 @@ class DataUstadzController extends Controller
     public function updatePassword(Request $request)
     {
         $request->validate([
-            'password' => 'required', 'string', Password::min(8), 'confirmed',
+            'password' => 'required', 'min:8', 'confirmed',
         ]);
 
         Ustadz::where('id', $request->id)->update([

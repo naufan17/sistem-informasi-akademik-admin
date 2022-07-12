@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers\Administrator;
 
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Course;
 use App\Models\CumulativeStudy;
 use App\Models\Grade;
-use Illuminate\Support\Facades\Session;
+use Illuminate\Http\Request;
 
 class DataNilaiController extends Controller
 {

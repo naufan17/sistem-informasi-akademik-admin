@@ -8,7 +8,6 @@ use App\Models\Course;
 use App\Models\CumulativeStudy;
 use App\Models\Grade;
 use App\Models\Santri;
-use Illuminate\Support\Facades\Session;
 
 class DataKRSController extends Controller
 {

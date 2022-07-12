@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers\Administrator;
 
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Course;
 use App\Models\Grade;
 use App\Models\Schedule;
-use Illuminate\Support\Facades\Session;
+use Illuminate\Http\Request;
 
 class DataJadwalController extends Controller
 {
@@ -126,9 +125,9 @@ class DataJadwalController extends Controller
     public function create(Request $request)
     {
         $request->validate([
-            'day' => 'required', 'string','max:255',
-            'time_begin' => 'required', 'string','max:255',
-            'time_end' => 'required', 'string','max:255',
+            'day' => 'required', 'string', 'max:255',
+            'time_begin' => 'required', 'string', 'max:255',
+            'time_end' => 'required', 'string', 'max:255',
         ]);
 
         Schedule::firstOrCreate([
@@ -150,9 +149,9 @@ class DataJadwalController extends Controller
     public function update(Request $request)
     {
         $request->validate([
-            'day' => 'required', 'string','max:255',
-            'time_begin' => 'required', 'string','max:255',
-            'time_end' => 'required', 'string','max:255',
+            'day' => 'required', 'string', 'max:255',
+            'time_begin' => 'required', 'string', 'max:255',
+            'time_end' => 'required', 'string', 'max:255',
         ]);
         
         Schedule::where('id_schedule', $request->id_schedule)->update([
