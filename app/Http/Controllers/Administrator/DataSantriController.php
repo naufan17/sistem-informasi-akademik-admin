@@ -21,6 +21,7 @@ class DataSantriController extends Controller
     public function index()
     {
         $santris = Santri::where('status', 'Aktif')
+                        ->orderBy('id')
                         ->paginate(50);
 
         $filter_grade_number = Grade::select('grade_number')
@@ -102,6 +103,7 @@ class DataSantriController extends Controller
                                     ->where('status', 'Aktif')
                                     ->where('grade_number', $request->grade_number)
                                     ->where('grade_name', $request->grade_name)
+                                    ->orderBy('id_santri')
                                     ->paginate(50);
 
         }elseif(date('m') > 06 ){
@@ -113,6 +115,7 @@ class DataSantriController extends Controller
                                     ->where('status', 'Aktif')
                                     ->where('grade_number', $request->grade_number)
                                     ->where('grade_name', $request->grade_name)
+                                    ->orderBy('id_santri')
                                     ->paginate(50);
         }
 
@@ -149,6 +152,7 @@ class DataSantriController extends Controller
     public function filterStatus(Request $request)
     {
         $santris = Santri::where('status', $request->status)
+                        ->orderBy('id')
                         ->paginate(50);
 
         $filter_grade_number = Grade::select('grade_number')
