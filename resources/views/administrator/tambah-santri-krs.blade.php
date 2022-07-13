@@ -154,7 +154,17 @@
                         </div>
                     </div>
                 </form>
-                <p class="text-xl my-4 flex items-center">Daftar Mata Pelajaran</p>
+                <p class="text-xl mt-4 flex items-center border-b-2">Daftar Mata Pelajaran</p>
+                <div class="flex flex-row-reverse object-left text-center text-white text-base py-4">
+                    <form method="POST" action="{{ url('administrator/data-krs/create-all') }}">
+                        @csrf
+                        @foreach($courses as $course)
+                        <input type="hidden" name="id_santri[{{ $loop->iteration }}]" value="{{ $id_santri }}" class="py-2 px-3 block w-full bg-transparent border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-300" />
+                        <input type="hidden" name="id_course[{{ $loop->iteration }}]" value="{{ $course->id_course }}" class="py-2 px-3 block w-full bg-transparent border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-300" />
+                        @endforeach
+                        <button type="submit" class="bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-2.5 px-6">Tambah Semua</button>
+                    </form>
+                </div>
                 <div class="bg-white overflow-auto pb-8">
                     <table class="table-auto bg-white">
                         <thead class="bg-gray-800 text-white">

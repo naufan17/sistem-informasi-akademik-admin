@@ -364,6 +364,55 @@ class DataKRSController extends Controller
         return redirect()->back()->with('tambah','Data Berhasil Ditambahkan!');
     }
 
+    public function createAll(Request $request)
+    {
+        $request->validate([
+            'id_santri' => 'required',
+            'id_course' => 'required',
+        ]);
+
+        if(date('m') <= 06 ){
+            for($x = 1; $x <= count($request->id_santri); $x++){
+                CumulativeStudy::firstOrCreate([
+                    'year' => date('Y')-1 . '/' . date('Y'),
+                    'semester' => 'Genap',
+                    'id_santri' => $request->id_santri[$x],
+                    'id_course' => $request->id_course[$x],
+                ]);
+
+                // CumulativeStudy::firstOrCreate([
+                //     'year' => date('Y') . '/' . date('Y')+1,
+                //     'semester' => 'Ganjil',
+                //     'id_santri' => $request->id_santri[$x],
+                //     'id_course' => $request->id_course[$x],
+                // ]);
+            }
+
+        }elseif(date('m') > 06 ){
+            for($x = 1; $x <= count($request->id_santri); $x++){
+                CumulativeStudy::firstOrCreate([
+                    'year' => date('Y') . '/' . date('Y')+1,
+                    'semester' => 'Ganjil',
+                    'id_santri' => $request->id_santri[$x],
+                    'id_course' => $request->id_course[$x],
+                ]);
+
+                // CumulativeStudy::firstOrCreate([
+                //     'year' => date('Y')-1 . '/' . date('Y'),
+                //     'semester' => 'Genap',
+                //     'id_santri' => $request->id_santri[$x],
+                //     'id_course' => $request->id_course[$x],
+                // ]);
+            }
+        }
+
+        return redirect()->route('administrator.data-krs.form-create', [$request->id_santri[1]])->with('tambah','Data Berhasil Ditambahkan!');
+
+        // return redirect('/administrator/data-krs/form-create')->with('tambah','Data Berhasil Ditambahkan!');
+
+        // return redirect()->back()->with('tambah','Data Berhasil Ditambahkan!');
+    }
+
     public function delete($id)
     {
         CumulativeStudy::where('id_cumulative_study', $id)->delete();
