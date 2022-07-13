@@ -18,7 +18,7 @@ class DataJadwalController extends Controller
     public function index()
     {
         $schedules = Schedule::orderBy('day', 'desc')
-                            ->orderBy('time_begin')
+                            ->orderBy('day', 'desc')
                             ->get();
 
         $filter_grade_number = Grade::select('grade_number')
@@ -30,6 +30,7 @@ class DataJadwalController extends Controller
                                     ->get();
 
         $filter_day = Schedule::select('day')
+                            ->orderBy('day', 'desc')
                             ->distinct()
                             ->get();
         
@@ -61,6 +62,7 @@ class DataJadwalController extends Controller
                                     ->get();
 
         $filter_day = Schedule::select('day')
+                            ->orderBy('day', 'desc')
                             ->distinct()
                             ->get();
 
@@ -100,6 +102,7 @@ class DataJadwalController extends Controller
                             ->get();
 
         $filter_day = Schedule::select('day')
+                            ->orderBy('day', 'desc')
                             ->distinct()
                             ->get();
 

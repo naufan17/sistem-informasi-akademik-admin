@@ -407,10 +407,6 @@ class DataKRSController extends Controller
         }
 
         return redirect()->route('administrator.data-krs.form-create', [$request->id_santri[1]])->with('tambah','Data Berhasil Ditambahkan!');
-
-        // return redirect('/administrator/data-krs/form-create')->with('tambah','Data Berhasil Ditambahkan!');
-
-        // return redirect()->back()->with('tambah','Data Berhasil Ditambahkan!');
     }
 
     public function delete($id)
