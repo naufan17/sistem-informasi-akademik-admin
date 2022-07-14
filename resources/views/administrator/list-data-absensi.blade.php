@@ -17,11 +17,13 @@
                     </a>
                 </div>
                 <p class="text-xl pt-4 flex items-center border-b-2">Input Presentase Absensi ke Santri</p>
+                @if($add_absensi === true)
                 <div class="flex flex-row-reverse object-left text-center text-white text-base py-4">
                     <a href="{{ url('administrator/data-absensi/form-create') }}/{{ $idSantri }}" class="button bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-2.5 px-6">
                         Tambah Absensi
                     </a>
                 </div>
+                @endif
                 @if($tambah = Session::get('tambah'))
                 <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mb-2" role="alert">
                     <span class="block sm:inline">{{ $tambah }}</span>
@@ -44,6 +46,11 @@
                     </span>
                 </div>
                 @endif
+                @if($add_absensi === true)
+                <div class="flex-1 text-center">
+                    <h1 class="text-lg text-black pb-6">Absensi Masih Kosong</h1>
+                </div>
+                @else
                 <div class="bg-white overflow-auto pb-8">
                     <table class="table-auto bg-white">
                         <thead class="bg-gray-800 text-white">
@@ -87,6 +94,7 @@
                         </tbody>
                     </table>
                 </div>
+                @endif
             </div>
         </main>
     </div>

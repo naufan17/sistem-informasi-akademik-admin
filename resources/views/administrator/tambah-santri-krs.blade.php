@@ -73,6 +73,11 @@
                     </span>
                 </div>
                 @endif
+                @if($cumulativestudys->isEmpty())
+                <div class="flex-1 text-center">
+                    <h1 class="text-lg text-black pb-6">Daftar Kelas Masih Kosong</h1>
+                </div>
+                @else
                 <div class="bg-white overflow-auto pb-8">
                     <table class="table-auto bg-white">
                         <thead class="bg-gray-800 text-white">
@@ -111,6 +116,7 @@
                         </tbody>
                     </table>
                 </div>
+                @endif
             </div>
             <div class="bg-white rounded-lg shadow-md p-8 my-8">
                 <form method="POST" action="{{ url('administrator/data-krs/form-create/filter-kelas') }}">
@@ -155,6 +161,7 @@
                     </div>
                 </form>
                 <p class="text-xl mt-4 flex items-center border-b-2">Daftar Mata Pelajaran</p>
+                @if($add_all === true)
                 <div class="flex flex-row-reverse object-left text-center text-white text-base py-4">
                     <form method="POST" action="{{ url('administrator/data-krs/create-all') }}">
                         @csrf
@@ -165,6 +172,7 @@
                         <button type="submit" class="bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-2.5 px-6">Tambah Semua</button>
                     </form>
                 </div>
+                @endif
                 <div class="bg-white overflow-auto pb-8">
                     <table class="table-auto bg-white">
                         <thead class="bg-gray-800 text-white">

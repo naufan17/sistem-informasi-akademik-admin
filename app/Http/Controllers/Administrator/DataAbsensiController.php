@@ -92,10 +92,22 @@ class DataAbsensiController extends Controller
         $santris = Santri::leftjoin('attendances', 'santris.id', '=', 'attendances.id_santri')
                         ->where('id', $id)
                         ->get();
+
+        $add_absensi = true;
+
+        if(date('m') <= 06 ){
+            if($santris->contains('semester', 'Genap') && $santris->contains('year', date('Y')-1 . '/' . date('Y'))){
+                $add_absensi = false;
+            }
+        }elseif(date('m') > 06 ){
+            if($santris->contains('semester', 'Ganjil') && $santris->contains('year', date('Y') . '/' . date('Y')+1)){
+                $add_absensi = false;
+            }
+        }
         
         $idSantri = $id;    
 
-        return view('administrator.list-data-absensi', compact('santris', 'idSantri'));
+        return view('administrator.list-data-absensi', compact('santris', 'idSantri', 'add_absensi'));
     }
 
     public function formCreate($id)

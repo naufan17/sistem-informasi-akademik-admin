@@ -167,8 +167,9 @@ class DataKRSController extends Controller
                                         ->get();
 
         $id_santri = $id;
+        $add_all = false;
 
-        return view('administrator.tambah-santri-krs', compact('cumulativestudys', 'courses', 'filter_semesters', 'filter_years', 'semesters', 'years', 'filter_grade_number', 'filter_grade_name', 'grade_number', 'grade_name', 'id_santri'));
+        return view('administrator.tambah-santri-krs', compact('cumulativestudys', 'courses', 'filter_semesters', 'filter_years', 'semesters', 'years', 'filter_grade_number', 'filter_grade_name', 'grade_number', 'grade_name', 'id_santri', 'add_all'));
     }
 
     public function filterSemester(Request $request)
@@ -319,8 +320,9 @@ class DataKRSController extends Controller
                                         ->get();
 
         $id_santri = $request->id;
+        $add_all = true;
 
-        return view('administrator.tambah-santri-krs', compact('cumulativestudys', 'courses', 'filter_semesters', 'filter_years', 'semesters', 'years', 'filter_grade_number', 'filter_grade_name', 'grade_number', 'grade_name', 'id_santri'));
+        return view('administrator.tambah-santri-krs', compact('cumulativestudys', 'courses', 'filter_semesters', 'filter_years', 'semesters', 'years', 'filter_grade_number', 'filter_grade_name', 'grade_number', 'grade_name', 'id_santri', 'add_all'));
     }
 
     public function create(Request $request)
