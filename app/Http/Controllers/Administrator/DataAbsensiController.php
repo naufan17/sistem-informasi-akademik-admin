@@ -163,10 +163,10 @@ class DataAbsensiController extends Controller
         return redirect()->route('administrator.data-absensi.list', [$request->id_santri])->with('perbarui','Data Berhasil Diperbarui!');
     }
 
-    public function delete($id)
-    {
-        Attendance::where('id_attendance', $id)->delete();
+    // public function delete($id)
+    // {
+    //     Attendance::where('id_attendance', $id)->delete();
 
-        return redirect()->back()->with('hapus','Data Berhasil Dihapus!');
-    }
+    //     return redirect()->back()->with('hapus','Data Berhasil Dihapus!');
+    // }
 }

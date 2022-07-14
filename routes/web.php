@@ -242,8 +242,8 @@ Route::get('/administrator/data-absensi/form-update/{id}', [DataAbsensiControlle
     ->name('administrator.data-absensi.form-update');
 Route::post('/administrator/data-absensi/update', [DataAbsensiController::class, 'update'])
     ->name('administrator.data-absensi.update');
-Route::get('/administrator/data-absensi/delete/{id}', [DataAbsensiController::class, 'delete'])
-    ->name('administrator.data-absensi.delete');
+// Route::get('/administrator/data-absensi/delete/{id}', [DataAbsensiController::class, 'delete'])
+//     ->name('administrator.data-absensi.delete');
 
 
 
