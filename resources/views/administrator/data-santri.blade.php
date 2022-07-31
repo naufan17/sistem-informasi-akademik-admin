@@ -5,18 +5,18 @@
 <div class="w-full flex flex-col h-screen overflow-y-hidden">
     <div class="overflow-x-hidden">
         <main class="pt-6 px-6">
-            <h1 class="text-3xl text-black pb-2 mt-2">Data Santri</h1>
+            <h1 class="sm:text-3xl text-2xl text-black pb-2 mt-2">Data Santri</h1>
             <div class="bg-white rounded-lg shadow-md p-8 my-8">
                 <!-- OPTION -->
                 <form method="POST" action="{{ url('administrator/data-santri') }}">
                     @csrf
                     <div class="flex space-x-4 items-center pb-4">
                         <div class="flex-none w-36">
-                            <a class="self-center">Tingkat</a>
+                            <a class="self-center sm:text-base text-sm">Tingkat</a>
                         </div>
                         <div class="flex-none w-1/5">
                             <div class="relative">
-                                <select type="number" name="grade_number" value="" class="block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker px-4 pr-8 rounded" id="grid-state">
+                                <select type="number" name="grade_number" value="" class="block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker sm:text-base text-sm px-4 pr-8 rounded" id="grid-state">
                                     @foreach($grade_number as $filter)
                                     <option selected value="{{ $filter->grade_number }}">{{ $filter->grade_number }}</option>
                                     @endforeach    
@@ -29,11 +29,11 @@
                     </div>
                     <div class="flex space-x-4 items-center pb-4">
                         <div class="flex-none w-36">
-                            <a class="self-center">Nama Kelas</a>
+                            <a class="self-center sm:text-base text-sm">Nama Kelas</a>
                         </div>
                         <div class="flex-none w-1/5">
                             <div class="relative">
-                                <select type="text" name="grade_name" value="" class="block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker px-4 pr-8 rounded" id="grid-state">
+                                <select type="text" name="grade_name" value="" class="block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker sm:text-base text-sm px-4 pr-8 rounded" id="grid-state">
                                     @foreach($grade_name as $filter)
                                     <option selected value="{{ $filter->grade_name }}">{{ $filter->grade_name }}</option>
                                     @endforeach
@@ -43,20 +43,20 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="object-left text-center text-white text-base">
-                            <button class="bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-2.5 px-6">Lihat</button>
+                        <div class="object-left text-center text-white sm:text-base text-sm">
+                            <button class="bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-2.5 sm:px-6 px-3.5">Lihat</button>
                         </div>
                     </div>
                 </form>
                 <form method="POST" action="{{ url('administrator/data-santri/filter-status') }}">
                     @csrf
                     <div class="flex flex-wrap space-x-4 items-center pb-8">
-                        <div class="flex w-36">
-                            <a class="self-center">Status</a>
+                        <div class="flex sm:w-36 w-12">
+                            <a class="self-center sm:text-base text-sm">Status</a>
                         </div>
                         <div class="flex-none w-1/5">
                             <div class="relative">
-                                <select type="text" name="status" value="" class="block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker px-4 pr-8 rounded" id="grid-state">
+                                <select type="text" name="status" value="" class="block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker sm:text-base text-sm px-4 pr-8 rounded" id="grid-state">
                                     @foreach($status as $filter)
                                     <option selected value="{{ $filter->status }}">{{ $filter->status }}</option>
                                     @endforeach
@@ -66,17 +66,17 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="object-left text-center text-white text-base">
-                            <button type="submit" class="bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-2.5 px-6">Lihat</button>
+                        <div class="object-left text-center text-white sm:text-base text-sm">
+                            <button type="submit" class="bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-2.5 sm:px-6 px-3.5">Lihat</button>
                         </div>
                     </div>
                 </form>
-                <p class="text-xl pt-4 flex items-center border-b-2">Daftar List Santri</p>
-                <div class="flex flex-row-reverse object-left text-center text-white text-base py-4">
-                    <a href="{{ url('administrator/data-santri/form-create') }}" class="button bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-2.5 px-6">
+                <p class="sm:text-xl text-lg pt-4 flex items-center border-b-2">Daftar List Santri</p>
+                <div class="flex flex-row-reverse object-left text-center text-white sm:text-base text-sm py-4">
+                    <a href="{{ url('administrator/data-santri/form-create') }}" class="button bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-2.5 sm:px-6 px-3.5">
                         Tambah
                     </a>
-                    <a href="{{ url('administrator/data-santri/form-import') }}" class="button bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-2.5 px-6 mr-6">
+                    <a href="{{ url('administrator/data-santri/form-import') }}" class="button bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-2.5 sm:px-6 px-3.5 mr-6">
                         Import
                     </a>
                 </div>
@@ -106,21 +106,21 @@
                     <table class="table-auto bg-white">
                         <thead class="bg-gray-800 text-white">
                             <tr>
-                                <th class="text-center py-3 px-4 uppercase font-semibold text-sm">No</th>
-                                <th class="text-center w-1/5 py-3 px-4 uppercase font-semibold text-sm">NIS</th>
-                                <th class="text-center w-1/5 py-3 px-4 uppercase font-semibold text-sm">Nama</th>
-                                <th class="text-center w-1/5 py-3 px-4 uppercase font-semibold text-sm">Status</td>
-                                <th class="text-center w-1/5 py-3 px-4 uppercase font-semibold text-sm">Profil</td>
-                                <th class="text-center w-1/5 py-3 px-4 uppercase font-semibold text-sm">Aksi</td>
+                                <th class="text-center py-3 px-4 uppercase font-semibold sm:text-base text-sm">No</th>
+                                <th class="text-center w-1/5 py-3 px-4 uppercase font-semibold sm:text-base text-sm">NIS</th>
+                                <th class="text-center w-1/5 py-3 px-4 uppercase font-semibold sm:text-base text-sm">Nama</th>
+                                <th class="text-center w-1/5 py-3 px-4 uppercase font-semibold sm:text-base text-sm">Status</td>
+                                <th class="text-center w-1/5 py-3 px-4 uppercase font-semibold sm:text-base text-sm">Profil</td>
+                                <th class="text-center w-1/5 py-3 px-4 uppercase font-semibold sm:text-base text-sm">Aksi</td>
                             </tr>
                         </thead>
                         <tbody class="text-gray-700">
                             @foreach($santris as $santri)
                             <tr>
-                                <td class="text-center py-3 px-4">{{ $loop->iteration }}</td>
-                                <td class="text-center py-3 px-4">{{ $santri->id }}</td>
-                                <td class="text-center py-3 px-4">{{ $santri->name }}</td>
-                                <td class="text-center py-3 px-4">{{ $santri->status }}</td>
+                                <td class="text-center sm:text-base text-sm py-3 px-4">{{ $loop->iteration }}</td>
+                                <td class="text-center sm:text-base text-sm py-3 px-4">{{ $santri->id }}</td>
+                                <td class="text-center sm:text-base text-sm py-3 px-4">{{ $santri->name }}</td>
+                                <td class="text-center sm:text-base text-sm py-3 px-4">{{ $santri->status }}</td>
                                 <td class="text-center py-3 px-4">
                                     <a href="{{ url('administrator/data-santri/detail') }}/{{ $santri->id }}" class="transform hover:text-purple-500 hover:scale-110">
                                     <i class="text-center fas fa-external-link-alt"></i></a>    

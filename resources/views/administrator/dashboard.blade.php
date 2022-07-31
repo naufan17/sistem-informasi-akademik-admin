@@ -7,11 +7,11 @@
         <main class="pt-6 px-6">
             <div class="flex px-8 py-8  my-4 bg-white rounded-lg shadow-md">
                 <div class="flex-1"></div>
-                <div class="flex-1 text-center p-8">
-                    <p class="text-xl text-gray-800">SELAMAT DATANG DI</p>
-                    <p class="text-4xl text-gray-800 pb-6">SIAKAD MDNU</p>
+                <div class="flex-1 text-center">
+                    <p class="sm:text-xl text-base text-gray-800">SELAMAT DATANG DI</p>
+                    <p class="sm:text-4xl text-2xl text-gray-800 pb-6">SIAKAD MDNU</p>
                     <div class="py-8">
-                        <svg id="a751cec9-7d0e-4c8a-a2d9-3a6c65a20454" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width="399" height="267.07575" viewBox="0 0 799 667.07575">
+                        <svg id="a751cec9-7d0e-4c8a-a2d9-3a6c65a20454" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 799 667.07575">
                             <title>newspaper</title>
                             <path d="M849.5,746.61987h-485l.21874-51.42174c.55348-130.11522,104.40844-237.32948,234.506-239.54236q2.10824-.03587,4.22346-.0359h.0004a245.33553,245.33553,0,0,1,85.75247,15.40589c92.054,34.28252,153.84089,121.38358,157.951,219.52807Z" transform="translate(-200.5 -116.46212)" fill="#6c63ff" />
                             <rect y="630.15774" width="799" height="2" fill="#2f2e41" />
