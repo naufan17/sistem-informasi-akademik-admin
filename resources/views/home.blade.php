@@ -129,20 +129,9 @@
                 </div>
             </div>
         </div>
-        <!-- <div class="w-full container mx-auto flex items-center justify-between">
-            <div class="flex-1 mx-8 py-8">
-                <div class="text-center">
-                    <a class="sm:text-xl text-base font-bold hover:no-underline">Masuk untuk melihat informasi akademik anda</a><br>
-                </div>
-                <div class=" text-center text-white text-xl py-4">
-                    <a href="{{ url('login/santri') }}" class="button sm:text-sm text-xs transform hover:scale-110 hover:no-underline motion-reduce:transform-none bg-blue-800 rounded sm:py-3 py-2.5 sm:px-4 px-2.5">Masuk Santri</a>
-                    <a href="{{ url('login/ustadz') }}" class="button sm:text-sm text-xs transform hover:scale-110 hover:no-underline motion-reduce:transform-none bg-blue-800 rounded sm:py-3 py-2.5 sm:px-4 px-2.5">Masuk Ustadz</a>
-                </div>
-            </div>
-        </div> -->
         <div class="container py-8 px-6 mx-auto">
-            <a class="uppercase tracking-wide no-underline hover:no-underline font-bold text-gray-800 text-xl mb-8">Tentang MDNU</a>
-            <p class="py-4 text-justify">MDNU atau Madrasah Diniyyah Nurul Ummah adalah satuan pendidikan keagamaan yang
+            <a class="uppercase tracking-wide no-underline hover:no-underline font-bold text-gray-800 sm:text-xl text-base mb-8">Tentang MDNU</a>
+            <p class="py-4 text-justify sm:text-base text-sm">MDNU atau Madrasah Diniyyah Nurul Ummah adalah satuan pendidikan keagamaan yang
                 menyelenggarakan pendidikan Agama Islam baik yang terorganisir pada
                 lembaga-lembaga pendidikan keagamaan yang berada di dalam pondok
                 pesantren maupun yang di luar pondok pesantren (Buklet Madin, 2003).
@@ -152,8 +141,7 @@
                 Madrasah tersebut didirikan pada tanggal 24 Februari 1991, kemudian
                 mendapat pengakuan resmi dari Kanwil Departemen Agama Wilayah
                 Propinsi DIY, berupa Piagam Madrasah Diniyah No. 91199, tertanggal 27
-                Agustus 1991.
-            </p>
+                Agustus 1991.</p>
         </div>
         <!-- ALAMAT -->
         <div class="container py-8 px-6 mx-auto">

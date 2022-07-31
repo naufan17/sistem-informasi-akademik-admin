@@ -59,7 +59,7 @@
             </nav>
             <!-- MENU -->
             <div class="bg-gray-100 font-family-karla flex">
-                <aside class="relative bg-gray-100 h-screen w-64 hidden sm:block">
+                <aside class="relative bg-gray-100 sm:w-64 w-36 sm:block">
                     <nav class="font-semibold pt-3">
                         <div class="text-gray-900">
                             <div class="pt-6 px-6 mb-8">
@@ -69,19 +69,19 @@
                                         <img src="https://source.unsplash.com/random/350x350" alt="random image" class="object-center rounded-full">
                                     </div>
                                     -->
-                                    <h4 class="py-6 text-l font-semibold leading-tight truncate">Hai {{ Auth::guard('administrator')->user()->name }}</h4>
+                                    <h4 class="py-6 text-l font-semibold sm:text-base text-sm leading-tight truncate">Hai {{ Auth::guard('administrator')->user()->name }}</h4>
                                 </div>
                             </div>
                         </div>
                         <div class="group border-indigo-500 hover:bg-blue-600 hover:shadow-lg hover:border-transparent">
-                            <a href="{{ url('administrator/data-admin') }}" class="text-gray-800 group-hover:text-white flex items-center py-3 pl-8">
+                            <a href="{{ url('administrator/data-admin') }}" class="text-gray-800 sm:text-base text-sm group-hover:text-white flex items-center py-3 pl-8">
                                 Admin
                             </a>
                         </div>
                         <button class="w-full">
                             <div @click.away="open = false" x-data="{ open: false }">
                                 <div @click="open = !open" class="w-full flex justify-between group border-indigo-500 hover:bg-blue-600 hover:shadow-lg hover:border-transparent">
-                                    <a class="font-bold text-gray-800 group-hover:text-white flex items-center py-3 pl-8">
+                                    <a class="font-bold text-gray-800 sm:text-base text-sm group-hover:text-white flex items-center py-3 pl-8">
                                         List Data
                                     </a>
                                     <div class="items-center flex group-hover:text-white pr-8">
@@ -90,8 +90,8 @@
                                 </div>
                                 <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="absolute w-full mt-2 origin-top-right rounded-md shadow-md">
                                     <div class="px-3 py-2 bg-white rounded-md shadow text-left">
-                                        <a class="block px-8 py-3 mt-2 text-sm font-semibold rounded-md hover:bg-blue-600 hover:text-white hover:shadow-lg hover:border-transparent" href="{{ url('administrator/data-ustadz') }}">Ustadz</a>
-                                        <a class="block px-8 py-3 mt-2 text-sm font-semibold rounded-md hover:bg-blue-600 hover:text-white hover:shadow-lg hover:border-transparent" href="{{ url('administrator/data-santri') }}">Santri</a>
+                                        <a class="block px-8 py-3 mt-2 sm:text-sm text-xs font-semibold rounded-md hover:bg-blue-600 hover:text-white hover:shadow-lg hover:border-transparent" href="{{ url('administrator/data-ustadz') }}">Ustadz</a>
+                                        <a class="block px-8 py-3 mt-2 sm:text-sm text-xs font-semibold rounded-md hover:bg-blue-600 hover:text-white hover:shadow-lg hover:border-transparent" href="{{ url('administrator/data-santri') }}">Santri</a>
                                     </div>
                                 </div>
                             </div>
@@ -99,7 +99,7 @@
                         <button class="w-full">
                             <div @click.away="open = false" class="flex justify-between group border-indigo-500 hover:bg-blue-600 hover:shadow-lg hover:border-transparent" x-data="{ open: false }">
                                 <div @click="open = !open" class="w-full flex justify-between group border-indigo-500 hover:bg-blue-600 hover:shadow-lg hover:border-transparent">
-                                    <a class="font-bold text-gray-800 group-hover:text-white flex items-center py-3 pl-8">
+                                    <a class="font-bold text-gray-800 sm:text-base text-sm group-hover:text-white flex items-center py-3 pl-8">
                                         Mata Pelajaran
                                     </a>
                                     <div class="items-center flex group-hover:text-white pr-8">
@@ -108,9 +108,9 @@
                                 </div>
                                 <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="absolute w-full mt-2 origin-top-right rounded-md shadow-md">
                                     <div class="px-3 py-2 bg-white rounded-md shadow text-left">
-                                        <a class="block px-8 py-3 mt-2 text-sm font-semibold rounded-md hover:bg-blue-600 hover:text-white hover:shadow-lg hover:border-transparent" href="{{ url('administrator/data-kelas') }}">Kelas</a>
-                                        <a class="block px-8 py-3 mt-2 text-sm font-semibold rounded-md hover:bg-blue-600 hover:text-white hover:shadow-lg hover:border-transparent" href="{{ url('administrator/data-jadwal') }}">Jadwal</a>
-                                        <a class="block px-8 py-3 mt-2 text-sm font-semibold rounded-md hover:bg-blue-600 hover:text-white hover:shadow-lg hover:border-transparent" href="{{ url('administrator/data-mapel') }}">Mata Pelajaran</a>
+                                        <a class="block px-8 py-3 mt-2 sm:text-sm text-xs font-semibold rounded-md hover:bg-blue-600 hover:text-white hover:shadow-lg hover:border-transparent" href="{{ url('administrator/data-kelas') }}">Kelas</a>
+                                        <a class="block px-8 py-3 mt-2 sm:text-sm text-xs font-semibold rounded-md hover:bg-blue-600 hover:text-white hover:shadow-lg hover:border-transparent" href="{{ url('administrator/data-jadwal') }}">Jadwal</a>
+                                        <a class="block px-8 py-3 mt-2 sm:text-sm text-xs font-semibold rounded-md hover:bg-blue-600 hover:text-white hover:shadow-lg hover:border-transparent" href="{{ url('administrator/data-mapel') }}">Mata Pelajaran</a>
                                     </div>
                                 </div>
                             </div>
@@ -118,7 +118,7 @@
                         <button class="w-full">
                             <div @click.away="open = false" class="flex justify-between group border-indigo-500 hover:bg-blue-600 hover:shadow-lg hover:border-transparent" x-data="{ open: false }">
                                 <div @click="open = !open" class="w-full flex justify-between group border-indigo-500 hover:bg-blue-600 hover:shadow-lg hover:border-transparent">
-                                    <a class="font-bold text-gray-800 group-hover:text-white flex items-center py-3 pl-8">
+                                    <a class="font-bold text-gray-800 sm:text-base text-sm group-hover:text-white flex items-center py-3 pl-8">
                                         Pembelajaran
                                     </a>
                                     <div class="items-center flex group-hover:text-white pr-8">
@@ -127,15 +127,15 @@
                                 </div>
                                 <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="absolute w-full mt-2 origin-top-right rounded-md shadow-md">
                                     <div class="px-3 py-2 bg-white rounded-md shadow text-left">
-                                        <a class="block px-8 py-3 mt-2 text-sm font-semibold rounded-md hover:bg-blue-600 hover:text-white hover:shadow-lg hover:border-transparent" href="{{ url('administrator/data-krs') }}">KRS</a>
-                                        <a class="block px-8 py-3 mt-2 text-sm font-semibold rounded-md hover:bg-blue-600 hover:text-white hover:shadow-lg hover:border-transparent" href="{{ url('administrator/data-nilai') }}">Nilai</a>
-                                        <a class="block px-8 py-3 mt-2 text-sm font-semibold rounded-md hover:bg-blue-600 hover:text-white hover:shadow-lg hover:border-transparent" href="{{ url('administrator/data-absensi') }}">Absensi</a>
+                                        <a class="block px-8 py-3 mt-2 sm:text-sm text-xs font-semibold rounded-md hover:bg-blue-600 hover:text-white hover:shadow-lg hover:border-transparent" href="{{ url('administrator/data-krs') }}">KRS</a>
+                                        <a class="block px-8 py-3 mt-2 sm:text-sm text-xs font-semibold rounded-md hover:bg-blue-600 hover:text-white hover:shadow-lg hover:border-transparent" href="{{ url('administrator/data-nilai') }}">Nilai</a>
+                                        <a class="block px-8 py-3 mt-2 sm:text-sm text-xs font-semibold rounded-md hover:bg-blue-600 hover:text-white hover:shadow-lg hover:border-transparent" href="{{ url('administrator/data-absensi') }}">Absensi</a>
                                     </div>
                                 </div>
                             </div>
                         </button>
                         <button class="w-full hover:bg-blue-600 cta-btn font-semibold justify-center ">
-                            <a class="text-gray-800 hover:text-white items-center py-3 pl-8 flex item-center" href="{{ route('administrator.logout') }}" onclick="event.preventDefault();
+                            <a class="text-gray-800 sm:text-base text-sm hover:text-white items-center py-3 pl-8 flex item-center" href="{{ route('administrator.logout') }}" onclick="event.preventDefault();
                             document.getElementById('logout-form').submit();">{{ __('Logout') }}
                             </a>
                             <form id="logout-form" action="{{ route('administrator.logout') }}" method="POST" class="d-none">
