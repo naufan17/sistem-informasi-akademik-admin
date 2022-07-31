@@ -5,7 +5,7 @@
 <div class="w-full flex flex-col h-screen overflow-y-hidden">
     <div class="overflow-x-hidden">
         <main class="m:pt-6 pt-3 sm:px-6 px-3">
-            <h1 class="sm:text-3xl text-2xl text-black pb-2 mt-2">Nilai</h1>
+            <h1 class="sm:text-3xl text-2xl text-black pb-2 mt-2">Data Nilai</h1>
             <div class="bg-white rounded-lg shadow-md sm:p-8 p-4 sm:my-8 my-4">
                 <form method="POST" action="{{ url('administrator/data-nilai') }}">
                     @csrf

@@ -6,7 +6,7 @@
     <!-- SANTRI -->
     <div class="overflow-x-hidden">
         <main class="m:pt-6 pt-3 sm:px-6 px-3">
-            <h1 class="text-3xl text-black pb-2 mt-2">Santri</h1>
+            <h1 class="text-3xl text-black pb-2 mt-2">Data Nilai</h1>
             <div class="bg-white rounded-lg shadow-md sm:p-8 p-4 sm:my-8 my-4">
                 <!-- BACK BUTTON -->
                 <div class="p-4 mb-6">

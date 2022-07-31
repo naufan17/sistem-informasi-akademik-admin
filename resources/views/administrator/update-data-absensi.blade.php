@@ -78,7 +78,7 @@
                         </div>
                         @endforeach
                     </div>
-                    <div class="flex flex-row-reverse object-left text-center text-white text-base pt-8 px-3">
+                    <div class="flex flex-row-reverse object-left text-center text-white sm:text-base text-sm pt-8 px-3">
                         <button type="submit" class="bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-2.5 sm:px-6 px-3.5">Simpan</button>
                     </div>
                 </form>
