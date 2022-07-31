@@ -59,10 +59,10 @@
             </nav>
             <!-- MENU -->
             <div class="bg-gray-100 font-family-karla flex">
-                <aside class="relative bg-gray-100 sm:w-64 w-36 sm:block">
+                <aside class="relative bg-gray-100 sm:w-64 w-32 sm:block">
                     <nav class="font-semibold pt-3">
                         <div class="text-gray-900">
-                            <div class="pt-6 px-6 mb-8">
+                            <div class="sm:py-6 py-4 sm:px-6 px-4">
                                 <div class="text-center bg-blue-600 text-white rounded-lg shadow-lg">
                                     <!--
                                     <div class="px-6 py-6">
@@ -74,17 +74,17 @@
                             </div>
                         </div>
                         <div class="group border-indigo-500 hover:bg-blue-600 hover:shadow-lg hover:border-transparent">
-                            <a href="{{ url('administrator/data-admin') }}" class="text-gray-800 sm:text-base text-sm group-hover:text-white flex items-center py-3 pl-8">
+                            <a href="{{ url('administrator/data-admin') }}" class="text-gray-800 sm:text-base text-sm group-hover:text-white flex items-center py-3 sm:pl-8 pl-6">
                                 Admin
                             </a>
                         </div>
                         <button class="w-full">
                             <div @click.away="open = false" x-data="{ open: false }">
                                 <div @click="open = !open" class="w-full flex justify-between group border-indigo-500 hover:bg-blue-600 hover:shadow-lg hover:border-transparent">
-                                    <a class="font-bold text-gray-800 sm:text-base text-sm group-hover:text-white flex items-center py-3 pl-8">
+                                    <a class="font-bold text-gray-800 sm:text-base text-sm group-hover:text-white flex items-center py-3 sm:pl-8 pl-6">
                                         List Data
                                     </a>
-                                    <div class="items-center flex group-hover:text-white pr-8">
+                                    <div class="items-center flex group-hover:text-white sm:pr-8 pr-4">
                                         <i class="fas fa-caret-down"></i>
                                     </div>
                                 </div>
@@ -99,10 +99,10 @@
                         <button class="w-full">
                             <div @click.away="open = false" class="flex justify-between group border-indigo-500 hover:bg-blue-600 hover:shadow-lg hover:border-transparent" x-data="{ open: false }">
                                 <div @click="open = !open" class="w-full flex justify-between group border-indigo-500 hover:bg-blue-600 hover:shadow-lg hover:border-transparent">
-                                    <a class="font-bold text-gray-800 sm:text-base text-sm group-hover:text-white flex items-center py-3 pl-8">
+                                    <a class="font-bold text-gray-800 sm:text-base text-sm group-hover:text-white flex items-center py-3 sm:pl-8 pl-6">
                                         Mata Pelajaran
                                     </a>
-                                    <div class="items-center flex group-hover:text-white pr-8">
+                                    <div class="items-center flex group-hover:text-white sm:pr-8 pr-4">
                                         <i class="fas fa-caret-down"></i>
                                     </div>
                                 </div>
@@ -118,10 +118,10 @@
                         <button class="w-full">
                             <div @click.away="open = false" class="flex justify-between group border-indigo-500 hover:bg-blue-600 hover:shadow-lg hover:border-transparent" x-data="{ open: false }">
                                 <div @click="open = !open" class="w-full flex justify-between group border-indigo-500 hover:bg-blue-600 hover:shadow-lg hover:border-transparent">
-                                    <a class="font-bold text-gray-800 sm:text-base text-sm group-hover:text-white flex items-center py-3 pl-8">
+                                    <a class="font-bold text-gray-800 sm:text-base text-sm group-hover:text-white flex items-center py-3 sm:pl-8 pl-6">
                                         Pembelajaran
                                     </a>
-                                    <div class="items-center flex group-hover:text-white pr-8">
+                                    <div class="items-center flex group-hover:text-white sm:pr-8 pr-4">
                                         <i class="fas fa-caret-down"></i>
                                     </div>
                                 </div>
@@ -135,7 +135,7 @@
                             </div>
                         </button>
                         <button class="w-full hover:bg-blue-600 cta-btn font-semibold justify-center ">
-                            <a class="text-gray-800 sm:text-base text-sm hover:text-white items-center py-3 pl-8 flex item-center" href="{{ route('administrator.logout') }}" onclick="event.preventDefault();
+                            <a class="text-gray-800 sm:text-base text-sm hover:text-white items-center py-3 sm:pl-8 pl-6 flex item-center" href="{{ route('administrator.logout') }}" onclick="event.preventDefault();
                             document.getElementById('logout-form').submit();">{{ __('Logout') }}
                             </a>
                             <form id="logout-form" action="{{ route('administrator.logout') }}" method="POST" class="d-none">

@@ -4,9 +4,9 @@
 
 <div class="w-full flex flex-col h-screen overflow-y-hidden">
     <div class="overflow-x-hidden">
-        <main class="pt-6 px-6">
+        <main class="sm:pt-6 pt-3 sm:px-6 px-3">
             <h1 class="sm:text-3xl text-2xl text-black pb-2 mt-2">Input Admin</h1>
-            <div class="bg-white rounded-lg shadow-md p-8 my-8">
+            <div class="bg-white rounded-lg shadow-md sm:p-8 p-4 sm:my-8 my-4">
                 <div class="p-4">
                     <a href="{{ url('administrator/data-admin') }}" class="button flex items-center border border-black-500 text-black-500 sm:text-base text-sm rounded-sm py-2.5 sm:px-6 px-3.5 sm:w-36 w-28 hover:bg-blue-700 hover:text-white">
                         <svg class="h-5 w-5 mr-3 fill-current" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="-49 141 512 512" style="enable-background:new -49 141 512 512;" xml:space="preserve">
@@ -43,16 +43,16 @@
                     @if(Auth::guard('administrator')->user()->id != $administrator->id )
                     <div class="flex flex-nowrap flex-row-reverse">
                         <div class="object-left text-center text-white text-base pt-8 px-3">
-                            <button type="submit" class="bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-2.5 px-6">Simpan</button>
+                            <button type="submit" class="bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-2.5 sm:px-6 px-3.5">Simpan</button>
                         </div>
                         <div class="object-left text-center text-white text-base pt-8 px-3">
-                            <a href="{{ url('administrator/data-admin/delete') }}/{{ $administrator->id }}" type="submit" class="border bg-red-600 hover:bg-red-700 rounded py-2.5 px-6">Hapus</a>
+                            <a href="{{ url('administrator/data-admin/delete') }}/{{ $administrator->id }}" type="submit" class="border bg-red-600 hover:bg-red-700 rounded py-2.5 sm:px-6 px-3.5">Hapus</a>
                         </div>
                     </div>
                     @else
                     <div class="flex flex-nowrap flex-row-reverse">
                         <div class="object-left text-center text-white sm:text-base text-sm pt-8 px-3">
-                            <button type="submit" class="bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-2.5 px-6">Simpan</button>
+                            <button type="submit" class="bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-2.5 sm:px-6 px-3.5">Simpan</button>
                         </div>
                     </div>
                     @endif
@@ -84,7 +84,7 @@
                         </div>
                         @endforeach
                     </div>
-                    <div class="flex flex-row-reverse object-left text-center text-whsm:text-base text-smite text-base pt-8 px-3">
+                    <div class="flex flex-row-reverse object-left text-center text-white sm:text-base text-sm text-base pt-8 px-3">
                         <button type="submit" class="bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-2.5 sm:px-6 px-3.5" >Simpan</button>
                     </div>
                 </form>

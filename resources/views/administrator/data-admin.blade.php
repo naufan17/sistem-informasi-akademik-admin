@@ -4,9 +4,9 @@
 
 <div class="w-full flex flex-col h-screen overflow-y-hidden">
     <div class="overflow-x-hidden">
-        <main class="pt-6 px-6">
+        <main class="sm:pt-6 pt-3 sm:px-6 px-3">
             <h1 class="sm:text-3xl text-2xl text-black pb-2 mt-2">Data Admin</h1>
-            <div class="bg-white rounded-lg shadow-md p-8 my-8">
+            <div class="bg-white rounded-lg shadow-md sm:p-8 p-4 sm:my-8 my-4">
                 <p class="sm:text-xl text-lg flex items-center border-b-2">Daftar Anggota Admin</p>
                 <div class="flex flex-row-reverse object-left text-center text-white sm:text-base text-sm py-4">
                     <a href="{{ url('administrator/data-admin/form-create') }}" class="button bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-2.5 sm:px-6 px-3.5">

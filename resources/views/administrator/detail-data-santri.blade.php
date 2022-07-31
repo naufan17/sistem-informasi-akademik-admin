@@ -5,9 +5,9 @@
 <div class="w-full flex flex-col overflow-y-hidden">
     <!-- DATA DIRI -->
     <div class="overflow-x-hidden">
-        <main class="w-full flex-grow-0 pt-6 px-6">
+        <main class="w-full flex-grow-0 sm:pt-6 pt-3 sm:px-6 px-3">
             <h1 class="sm:text-2xl text-2xl text-black pb-2 mt-2">Data Diri</h1>
-            <div class="bg-white rounded-lg shadow-md p-8 my-8">
+            <div class="bg-white rounded-lg shadow-md sm:p-8 p-4 sm:my-8 my-4">
                 <div class="p-4">
                     <a href="{{ url('administrator/data-santri') }}" class="button flex items-center border border-black-500 text-black-500 sm:text-base text-sm rounded-sm py-2.5 sm:px-6 px-3.5 sm:w-36 w-28 hover:bg-blue-700 hover:text-white">
                         <svg class="h-5 w-5 mr-3 fill-current" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="-49 141 512 512" style="enable-background:new -49 141 512 512;" xml:space="preserve">

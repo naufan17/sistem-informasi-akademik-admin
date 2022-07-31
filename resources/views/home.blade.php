@@ -30,6 +30,107 @@
     <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
 
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Karla:400,700&display=swap');
+
+        .font-family-karla {
+            font-family: karla;
+        }
+
+        .bg-sidebar {
+            background: #3d68ff;
+        }
+
+        .cta-btn {
+            color: #3d68ff;
+        }
+
+        .upgrade-btn {
+            background: #1947ee;
+        }
+
+        .upgrade-btn:hover {
+            background: #0038fd;
+        }
+
+        .active-nav-link {
+            background: #1947ee;
+        }
+
+        .nav-item:hover {
+            background: #1947ee;
+        }
+
+        .account-link:hover {
+            background: #3d68ff;
+        }
+
+        .work-sans {
+            font-family: 'Work Sans', sans-serif;
+        }
+
+        #menu-toggle:checked+#menu {
+            display: block;
+        }
+
+        .hover\:grow {
+            transition: all 0.3s;
+            transform: scale(1);
+        }
+
+        .hover\:grow:hover {
+            transform: scale(1.02);
+        }
+
+        .carousel-open:checked+.carousel-item {
+            position: static;
+            opacity: 100;
+        }
+
+        .carousel-item {
+            -webkit-transition: opacity 0.6s ease-out;
+            transition: opacity 0.6s ease-out;
+        }
+
+        #carousel-1:checked~.control-1,
+        #carousel-2:checked~.control-2,
+        #carousel-3:checked~.control-3 {
+            display: block;
+        }
+
+        .carousel-indicators {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            position: absolute;
+            bottom: 2%;
+            left: 0;
+            right: 0;
+            text-align: center;
+            z-index: 10;
+        }
+
+        #carousel-1:checked~.control-1~.carousel-indicators li:nth-child(1) .carousel-bullet,
+        #carousel-2:checked~.control-2~.carousel-indicators li:nth-child(2) .carousel-bullet,
+        #carousel-3:checked~.control-3~.carousel-indicators li:nth-child(3) .carousel-bullet {
+            color: #000;
+        }
+        tr:nth-child(even) {
+            background-color:rgba(229, 231, 235, var(--tw-bg-opacity));
+        }
+
+        iframe{
+            height: 300px;
+            width: 600px;
+        }
+
+        @media (max-width: 639px){
+            iframe{
+                height: 300px;
+                width: 360px;
+            }
+        }
+    </style>
 </head>
 <body class="bg-white text-gray-600 work-sans leading-normal text-base tracking-normal">
     <!--HEADER-->
