@@ -87,3 +87,15 @@
 tr:nth-child(even) {
     background-color:rgba(229, 231, 235, var(--tw-bg-opacity));
 }
+
+iframe{
+    height: 300px;
+    width: 600px;
+}
+
+@media (max-width: 639px){
+    iframe{
+        height: 300px;
+        width: 360px;
+    }
+}

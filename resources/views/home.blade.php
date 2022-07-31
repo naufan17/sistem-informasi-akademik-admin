@@ -33,23 +33,23 @@
 </head>
 <body class="bg-white text-gray-600 work-sans leading-normal text-base tracking-normal">
     <!--HEADER-->
-    <nav id="header" class="w-full z-30 top-0 py-1">
-        <div class="w-full container mx-auto flex flex-wrap items-center justify-between">
-            <div class="flex space-x-4 py-2">
+    <nav id="header" class="w-full z-30 top-0 bg-white border-b-2">
+        <div class="w-full mx-auto flex flex-wrap items-center justify-between">
+            <div class="flex sm:space-x-4 space-x-1 py-2">
                 <!--LOGO-->
                 <div class="object-left">
-                    <a href="/"><img src="{{ ('images/logo.png ') }}" class="w-24"></a>
+                    <a href="/"><img src="{{ ('images/logo.png ') }}" class="sm:w-24 w-16"></a>
                 </div>
                 <!--NAME-->
-                <div class="text-center font-sans font-bold text-yellow-800 mt-3">
-                    <a class="text-base">MADRASAH DINIYYAH<br></a>
-                    <a class="text-2xl">NURUL UMMAH<br></a>
-                    <a class="text-base tracking-widest">YOGYAKARTA</a>
+                <div class="text-center font-bold font-sans text-yellow-800 mt-2">
+                    <p class="sm:text-base text-sm sm:tracking-normal tracking-tighter">MADRASAH DINIYYAH</p>
+                    <p class="sm:text-xl text-base font-bold sm:tracking-normal tracking-tighter">NURUL UMMAH</p>
+                    <p class="sm:text-base text-sm tracking-tight sm:tracking-wide">YOGYAKARTA</p>
                 </div>
             </div>
             <div class="font-bold text-yellow-600 text-right">
-                <a class="text-xl">SISTEM INFORMASI AKADEMIK <br></a>
-                <a class="text-base tracking-widest">M D N U</a>
+                <p class="sm:text-lg text-sm sm:tracking-normal tracking-tighter">SISTEM INFORMASI AKADEMIK</p>
+                <p class="sm:text-base text-sm tracking-tight sm:tracking-wide">M D N U</p>
             </div>
         </div>
     </nav>
@@ -122,13 +122,24 @@
         <div class="w-full container mx-auto flex items-center justify-between">
             <div class="flex-1 mx-8 py-8">
                 <div class="text-center">
-                    <a class="text-lg font-bold">Masuk untuk melihat informasi akademik</a><br>
+                    <a class="sm:text-xl text-base font-bold hover:no-underline">Masuk untuk melihat informasi akademik anda</a><br>
                 </div>
                 <div class=" text-center text-white text-xl py-4">
-                    <a href="{{ route('administrator.login') }}" class="button text-sm transform hover:scale-110 motion-reduce:transform-none bg-blue-800 p-3 mt-1 rounded py-3 px-8">Masuk</a>
+                    <a href="{{ route('administrator.login') }}" class="button sm:text-sm text-xs transform hover:scale-110 hover:no-underline motion-reduce:transform-none bg-blue-800 rounded sm:py-3 py-2.5 sm:px-4 px-2.5">Masuk</a>
                 </div>
             </div>
         </div>
+        <!-- <div class="w-full container mx-auto flex items-center justify-between">
+            <div class="flex-1 mx-8 py-8">
+                <div class="text-center">
+                    <a class="sm:text-xl text-base font-bold hover:no-underline">Masuk untuk melihat informasi akademik anda</a><br>
+                </div>
+                <div class=" text-center text-white text-xl py-4">
+                    <a href="{{ url('login/santri') }}" class="button sm:text-sm text-xs transform hover:scale-110 hover:no-underline motion-reduce:transform-none bg-blue-800 rounded sm:py-3 py-2.5 sm:px-4 px-2.5">Masuk Santri</a>
+                    <a href="{{ url('login/ustadz') }}" class="button sm:text-sm text-xs transform hover:scale-110 hover:no-underline motion-reduce:transform-none bg-blue-800 rounded sm:py-3 py-2.5 sm:px-4 px-2.5">Masuk Ustadz</a>
+                </div>
+            </div>
+        </div> -->
         <div class="container py-8 px-6 mx-auto">
             <a class="uppercase tracking-wide no-underline hover:no-underline font-bold text-gray-800 text-xl mb-8">Tentang MDNU</a>
             <p class="py-4 text-justify">MDNU atau Madrasah Diniyyah Nurul Ummah adalah satuan pendidikan keagamaan yang
@@ -141,79 +152,47 @@
                 Madrasah tersebut didirikan pada tanggal 24 Februari 1991, kemudian
                 mendapat pengakuan resmi dari Kanwil Departemen Agama Wilayah
                 Propinsi DIY, berupa Piagam Madrasah Diniyah No. 91199, tertanggal 27
-                Agustus 1991.</p>
-
-            <!--
-            <div class="w-full">
-                <div x-data={show:false} class="rounded-sm">
-                    <div class="" id="headingOne">
-                        <button @click="show=!show" class="underline text-blue-500 hover:text-blue-700 focus:outline-none" type="button">
-                            Baca selengkapnya..
-                        </button>
-                    </div>
-                    <div x-show="show" class="text-justify py-6">
-                        Sebelum MDNU berdiri, sebenarnya di PP Nurul Ummah telah
-                        terdapat kegiatan belajar mengajar yang berupa sorogan dan bandongan.
-                        Namun karena jumlah santri yang semakin meningkat, maka kemudian
-                        dibuat sistem klasikal (2 tahun kelas persiapan dan 4 tahun kelas
-                        madrasah). Tidak lama kemudian, seiring dengan peningkatan jumlah
-                        santri dan makin mendesaknya kebutuhan akan manajemen yang lebih
-                        bagus, maka pada tahun 1411 H / 1991 M, didirikanlah Madrasah Diniyah
-                        Nurul Ummah (MDNU) <br>
-
-                        Pada mulanya MDNU memiliki kepengurusan tersendiri yang berdiri
-                        sejajar dengan kepengurusan di Pondok Pesantren Nurul Ummah yang
-                        waktu itu ditangani oleh Ikatan Santri Nurul Ummah (ISNU). MDNU
-                        mengelola sistem madrasah, sedangkan ISNU menangani pengajian santri
-                        serta kegiatan lainnya yang berada di luar kegiatan madrasah diniyah.
-                        Untuk mengatasi adanya dualisme kepengurusan tersebut, maka pada
-                        tahun 1995, dua kepengurusan tersebut difusikan dalam wadah Pengurus
-                        Pondok Pesantren Nurul Ummah, dengan demikian berarti MDNU berada
-                        di bawah otoritas Pengurus Pondok Pesantren Nurul Ummah. <br>
-
-
-                    </div>
-                </div>
-            </div>
--->
-
+                Agustus 1991.
+            </p>
         </div>
         <!-- ALAMAT -->
-        <div class="w-full container mx-auto flex flex-wrap items-center justify-between">
-            <div class="flex space-x-10 py-5 mx-auto">
-                <div class="text-left pl-5 mb-8">
-                    <a class="uppercase tracking-wide no-underline hover:no-underline font-bold text-gray-800 text-xl">Kunjungi Kami</a>
-                    <p class="py-4">Anda dapat menemukan kami di:</p>
-                    <p class="text-blue-900">Jl. Raden Ronggo KG II No.982, Prenggan, Kec. Kotagede, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55172.</p>
-                </div>
-                <div>
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.6604869675466!2d110.3934521145091!3d-7.825712579895561!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a5710b624c18d%3A0x8d5f089b87af3c59!2sPondok%20Pesantren%20Nurul%20Ummah!5e0!3m2!1sen!2sid!4v1620766907033!5m2!1sen!2sid" width="600" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        <div class="container py-8 px-6 mx-auto">
+            <div class="flex space-x-10 mx-auto">
+                <div class="w-full mx-auto flex flex-wrap">
+                    <div class="text-left">
+                        <a class="uppercase tracking-wide no-underline hover:no-underline font-bold text-gray-800 sm:text-xl text-base">Kunjungi Kami</a>
+                        <p class="py-4 sm:text-base text-sm">Anda dapat menemukan kami di:</p>
+                        <p class="text-blue-900 sm:text-base text-sm">Jl. Raden Ronggo KG II No.982, Prenggan, Kec. Kotagede, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55172.</p>
+                    </div>
+                    <div class="py-10">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.6604869675466!2d110.3934521145091!3d-7.825712579895561!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a5710b624c18d%3A0x8d5f089b87af3c59!2sPondok%20Pesantren%20Nurul%20Ummah!5e0!3m2!1sen!2sid!4v1620766907033!5m2!1sen!2sid" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
     <!-- FOOTER -->
-    <footer class="container mx-auto bg-white py-8 border-t border-gray-400">
+    <footer class="mx-auto bg-white py-8 border-t border-gray-400">
         <div class="container flex px-6 py-8 ">
             <div class="w-full mx-auto flex flex-wrap">
                 <div class="text-left flex w-full lg:w-1/2 ">
                     <div class="px-3 md:px-0">
-                        <h3 class="font-bold text-gray-900">Madrasah Diniyyah Pondok Pesantren Nurul Ummah Yogyakarta</h3>
-                        <a class="inline-block no-underline hover:text-black hover:underline pt-4" href="tel:+62 857 2565 5593">Telp. 0857 2565 5593</a><br>
-                        <a class="inline-block no-underline hover:text-black hover:underline" href="https://web.whatsapp.com/send?phone=6285725655593&text=Assalamualaikum%20Admin">WhatsApp. 0857 2565 5593</a><br>
-                        <a class="inline-block no-underline hover:text-black hover:underline" href="mailto:admisi.nurma@gmail.com">E-mail. admisi.nurma@gmail.com</a>
+                        <h3 class="font-bold sm:text-xl text-base text-gray-900">Madrasah Diniyyah Pondok Pesantren Nurul Ummah Yogyakarta</h3>
+                        <a class="inline-block no-underline hover:text-black sm:text-base text-sm hover:underline pt-4" href="tel:+62 857 2565 5593">Telp. 0857 2565 5593</a><br>
+                        <a class="inline-block no-underline hover:text-black sm:text-base text-sm hover:underline" href="https://web.whatsapp.com/send?phone=6285725655593&text=Assalamualaikum%20Admin">WhatsApp. 0857 2565 5593</a><br>
+                        <a class="inline-block no-underline hover:text-black sm:text-base text-sm hover:underline" href="mailto:admisi.nurma@gmail.com">E-mail. admisi.nurma@gmail.com</a>
                     </div>
                 </div>
                 <div class="flex w-full lg:w-1/2 lg:justify-end lg:text-right">
-                    <div class="px-3 md:px-0">
-                        <h3 class="font-bold text-gray-900">Media Sosial</h3>
+                    <div class="px-3 md:px-0 lg:mt-0 mt-8">
+                        <h3 class="font-bold sm:text-xl text-base text-gray-900">Media Sosial</h3>
                         <ul class="list-reset items-center pt-4">
                             <li>
-                                <a class="inline-block no-underline hover:text-black hover:underline py-1" href="https://instagram.com/nurulummahyk?igshid=1m74irp80dl0v">Instagram</a>
-                                <a class="inline-block no-underline hover:text-black hover:underline" href="https://www.youtube.com/channel/UCYQ8dFPzAkFF0WbS0r-IDaw">YouTube</a>
-                                <a class="inline-block no-underline hover:text-black hover:underline" href="https://www.youtube.com/channel/UCYQ8dFPzAkFF0WbS0r-IDaw">Facebook</a><br>
-                                <a class="inline-block no-underline hover:text-black hover:underline" href="https://nurulummah.com/">Twitter</a>
-                                <a class="inline-block no-underline hover:text-black hover:underline" href="https://nurulummah.com/">Website</a>
+                                <a class="inline-block no-underline hover:text-black sm:text-base text-sm hover:underline py-1" href="https://instagram.com/nurulummahyk?igshid=1m74irp80dl0v">Instagram</a>
+                                <a class="inline-block no-underline hover:text-black sm:text-base text-sm hover:underline" href="https://www.youtube.com/channel/UCYQ8dFPzAkFF0WbS0r-IDaw">YouTube</a>
+                                <a class="inline-block no-underline hover:text-black sm:text-base text-sm hover:underline" href="https://www.youtube.com/channel/UCYQ8dFPzAkFF0WbS0r-IDaw">Facebook</a><br>
+                                <a class="inline-block no-underline hover:text-black sm:text-base text-sm hover:underline" href="https://nurulummah.com/">Twitter</a>
+                                <a class="inline-block no-underline hover:text-black sm:text-base text-sm hover:underline" href="https://nurulummah.com/">Website</a>
                             </li>
                         </ul>
                     </div>
