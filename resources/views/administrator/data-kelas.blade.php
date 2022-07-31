@@ -63,19 +63,19 @@
                     <table class="table-auto bg-white">
                         <thead class="bg-gray-800 text-white">
                             <tr>
-                                <th class="text-center py-3 px-4 uppercase font-semibold sm:text-base text-sm">No</th>
-                                <th class="text-center w-1/3 py-3 px-4 uppercase font-semibold sm:text-base text-sm">Tingkat</th>
-                                <th class="text-center w-1/3 py-3 px-4 uppercase font-semibold sm:text-base text-sm">Nama Kelas</th>
-                                <th class="text-center w-1/3 py-3 px-4 uppercase font-semibold sm:text-base text-sm">Aksi</th>
+                                <th class="text-center sm:py-3 py-2 sm:px-4 px-3 uppercase font-semibold sm:text-base text-sm">No</th>
+                                <th class="text-center w-1/3 sm:py-3 py-2 sm:px-4 px-3 uppercase font-semibold sm:text-base text-sm">Tingkat</th>
+                                <th class="text-center w-1/3 sm:py-3 py-2 sm:px-4 px-3 uppercase font-semibold sm:text-base text-sm">Nama Kelas</th>
+                                <th class="text-center w-1/3 sm:py-3 py-2 sm:px-4 px-3 uppercase font-semibold sm:text-base text-sm">Aksi</th>
                             </tr>
                         </thead>
                         <tbody class="text-gray-700">
                             @foreach($grades as $grade)
                             <tr>
-                                <td class="text-center sm:text-base text-sm py-3 px-4">{{ $loop->iteration }}</td>
-                                <td class="text-center sm:text-base text-sm py-3 px-4">{{ $grade->grade_number }}</td>
-                                <td class="text-center sm:text-base text-sm py-3 px-4">{{ $grade->grade_name }}</td>
-                                <td class="grid justify-items-center py-3 px-4">
+                                <td class="text-center sm:text-base text-sm sm:py-3 py-2 sm:px-4 px-3">{{ $loop->iteration }}</td>
+                                <td class="text-center sm:text-base text-sm sm:py-3 py-2 sm:px-4 px-3">{{ $grade->grade_number }}</td>
+                                <td class="text-center sm:text-base text-sm sm:py-3 py-2 sm:px-4 px-3">{{ $grade->grade_name }}</td>
+                                <td class="grid justify-items-center sm:py-3 py-2 sm:px-4 px-3">
                                     <div class="flex">
                                         <div class="w-5 mr-2 transform hover:text-purple-500 hover:scale-110">
                                             <a href="{{ url('administrator/data-kelas/form-update') }}/{{ $grade->id_grade }}">

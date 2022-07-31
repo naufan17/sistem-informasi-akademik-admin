@@ -103,21 +103,21 @@
                     <table class="table-auto bg-white">
                         <thead class="bg-gray-800 text-white">
                             <tr>
-                                <th class="text-center py-3 px-4 uppercase font-semibold sm:text-base text-sm">No</th>
-                                <th class="text-center w-1/4 py-3 px-4 uppercase font-semibold sm:text-base text-sm">Hari</th>
-                                <th class="text-center w-1/4 py-3 px-4 uppercase font-semibold sm:text-base text-sm">Waktu Mulai</th>
-                                <th class="text-center w-1/4 py-3 px-4 uppercase font-semibold sm:text-base text-sm">Waktu Selesai</th>
-                                <th class="text-center w-1/4 py-3 px-4 uppercase font-semibold sm:text-base text-sm">Aksi</th>
+                                <th class="text-center sm:py-3 py-2 sm:px-4 px-3 uppercase font-semibold sm:text-base text-sm">No</th>
+                                <th class="text-center w-1/4 sm:py-3 py-2 sm:px-4 px-3 uppercase font-semibold sm:text-base text-sm">Hari</th>
+                                <th class="text-center w-1/4 sm:py-3 py-2 sm:px-4 px-3 uppercase font-semibold sm:text-base text-sm">Waktu Mulai</th>
+                                <th class="text-center w-1/4 sm:py-3 py-2 sm:px-4 px-3 uppercase font-semibold sm:text-base text-sm">Waktu Selesai</th>
+                                <th class="text-center w-1/4 sm:py-3 py-2 sm:px-4 px-3 uppercase font-semibold sm:text-base text-sm">Aksi</th>
                             </tr>
                         </thead>
                         <tbody class="text-gray-700">
                             @foreach($schedules as $schedule)
                             <tr>
-                                <td class="text-center sm:text-base text-sm py-3 px-4">{{ $loop->iteration }}</td>
-                                <td class="text-center sm:text-base text-sm py-3 px-4">{{ $schedule->day }}</td>
-                                <td class="text-center sm:text-base text-sm py-3 px-4">{{ $schedule->time_begin }}</td>
-                                <td class="text-center sm:text-base text-sm py-3 px-4">{{ $schedule->time_end }}</td>
-                                <td class="grid justify-items-center py-3 px-4">
+                                <td class="text-center sm:text-base text-sm sm:py-3 py-2 sm:px-4 px-3">{{ $loop->iteration }}</td>
+                                <td class="text-center sm:text-base text-sm sm:py-3 py-2 sm:px-4 px-3">{{ $schedule->day }}</td>
+                                <td class="text-center sm:text-base text-sm sm:py-3 py-2 sm:px-4 px-3">{{ $schedule->time_begin }}</td>
+                                <td class="text-center sm:text-base text-sm sm:py-3 py-2 sm:px-4 px-3">{{ $schedule->time_end }}</td>
+                                <td class="grid justify-items-center sm:py-3 py-2 sm:px-4 px-3">
                                     <div class="flex">
                                         <div class="w-5 mr-2 transform hover:text-purple-500 hover:scale-110">
                                             <a href="{{ url('administrator/data-jadwal/form-update') }}/{{ $schedule->id_schedule }}">

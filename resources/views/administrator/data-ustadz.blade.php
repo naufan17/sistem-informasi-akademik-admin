@@ -66,28 +66,28 @@
                     <table class="table-auto bg-white">
                         <thead class="bg-gray-800 text-white">
                             <tr>
-                                <th class="text-center py-3 px-4 uppercase font-semibold sm:text-base text-sm">No</th>
-                                <th class="text-center w-1/5 px-4 uppercase font-semibold sm:text-base text-sm">NIU</th>
-                                <th class="text-center w-1/5 py-3 px-4 uppercase font-semibold sm:text-base text-sm">Nama</th>
-                                <th class="text-center w-1/5 py-3 px-4 uppercase font-semibold sm:text-base text-sm">Status</th>
-                                <!-- <th class="text-center w-1/5 py-3 px-4 uppercase font-semibold sm:text-base text-sm">Password</th> -->
-                                <th class="text-center w-1/5 py-3 px-4 uppercase font-semibold sm:text-base text-sm">Profil</td>
-                                <th class="text-center w-1/5 py-3 px-4 uppercase font-semibold sm:text-base text-sm">Aksi</td>
+                                <th class="text-center sm:py-3 py-2 sm:px-4 px-3 uppercase font-semibold sm:text-base text-sm">No</th>
+                                <th class="text-center w-1/5 sm:py-3 py-2 sm:px-4 px-3 uppercase font-semibold sm:text-base text-sm">NIU</th>
+                                <th class="text-center w-1/5 sm:py-3 py-2 sm:px-4 px-3 uppercase font-semibold sm:text-base text-sm">Nama</th>
+                                <th class="text-center w-1/5 sm:py-3 py-2 sm:px-4 px-3 uppercase font-semibold sm:text-base text-sm">Status</th>
+                                <!-- <th class="text-center w-1/5 sm:py-3 py-2 sm:px-4 px-3 uppercase font-semibold sm:text-base text-sm">Password</th> -->
+                                <th class="text-center w-1/5 sm:py-3 py-2 sm:px-4 px-3 uppercase font-semibold sm:text-base text-sm">Profil</td>
+                                <th class="text-center w-1/5 sm:py-3 py-2 sm:px-4 px-3 uppercase font-semibold sm:text-base text-sm">Aksi</td>
                             </tr>
                         </thead>
                         <tbody class="text-gray-700">
                             @foreach($ustadzs as $ustadz)
                             <tr>
-                                <td class="text-center sm:text-base text-sm py-3 px-4">{{ $loop->iteration }}</td>
-                                <td class="text-center sm:text-base text-sm py-3 px-4">{{ $ustadz->id }}</td>
-                                <td class="text-center sm:text-base text-sm py-3 px-4">{{ $ustadz->name }}</td>
-                                <td class="text-center sm:text-base text-sm py-3 px-4">{{ $ustadz->status }}</td>
-                                <!-- <td class="text-center sm:text-base text-sm py-3 px-4">passwordustadz</td> -->
-                                <td class="text-center py-3 px-4">
+                                <td class="text-center sm:text-base text-sm sm:py-3 py-2 sm:px-4 px-3">{{ $loop->iteration }}</td>
+                                <td class="text-center sm:text-base text-sm sm:py-3 py-2 sm:px-4 px-3">{{ $ustadz->id }}</td>
+                                <td class="text-center sm:text-base text-sm sm:py-3 py-2 sm:px-4 px-3">{{ $ustadz->name }}</td>
+                                <td class="text-center sm:text-base text-sm sm:py-3 py-2 sm:px-4 px-3">{{ $ustadz->status }}</td>
+                                <!-- <td class="text-center sm:text-base text-sm sm:py-3 py-2 sm:px-4 px-3">passwordustadz</td> -->
+                                <td class="text-center sm:py-3 py-2 sm:px-4 px-3">
                                     <a href="{{ url('administrator/data-ustadz/detail') }}/{{ $ustadz->id }}" class="transform hover:text-purple-500 hover:scale-110">
                                     <i class="text-center fas fa-external-link-alt"></i></a>                                
                                 </td>
-                                <td class="grid justify-items-center py-3 px-4">
+                                <td class="grid justify-items-center sm:py-3 py-1.5 sm:px-4 px-2">
                                     <div class="flex">
                                         <div class="w-5 mr-2 transform hover:text-purple-500 hover:scale-110">
                                             <a href="{{ url('administrator/data-ustadz/form-update') }}/{{ $ustadz->id }}">

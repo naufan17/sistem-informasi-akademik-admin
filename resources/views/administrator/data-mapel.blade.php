@@ -80,28 +80,28 @@
                     <table class="table-auto bg-white">
                         <thead class="bg-gray-800 text-white">
                             <tr>
-                                <th class="text-center py-3 px-4 uppercase font-semibold sm:text-base text-sm">No</th>
-                                <th class="text-center w-1/6 py-3 px-4 uppercase font-semibold sm:text-base text-sm">Kode MP</th>
-                                <th class="text-center w-1/6 py-3 px-4 uppercase font-semibold sm:text-base text-sm">Mata pelajaran</th>
-                                <th class="text-center w-1/6 py-3 px-4 uppercase font-semibold sm:text-base text-sm">Kitab</th>
-                                <th class="text-center w-1/6 py-3 px-4 uppercase font-semibold sm:text-base text-sm">Kelas</th>
-                                <th class="text-center w-1/6 py-3 px-4 uppercase font-semibold sm:text-base text-sm">Jadwal</th>
-                                <th class="text-center w-1/6 py-3 px-4 uppercase font-semibold sm:text-base text-sm">Nama Ustadz</th>
-                                <th class="text-center w-1/6 py-3 px-4 uppercase font-semibold sm:text-base text-sm">Aksi</th>
+                                <th class="text-center sm:py-3 py-2 sm:px-4 px-3 uppercase font-semibold sm:text-base text-sm">No</th>
+                                <th class="text-center w-1/6 sm:py-3 py-2 sm:px-4 px-3 uppercase font-semibold sm:text-base text-sm">Kode MP</th>
+                                <th class="text-center w-1/6 sm:py-3 py-2 sm:px-4 px-3 uppercase font-semibold sm:text-base text-sm">Mata pelajaran</th>
+                                <th class="text-center w-1/6 sm:py-3 py-2 sm:px-4 px-3 uppercase font-semibold sm:text-base text-sm">Kitab</th>
+                                <th class="text-center w-1/6 sm:py-3 py-2 sm:px-4 px-3 uppercase font-semibold sm:text-base text-sm">Kelas</th>
+                                <th class="text-center w-1/6 sm:py-3 py-2 sm:px-4 px-3 uppercase font-semibold sm:text-base text-sm">Jadwal</th>
+                                <th class="text-center w-1/6 sm:py-3 py-2 sm:px-4 px-3 uppercase font-semibold sm:text-base text-sm">Nama Ustadz</th>
+                                <th class="text-center w-1/6 sm:py-3 py-2 sm:px-4 px-3 uppercase font-semibold sm:text-base text-sm">Aksi</th>
                             </tr>
                         </thead>
                         <tbody class="text-gray-700">
                             @foreach($courses as $course)
                             <tr>
-                                <td class="text-center sm:text-base text-sm py-3 px-4">{{ $loop->iteration }}</td>
-                                <td class="text-center sm:text-base text-sm py-3 px-4">{{ $course->id_course }}</td>
-                                <td class="text-center sm:text-base text-sm py-3 px-4">{{ $course->course }}</td>
-                                <td class="text-center sm:text-base text-sm py-3 px-4">{{ $course->book }}</td>
-                                <td class="text-center sm:text-base text-sm py-3 px-4">{{ $course->grade_number }} {{ $course->grade_name }}</td>
-                                <td class="text-center sm:text-base text-sm py-3 px-4">{{ $course->day }}, {{ $course->time_begin }} - {{ $course->time_end }}</td>  
-                                <td class="text-center sm:text-base text-sm py-3 px-4">{{ $course->name }}</td>
-                                <td class="grid justify-items-center py-3 px-4">
-                                    <div class="flex py-3 px-4">
+                                <td class="text-center sm:text-base text-sm sm:py-3 py-2 sm:px-4 px-3">{{ $loop->iteration }}</td>
+                                <td class="text-center sm:text-base text-sm sm:py-3 py-2 sm:px-4 px-3">{{ $course->id_course }}</td>
+                                <td class="text-center sm:text-base text-sm sm:py-3 py-2 sm:px-4 px-3">{{ $course->course }}</td>
+                                <td class="text-center sm:text-base text-sm sm:py-3 py-2 sm:px-4 px-3">{{ $course->book }}</td>
+                                <td class="text-center sm:text-base text-sm sm:py-3 py-2 sm:px-4 px-3">{{ $course->grade_number }} {{ $course->grade_name }}</td>
+                                <td class="text-center sm:text-base text-sm sm:py-3 py-2 sm:px-4 px-3">{{ $course->day }}, {{ $course->time_begin }} - {{ $course->time_end }}</td>  
+                                <td class="text-center sm:text-base text-sm sm:py-3 py-2 sm:px-4 px-3">{{ $course->name }}</td>
+                                <td class="grid justify-items-center sm:py-3 py-2 sm:px-4 px-3">
+                                    <div class="flex sm:py-3 py-2 sm:px-4 px-3">
                                         <div class="w-5 mr-2 transform hover:text-purple-500 hover:scale-110">
                                             <a href="{{ url('administrator/data-mapel/form-update') }}/{{ $course->id_course }}">
                                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
