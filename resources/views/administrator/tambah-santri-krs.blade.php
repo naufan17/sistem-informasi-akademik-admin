@@ -4,12 +4,12 @@
 
 <div class="w-full flex flex-col h-screen overflow-y-hidden">
     <div class="overflow-x-hidden">
-        <main class="pt-6 px-6">
-            <h1 class="text-3xl text-black pb-2 mt-2">Data KRS</h1>
-            <div class="bg-white rounded-lg shadow-md p-8 my-8">
+        <main class="m:pt-6 pt-3 sm:px-6 px-3">
+            <h1 class="sm:text-3xl text-2xl text-black pb-2 mt-2">Data KRS</h1>
+            <div class="bg-white rounded-lg shadow-md sm:p-8 p-4 sm:my-8 my-4">
                 <!-- BACK BUTTON -->
                 <div class="p-4">
-                    <a href="{{ url('administrator/data-krs') }}" class="button flex items-center border border-black-500 text-black-500 rounded-sm py-2.5 px-5 w-32 hover:bg-blue-700 hover:text-white">
+                    <a href="{{ url('administrator/data-krs') }}" class="button flex items-center border border-black-500 text-black-500 sm:text-base text-sm rounded-sm py-2.5 sm:px-6 px-3.5 sm:w-36 w-28 hover:bg-blue-700 hover:text-white">
                         <svg class="h-5 w-5 mr-3 fill-current" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="-49 141 512 512" style="enable-background:new -49 141 512 512;" xml:space="preserve">
                             <path id="XMLID_10_" d="M438,372H36.355l72.822-72.822c9.763-9.763,9.763-25.592,0-35.355c-9.763-9.764-25.593-9.762-35.355,0 l-115.5,115.5C-46.366,384.01-49,390.369-49,397s2.634,12.989,7.322,17.678l115.5,115.5c9.763,9.762,25.593,9.763,35.355,0 c9.763-9.763,9.763-25.592,0-35.355L36.355,422H438c13.808,0,25-11.193,25-25S451.808,372,438,372z"></path>
                         </svg>
@@ -20,12 +20,12 @@
                     @csrf
                     <div class="flex space-x-4 items-center pb-4">
                         <div class="flex-none w-36">
-                            <a class="self-center hover:no-underline">Semester</a>
+                            <a class="self-center sm:text-base text-sm hover:no-underline">Semester</a>
                         </div>
                         <input type="hidden" name="id" value="{{ $id_santri }}" class="self-center w-full bg-transparent border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-200" />
                         <div class="flex-none md:w-1/5">
                             <div class="relative">
-                                <select type="text" name="semester" value=""  class="block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker px-4 pr-8 rounded" id="grid-state">
+                                <select type="text" name="semester" value=""  class="block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker sm:text-base text-sm px-4 pr-8 rounded" id="grid-state">
                                     @foreach($semesters as $filter)    
                                     <option selected value="{{ $filter->semester }}">{{ $filter->semester }}</option>
                                     @endforeach      
@@ -38,11 +38,11 @@
                     </div>
                     <div class="flex space-x-4 items-center pb-4">
                         <div class="flex-none w-36">
-                            <a class="self-center hover:no-underline">Tahun Ajaran</a>
+                            <a class="self-center sm:text-base text-sm hover:no-underline">Tahun Ajaran</a>
                         </div>
                         <div class="flex-none md:w-1/5">
                             <div class="relative">
-                                <select type="text" name="year" value=""  class="block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker px-4 pr-8 rounded" id="grid-state">
+                                <select type="text" name="year" value=""  class="block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker sm:text-base text-sm px-4 pr-8 rounded" id="grid-state">
                                     @foreach($years as $filter)    
                                     <option selected value="{{ $filter->year }}">{{ $filter->year }}</option>
                                     @endforeach
@@ -52,12 +52,12 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="object-left text-center text-white text-base">
-                            <button class="bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-2.5 px-6">Lihat</button>
+                        <div class="object-left text-center text-white sm:text-base text-sm">
+                            <button class="bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-2.5 sm:px-6 px-3.5">Lihat</button>
                         </div>
                     </div>
                 </form>
-                <p class="text-xl py-4 flex items-center">Daftar Kelas yang Diikuti oleh Sdr. {{ Auth::guard('administrator')->user()->name }}</p>
+                <p class="sm:text-xl text-lg py-4 flex items-center">Daftar Kelas yang Diikuti oleh Sdr. {{ Auth::guard('administrator')->user()->name }}</p>
                 @if($tambah = Session::get('tambah'))
                 <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mb-2" role="alert">
                     <span class="block sm:inline">{{ $tambah }}</span>
@@ -82,20 +82,20 @@
                     <table class="table-auto bg-white">
                         <thead class="bg-gray-800 text-white">
                             <tr>
-                                <th class="text-center py-3 px-4 uppercase font-semibold text-sm">No</th>
-                                <th class="text-center w-1/4 py-3 px-4 uppercase font-semibold text-sm">Kode MP</th>
-                                <th class="text-center w-1/4 py-3 px-4 uppercase font-semibold text-sm">Mata pelajaran</th>
-                                <th class="text-center w-1/4 py-3 px-4 uppercase font-semibold text-sm">Kitab</th>
-                                <th class="text-center w-1/4 py-3 px-4 uppercase font-semibold text-sm">Aksi</th>
+                                <th class="text-center py-3 px-4 uppercase font-semibold sm:text-base text-sm">No</th>
+                                <th class="text-center w-1/4 py-3 px-4 uppercase font-semibold sm:text-base text-sm">Kode MP</th>
+                                <th class="text-center w-1/4 py-3 px-4 uppercase font-semibold sm:text-base text-sm">Mata pelajaran</th>
+                                <th class="text-center w-1/4 py-3 px-4 uppercase font-semibold sm:text-base text-sm">Kitab</th>
+                                <th class="text-center w-1/4 py-3 px-4 uppercase font-semibold sm:text-base text-sm">Aksi</th>
                             </tr>
                         </thead>
                         <tbody class="text-gray-700">
                             @foreach($cumulativestudys as $cumulativestudy)
                             <tr>
-                                <td class="text-center py-3 px-4">{{ $loop->iteration }}</td>
-                                <td class="text-center py-3 px-4">{{ $cumulativestudy->id_course }}</td>
-                                <td class="text-center py-3 px-4">{{ $cumulativestudy->course }}</td>
-                                <td class="text-center py-3 px-4">{{ $cumulativestudy->book }}</td>
+                                <td class="text-center sm:text-base text-sm py-3 px-4">{{ $loop->iteration }}</td>
+                                <td class="text-center sm:text-base text-sm py-3 px-4">{{ $cumulativestudy->id_course }}</td>
+                                <td class="text-center sm:text-base text-sm py-3 px-4">{{ $cumulativestudy->course }}</td>
+                                <td class="text-center sm:text-base text-sm py-3 px-4">{{ $cumulativestudy->book }}</td>
                                 @if(empty($cumulativestudy->score))
                                 <td class="grid justify-items-center py-3 px-4">
                                     <div class="flex">
@@ -123,12 +123,12 @@
                     @csrf
                     <div class="flex space-x-4 items-center pb-4">
                         <div class="flex-none w-36">
-                            <a class="self-center">Tingkat</a>
+                            <a class="self-center sm:text-base text-sm">Tingkat</a>
                         </div>
                         <input type="hidden" name="id" value="{{ $id_santri }}" class="self-center w-full bg-transparent border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-200" />
                         <div class="flex-none w-1/5">
                             <div class="relative">
-                                <select type="number" name="grade_number" value="" class="block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker px-4 pr-8 rounded" id="grid-state">
+                                <select type="number" name="grade_number" value="" class="block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker sm:text-base text-sm px-4 pr-8 rounded" id="grid-state">
                                     @foreach($grade_number as $filter)
                                     <option selected value="{{ $filter->grade_number }}">{{ $filter->grade_number }}</option>
                                     @endforeach      
@@ -141,11 +141,11 @@
                     </div>
                     <div class="flex space-x-4 items-center pb-4">
                         <div class="flex-none w-36">
-                            <a class="self-center">Nama Kelas</a>
+                            <a class="self-center sm:text-base text-sm">Nama Kelas</a>
                         </div>
                         <div class="flex-none w-1/5">
                             <div class="relative">
-                                <select type="text" name="grade_name" value="" class="block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker px-4 pr-8 rounded" id="grid-state">
+                                <select type="text" name="grade_name" value="" class="block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker sm:text-base text-sm px-4 pr-8 rounded" id="grid-state">
                                     @foreach($grade_name as $filter)
                                     <option selected value="{{ $filter->grade_name }}">{{ $filter->grade_name }}</option>
                                     @endforeach    
@@ -155,21 +155,21 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="object-left text-center text-white text-base">
-                            <button class="bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-2.5 px-6">Lihat</button>
+                        <div class="object-left text-center text-white sm:text-base text-sm">
+                            <button class="bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-2.5 sm:px-6 px-3.5">Lihat</button>
                         </div>
                     </div>
                 </form>
-                <p class="text-xl mt-4 flex items-center border-b-2">Daftar Mata Pelajaran</p>
+                <p class="sm:text-xl text-lg mt-4 flex items-center border-b-2">Daftar Mata Pelajaran</p>
                 @if($add_all === true)
-                <div class="flex flex-row-reverse object-left text-center text-white text-base py-4">
+                <div class="flex flex-row-reverse object-left text-center text-white sm:text-base text-sm py-4">
                     <form method="POST" action="{{ url('administrator/data-krs/create-all') }}">
                         @csrf
                         @foreach($courses as $course)
                         <input type="hidden" name="id_santri[{{ $loop->iteration }}]" value="{{ $id_santri }}" class="py-2 px-3 block w-full bg-transparent border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-300" />
                         <input type="hidden" name="id_course[{{ $loop->iteration }}]" value="{{ $course->id_course }}" class="py-2 px-3 block w-full bg-transparent border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-300" />
                         @endforeach
-                        <button type="submit" class="bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-2.5 px-6">Tambah Semua</button>
+                        <button type="submit" class="bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-2.5 sm:px-6 px-3.5">Tambah Semua</button>
                     </form>
                 </div>
                 @endif
@@ -177,33 +177,33 @@
                     <table class="table-auto bg-white">
                         <thead class="bg-gray-800 text-white">
                             <tr>
-                                <th class="text-center py-3 px-4 uppercase font-semibold text-sm">No</th>
-                                <th class="text-center w-1/6 py-3 px-4 uppercase font-semibold text-sm">Kode MP</th>
-                                <th class="text-center w-1/6 py-3 px-4 uppercase font-semibold text-sm">Mata pelajaran</th>
-                                <th class="text-center w-1/6 py-3 px-4 uppercase font-semibold text-sm">Kitab</th>
-                                <th class="text-center w-1/6 py-3 px-4 uppercase font-semibold text-sm">Kelas</th>
-                                <th class="text-center w-1/6 py-3 px-4 uppercase font-semibold text-sm">Jadwal</th>
-                                <th class="text-center w-1/6 py-3 px-4 uppercase font-semibold text-sm">Nama Ustadz</th>
-                                <th class="text-center w-1/6 py-3 px-4 uppercase font-semibold text-sm">Aksi</th>
+                                <th class="text-center sm:py-3 py-2 sm:px-4 px-3 uppercase font-semibold sm:text-base text-sm">No</th>
+                                <th class="text-center w-1/6 sm:py-3 py-2 sm:px-4 px-3 uppercase font-semibold sm:text-base text-sm">Kode MP</th>
+                                <th class="text-center w-1/6 sm:py-3 py-2 sm:px-4 px-3 uppercase font-semibold sm:text-base text-sm">Mata pelajaran</th>
+                                <th class="text-center w-1/6 sm:py-3 py-2 sm:px-4 px-3 uppercase font-semibold sm:text-base text-sm">Kitab</th>
+                                <th class="text-center w-1/6 sm:py-3 py-2 sm:px-4 px-3 uppercase font-semibold sm:text-base text-sm">Kelas</th>
+                                <th class="text-center w-1/6 sm:py-3 py-2 sm:px-4 px-3 uppercase font-semibold sm:text-base text-sm">Jadwal</th>
+                                <th class="text-center w-1/6 sm:py-3 py-2 sm:px-4 px-3 uppercase font-semibold sm:text-base text-sm">Nama Ustadz</th>
+                                <th class="text-center w-1/6 sm:py-3 py-2 sm:px-4 px-3 uppercase font-semibold sm:text-base text-sm">Aksi</th>
                             </tr>
                         </thead>
                         <tbody class="text-gray-700">
                             @foreach($courses as $course)
                             <tr>
-                                <td class="text-center py-3 px-4">{{ $loop->iteration }}</td>
-                                <td class="text-center py-3 px-4">{{ $course->id_course }}</td>
-                                <td class="text-center py-3 px-4">{{ $course->course }}</td>
-                                <td class="text-center py-3 px-4">{{ $course->book }}</td>
-                                <td class="text-center py-3 px-4">{{ $course->grade_number }} {{ $course->grade_name }}</td>
-                                <td class="text-center py-3 px-4">{{ $course->day }}, {{ $course->time_begin }} - {{ $course->time_end }}</td>  
-                                <td class="text-center py-3 px-4">{{ $course->name }}</td>
+                                <td class="text-center sm:text-base text-sm sm:py-3 py-2 sm:px-4 px-3">{{ $loop->iteration }}</td>
+                                <td class="text-center sm:text-base text-sm sm:py-3 py-2 sm:px-4 px-3">{{ $course->id_course }}</td>
+                                <td class="text-center sm:text-base text-sm sm:py-3 py-2 sm:px-4 px-3">{{ $course->course }}</td>
+                                <td class="text-center sm:text-base text-sm sm:py-3 py-2 sm:px-4 px-3">{{ $course->book }}</td>
+                                <td class="text-center sm:text-base text-sm sm:py-3 py-2 sm:px-4 px-3">{{ $course->grade_number }} {{ $course->grade_name }}</td>
+                                <td class="text-center sm:text-base text-sm sm:py-3 py-2 sm:px-4 px-3">{{ $course->day }}, {{ $course->time_begin }} - {{ $course->time_end }}</td>  
+                                <td class="text-center sm:text-base text-sm sm:py-3 py-2 sm:px-4 px-3">{{ $course->name }}</td>
                                 <td>
                                     <form method="POST" action="{{ url('administrator/data-krs/create') }}">
                                         @csrf
-                                        <div class="flex flex-row-reverse object-left text-center text-white text-base py-3 px-4">
+                                        <div class="flex flex-row-reverse object-left text-center text-white sm:text-base text-sm py-3 px-4">
                                             <input type="hidden" name="id_santri" value="{{ $id_santri }}" class="py-2 px-3 block w-full bg-transparent border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-300" />
                                             <input type="hidden" name="id_course" value="{{ $course->id_course }}" class="py-2 px-3 block w-full bg-transparent border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-300" />
-                                            <button type="submit" class="bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-2 px-4">Tambah</button>
+                                            <button type="submit" class="bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-2 sm:px-6 px-3.5">Tambah</button>
                                         </div>
                                     </form>
                                 </td>
