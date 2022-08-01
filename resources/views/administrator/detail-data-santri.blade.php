@@ -22,7 +22,7 @@
                 </div>
                 @foreach($santris as $santri)
                 <div>
-                    <div class="pt-8">
+                    <div class="pt-4">
                         <p class="self-center sm:text-base text-sm bg-gray-50 py-4 px-4">Identitas Diri</p>
                     </div>
                     <!--

@@ -23,7 +23,7 @@
                 <form method="POST" action="{{ url('administrator/data-absensi/update') }}">
                     @csrf
                     <div class="pb-8">
-                        <div class="pt-8">
+                        <div class="pt-4">
                             <p class="self-center sm:text-base text-sm bg-gray-50 py-4 px-4">Absensi</p>
                         </div>
                         @foreach($attendances as $attendance)

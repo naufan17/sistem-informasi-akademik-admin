@@ -22,7 +22,7 @@
                 <form method="POST" action="{{ url('administrator/data-admin/create') }}">
                     @csrf
                     <div class="pb-8">
-                        <div class="pt-8">
+                        <div class="pt-4">
                             <p class="self-center bg-gray-50 sm:text-base text-sm py-4 px-4">Identitas Diri</p>
                         </div>
                         <div class="md:grid md:grid-cols-2 hover:bg-gray-50 sm:text-base text-sm md:space-y-0 px-4 py-2 space-y-1">

@@ -14,7 +14,7 @@
                         <div class="flex-none sm:w-36 w-12">
                             <a class="self-center sm:text-base text-sm">Tingkat</a>
                         </div>
-                        <div class="flex-none w-1/5">
+                        <div class="flex-none sm:w-1/5 w-1/3">
                             <div class="relative">
                                 <select type="number" name="grade_number" value="" class="block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker sm:text-base text-sm px-4 pr-8 rounded" id="grid-state">
                                     @foreach($grade_number as $filter)
@@ -31,7 +31,7 @@
                         <div class="flex-none sm:w-36 w-12">
                             <a class="self-center sm:text-base text-sm">Nama Kelas</a>
                         </div>
-                        <div class="flex-none w-1/5">
+                        <div class="flex-none sm:w-1/5 w-1/3">
                             <div class="relative">
                                 <select type="text" name="grade_name" value="" class="block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker sm:text-base text-sm px-4 pr-8 rounded" id="grid-state">
                                     @foreach($grade_name as $filter)
@@ -50,11 +50,11 @@
                 </form>
                 <form method="POST" action="{{ url('administrator/data-santri/filter-status') }}">
                     @csrf
-                    <div class="flex flex-wrap space-x-4 items-center pb-8">
+                    <div class="flex space-x-4 items-center pb-8">
                         <div class="flex sm:w-36 w-12">
                             <a class="self-center sm:text-base text-sm">Status</a>
                         </div>
-                        <div class="flex-none w-1/5">
+                        <div class="flex-none sm:w-1/5 w-1/3">
                             <div class="relative">
                                 <select type="text" name="status" value="" class="block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker sm:text-base text-sm px-4 pr-8 rounded" id="grid-state">
                                     @foreach($status as $filter)

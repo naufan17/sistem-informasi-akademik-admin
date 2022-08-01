@@ -4,7 +4,7 @@
 
 <div class="w-full flex flex-col h-screen overflow-y-hidden">
     <div class="overflow-x-hidden">
-        <main class="m:pt-6 pt-3 sm:px-6 px-3">
+        <main class="sm:pt-6 pt-3 sm:px-6 px-3">
             <h1 class="sm:text-3xl text-2xl text-black pb-2 mt-2">Data Kelas</h1>
             <div class="bg-white rounded-lg shadow-md sm:p-8 p-4 sm:my-8 my-4">
                 <!-- OPTION -->
@@ -14,7 +14,7 @@
                         <div class="flex-none sm:w-36 w-12">
                             <a class="self-center sm:text-base text-sm">Nama Kelas</a>
                         </div>
-                        <div class="flex-none md:w-1/5">
+                        <div class="flex-none sm:w-1/5 w-1/3">
                             <div class="relative">
                                 <select type="text" name="grade_name" value=""  class="block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker sm:text-base text-sm px-4 pr-8 rounded" id="grid-state">
                                     @foreach($grade_name as $filter)

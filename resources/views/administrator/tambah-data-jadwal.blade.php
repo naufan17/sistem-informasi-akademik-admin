@@ -21,7 +21,7 @@
                 <form method="POST" action="{{ url('administrator/data-jadwal/create') }}">
                     @csrf
                     <div class="pb-8">
-                        <div class="pt-8">
+                        <div class="pt-4">
                             <p class="self-center sm:text-base text-sm bg-gray-50 py-4 px-4">Jadwal Kelas</p>
                         </div>
                         <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 px-4 py-2 space-y-1">

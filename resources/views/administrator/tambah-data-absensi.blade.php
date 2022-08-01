@@ -21,7 +21,7 @@
                 <form method="POST" action="{{ url('administrator/data-absensi/create') }}">
                     @csrf
                     <div class="pb-8">
-                        <div class="pt-8">
+                        <div class="pt-4">
                             <p class="self-center sm:text-base text-sm bg-gray-50 py-4 px-4">Absensi</p>
                         </div>
                         <input type="hidden" name="id_santri" value="{{ $idSantri }}" class="py-2 px-3 block w-full bg-transparent border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-300" />

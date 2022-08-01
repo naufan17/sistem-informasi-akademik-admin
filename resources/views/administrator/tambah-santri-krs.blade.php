@@ -23,7 +23,7 @@
                             <a class="self-center sm:text-base text-sm hover:no-underline">Semester</a>
                         </div>
                         <input type="hidden" name="id" value="{{ $id_santri }}" class="self-center w-full bg-transparent border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-200" />
-                        <div class="flex-none md:w-1/5">
+                        <div class="flex-none sm:w-1/5 w-1/3">
                             <div class="relative">
                                 <select type="text" name="semester" value=""  class="block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker sm:text-base text-sm px-4 pr-8 rounded" id="grid-state">
                                     @foreach($semesters as $filter)    
@@ -40,7 +40,7 @@
                         <div class="flex-none sm:w-36 w-12">
                             <a class="self-center sm:text-base text-sm hover:no-underline">Tahun Ajaran</a>
                         </div>
-                        <div class="flex-none md:w-1/5">
+                        <div class="flex-none sm:w-1/5 w-1/3">
                             <div class="relative">
                                 <select type="text" name="year" value=""  class="block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker sm:text-base text-sm px-4 pr-8 rounded" id="grid-state">
                                     @foreach($years as $filter)    
@@ -126,7 +126,7 @@
                             <a class="self-center sm:text-base text-sm">Tingkat</a>
                         </div>
                         <input type="hidden" name="id" value="{{ $id_santri }}" class="self-center w-full bg-transparent border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-200" />
-                        <div class="flex-none w-1/5">
+                        <div class="flex-none sm:w-1/5 w-1/3">
                             <div class="relative">
                                 <select type="number" name="grade_number" value="" class="block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker sm:text-base text-sm px-4 pr-8 rounded" id="grid-state">
                                     @foreach($grade_number as $filter)
@@ -143,7 +143,7 @@
                         <div class="flex-none sm:w-36 w-12">
                             <a class="self-center sm:text-base text-sm">Nama Kelas</a>
                         </div>
-                        <div class="flex-none w-1/5">
+                        <div class="flex-none sm:w-1/5 w-1/3">
                             <div class="relative">
                                 <select type="text" name="grade_name" value="" class="block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker sm:text-base text-sm px-4 pr-8 rounded" id="grid-state">
                                     @foreach($grade_name as $filter)

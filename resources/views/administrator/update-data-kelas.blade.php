@@ -21,7 +21,7 @@
                 <form method="POST" action="{{ url('administrator/data-kelas/update') }}">
                     @csrf
                     <div class="pb-8">
-                        <div class="pt-8">
+                        <div class="pt-4">
                             <p class="self-center sm:text-base text-sm bg-gray-50 py-4 px-4">Tingkatan Kelas</p>
                         </div>
                         @foreach($grades as $grade)

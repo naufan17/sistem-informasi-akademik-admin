@@ -21,12 +21,12 @@
                 <form method="POST" action="{{ url('administrator/data-ustadz/import') }}" enctype="multipart/form-data">
                     @csrf
                     <div class="pb-4">
-                        <div class="md:grid md:grid-cols-4 hover:bg-gray-50 md:space-y-0 px-4 py-2 space-y-1">
+                        <div class="grid grid-cols-4 hover:bg-gray-50 md:space-y-0 px-4 py-2 space-y-1">
                             <p class="self-center sm:text-base text-sm text-gray-600">File Import</p>
                             <div class="relative z-0 w-full mb-5 col-span-2">
                                 <input class="form-control block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker sm:text-base text-sm py-2 px-4 pr-4 rounded" type="file" name="file" required="required">
                             </div>
-                            <div class="object-left text-center text-white sm:text-base text-sme">
+                            <div class="object-left text-center text-white sm:text-base text-sm">
                                 <button type="submit" class="bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-2.5 sm:px-6 px-3.5">Import</button>
                             </div>
                         </div>

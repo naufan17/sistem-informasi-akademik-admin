@@ -22,7 +22,7 @@
                     @csrf
                     @foreach($courses as $course)
                     <div class="pb-8">
-                        <div class="pt-8">
+                        <div class="pt-4">
                             <p class="self-center sm:text-base text-sm bg-gray-50 py-4 px-4">Data Mata Pelajaran</p>
                         </div>
                         <input id="id" type="hidden" name="id_course" value="{{ $course->id_course }}" class="pt-3 pb-2 px-3 block w-full mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-200" />

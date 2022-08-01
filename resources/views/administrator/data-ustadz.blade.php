@@ -14,7 +14,7 @@
                         <div class="flex-none sm:w-36 w-12">
                             <a class="self-center sm:text-base text-sm">Status</a>
                         </div>
-                        <div class="flex-none md:w-1/5">
+                        <div class="flex-none sm:w-1/5 w-1/3">
                             <div class="relative">
                                 <select type="text" name="status" value="" class="block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker sm:text-base text-sm px-4 pr-8 rounded" id="grid-state">
                                     @foreach($status as $filter)
