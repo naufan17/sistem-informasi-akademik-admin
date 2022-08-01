@@ -65,7 +65,7 @@
             </nav>
             <!-- MENU -->
             <div class="bg-gray-100 font-family-karla flex">
-                <aside class="relative bg-gray-100 sm:w-64 w-32 sm:block" id="sidebar">
+                <aside class="relative bg-gray-100 sm:w-64 w-32 hidden sm:block" id="sidebar">
                     <nav class="font-semibold pt-3">
                         <div class="text-gray-900">
                             <div class="sm:py-6 py-4 sm:px-6 px-4">
@@ -153,7 +153,7 @@
                 <!-- Page Content -->
                 <div class="w-full flex flex-col h-screen overflow-y-hidden">
                     <div class="overflow-x-hidden">
-                        <div class="pt-4 pl-4 sm:hidden block">
+                        <div class="pl-4 pt-4 sm:hidden inline-block">
                             <a href="javascript:void(0);" class="icon px-3 py-2 bg-white p-8 shadow-lg rounded text-base" id="menu-icon" onclick="menuIcon()">
                                 <i class="fa fa-bars"></i>
                             </a>
