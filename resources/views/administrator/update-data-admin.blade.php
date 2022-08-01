@@ -5,7 +5,7 @@
 <div class="w-full flex flex-col h-screen overflow-y-hidden">
     <div class="overflow-x-hidden">
         <main class="sm:pt-6 pt-3 sm:px-6 px-3">
-            <h1 class="sm:text-3xl text-2xl text-black pb-2 mt-2">Input Admin</h1>
+            <h1 class="sm:text-3xl text-2xl text-black pb-2 mt-2">Data Admin</h1>
             <div class="bg-white rounded-lg shadow-md sm:p-8 p-4 sm:my-8 my-4">
                 <div class="p-4">
                     <a href="{{ url('administrator/data-admin') }}" class="button flex items-center border border-black-500 text-black-500 sm:text-base text-sm rounded-sm py-2.5 sm:px-6 px-3.5 sm:w-36 w-28 hover:bg-blue-700 hover:text-white">
@@ -42,7 +42,7 @@
                     </div>
                     @if(Auth::guard('administrator')->user()->id != $administrator->id )
                     <div class="flex flex-nowrap flex-row-reverse">
-                        <div class="object-left text-center text-white text-base pt-8 px-3">
+                        <div class="object-left text-center text-white sm:text-base text-sm pt-8 px-3">
                             <button type="submit" class="bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-2.5 sm:px-6 px-3.5">Simpan</button>
                         </div>
                         <div class="object-left text-center text-white text-base pt-8 px-3">

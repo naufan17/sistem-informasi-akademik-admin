@@ -6,7 +6,7 @@
     <!-- SANTRI -->
     <div class="overflow-x-hidden">
         <main class="m:pt-6 pt-3 sm:px-6 px-3">
-            <h1 class="text-3xl text-black pb-2 mt-2">Data Nilai</h1>
+            <h1 class="sm:text-3xl text-2xl text-black pb-2 mt-2">Data Nilai</h1>
             <div class="bg-white rounded-lg shadow-md sm:p-8 p-4 sm:my-8 my-4">
                 <!-- BACK BUTTON -->
                 <div class="p-4 mb-6">
@@ -21,7 +21,7 @@
                 <form method="POST" action="{{ url('administrator/data-nilai/santri') }}">
                     @csrf
                     <div class="flex space-x-4 items-center pb-4">
-                        <div class="flex-none w-36">
+                        <div class="flex-none sm:w-36 w-12">
                             <a class="self-center sm:text-base text-sm hover:no-underline">Semester</a>
                         </div>
                         <input type="hidden" name="id" placeholder="" value="{{ $id_course }}" class="self-center w-full bg-transparent border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-200" />
@@ -44,7 +44,7 @@
                         </div>
                     </div>
                     <div class="flex space-x-4 items-center pb-8">
-                        <div class="flex-none w-36">
+                        <div class="flex-none sm:w-36 w-12">
                             <a class="self-center sm:text-base text-sm hover:no-underline">Tahun Ajaran</a>
                         </div>
                         <div class="flex-none md:w-1/5">
