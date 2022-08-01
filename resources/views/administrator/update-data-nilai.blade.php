@@ -71,7 +71,7 @@
                 </form>
                 <p class="sm:text-xl text-lg py-4 flex items-center">Daftar Santri</p>
                 @if($tambah = Session::get('tambah'))
-                <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mb-2" role="alert">
+                <div class="bg-green-100 border border-green-400 text-green-700 sm:text-base text-sm px-4 py-3 rounded relative mb-2" role="alert">
                     <span class="block sm:inline">{{ $tambah }}</span>
                     <span class="absolute top-0 bottom-0 right-0 px-4 py-3" onclick="this.parentElement.style.display='none';">
                         <svg class="fill-current h-6 w-6 text-green-500" role="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
