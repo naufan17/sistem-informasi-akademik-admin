@@ -232,11 +232,11 @@ class DataSantriController extends Controller
         return view('administrator.detail-data-santri', compact('santris'));
     }
 
-    public function sampleImport()
-    {
-        $path = storage_path('app/public/data_sample_santri.xlsx');
-        // $path = Storage::url('data_sample_santri.xlsx');
+    // public function sampleImport()
+    // {
+    //     // $path = public_path('data_sample_santri.xlsx');
+    //     // $path = Storage::url('data_sample_santri.xlsx');
 
-        return response()->download($path);
-    }
+    //     return response()->download($path);
+    // }
 }
