@@ -234,8 +234,8 @@ class DataSantriController extends Controller
 
     public function sampleImport()
     {
-        // $path = storage_path('app/public/' . 'data_sample_santri.xlsx');
-        $path = Storage::url('data_sample_santri.xlsx');
+        $path = storage_path('app/public/' . 'data_sample_santri.xlsx');
+        // $path = Storage::url('data_sample_santri.xlsx');
 
         return response()->download($path);
     }

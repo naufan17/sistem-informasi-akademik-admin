@@ -147,8 +147,8 @@ class DataUstadzController extends Controller
 
     public function sampleImport()
     {
-        // $path = storage_path('app/public/' . 'data_sample_ustadz.xlsx');
-        $path = Storage::url('data_sample_ustadz.xlsx');
+        $path = public_path('app/public/' . 'data_sample_ustadz.xlsx');
+        // $path = Storage::url('data_sample_ustadz.xlsx');
 
         return response()->download($path);
     }
