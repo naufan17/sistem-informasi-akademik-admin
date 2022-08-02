@@ -7,6 +7,7 @@ use App\Models\Ustadz;
 use App\Models\ImportUstadz;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
 use Maatwebsite\Excel\Facades\Excel;
 
 class DataUstadzController extends Controller
@@ -146,7 +147,8 @@ class DataUstadzController extends Controller
 
     public function sampleImport()
     {
-        $path = storage_path('app/public/' . 'data_sample_ustadz.xlsx');
+        // $path = storage_path('app/public/' . 'data_sample_ustadz.xlsx');
+        $path = Storage::url('data_sample_ustadz.xlsx');
 
         return response()->download($path);
     }

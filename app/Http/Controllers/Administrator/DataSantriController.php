@@ -9,6 +9,7 @@ use App\Models\ImportSantri;
 use App\Models\Santri;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
 use Maatwebsite\Excel\Facades\Excel;
 
 class DataSantriController extends Controller
@@ -233,7 +234,8 @@ class DataSantriController extends Controller
 
     public function sampleImport()
     {
-        $path = storage_path('app/public/' . 'data_sample_santri.xlsx');
+        // $path = storage_path('app/public/' . 'data_sample_santri.xlsx');
+        $path = Storage::url('data_sample_santri.xlsx');
 
         return response()->download($path);
     }
