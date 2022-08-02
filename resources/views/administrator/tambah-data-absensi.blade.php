@@ -20,7 +20,7 @@
                 </div>
                 <form method="POST" action="{{ url('administrator/data-absensi/create') }}">
                     @csrf
-                    <div class="pb-8">
+                    <div class="pb-4">
                         <div class="pt-4">
                             <p class="self-center sm:text-base text-sm bg-gray-50 py-4 px-4">Absensi</p>
                         </div>
@@ -76,9 +76,9 @@
                                 <input type="number" name="attendance_asrama" placeholder="0-100%" min="0" max="100" required class="sm:text-base text-sm pt-3 pb-2 px-3 block w-full mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-200" />
                             </div>
                         </div>
-                    </div>
-                    <div class="flex flex-row-reverse object-left text-center text-white sm:text-base text-sm pt-8 px-3">
-                        <button type="submit" class="bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-2.5 sm:px-6 px-3.5">Simpan</button>
+                        <div class="flex flex-row-reverse object-left text-center text-white sm:text-base text-sm pt-8 px-3">
+                            <button type="submit" class="bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-2.5 sm:px-6 px-3.5">Simpan</button>
+                        </div>
                     </div>
                 </form>
             </div>

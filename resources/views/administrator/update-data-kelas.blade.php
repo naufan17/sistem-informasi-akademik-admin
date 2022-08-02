@@ -20,7 +20,7 @@
                 </div>
                 <form method="POST" action="{{ url('administrator/data-kelas/update') }}">
                     @csrf
-                    <div class="pb-8">
+                    <div class="pb-4">
                         <div class="pt-4">
                             <p class="self-center sm:text-base text-sm bg-gray-50 py-4 px-4">Tingkatan Kelas</p>
                         </div>
@@ -50,13 +50,13 @@
                             </div>
                         </div>
                         @endforeach
-                    </div>
-                    <div class="flex flex-row-reverse">
-                        <div class="object-left text-center text-white sm:text-base text-sm pt-8 px-3">
-                            <button type="submit" class="bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-2.5 sm:px-6 px-3.5">Simpan</button>
-                        </div>
-                        <div class="object-left text-center text-white sm:text-base text-sm pt-8 px-3">
-                            <a href="{{ url('administrator/data-kelas/delete') }}/{{ $grade->id_grade }}" type="submit" class="bg-red-600 hover:bg-red-700 rounded py-2.5 sm:px-6 px-3.5">Hapus</a>
+                        <div class="flex flex-row-reverse">
+                            <div class="object-left text-center text-white sm:text-base text-sm pt-8 px-3">
+                                <button type="submit" class="bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-2.5 sm:px-6 px-3.5">Simpan</button>
+                            </div>
+                            <div class="object-left text-center text-white sm:text-base text-sm pt-8 px-3">
+                                <a href="{{ url('administrator/data-kelas/delete') }}/{{ $grade->id_grade }}" type="submit" class="bg-red-600 hover:bg-red-700 rounded py-2.5 sm:px-6 px-3.5">Hapus</a>
+                            </div>
                         </div>
                     </div>
                 </form>

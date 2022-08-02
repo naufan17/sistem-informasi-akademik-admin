@@ -83,7 +83,7 @@
                 @endif
                 <form method="POST" action="{{ url('administrator/data-nilai/create') }}">
                     @csrf
-                    <div class="bg-white overflow-auto pb-8">
+                    <div class="bg-white overflow-auto pb-4">
                         <table class="table-auto bg-white">
                             <thead class="bg-gray-800 text-white">
                                 <tr>

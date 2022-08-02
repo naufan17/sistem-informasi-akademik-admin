@@ -118,7 +118,7 @@
                 </div>
                 @endif
             </div>
-            <div class="bg-white rounded-lg shadow-md p-8 my-8">
+            <div class="bg-white rounded-lg shadow-md sm:p-8 p-4 sm:my-8 my-4">
                 <form method="POST" action="{{ url('administrator/data-krs/form-create/filter-kelas') }}">
                     @csrf
                     <div class="flex space-x-4 items-center pb-4">

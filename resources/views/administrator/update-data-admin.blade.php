@@ -20,7 +20,7 @@
                 </div>
                 <form method="POST" action="{{ url('administrator/data-admin/update-profile') }}">
                     @csrf
-                    <div class="pb-8">
+                    <div class="pb-4">
                         <div class="pt-4">
                             <p class="self-center sm:text-base text-sm bg-gray-50 py-4 px-4">Update Profile</p>
                         </div>
@@ -39,27 +39,23 @@
                             </div>
                         </div>
                         @endforeach
+                        @if(Auth::guard('administrator')->user()->id != $administrator->id )
+                            <div class="flex flex-row-reverse object-left text-center text-white sm:text-base text-sm pt-8 px-3">
+                                <button type="submit" class="bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-2.5 sm:px-6 px-3.5">Simpan</button>
+                            </div>
+                            <div class="object-left text-center text-white text-base pt-8 px-3">
+                                <a href="{{ url('administrator/data-admin/delete') }}/{{ $administrator->id }}" type="submit" class="border bg-red-600 hover:bg-red-700 rounded py-2.5 sm:px-6 px-3.5">Hapus</a>
+                            </div>
+                        @else
+                            <div class="flex flex-row-reverse object-left text-center text-white sm:text-base text-sm pt-8 px-3">
+                                <button type="submit" class="bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-2.5 sm:px-6 px-3.5">Simpan</button>
+                            </div>
+                        @endif
                     </div>
-                    @if(Auth::guard('administrator')->user()->id != $administrator->id )
-                    <div class="flex flex-nowrap flex-row-reverse">
-                        <div class="object-left text-center text-white sm:text-base text-sm pt-8 px-3">
-                            <button type="submit" class="bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-2.5 sm:px-6 px-3.5">Simpan</button>
-                        </div>
-                        <div class="object-left text-center text-white text-base pt-8 px-3">
-                            <a href="{{ url('administrator/data-admin/delete') }}/{{ $administrator->id }}" type="submit" class="border bg-red-600 hover:bg-red-700 rounded py-2.5 sm:px-6 px-3.5">Hapus</a>
-                        </div>
-                    </div>
-                    @else
-                    <div class="flex flex-nowrap flex-row-reverse">
-                        <div class="object-left text-center text-white sm:text-base text-sm pt-8 px-3">
-                            <button type="submit" class="bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-2.5 sm:px-6 px-3.5">Simpan</button>
-                        </div>
-                    </div>
-                    @endif
                 </form>
                 <form method="POST" action="{{ url('administrator/data-admin/update-password') }}">
                     @csrf
-                    <div class="pb-8">
+                    <div class="pb-4">
                         <div class="pt-8">
                             <p class="self-center sm:text-base text-sm bg-gray-50 py-4 px-4">Update Password</p>
                         </div>
@@ -83,9 +79,9 @@
                             </div>
                         </div>
                         @endforeach
-                    </div>
-                    <div class="flex flex-row-reverse object-left text-center text-white sm:text-base text-sm pt-8 px-3">
-                        <button type="submit" class="bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-2.5 sm:px-6 px-3.5">Simpan</button>
+                        <div class="flex flex-row-reverse object-left text-center text-white sm:text-base text-sm pt-8 px-3">
+                            <button type="submit" class="bg-blue-600 hover:bg-blue-800 rounded shadow-lg py-2.5 sm:px-6 px-3.5">Simpan</button>
+                        </div>
                     </div>
                 </form>
             </div>
