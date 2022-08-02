@@ -37,7 +37,7 @@
                             <a href="/"><img src="{{ URL::to('/') }}/images/logo.png" class="sm:w-24 w-16"></a>
                         </div>
                         <!--NAME-->
-                        <div class="text-center font-bold font-sans text-yellow-800 mt-2">
+                        <div class="text-center font-bold text-yellow-800 mt-2">
                             <p class="sm:text-base text-sm sm:tracking-normal tracking-tighter">MADRASAH DINIYYAH</p>
                             <p class="sm:text-xl text-base font-bold sm:tracking-normal tracking-tighter">NURUL UMMAH</p>
                             <p class="sm:text-base text-sm tracking-tight sm:tracking-wide">YOGYAKARTA</p>
