@@ -15,6 +15,8 @@
     
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <!-- Tailwind -->
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
     
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -23,7 +25,6 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
-
 </head>
 <body class="work-sans leading-normal text-base tracking-normal">
     <div id="app">
